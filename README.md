@@ -98,4 +98,4 @@ any other of my mods, including publishing a continuation of it. All credit must
 
 - **Shooki** — the teshi: design, textures, defs.
 - **Mlie** — the continuation through 1.4, and the MIT terms this port relies on.
-- 1.6 update by nelim. Written with the help of Claude (Anthropic).
+- 1.6 update by Nelim. Written with the help of Claude (Anthropic).
