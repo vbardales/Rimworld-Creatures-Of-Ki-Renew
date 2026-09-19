@@ -46,7 +46,7 @@ Both the About URL and the description contain the GitHub repository link.
 **MIT**, classified `open`. The repository's LICENSE records copyright 2020 Mlie and the upstream
 source https://github.com/emipa606/CreaturesOfKi. This continuation inherits the teshi assets and
 definitions from Shooki/Mlie; it is not wholly original work. The local license explicitly offers
-nelim's extraction and 1.6 port under the same MIT terms. ATTRIBUTION.md records provenance and
+Nelim's extraction and 1.6 port under the same MIT terms. ATTRIBUTION.md records provenance and
 changes. This is the documented basis for retaining MIT rather than choosing a new license.
 
 LICENSE and Mod/LICENSE are byte-identical (SHA-256 checked on 2026-09-12), so the upstream notice
