@@ -30,9 +30,24 @@ It adds one animal and its eggs.
 Taming failure turns it manhunter one time in twenty; damaging it, three times in four. It is a
 predator with four times a human's health pool, so that matters.
 
-No DLC required. No Harmony, no framework, no dependency of any kind.
+No DLC required. No Harmony, no framework, no mandatory dependency. One optional integration is built
+in, described below.
 
 Content mod: removing it mid-save will lose any teshi and any teshi eggs already in play.
+
+## Compatibility
+
+- **[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862)**
+  (`SamBucher.ADogSaidAnimalProsthetics2`), built in. That mod decides which animals can receive
+  prostheses through three abstract recipe categories, and asks any mod that builds compatibility in to
+  load before it. `Mod/Patches/ADS2_Categories.xml` writes the teshi into all three, which is category 3,
+  the one that holds the bears, wolves, wargs and cougars: it is trainable to intermediate and as large as a
+  bear. The lists nest, so a category 3 animal is written into each. `About.xml` declares the mod in
+  `loadBefore`, and nothing else: no `modDependencies`, no `LoadFolders.xml`. The patch is conditional on the
+  category existing in the merged defs, so with the other mod absent it finds nothing and logs nothing.
+  Whether the teshi's body has a part for each prosthesis is that mod's arithmetic, not this one's. It has
+  been checked offline for its shape and has not been played: the Pickle scenario
+  `08-ads2-integration` needs that mod mounted.
 
 ## What is not included
 

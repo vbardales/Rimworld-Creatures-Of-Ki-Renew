@@ -30,6 +30,10 @@ through 1.4.
   without having been fertilized, which was stated too absolutely. The other said the second egg of a
   mated laying has nothing to be but unfertilized, inferred from the two settings without reading
   `ProduceEgg`, which makes one stack. The in-game confirmation is still to be performed.
+- Built-in compatibility with **A Dog Said... Animal Prosthetics 2**. `Patches/ADS2_Categories.xml` writes
+  the teshi into that mod's three animal categories, category 3 like the bears and the wolves, and
+  `About.xml` loads this mod before it, as its page asks. It is optional and conditional: nothing is
+  required, and with the other mod absent the patch finds nothing and logs nothing. Not yet played.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed
@@ -66,8 +70,10 @@ which holds item `3806709627`. This entry does not say the mod is public or test
 ### Notes
 
 - The upload contained `Mod/` as it stood at `3449ee5`. Nothing in `Mod/` has changed since, apart
-  from that file and the wording of the two egg passages in `About.xml`, corrected afterwards. The
-  private item still carries the earlier text, which only a hand edit on the Steam page can change.
+  from that file, the wording of the two egg passages in `About.xml` (corrected afterwards), and the
+  integration with A Dog Said... Animal Prosthetics 2: a patch, a `loadBefore` and a paragraph of
+  `About.xml`. The private item still carries the earlier text, which only a hand edit on the Steam page
+  can change.
 - It was made from the working tree, which also held 9 `.dds` texture caches that the game had
   written beside the PNGs eighteen minutes earlier. They are not in git, so the private item probably
   carries them. This repository has no publish workflow yet: an upload from a git checkout drops

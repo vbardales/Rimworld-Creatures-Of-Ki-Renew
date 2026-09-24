@@ -18,7 +18,8 @@ mod, which is what MIT asks in exchange for redistribution.
 ## What was taken
 
 Three def files and nine textures were taken from the original; a fourth def file
-was added for the unfertilized egg. The playable race was excluded.
+was added for the unfertilized egg, and a patch file for an optional integration. The playable race was
+excluded.
 
 | File | Origin |
 |---|---|
@@ -99,6 +100,16 @@ requiring a full 1.
 Then that a mated female lays one fertilized and one unfertilized egg, "the second egg has nothing to be
 but unfertilized". That was inferred from `eggCountRange` 2 and one fertilization, and never read off
 `ProduceEgg`, which builds a single stack. It was wrong on the reading above.
+
+### An optional integration, written here
+
+`Patches/ADS2_Categories.xml` is new and is not from the original. It follows the convention of
+**A Dog Said... Animal Prosthetics 2** by SamBucher
+([Workshop 3238353862](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862),
+[repository](https://github.com/SamuelBucher/A-Dog-Said-Animal-Prosthetics-2)): the mod lists the animals that
+may receive prostheses in the abstract recipe categories `ADS_Cat1`, `ADS_Cat2` and `ADS_Cat3`, and its page asks
+any mod that builds compatibility in to load before it. Only those names and that rule are used; no def, code or
+asset of that mod is copied. The mod is not a dependency: `About.xml` names it in `loadBefore` only.
 
 ### Nothing else
 

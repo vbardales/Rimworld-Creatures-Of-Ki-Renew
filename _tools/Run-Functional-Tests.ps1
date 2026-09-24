@@ -369,6 +369,37 @@ It 'body parts and stat keys resolve against Core alone' {
     }
 }
 
+It 'the A Dog Said... Animal Prosthetics 2 integration is one conditional patch, and About only orders the load' {
+    # There is no copy of that mod here to read its categories from, so this checks the shape that keeps the
+    # integration harmless when it is absent, and that it names only this mod's own animal. That the three
+    # categories still exist under these names is what the pass with the other mod mounted shows.
+    $patchFile = Join-Path $modDir 'Patches/ADS2_Categories.xml'
+    if (-not (Test-Path -LiteralPath $patchFile)) { 'Patches/ADS2_Categories.xml is missing'; return }
+    $p = New-Object System.Xml.XmlDocument
+    $p.Load($patchFile)
+    $ops = @($p.SelectNodes('/Patch/Operation'))
+    if ($ops.Count -ne 1) { "expected one operation, found $($ops.Count)" }
+    foreach ($op in $ops) {
+        if ($op.GetAttribute('Class') -cne 'PatchOperationConditional') { 'the operation is not a PatchOperationConditional: with the other mod absent it would fail and log' }
+        if ($op.xpath -notmatch 'ADS_Cat3') { 'the condition does not look for the ADS_Cat3 category' }
+        $add = $op.SelectSingleNode('match')
+        if (-not $add -or $add.GetAttribute('Class') -cne 'PatchOperationAdd') { 'the match is not a PatchOperationAdd'; continue }
+        foreach ($cat in 'ADS_Cat1', 'ADS_Cat2', 'ADS_Cat3') {
+            if ($add.xpath -notmatch [regex]::Escape("@Name=`"$cat`"")) { "the target does not name ${cat}: the three lists nest, an animal of category 3 belongs in all three" }
+        }
+        $mine = @($defNodes | Where-Object { $_.LocalName -eq 'ThingDef' } | ForEach-Object { Get-Text $_ 'defName' })
+        $users = @($add.SelectNodes('value/li') | ForEach-Object { $_.InnerText.Trim() })
+        if ($users.Count -eq 0) { 'the patch adds no animal' }
+        foreach ($u in $users) { if ($mine -cnotcontains $u) { "the patch lists '${u}', which is no ThingDef of this mod" } }
+    }
+    $about = New-Object System.Xml.XmlDocument
+    $about.Load((Join-Path $modDir 'About/About.xml'))
+    $before = @($about.SelectNodes('/ModMetaData/loadBefore/li') | ForEach-Object { $_.InnerText.Trim() })
+    if ($before -cnotcontains 'SamBucher.ADogSaidAnimalProsthetics2') { 'About.xml does not load this mod before ADS2, which its author asks of any mod that builds compatibility in' }
+    if (@($about.SelectNodes('/ModMetaData/modDependencies/li')).Count -gt 0) { 'About.xml declares a hard dependency: the integration is optional' }
+    if (Test-Path -LiteralPath (Join-Path $modDir 'LoadFolders.xml')) { 'a LoadFolders.xml exists: the integration does not need one' }
+}
+
 Section "The port's two changes, read off the game"
 # =============================================================================================
 

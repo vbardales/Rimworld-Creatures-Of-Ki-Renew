@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!--
+    A Dog Said... Animal Prosthetics 2 (packageId SamBucher.ADogSaidAnimalProsthetics2, Workshop 3238353862)
+    lets an animal receive prostheses by listing it in one of three abstract recipe categories:
+
+      ADS_Cat1  basic replacements, the small critters
+      ADS_Cat2  Cat1 and simple prosthetic limbs, non-trainable and non-packable animals
+      ADS_Cat3  Cat2 and bionics, trainable and packable animals, and cats
+
+    Each category lists the animals that may use its recipes, and the three lists nest, so an animal of
+    category 3 is written into all three. The teshi is trainable to intermediate and as large as a bear,
+    and the bears, wolves, wargs and cougars are category 3 there, so it goes in all three.
+
+    The patch is conditional on the category existing in the merged defs, not on a mod name: with the
+    other mod absent it finds nothing and does nothing, and no log line is written. ADS2 asks any mod
+    that builds this in to load BEFORE it, which About.xml declares in loadBefore. It is an optional
+    integration: About.xml declares no modDependencies and there is no LoadFolders.
+  -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[@Name="ADS_Cat3"]/recipeUsers</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[
+        @Name="ADS_Cat3" or
+        @Name="ADS_Cat2" or
+        @Name="ADS_Cat1"
+      ]/recipeUsers</xpath>
+      <value>
+        <li>Teshi</li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>
