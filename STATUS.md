@@ -43,8 +43,9 @@ Newest entry; where it disagrees with the sections below, it wins. The owner ask
 ticket dispatcher (`Rimworld-Ticket-Dispatcher/`, `docs/WELCOME.md`), with no follow-up task in this session, and
 for small tickets: a validation plays every scenario of its pass, a fix or an exploration as few as it can.
 
-- **Registered** with the dispatcher by message (`REGISTER local_ebbf6354-e959-4188-bafe-63729c5190ff`). Its answer
-  has not arrived at the time of writing.
+- **Registered** with the dispatcher by message (`REGISTER local_ebbf6354-e959-4188-bafe-63729c5190ff`). It answered that this session is autonomous:
+  the three requests are deposited, the old direct tickets are dead, and later runs go straight to
+  \Submit-PickleRun.ps1\ without writing to it first. It wakes this session at \START\, \END\ and \RUN_DONE\.
 - **Three requests dropped** with `Submit-PickleRun.ps1`, all first runs and so all scenarios of their pass:
   `20260924-164447-947-54ad` English without the slow laying, `20260924-164448-628-681f` the slow laying and hatching
   alone, `20260924-164449-372-9aa5` French. Evidence goes to `Tests/Pickle/Evidence/2026-09-24-english-fast`,
