@@ -49,3 +49,25 @@ through 1.4.
 
 No balance value was changed. One defect inherited from the original is left in place on purpose
 and documented in `ATTRIBUTION.md`: the dessicated teshi corpse uses the dromedary's texture.
+
+## [0.1.0] — 2026-09-23
+
+Creation of a publishIdFile. Prepublication: a first upload whose only purpose was to create the
+Workshop item, private as Steam creates every new item, and to obtain `Mod/About/PublishedFileId.txt`,
+which holds item `3806709627`. This entry does not say the mod is public or tested.
+
+### Added
+
+- `Mod/About/PublishedFileId.txt`, committed in `98a7c49`. Without it the next upload would create a
+  second item instead of updating this one.
+
+### Notes
+
+- The upload contained `Mod/` as it stood at `3449ee5`. Nothing in `Mod/` has changed since, apart
+  from that file.
+- It was made from the working tree, which also held 9 `.dds` texture caches that the game had
+  written beside the PNGs eighteen minutes earlier. They are not in git, so the private item probably
+  carries them. This repository has no publish workflow yet: an upload from a git checkout drops
+  them, one from the working tree sends them again.
+- The features listed under 1.0.0 are still to come as a release. The `tested` and `prepublished`
+  states have not been reached: see `STATUS.md`.
