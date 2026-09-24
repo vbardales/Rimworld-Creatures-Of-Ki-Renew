@@ -48,9 +48,11 @@ for small tickets: a validation plays every scenario of its pass, a fix or an ex
   `20260924-164447-947-54ad` English without the slow laying, `20260924-164448-628-681f` the slow laying and hatching
   alone, `20260924-164449-372-9aa5` French. Evidence goes to `Tests/Pickle/Evidence/2026-09-24-english-fast`,
   `-english-slow` and `-french`. Nothing has run.
-- **Two older direct tickets** are still in the queue, 40904 English and 42836 French, launched before the dispatcher
-  was known and labelled without a `local_<id>`. They are this session's and have played nothing. They are to be
-  withdrawn once the dispatcher has answered, so the same passes do not play twice.
+- **Two older direct tickets**, 40904 English and 42836 French, launched before the dispatcher was known, are gone.
+  When the owner asked for them to be withdrawn, at about 16:50, both launcher processes had already exited and
+  neither ticket was in the queue any more, which by then held two entries and none of this mod's. They had
+  played nothing: no report, no evidence folder, and the lock was never this session's. Nothing was killed or
+  deleted by this session. Why they left is not known; the dispatcher may have taken the queue over.
 - **No watcher** is left: the Monitor that was armed has ended and none will be armed again.
 
 ## Optional integration — 2026-09-24
