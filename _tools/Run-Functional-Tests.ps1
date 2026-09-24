@@ -567,7 +567,8 @@ It 'no texture is shipped that no def asks for' {
     $asked = @{}
     foreach ($n in $kindNode.SelectNodes('.//texPath')) {
         $leaf = @($n.InnerText.Trim() -split '/')[-1]
-        foreach ($suffix in @('_north', '_east', '_south')) { $asked["$leaf$suffix.png"] = $true }
+        # RimWorld writes a .dds cache beside each PNG; git never holds it (see .gitignore), the disk does.
+        foreach ($suffix in @('_north', '_east', '_south')) { foreach ($ext in @('png', 'dds')) { $asked["$leaf$suffix.$ext"] = $true } }
     }
     $orphans = @()
     foreach ($f in (Get-ChildItem (Join-Path $modDir 'Textures') -Recurse -File)) {
