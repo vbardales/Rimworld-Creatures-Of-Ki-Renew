@@ -70,20 +70,24 @@ eggProgressUnfertilizedMax 0.9
 eggLayIntervalDays         15
 ```
 
-Two eggs per laying, but only one fertilization available — so a fertilized teshi should produce
-one fertilized egg and one unfertilized. That is the path that reaches `eggUnfertilizedDef`, and it
-does not depend on the animal laying while unmated.
+Two eggs per laying, but only one fertilization available. An earlier version of this document, of
+the README and of the changelog said that a mated teshi therefore lays one fertilized egg and one
+unfertilized. Reading `CompEggLayer.ProduceEgg` in the compiled game says otherwise, and 4a is written
+to the reading: `ProduceEgg` makes **one stack** of `eggCountRange` eggs, all of the fertilized def while
+a fertilization is left, and all of the unfertilized def otherwise. The stack is two fertilized eggs. The
+unfertilized def is chosen only when no fertilization is left, and a laying without one is stopped at
+0.9 (4b), so a teshi never lays it. If 4a shows a stack of one and a stack of one, the reading is wrong.
 
 ### 4a. Mated female
 
 Tame one male and one female, keep them together, and let a laying cycle complete. In dev mode the
 egg-layer comp offers a debug gizmo that advances the cycle by a day; push it until she lays.
 
-**Expect:** two eggs on the ground — one `teshi egg (fert.)`, one `teshi egg (unfert.)`.
+**Expect:** one stack of two `teshi egg (fert.)` on the ground, and no `teshi egg (unfert.)`. The
+female has no fertilization left afterwards, so she does not lay again until she is mated.
 
-**Fails if:** an exception appears in the log at the moment of laying, naming `CompEggLayer` or
-`ThingMaker.MakeThing`. That is the crash the new def exists to prevent, and it would mean the def
-is not being found.
+**Fails if:** the stack is anything else, or an exception appears in the log at the moment of laying,
+naming `CompEggLayer` or `ThingMaker.MakeThing`.
 
 ### 4b. Lone female
 
@@ -104,15 +108,16 @@ So this scenario is now a confirmation rather than an experiment. **Fails if** s
 at all — that would mean the reading above is wrong, and `Run-Functional-Tests.ps1` should have
 caught it first.
 
-What that settles about the def: the crash this mod's documents once described was indeed not
-possible for a lone teshi. The def is still needed, and 4a is where it earns its place — a mated
-female lays two eggs with one fertilization, and the second has nothing to be but unfertilized.
+What that settles about the def: the crash this mod's documents once described was not possible for a
+lone teshi, and the same reading shows the unfertilized def is not reached by a mated laying either. It
+is declared because every egg-layer in Core declares one, and it is what a dev-mode lay-egg on a female
+with no fertilization left would ask for. It is harmless, and it is not the fix the changelog says.
 
 ## 5. The egg hatches
 
 Leave a fertilized egg somewhere warm and advance fifteen days, or use the dev gizmo on the egg.
 
-**Expect:** a teshi kit, tame, belonging to the colony.
+**Expect:** teshi kits, tame, belonging to the colony: a laid stack of two eggs hatches into two.
 
 **Fails if:** it hatches into nothing, or into the wrong pawn kind.
 
@@ -164,26 +169,28 @@ run, and no Pickle suite exists yet. That is pending work, not a pass.
 - Every conditional scenario (`@requires:<packageId>`) has had its pass. This mod declares no optional
   mod and needs no DLC, so there is none to play, and the DLC in `loadAfter` is ordering only.
 - No manual test is left to validate. Each of the seven scenarios becomes a green Pickle scenario or
-  a listed not-applicable. The proposal below is what the suite would cover, not a suite.
+  a listed not-applicable. The suite is in `Tests/Pickle/`, written on 2026-09-24 and never run: see its README and the table below.
 - Both languages are played, one pass each (`-Language English`, `-Language French`), in developer
   mode: accented gibberish means a key missing from the active language, clean English inside French
   means a string that never went through translation.
 
-### Proposed scope of the Pickle suite
+### Scope of the Pickle suite
 
 Only what a running game can show. The rest is already proved offline by `_tools/Run-Functional-Tests.ps1`.
+The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run them.
 
-| Scenario | Fate | Why |
-| --- | --- | --- |
-| 1. It loads | Pickle, `no errors were logged` | Only a load shows a def that failed and went silently absent. |
-| 2. The animal draws | Pickle, `@review` captures | A pink box is a rendering fact. The captures still have to be opened. |
-| 3. Wildness reads 50 % | Pickle, `@review` capture of the Information tab | The offline suite shows the stat exists and accepts 0.50. It does not show that the running game parses `<Wildness>` under `statBases` into the animal, which is the whole point of the port change. Taken in the run of scenario 2. Add an assertion only if a step that reads a stat already exists in PickleTools; `PickleTools/README.md` lists none today. |
-| 4a. Mated female lays | Pickle | Two eggs, one fertilized, one not: behaviour through the game's own callbacks. |
-| 4b. Lone female | Not applicable | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
-| 5. The egg hatches | Pickle | Needs the egg's timer to run. |
-| 6. Dessicated corpse | Pickle, `@review` capture | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
-| 7. Predator and manhunter | Not applicable | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
-| FR / EN display | Pickle, one pass per language | Health tab body parts, baby name and plural, both eggs, attack labels. |
+| Scenario | Fate | Feature | Why |
+| --- | --- | --- | --- |
+| 1. It loads | Pickle | `01-loads` | Only a load shows a def that failed and went silently absent, and the Wildness the game computes for the animal. |
+| 2. The animal draws | Pickle, `@review` captures | `02-draws` | A pink box is a rendering fact. Three captures show the nine textures on all four facings. The captures still have to be opened. |
+| 3. Wildness reads 50 % | Pickle | `01-loads`, `02-draws` | The game's computed value is asserted in 01, and a `@review` capture of the information card in 02 is what a person reads it off. The offline suite shows the stat accepts 0.50, not that the game reads it. |
+| 4a. Mated female lays | Pickle, `@slow` | `03-laying-and-hatching` | One stack of two fertilized eggs and no unfertilized egg, for the colony: behaviour through the game's own job. |
+| 4b. Lone female | Not applicable | none | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
+| 5. The egg hatches | Pickle, `@slow` | `03-laying-and-hatching` | Two kits that belong to the colony, from the eggs she laid. Needs the hatcher's own tick. |
+| 6. Dessicated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
+| 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
+| Save and reload | Pickle | `05-save-reload` | An animal and an egg survive a round trip; the fixture colony, saved without the mod, is the mod added to an existing colony. |
+| FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side. |
 
 ## Evidence to keep
 
@@ -202,7 +209,7 @@ The proofs worth keeping for this mod, and only these:
 
 - the animal drawn on each facing: one capture per sex and life stage (adult male, adult female, kit),
   with no pink box;
-- both eggs on the ground after a mated laying, `teshi egg (fert.)` and `teshi egg (unfert.)`;
+- the stack of two `teshi egg (fert.)` on the ground after a mated laying, with none of the unfertilized egg;
 - the hatched kit, tame and belonging to the colony;
 - the dessicated corpse;
 - the health tab of an adult teshi in English and in French, showing the custom body-part labels;

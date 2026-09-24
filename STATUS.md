@@ -10,7 +10,7 @@ remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes
-stage:        preTest
+stage:        done
 licence:      open
 licence_spdx: MIT
 licence_github_detection: Other (NOASSERTION)
@@ -21,13 +21,13 @@ tested_on:
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-24, stage corrected from done to preTest by the AUDIT.md audit, kept by the session that holds this mod
+updated:      2026-09-24, Pickle scenarios written, stage back to done, kept by the session that holds this mod
 remaining:
   - unverified: English and French runtime display (animal, eggs, life stage, attacks and health body parts).
   - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
-  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists. TESTS.md proposes the scope, scenarios 1, 2, 3, 4a, 5, 6 and one pass per language, with 4b and 7 not applicable.
-  - unverified: to reach tested, every one of the seven TESTS.md scenarios must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md transition 9); no @wip may remain; no conditional scenario exists, the mod declares no optional mod. Manual tests left to validate, all of them.
+  - unverified: to reach tested (AUDIT.md transition 9), the two Pickle passes in Tests/Pickle/README.md must run green, English then French, with exitReason read before the counts and the 13 scenarios played against the 13 discovered; every @review capture opened and looked at; no @wip (none exists); no conditional scenario (the mod declares no optional mod). No manual test is left to validate, since each of the seven TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7). Nothing has run.
+  - defect: README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml say a mated teshi lays one fertilized and one unfertilized egg, "the second egg has nothing to be but unfertilized", and give that as the reason EggTeshiUnfertilized was written. Reading CompEggLayer.ProduceEgg in the compiled game says a laying is one stack of eggCountRange eggs, all fertilized while a fertilization is left, so a mated teshi lays a stack of two fertilized eggs and never the unfertilized one, which a laying stopped at 0.9 cannot reach. TESTS.md is corrected and 03-laying-and-hatching asserts the reading; the four other texts are not changed, and the Steam description can only be corrected by hand. Basis is a reading of the IL, not yet a run.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
   - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item's page has not been read by a session.
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries the nine .dds caches that git never held; check its file list.
@@ -35,9 +35,30 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Pickle scenarios written — 2026-09-24, back to `done`
+
+Newest entry; where it disagrees with the sections below, it wins. The audit below found `preTest` for one
+reason, the Pickle scenarios not being written. They are now, so **the stage is `done` again** (transition 8).
+Nothing else in that audit changed, and its checks stand.
+
+- **The suite** is `Tests/Pickle/`: a companion mod (`Creatures of Ki - Teshi Renew - Pickle tests`), seven
+  features and 13 scenarios, 22 local steps in `Source/TeshiSteps.cs`, one pass map, and `Check-Steps.ps1`.
+  `README.md` there says what each feature shows and why it needs a game, what is deliberately not in Gherkin,
+  the two passes, and eight assumptions a first run confirms or breaks. The scope is justified in `TESTS.md`.
+- **Checked without a game**: the step assembly builds against the installed game and Pickle with no warning,
+  and `Check-Steps.ps1` reports every one of the 146 step lines resolving to exactly one step and every local
+  pattern compiling. It was seen to go red on an undefined step. `Run-Functional-Tests.ps1` still passes.
+  **Nothing was played**: no RimWorld was started, by any route, and no Pickle ticket is held.
+- **A finding that changes a document**: the mated laying makes one stack of two fertilized eggs, not one
+  fertilized and one unfertilized. See the defect in `remaining`; TESTS.md is corrected, the rest is left for a
+  decision.
+- **Evidence**: still none to sort, since nothing has run. Pickle steps also cover Wildness now: the value the
+  game computes in `01-loads` and a capture of the information card in `02-draws`; TESTS.md 3 is no longer
+  "not applicable".
+
 ## Audit — 2026-09-24, `done` -> `preTest`
 
-Newest entry; where it disagrees with the sections below, it wins. `AUDIT.md` was applied as it
+Superseded on the stage by the section above; its checks stand. `AUDIT.md` was applied as it
 stands today, including the clarification of 2026-09-21 on what `done` requires. The stage values
 are the workflow's literal states, no codes.
 
