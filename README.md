@@ -45,9 +45,12 @@ Content mod: removing it mid-save will lose any teshi and any teshi eggs already
   bear. The lists nest, so a category 3 animal is written into each. `About.xml` declares the mod in
   `loadBefore`, and nothing else: no `modDependencies`, no `LoadFolders.xml`. The patch is conditional on the
   category existing in the merged defs, so with the other mod absent it finds nothing and logs nothing.
-  Whether the teshi's body has a part for each prosthesis is that mod's arithmetic, not this one's. It has
-  been checked offline for its shape and has not been played: the Pickle scenario
-  `08-ads2-integration` needs that mod mounted.
+  Which prostheses apply is decided by the parts of the body. Read from that mod's recipes, the teshi's body
+  has the parts for its leg, ear, eye, heart, kidney, lung, spine, stomach, tail and jaw recipes, and for the two
+  that target a paw (the wooden paw and the power claw). Its arm recipes, simple and bionic, target a
+  `Shoulder`, which this mod's body does not have, so the front limbs get the paw recipes only. The patch has been
+  checked offline for its shape and has not been played: the Pickle scenario `08-ads2-integration` needs that
+  mod mounted.
 
 ## What is not included
 
@@ -94,12 +97,12 @@ Run the standalone technical suite:
 powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
 ```
 
-Twenty tests, no game launch. It does not simulate RimWorld — it reads the
+Twenty-one tests, no game launch. It does not simulate RimWorld — it reads the
 compiled game: the fields these defs write are checked against the methods that still read them,
 and the two changes this port made are checked against the code that made them necessary. Sixteen of the original seventeen have been watched failing against a deliberately broken copy of the mod; the
 seventeenth can only go red if RimWorld itself changes, and the file says so.
 
-`TESTS.md` is the layer no reflection reaches: seven scenarios to play, for everything that has to
+`TESTS.md` is the layer no reflection reaches: eight scenarios to play, for everything that has to
 be *seen* — the animal drawn from four sides, an egg hatching, a corpse drying out.
 
 ## Terms

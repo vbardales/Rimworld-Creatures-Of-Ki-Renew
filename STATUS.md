@@ -27,6 +27,7 @@ remaining:
   - unverified: all eight TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
   - unverified: to reach tested (AUDIT.md transition 9), three Pickle passes in Tests/Pickle/README.md must run green, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, with exitReason read before the counts and the scenarios played against the scenarios discovered; every @review capture opened and looked at; no @wip (none exists); the one conditional scenario, 08-ads2-integration, played in the third pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7). Nothing has been played.
+  - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 (Mod/Patches/ADS2_Categories.xml, loadBefore in About.xml) has been checked offline for its shape only. The category names ADS_Cat1 to ADS_Cat3 were read from that mod's repository on 2026-09-24, not from an installed copy; that the patch lands, and that the teshi is offered the same recipes as a grizzly bear, is what 08-ads2-integration shows. That mod is not yet downloaded into the WSL game, a queued job of its own that has not been started. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
   - unverified: the egg texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml now say what CompEggLayer.ProduceEgg does in the compiled game, a mated teshi lays one stack of two fertilized eggs and never the unfertilized one, and that reading has not been played; 03-laying-and-hatching settles it. The Steam page of item 3806709627 still carries the old paragraph, which SetItemDescription sent at creation and only a hand edit can change, and the private item carries the old About.xml.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
@@ -65,6 +66,15 @@ into account natively. Read from the Steam item, its API record and its reposito
   categories, `ADS_Cat1` to `ADS_Cat3`, that nest; category 3 also gets bionics and holds the trainable
   animals, the bears, wolves, wargs and cougars among them. The page asks any mod that builds compatibility
   in to load **before** it.
+- **Read against the source, 2026-09-24** (the repository, from its GitHub API and raw files; still no installed
+  copy). Its `z_Category_Patches.xml` copies the three category lists into the real recipe bases at patch time,
+  with the XML Extensions variant doing the same, and its "free for all" setting copies the category 1 list into
+  all artificial-part recipes. That confirms the load-before rule, since a patch applied after that copy is too
+  late, and it confirms that the teshi belongs in all three lists. The other mods' compat patches write the same
+  three names the same way. Of its 25 recipes, the teshi's body has the target part for those on the leg, ear,
+  eye, heart, kidney, lung, spine, stomach, tail and jaw, and for the wooden paw and the power claw. It has none
+  of the antenna, beak, tongue, insect and turtle parts, and no `Shoulder`, which the simple and the bionic arm
+  recipes target: the teshi's front limb is an `Arm` ending in `Paw` claws.
 - **What was built.** `Mod/Patches/ADS2_Categories.xml`, one `PatchOperationConditional` on the category
   existing in the merged defs, that writes `Teshi` into all three lists; `loadBefore` on
   `SamBucher.ADogSaidAnimalProsthetics2` in About.xml; a Compatibility paragraph in About.xml, README.md,
