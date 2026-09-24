@@ -10,7 +10,7 @@ remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
 licence:      open
 licence_spdx: MIT
 licence_github_detection: Other (NOASSERTION)
@@ -18,16 +18,100 @@ licence_at:   LICENSE and Mod/LICENSE, copyright 2020 Mlie
 dependencies: none
 showcase:     complete
 tested_on:
-workshop:
-maintainer:   Codex, current task responsible for this standalone repository
-updated:      2026-09-13
+workshop:     3806709627
+maintainer:   Claude Code, the session named in session, which holds this standalone repository
+session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
+updated:      2026-09-24, stage corrected from done to preTest by the AUDIT.md audit, kept by the session that holds this mod
 remaining:
   - unverified: English and French runtime display (animal, eggs, life stage, attacks and health body parts).
   - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
+  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists. TESTS.md proposes the scope, scenarios 1, 2, 4a, 5, 6 and one pass per language, with 3, 4b and 7 not applicable.
+  - unverified: to reach tested, every one of the seven TESTS.md scenarios must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md transition 9); no @wip may remain; no conditional scenario exists, the mod declares no optional mod. Manual tests left to validate, all of them.
+  - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
+  - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation: any change is by hand on the Steam page. The item's page has not been read by a session.
+  - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries the nine .dds caches that git never held; check its file list.
 ---
 
 # Creatures of Ki - Teshi Renew — status
+
+## Audit — 2026-09-24, `done` -> `preTest`
+
+Newest entry; where it disagrees with the sections below, it wins. `AUDIT.md` was applied as it
+stands today, including the clarification of 2026-09-21 on what `done` requires. The stage values
+are the workflow's literal states, no codes.
+
+**Old stage `done`, stage kept `preTest`.** The audit of 2026-09-13 below predates the present
+`AUDIT.md`. Transition 8 (`preTest -> done`) now asks for the Pickle scenarios to be **written**, with
+their scope justified, and none exists: no `Tests/Pickle/`, no feature file, no companion mod. Every
+other criterion of that transition holds, so this is a missing artifact and not a failed test. Nothing
+was written to make the gate pass: the audit does not create features or tests.
+
+**Audited revision** `3449ee5fa011806a16c5999a7bbcea4f803d96fb`, equal to `origin/main` after a fresh
+fetch. Local modifications at the start: `Mod/About/PublishedFileId.txt` untracked, and nine `.dds`
+files untracked in `Mod/Textures/`. Commits made since, none pushed: `98a7c49` (the file id),
+`0b99ae5` (CHANGELOG), `c51e2b6` (`.gitignore` and the texture test), and the one holding this text.
+
+### Transitions, re-read against the disk
+
+| Transition | Result | Basis |
+| --- | --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated | Own `.git`, remote `origin`, `origin/main` equals the audited SHA. Public, licence `open`, MIT. `LICENSE` and `Mod/LICENSE` are byte-identical. README, ATTRIBUTION, CHANGELOG in English. |
+| -> ModIcon generated | Validated, one reserve | `Mod/About/ModIcon.png` is 128 x 128 RGBA, opened and looked at. No build: XML and textures only. See the icon line in `remaining`. |
+| -> Preview generated | Validated | `Mod/About/Preview.png` is 896 x 504, 665,299 bytes, under 1 MB, opened and looked at. |
+| -> preOptions | Validated | Title and version readable, blue rule distinct from the golden secondary ink, description in English, name kept as `Creatures of Ki - Teshi Renew`. |
+| -> options | Justified not applicable | No assembly, no C#, no settings class, no MainButton, no LoadFolders or patch in `Mod/`. Neither an empty page nor a shortcut can exist. `settings_audit: not_applicable`. |
+| -> l10n | Validated | `../scripts/Check-DefInjected.ps1 -TransMod Mod`: 31 keys, 0 errors. Independent count of the French files: 19 BodyDef, 9 ThingDef, 3 PawnKindDef, 31 in all. English is the native Def value. |
+| -> preTest | Validated | No dependency, none declared, none used: the suite resolves every reference against Core alone. `loadAfter` lists the DLC for ordering only. |
+| preTest -> done | **Not reached** | Scenarios written (TESTS.md, seven), automated and XML tests green, results tied to the shipped `Mod/`. Pickle scenarios not written and their scope not justified as a suite: see below. |
+| done -> tested | Not evaluated | The mod has never run. |
+
+### Checks run
+
+1. `_tools/Run-Functional-Tests.ps1`: first run **19 passed, 1 failed**. The orphan-texture test read
+   the nine `.dds` caches the game wrote beside the PNGs on 2026-09-23 as textures no def asks for.
+   That was the test's fault, not the mod's: it now accepts a `.dds` under the same names as the PNG
+   (`c51e2b6`). Rerun: **20 tests, 0 failed**, against 6,063 Core defs, 438 abstract bases and 16,130
+   assembly types.
+2. `../scripts/Check-DefInjected.ps1 -TransMod Mod`: 31 keys checked, 0 errors.
+3. `file` on both images, then both opened. `cmp LICENSE Mod/LICENSE`: identical.
+4. `find Mod` for `*.dll`, `*.cs`, `LoadFolders.xml`, `Patches`: nothing.
+5. `git fetch` then `git rev-parse HEAD origin/main`: same SHA.
+
+Not done, on purpose: no RimWorld was started, by any route (`AUDIT.md`, the absolute rule). No image
+was generated or edited. No Pickle ticket is held, since there is nothing to queue; once a suite
+exists, the wait is watched with `Monitor` on `scripts/Pickle-Status.ps1`, never with a cron.
+
+### Prepublication 0.1.0
+
+- **Workshop item `3806709627`**, created on 2026-09-23 by a prepublication upload from this working
+  tree. Steam creates every item private and RimWorld never changes that. `Mod/About/PublishedFileId.txt`
+  is committed in `98a7c49`, not yet pushed. The item's page has not been read by a session.
+- A prepublication is an act, not a stage (`AUDIT.md`, transition 11): it moves nothing.
+- `CHANGELOG.md` opens its released history at `0.1.0`, with `1.0.0` still unreleased above it.
+  The upload held `Mod/` as it stood at `3449ee5`, and `Mod/` is unchanged since.
+- The nine `.dds` files were written at 14:13, the file id at 14:31: the private item probably carries
+  them. `*.dds` is now ignored; the files stay on disk. None was ever in git.
+
+### Evidence
+
+There is none to sort. No Pickle run exists, so no report sits in `Tests/Pickle/Evidence/`, in git or in
+`pickle-reports-archive/`, and nothing exists under `docs/runs/`. `Tests/Pickle/Evidence/` and
+`evidence/` are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTS.md`
+("Evidence to keep"). `_tools/audit-2026-09-13-*manifest.json` are audit records that this file points
+to: tracked, small, kept.
+
+### The gates, measured
+
+- To reach `done`: write the Pickle scenarios, with their scope justified. `TESTS.md` proposes it:
+  scenarios 1, 2, 4a, 5, 6 and one pass per language; 3, 4b and 7 not applicable, with reasons.
+- To reach `tested`: no `@wip`; every conditional scenario has run (this mod has none, since it
+  declares no optional mod); **manual tests left to validate: all seven scenarios**, each to become a
+  green Pickle scenario or a listed not-applicable.
+
+Reserve, not a blocker: the icon. This file records that a session edited it on 2026-09-13 with the
+built-in image tool, and `AUDIT.md` now reserves icon generation to the owner alone. Whether the owner
+accepts that edit is not known; the previous icon is kept at `Art/ModIcon-before-2026-09-13.png`.
 
 This task maintains this file whenever the repository state changes. Scope is this local
 repository only, no longer a monorepo. Git reports this folder as its root, uses its own `.git`

@@ -149,3 +149,70 @@ Unverified until performed in RimWorld 1.6. Repeat in both languages: inspect an
 and a baby teshi, both egg types, melee attack labels and all custom body-part labels in
 the health tab. Check the baby singular/plural, accents, raw keys, English fallback in
 French, formatting and clipping. Record results and Player.log evidence in STATUS.md.
+
+---
+
+## What `tested` requires
+
+Read from `../AUDIT.md`, transition `done -> tested`. Nothing below has been done: the mod has never
+run, and no Pickle suite exists yet. That is pending work, not a pass.
+
+- Every scenario above is played in the game, or is listed here as not applicable with its reason.
+- The Pickle suites run green, and their `@review` captures are opened and looked at. Read `exitReason`
+  before the counts, and compare the scenarios played with the features discovered.
+- No scenario is left tagged `@wip`: it is repaired and replayed, or deleted with its justification.
+- Every conditional scenario (`@requires:<packageId>`) has had its pass. This mod declares no optional
+  mod and needs no DLC, so there is none to play, and the DLC in `loadAfter` is ordering only.
+- No manual test is left to validate. Each of the seven scenarios becomes a green Pickle scenario or
+  a listed not-applicable. The proposal below is what the suite would cover, not a suite.
+- Both languages are played, one pass each (`-Language English`, `-Language French`), in developer
+  mode: accented gibberish means a key missing from the active language, clean English inside French
+  means a string that never went through translation.
+
+### Proposed scope of the Pickle suite
+
+Only what a running game can show. The rest is already proved offline by `_tools/Run-Functional-Tests.ps1`.
+
+| Scenario | Fate | Why |
+| --- | --- | --- |
+| 1. It loads | Pickle, `no errors were logged` | Only a load shows a def that failed and went silently absent. |
+| 2. The animal draws | Pickle, `@review` captures | A pink box is a rendering fact. The captures still have to be opened. |
+| 3. Wildness reads 50 % | Not applicable as a scenario | The offline suite reads the stat and its accepted range. Kept as one line in the log check of scenario 1. |
+| 4a. Mated female lays | Pickle | Two eggs, one fertilized, one not: behaviour through the game's own callbacks. |
+| 4b. Lone female | Not applicable | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
+| 5. The egg hatches | Pickle | Needs the egg's timer to run. |
+| 6. Dessicated corpse | Pickle, `@review` capture | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
+| 7. Predator and manhunter | Not applicable | Declared values, checked offline. The 0.75 chance is random and is the engine's to honour. |
+| FR / EN display | Pickle, one pass per language | Health tab body parts, baby name and plural, both eggs, attack labels. |
+
+## Evidence to keep
+
+Raw Pickle reports live on disk in `Tests/Pickle/Evidence/<run>/`, which `.gitignore` excludes:
+captures and `Player.log` grow without limit. Pass `-EvidenceDir` to the launcher so the report is
+copied there before the lock is released, then check `exitReason` and the played and discovered
+counts in each copy.
+
+Keep, per scenario, the latest report for the revision now in the repository. Keep an older one only
+when it is the sole proof of a check the latest run did not repeat. Delete every other report as soon
+as a newer one replaces it, after listing what goes and what stays. Never delete a report that
+`STATUS.md` still points to: repoint it first. The history is one text line per run in `docs/runs/`,
+never a folder. The shared Pickle report folder holds every mod's screenshots: keep only this mod's.
+
+The proofs worth keeping for this mod, and only these:
+
+- the animal drawn on each facing: one capture per sex and life stage (adult male, adult female, kit),
+  with no pink box;
+- both eggs on the ground after a mated laying, `teshi egg (fert.)` and `teshi egg (unfert.)`;
+- the hatched kit, tame and belonging to the colony;
+- the dessicated corpse;
+- the health tab of an adult teshi in English and in French, showing the custom body-part labels;
+- the `Player.log` of each pass, already searched for `XML error`, `Could not resolve cross-reference`
+  and the names `Teshi`, `EggTeshiFertilized`, `EggTeshiUnfertilized`: only the newest one per pass.
+
+A capture is minified before it is kept: drop the ones the verdict does not rest on, crop to the
+panel that proves the point, or re-encode it as JPEG (quality 80, at most 1280 px wide). Never retouch
+one, and keep the original of a capture that has to be measured. The text reports (`summary.md`,
+`junit.xml`) are small and stay whole; `report.html` and `messages.ndjson` go.
+
+Today there is nothing to sort: no Pickle run has been made, so no report sits in this repository,
+in git or on disk.
