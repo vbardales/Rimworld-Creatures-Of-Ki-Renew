@@ -107,8 +107,8 @@ None of this was seen running. These are the assumptions a green first run confi
 2. **A paused game keeps what it is given.** A spawned animal keeps its facing, and ten frames are enough for
    every graphic to be built before the capture.
 3. **The laying reading is right.** `ProduceEgg` makes one stack of two fertilized eggs. If the game lays two
-   stacks or an unfertilized egg, `03` fails with the stacks it found, and TESTS.md 4 and the README, changelog
-   and About text about "the second egg" are wrong in a different way.
+   stacks or an unfertilized egg, `03` fails with the stacks it found, and the egg passages of TESTS.md,
+   README.md, CHANGELOG.md, ATTRIBUTION.md and About.xml, which now state that reading, are wrong again.
 4. **A colony teshi lays where it stands.** No egg box is needed, and the laying job is given within the deadline
    at ultrafast speed.
 5. **The eggs hatch in a few hundred ticks** once their progress is 0.9999, at the fixture's temperature, and a

@@ -17,17 +17,19 @@ through 1.4.
 - Complete French DefInjected coverage for the teshi, eggs, young animal, attacks and custom body-part labels.
 - `EggTeshiUnfertilized`. The mod declared only its fertilized egg. Every egg-layer in Core
   declares both, without exception — chicken, duck, goose, turkey, ostrich, emu, cassowary, cobra,
-  tortoise and iguana — and the teshi lays two eggs at a time with only one fertilization available
-  (`eggCountRange` 2, `eggFertilizationCountMax` 1), so the second egg of a laying has nothing to
-  be but unfertilized. The new def carries the fertilized egg's market value.
+  tortoise and iguana. The new def carries the fertilized egg's market value.
 
-  An earlier wording of this entry said `CompEggLayer` throws whenever an animal lays without
-  having been fertilized. That was stated too absolutely, and the point is now settled, read off
-  the compiled game by `_tools/Run-Functional-Tests.ps1`: while an animal is unfertilized,
-  `CompTick` writes `eggProgressUnfertilizedMax` straight into `eggProgress`, and `CanLayNow`
-  requires a full 1. The teshi's setting is 0.9, inherited from upstream and not set here, so a
-  lone female is pinned below the threshold and never lays at all. The crash described was
-  therefore never possible for her. The def is needed all the same, for the mated case above.
+  It is declared for parity, not because the animal needs it: a teshi does not lay it in normal play.
+  Read in the compiled game, one laying is a single stack of `eggCountRange` eggs (2), all fertilized
+  while a fertilization is left (`eggFertilizationCountMax` is 1), so a mated female lays a stack of two
+  fertilized eggs. Without a fertilization, `CompTick` pins her progress at `eggProgressUnfertilizedMax`
+  (0.9, inherited from upstream and not set here) and `CanLayNow` requires a full 1, so she does not lay
+  at all. Only the dev-mode gizmo that sets the progress to 1 reaches the unfertilized egg.
+
+  Two earlier wordings of this entry were wrong. One said `CompEggLayer` throws whenever an animal lays
+  without having been fertilized, which was stated too absolutely. The other said the second egg of a
+  mated laying has nothing to be but unfertilized, inferred from the two settings without reading
+  `ProduceEgg`, which makes one stack. The in-game confirmation is still to be performed.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed
@@ -64,7 +66,8 @@ which holds item `3806709627`. This entry does not say the mod is public or test
 ### Notes
 
 - The upload contained `Mod/` as it stood at `3449ee5`. Nothing in `Mod/` has changed since, apart
-  from that file.
+  from that file and the wording of the two egg passages in `About.xml`, corrected afterwards. The
+  private item still carries the earlier text, which only a hand edit on the Steam page can change.
 - It was made from the working tree, which also held 9 `.dds` texture caches that the game had
   written beside the PNGs eighteen minutes earlier. They are not in git, so the private item probably
   carries them. This repository has no publish workflow yet: an upload from a git checkout drops

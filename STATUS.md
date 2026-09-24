@@ -27,7 +27,7 @@ remaining:
   - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
   - unverified: to reach tested (AUDIT.md transition 9), the two Pickle passes in Tests/Pickle/README.md must run green, English then French, with exitReason read before the counts and the 13 scenarios played against the 13 discovered; every @review capture opened and looked at; no @wip (none exists); no conditional scenario (the mod declares no optional mod). No manual test is left to validate, since each of the seven TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7). Nothing has run.
-  - defect: README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml say a mated teshi lays one fertilized and one unfertilized egg, "the second egg has nothing to be but unfertilized", and give that as the reason EggTeshiUnfertilized was written. Reading CompEggLayer.ProduceEgg in the compiled game says a laying is one stack of eggCountRange eggs, all fertilized while a fertilization is left, so a mated teshi lays a stack of two fertilized eggs and never the unfertilized one, which a laying stopped at 0.9 cannot reach. TESTS.md is corrected and 03-laying-and-hatching asserts the reading; the four other texts are not changed, and the Steam description can only be corrected by hand. Basis is a reading of the IL, not yet a run.
+  - unverified: the egg texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml now say what CompEggLayer.ProduceEgg does in the compiled game, a mated teshi lays one stack of two fertilized eggs and never the unfertilized one, and that reading has not been played; 03-laying-and-hatching settles it. The Steam page of item 3806709627 still carries the old paragraph, which SetItemDescription sent at creation and only a hand edit can change, and the private item carries the old About.xml.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
   - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item's page has not been read by a session.
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries the nine .dds caches that git never held; check its file list.
@@ -49,9 +49,10 @@ Nothing else in that audit changed, and its checks stand.
   and `Check-Steps.ps1` reports every one of the 146 step lines resolving to exactly one step and every local
   pattern compiling. It was seen to go red on an undefined step. `Run-Functional-Tests.ps1` still passes.
   **Nothing was played**: no RimWorld was started, by any route, and no Pickle ticket is held.
-- **A finding that changes a document**: the mated laying makes one stack of two fertilized eggs, not one
-  fertilized and one unfertilized. See the defect in `remaining`; TESTS.md is corrected, the rest is left for a
-  decision.
+- **A finding that changes documents**: the mated laying makes one stack of two fertilized eggs, not one
+  fertilized and one unfertilized. TESTS.md, README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml
+  were corrected to that reading in a later commit of the same day, each keeping the history of what it used to
+  say. The Steam page still holds the old paragraph: see `remaining`.
 - **Evidence**: still none to sort, since nothing has run. Pickle steps also cover Wildness now: the value the
   game computes in `01-loads` and a capture of the information card in `02-draws`; TESTS.md 3 is no longer
   "not applicable".

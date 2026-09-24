@@ -16,7 +16,7 @@ Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020
 What it adds
 
 - The teshi: a large, bipedal feathered predator with four wide banded ears, a short dark crest and a thick banded tail. The showcase depicts it resting, a pose consistent with its bipedal anatomy. It has claws, a bite worth 25 damage, and it turns manhunter three times in four when harmed. Trainable to intermediate. It nuzzles. It lays eggs, and it lives eighty years.
-- Teshi eggs, fertilized and unfertilized. Fifteen days to hatch.
+- Teshi eggs. A mated female lays a stack of two fertilized eggs, which take fifteen days to hatch. An unfertilized egg is defined too, as every egg-layer has one, but a teshi does not lay it in normal play.
 - Found in shrubland, forest, rainforest, boreal forest and tundra, sparsely, and almost never on ice or desert.
 
 What is not included
@@ -26,7 +26,7 @@ Creatures of Ki is four fifths a playable race: the Kija, their faction and thei
 What changed in the 1.6 update
 
 - Wildness stopped being a race property. In 1.6 it is a Wildness StatDef declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
-- The unfertilized egg was missing. Every egg-laying animal in the base game declares one, and the teshi did not. It lays two eggs at a time with a single fertilization available, so the second egg of a laying has nothing to be but unfertilized. The def was written, taking the market value of its fertilized counterpart.
+- The unfertilized egg was missing. Every egg-laying animal in the base game declares one, and the teshi did not. The def was written, taking the market value of its fertilized counterpart. It is declared for parity: a teshi lays a stack of two fertilized eggs, and without a fertilization it does not lay at all.
 
 No balance value was changed.
 

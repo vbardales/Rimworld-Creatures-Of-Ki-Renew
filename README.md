@@ -21,8 +21,9 @@ It adds one animal and its eggs.
   a short dark crest and a thick banded tail. The showcase depicts it resting;
   that pose does not contradict its bipedal anatomy. Damaging one turns it manhunter
   three times in four.
-- **Teshi eggs**, fertilized and unfertilized. One egg fertilized at a time, laid every fifteen
-  days, hatching after fifteen more.
+- **Teshi eggs.** A mated female lays a stack of two fertilized eggs every fifteen days, and they hatch
+  after fifteen more. An unfertilized egg is defined too, as every egg-layer has one, but a teshi does not
+  lay it in normal play.
 - Spawns sparsely in shrubland, temperate forest, boreal forest and tundra, a little more in
   rainforest, and almost never on ice sheet or desert.
 
@@ -49,17 +50,20 @@ Two breakages, both silent in different ways.
   `defaultBaseValue -1`, deliberately outside the `[0,1]` range, precisely so animals that lost the
   value show up. Untouched, the teshi tamed about as easily as a rat.
 - **The unfertilized egg was missing.** Every egg-laying animal in Core declares one, and the teshi
-  did not. It is reachable here for a plainer reason than a crash: the comp lays two eggs at a time
-  and offers one fertilization, so the second egg of a laying has nothing to be but unfertilized.
-  `EggTeshiUnfertilized` was written, taking the market value of its fertilized counterpart.
+  did not. `EggTeshiUnfertilized` was written, taking the market value of its fertilized counterpart.
+  It is not what makes the animal work, and a teshi does not lay it in normal play: one laying is a
+  single stack of two eggs, all fertilized while a fertilization is left, and the teshi has one, so a
+  mated female lays a stack of two fertilized eggs. Without a fertilization she is pinned at 0.9 of her
+  progress and does not lay at all. Only the dev-mode gizmo that sets the progress to 1 gets an
+  unfertilized laying out of the comp, and there the def is what it asks for.
 
-  This entry used to say that `CompEggLayer` throws whenever an animal lays unfertilized, making
-  the def mandatory. That went further than the evidence, and the evidence is now in: while an
-  animal is unfertilized, `CompTick` pins `eggProgress` to `eggProgressUnfertilizedMax`, and
-  `CanLayNow` wants a full 1. The teshi's setting is 0.9, inherited untouched, so a lone female
-  never lays at all and that crash was never possible for her. Read off the compiled game by
-  `_tools/Run-Functional-Tests.ps1`; `TESTS.md`, scenario 4, describes the in-game
-  confirmation that remains to be performed.
+  This entry used to say that `CompEggLayer` throws whenever an animal lays unfertilized, and later that
+  the second egg of a mated laying has nothing to be but unfertilized. Neither was right. The first went
+  further than the evidence; the second was inferred from the two settings and never read off
+  `ProduceEgg`, which builds one stack. `CompTick`, `CanLayNow`, `NextEggType` and `ProduceEgg` were
+  read in the compiled game, and `_tools/Run-Functional-Tests.ps1` covers the pinning. `TESTS.md`,
+  scenario 4, and the Pickle scenario `03-laying-and-hatching` describe the in-game confirmation that
+  remains to be performed.
 
 No balance value was changed. Nothing else in the teshi's defs needed touching: no `deathAction`,
 no toxic sensitivity, no C#.

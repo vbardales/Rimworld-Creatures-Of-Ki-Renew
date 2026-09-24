@@ -61,8 +61,7 @@ health scale of 4; taming it for free is not a cosmetic difference.
 Core declares both — chicken, duck, goose, turkey, ostrich, emu, cassowary, cobra, tortoise,
 iguana — so the teshi was the exception, not the rule.
 
-It is reachable here, and not for the reason one would guess. The comp reads, upstream's values
-untouched:
+Is it reachable? Less than this section used to say. The comp reads, upstream's values untouched:
 
 ```xml
 <eggFertilizationCountMax>1</eggFertilizationCountMax>
@@ -70,25 +69,36 @@ untouched:
 <eggProgressUnfertilizedMax>0.9</eggProgressUnfertilizedMax>
 ```
 
-Two eggs a laying, one fertilization available. The second egg of a laying has nothing to be but
-unfertilized in a mated laying. A lone unfertilized female never reaches the laying threshold.
+Read in the compiled game (`CompEggLayer.ProduceEgg`, `NextEggType`, `CompTick`, `CanLayNow`), and still to
+be confirmed in game by the Pickle scenario `03-laying-and-hatching`:
+
+- one laying is **one stack** of `eggCountRange` eggs, not two separate eggs. It is made entirely of the
+  fertilized def while a fertilization is left, and entirely of the unfertilized def otherwise;
+- the teshi has one fertilization and lays two, so a mated female lays a stack of two fertilized eggs,
+  uses up her fertilization, and does not lay again until she is mated;
+- a female with no fertilization left is pinned at 0.9 by `CompTick` while `CanLayNow` wants 1, so she
+  does not lay at all. That covers the lone female.
+
+So in normal play a teshi never lays the unfertilized egg. The def is reached by one route only: the
+dev-mode gizmo that sets `eggProgress` to 1, where `ProduceEgg` on a female with no fertilization left
+asks for it. It stays for parity with every other egg-layer in Core, and it is harmless.
 
 `EggTeshiUnfertilized` is a new def on `EggUnfertBase`, carrying the market value of the fertilized
 egg (125) and the same near-white tint, so the pair reads as one animal's eggs. It is the only def
 in this mod that is not Shooki's.
 
-**What this section used to claim, and should not have.** It said `CompEggLayer` throws whenever an
-animal lays without having been fertilized, quoting the call that builds the egg. The call is real;
-the certainty was not. The 1.6 port of Race to the Rim found that branch unreachable for animals
-whose `eggProgressUnfertilizedMax` sits below 1 — theirs was 0.5, and the teshi's is 0.9 — because
-progress stops short of a laying and `CanLayNow` never comes true.
+**What this section used to claim, and should not have.** Two things, one after the other. First that
+`CompEggLayer` throws whenever an animal lays without having been fertilized, quoting the call that builds
+the egg. The call is real; the certainty was not. The 1.6 port of Race to the Rim found that branch
+unreachable for animals whose `eggProgressUnfertilizedMax` sits below 1 — theirs was 0.5, and the teshi's is
+0.9 — because progress stops short of a laying and `CanLayNow` never comes true.
+`_tools/Run-Functional-Tests.ps1` now confirms that from the game: it reads `CompTick` writing
+`eggProgressUnfertilizedMax` into `eggProgress` while the animal is unfertilized, and `CanLayNow`
+requiring a full 1.
 
-That is now confirmed rather than suspected, and from the game itself: `_tools/Run-Functional-Tests.ps1`
-reads `CompEggLayer.CompTick` writing `eggProgressUnfertilizedMax` into `eggProgress` while the
-animal is unfertilized, and `CanLayNow` requiring a full 1. Pinned at 0.9, a lone teshi never lays,
-so the crash this section once described was never possible for her. The def stays, and `TESTS.md`
-scenario 4a is where it earns its place: a mated female lays two eggs with one fertilization
-available, and the second has nothing to be but unfertilized.
+Then that a mated female lays one fertilized and one unfertilized egg, "the second egg has nothing to be
+but unfertilized". That was inferred from `eggCountRange` 2 and one fertilization, and never read off
+`ProduceEgg`, which builds a single stack. It was wrong on the reading above.
 
 ### Nothing else
 
