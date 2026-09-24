@@ -177,12 +177,12 @@ Only what a running game can show. The rest is already proved offline by `_tools
 | --- | --- | --- |
 | 1. It loads | Pickle, `no errors were logged` | Only a load shows a def that failed and went silently absent. |
 | 2. The animal draws | Pickle, `@review` captures | A pink box is a rendering fact. The captures still have to be opened. |
-| 3. Wildness reads 50 % | Not applicable as a scenario | The offline suite reads the stat and its accepted range. Kept as one line in the log check of scenario 1. |
+| 3. Wildness reads 50 % | Pickle, `@review` capture of the Information tab | The offline suite shows the stat exists and accepts 0.50. It does not show that the running game parses `<Wildness>` under `statBases` into the animal, which is the whole point of the port change. Taken in the run of scenario 2. Add an assertion only if a step that reads a stat already exists in PickleTools; `PickleTools/README.md` lists none today. |
 | 4a. Mated female lays | Pickle | Two eggs, one fertilized, one not: behaviour through the game's own callbacks. |
 | 4b. Lone female | Not applicable | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
 | 5. The egg hatches | Pickle | Needs the egg's timer to run. |
 | 6. Dessicated corpse | Pickle, `@review` capture | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
-| 7. Predator and manhunter | Not applicable | Declared values, checked offline. The 0.75 chance is random and is the engine's to honour. |
+| 7. Predator and manhunter | Not applicable | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
 | FR / EN display | Pickle, one pass per language | Health tab body parts, baby name and plural, both eggs, attack labels. |
 
 ## Evidence to keep

@@ -571,10 +571,15 @@ It 'no texture is shipped that no def asks for' {
         foreach ($suffix in @('_north', '_east', '_south')) { foreach ($ext in @('png', 'dds')) { $asked["$leaf$suffix.$ext"] = $true } }
     }
     $orphans = @()
+    $strays  = @()
     foreach ($f in (Get-ChildItem (Join-Path $modDir 'Textures') -Recurse -File)) {
         if (-not $asked.ContainsKey($f.Name)) { $orphans += $f.Name }
+        # A cache is only a cache beside its source. Without the PNG it is a texture on its own, and a
+        # checkout that never had it draws a pink box.
+        elseif ($f.Extension -eq '.dds' -and -not (Test-Path -LiteralPath (Join-Path $f.DirectoryName "$($f.BaseName).png"))) { $strays += $f.Name }
     }
     if ($orphans.Count -gt 0) { "shipped, but named by no def: $($orphans -join ', ')" }
+    if ($strays.Count -gt 0)  { "a .dds cache with no PNG beside it: $($strays -join ', ')" }
 }
 
 # =============================================================================================

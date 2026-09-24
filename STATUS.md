@@ -26,10 +26,10 @@ remaining:
   - unverified: English and French runtime display (animal, eggs, life stage, attacks and health body parts).
   - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
-  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists. TESTS.md proposes the scope, scenarios 1, 2, 4a, 5, 6 and one pass per language, with 3, 4b and 7 not applicable.
+  - unverified: to reach done, the Pickle scenarios must be written with their scope justified (AUDIT.md transition 8); none exists. TESTS.md proposes the scope, scenarios 1, 2, 3, 4a, 5, 6 and one pass per language, with 4b and 7 not applicable.
   - unverified: to reach tested, every one of the seven TESTS.md scenarios must become a green Pickle scenario or a listed not-applicable with its reason (AUDIT.md transition 9); no @wip may remain; no conditional scenario exists, the mod declares no optional mod. Manual tests left to validate, all of them.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
-  - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation: any change is by hand on the Steam page. The item's page has not been read by a session.
+  - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item's page has not been read by a session.
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries the nine .dds caches that git never held; check its file list.
 ---
 
@@ -49,8 +49,9 @@ was written to make the gate pass: the audit does not create features or tests.
 
 **Audited revision** `3449ee5fa011806a16c5999a7bbcea4f803d96fb`, equal to `origin/main` after a fresh
 fetch. Local modifications at the start: `Mod/About/PublishedFileId.txt` untracked, and nine `.dds`
-files untracked in `Mod/Textures/`. Commits made since, none pushed: `98a7c49` (the file id),
-`0b99ae5` (CHANGELOG), `c51e2b6` (`.gitignore` and the texture test), and the one holding this text.
+files untracked in `Mod/Textures/`. Commits made since, pushed to `origin/main` on 2026-09-24: `98a7c49` (the file id),
+`0b99ae5` (CHANGELOG), `c51e2b6` (`.gitignore` and the texture test) and `70c167e` (this audit), then the
+fixes that followed the review of those four, in the commit that carries this sentence.
 
 ### Transitions, re-read against the disk
 
@@ -86,7 +87,7 @@ exists, the wait is watched with `Monitor` on `scripts/Pickle-Status.ps1`, never
 
 - **Workshop item `3806709627`**, created on 2026-09-23 by a prepublication upload from this working
   tree. Steam creates every item private and RimWorld never changes that. `Mod/About/PublishedFileId.txt`
-  is committed in `98a7c49`, not yet pushed. The item's page has not been read by a session.
+  is committed in `98a7c49` and pushed. The item's page has not been read by a session.
 - A prepublication is an act, not a stage (`AUDIT.md`, transition 11): it moves nothing.
 - `CHANGELOG.md` opens its released history at `0.1.0`, with `1.0.0` still unreleased above it.
   The upload held `Mod/` as it stood at `3449ee5`, and `Mod/` is unchanged since.
@@ -95,8 +96,11 @@ exists, the wait is watched with `Monitor` on `scripts/Pickle-Status.ps1`, never
 
 ### Evidence
 
-There is none to sort. No Pickle run exists, so no report sits in `Tests/Pickle/Evidence/`, in git or in
-`pickle-reports-archive/`, and nothing exists under `docs/runs/`. `Tests/Pickle/Evidence/` and
+There is none to sort. No Pickle run exists, so no report sits in `Tests/Pickle/Evidence/`, in git or under `docs/runs/`.
+The shared folders were searched on 2026-09-24, not just listed: the 17 folders of `pickle-reports-archive/`
+are named by time, eight of them `stalled-<Mod>` with a `Player.log` and none for this mod, and the
+`summary.md`, `summary.json` and `junit.xml` of the nine others and of `pickle-reports/`, plus its
+`Player.log`, hold neither `Creatures of Ki` nor `teshi`. The big files of those folders were not opened. `Tests/Pickle/Evidence/` and
 `evidence/` are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTS.md`
 ("Evidence to keep"). `_tools/audit-2026-09-13-*manifest.json` are audit records that this file points
 to: tracked, small, kept.
@@ -104,7 +108,7 @@ to: tracked, small, kept.
 ### The gates, measured
 
 - To reach `done`: write the Pickle scenarios, with their scope justified. `TESTS.md` proposes it:
-  scenarios 1, 2, 4a, 5, 6 and one pass per language; 3, 4b and 7 not applicable, with reasons.
+  scenarios 1, 2, 3, 4a, 5, 6 and one pass per language; 4b and 7 not applicable, with reasons.
 - To reach `tested`: no `@wip`; every conditional scenario has run (this mod has none, since it
   declares no optional mod); **manual tests left to validate: all seven scenarios**, each to become a
   green Pickle scenario or a listed not-applicable.
