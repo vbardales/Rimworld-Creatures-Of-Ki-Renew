@@ -87,8 +87,8 @@ Three passes. The mod declares no dependency and no `incompatibleWith`, and one 
 Tags decide what runs where: `@en-only` and `@fr-only` follow the language of the labels they name, and
 everything that does not depend on the language (`02` to `05`, `08`) is `@en-only`, so it is played once.
 `08` carries `@requires:SamBucher.ADogSaidAnimalProsthetics2`, so the two minimal passes skip it, and a skipped
-scenario is not a passed one: it has to be played in the third pass. That mod has to be downloaded into the WSL
-game first, a queued job of its own (`scripts/download-workshop-wsl.sh`), which has not been done.
+scenario is not a passed one: it has to be played in the third pass. That mod is already in the WSL cache
+(`~/workshop-cache/steamapps/workshop/content/294100/3238353862`, checked on 2026-09-24), which the staging copies from.
 
 Never start RimWorld by hand and never a second instance (`../../../AUDIT.md`). A run is not launched from here
 and nothing is kept alive in the session: a request is dropped with the ticket dispatcher
@@ -107,7 +107,7 @@ takes long, not by what it covers:
 | French, all | `Creatures of Ki - Teshi Renew - Pickle tests,!@en-only` | French | `01` and `07` |
 
 The integration pass is a fourth ticket, with `wsl-deps.avec-ads2.map` and the same English filter minus `!@slow`,
-once that mod is downloaded into the WSL game.
+now that the mod is in the WSL cache.
 
 ```powershell
 # from the collection root; the owner is this session's local_<id>, from get_session with "self"
