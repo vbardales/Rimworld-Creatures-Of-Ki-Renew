@@ -5,10 +5,11 @@
 @review @en-only
 Feature: The dessicated teshi corpse draws
 
-  Scenario: a female teshi is killed and dessicated, and the corpse draws
+  Scenario: a female teshi is killed and dessicated and the corpse draws
     Given the save "test-colony" is loaded
     And game speed is paused
     And I move the camera to (146, 155)
+    And I zoom all the way in
     And Teshi Renew: a female adult teshi stands at (146, 155)
     When Teshi Renew: the female teshi is killed and left dessicated
     And Teshi Renew: I let 10 frames pass

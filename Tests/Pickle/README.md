@@ -19,7 +19,7 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 | Feature | Language | What it shows | Why it cannot be an offline test |
 |---|---|---|---|
 | `01-loads` | all | The mod loaded, its five defs survived the real loader, the Wildness the game computes is 0.5, no warning from the mod, no error | A def the loader drops is silently absent, and the stat is computed by the game from the parsed def |
-| `02-draws` (`@review`) | English | Adult male, adult female and kit, each turned north, east, south and west: three captures for nine textures. And the information card of a wild teshi | A missing texture is a pink box at most; the offline suite checks the files, not the draw. The card is the one route to the pawn's own Wildness |
+| `02-draws` (`@review`) | English | Adult male, adult female and kit, each turned north, east, south and west: three captures for nine textures. And a wild teshi's Wildness read off the living animal, with its information card opened | A missing texture is a pink box at most; the offline suite checks the files, not the draw. Pickle's pawn-stat step looks colonists up by nickname, so a local step reads the animal |
 | `03-laying-and-hatching` (`@slow`) | English | A mated colony female lays by the game's own job, one stack of two fertilized eggs and no unfertilized egg, for the colony. Those eggs then hatch into two colony kits | Time, the egg-layer and hatcher comps, and the faction rule |
 | `04-dessicated-corpse` (`@review`) | English | A killed, dessicated female draws with the borrowed dromedary sprite | The game does not ship that texture in the clear, so no file names it |
 | `05-save-reload` | English | An animal and an egg survive a round trip, in a colony saved without the mod | Scribe behaviour |
@@ -53,7 +53,7 @@ suite loaded. Each exists because no stock or shared step does it:
 - **bring the eggs one tick from hatching, wait, count the kits that belong to the colony**;
 - **kill a female and dessicate her corpse** through the rot comp's own method;
 - **select, injure and read the animal by body part label**, one part per label or the step fails;
-- **open the information card**;
+- **read a stat** off a race, and off a living animal, and **open the information card**;
 - **read a def's label, description, the kit's label and plural, and the attack labels**, off the loaded defs;
 - **count the recipes of another mod that a race is offered**, to compare the teshi with a grizzly bear.
 
@@ -144,7 +144,7 @@ None of this was seen running. These are the assumptions a green first run confi
    at ultrafast speed.
 5. **The eggs hatch in a few hundred ticks** once their progress is 0.9999, at the fixture's temperature, and a
    stack of two hatches two kits.
-6. **The information card is a window the screenshot mode keeps**, and it lists Wildness for a wild animal.
+6. **The information card is a window the screenshot mode keeps.** Confirmed by the first run, which also showed that its list does not reach the Wildness line without scrolling, so Wildness is asserted and not read off the capture.
 7. **Reading the label of a def in French returns the injected text**, with no accented gibberish, and the
    health tab keeps the longer French labels on one line.
 8. **Killing a spawned animal is quiet**: no letter, dialog or thought blocks the next step.

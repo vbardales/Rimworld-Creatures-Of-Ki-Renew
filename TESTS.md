@@ -1,13 +1,13 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-The standalone suite `_tools/Run-Functional-Tests.ps1` provides 20 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
+The standalone suite `_tools/Run-Functional-Tests.ps1` provides 21 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
 
 `_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
-reads the compiled game and runs twenty checks this document used to have to ask of a
+reads the compiled game and runs twenty-one checks this document used to have to ask of a
 play session — including the one scenario 4b was written to settle, which is now settled below.
 Run it first; it takes seconds and it costs nothing.
 
-The mod has never run. Run these in order: the first one is cheap and catches anything fatal, the
+The Pickle suite played most of these on the headless game on 2026-09-24, and STATUS.md says what it found. Played by hand, run these in order: the first one is cheap and catches anything fatal, the
 fourth is the only one that can crash a save.
 
 Junction it into `RimWorld/Mods` first — pointing at `CreaturesOfKiRenew/Mod`, not at the repository
@@ -47,7 +47,7 @@ This is the first of the two things the 1.6 port changed. `wildness` stopped bei
 `<race>` and became a `Wildness` StatDef under `statBases`. The old form is not an error — it is
 simply not read, and the stat's default is `-1`, outside the `[0,1]` the game uses.
 
-Select a wild teshi → **Information** tab → find *Wildness*.
+Select a wild teshi → **Information** tab → find *Wildness*. The list is longer than the card: scroll it, or type `Wildness` in the card's search box.
 
 **Expect:** 50 %.
 
@@ -202,7 +202,7 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | --- | --- | --- | --- |
 | 1. It loads | Pickle | `01-loads` | Only a load shows a def that failed and went silently absent, and the Wildness the game computes for the animal. |
 | 2. The animal draws | Pickle, `@review` captures | `02-draws` | A pink box is a rendering fact. Three captures show the nine textures on all four facings. The captures still have to be opened. |
-| 3. Wildness reads 50 % | Pickle | `01-loads`, `02-draws` | The game's computed value is asserted in 01, and a `@review` capture of the information card in 02 is what a person reads it off. The offline suite shows the stat accepts 0.50, not that the game reads it. |
+| 3. Wildness reads 50 % | Pickle | `01-loads`, `02-draws` | The game's computed value is asserted in 01, off the race, and in 02, off a living animal. The first run showed the information card's list is longer than its window and Wildness sits below the fold, so its capture shows that the card opens and reads in English, and is not offered as proof of 50 %. The offline suite shows the stat accepts 0.50, not that the game reads it. |
 | 4a. Mated female lays | Pickle, `@slow` | `03-laying-and-hatching` | One stack of two fertilized eggs and no unfertilized egg, for the colony: behaviour through the game's own job. |
 | 4b. Lone female | Not applicable | none | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
 | 5. The egg hatches | Pickle, `@slow` | `03-laying-and-hatching` | Two kits that belong to the colony, from the eggs she laid. Needs the hatcher's own tick. |

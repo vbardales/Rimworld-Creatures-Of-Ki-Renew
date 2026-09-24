@@ -7,7 +7,11 @@
 # There are nine texture files: north, east and south for the adult male, the adult female and the kit. West is
 # the east drawing mirrored. One row per stage shows all four facings, so three captures cover all nine files.
 # The offline suite already asserts that every path the defs name resolves, case for case; what it cannot say is
-# that the game draws them.
+# that the game draws them. The camera is zoomed all the way in: at the default zoom, the first run showed four
+# animals about forty pixels wide on a 1920 pixel capture, readable but small.
+#
+# No scenario name here carries a comma: a filter separates its terms with commas, so a name with one cannot be
+# picked alone.
 @review @en-only
 Feature: The teshi draws on every facing
 
@@ -15,8 +19,9 @@ Feature: The teshi draws on every facing
     Given the save "test-colony" is loaded
     And game speed is paused
     And I move the camera to (146, 155)
+    And I zoom all the way in
 
-  Scenario: the adult male, turned north, east, south and west
+  Scenario: the adult male turned to each of the four facings
     When Teshi Renew: I spawn a male adult teshi at (142, 155) facing north
     And Teshi Renew: I spawn a male adult teshi at (145, 155) facing east
     And Teshi Renew: I spawn a male adult teshi at (148, 155) facing south
@@ -26,7 +31,7 @@ Feature: The teshi draws on every facing
     When I take a screenshot "teshi adult male four facings"
     Then no errors were logged
 
-  Scenario: the adult female, turned north, east, south and west
+  Scenario: the adult female turned to each of the four facings
     When Teshi Renew: I spawn a female adult teshi at (142, 155) facing north
     And Teshi Renew: I spawn a female adult teshi at (145, 155) facing east
     And Teshi Renew: I spawn a female adult teshi at (148, 155) facing south
@@ -36,7 +41,7 @@ Feature: The teshi draws on every facing
     When I take a screenshot "teshi adult female four facings"
     Then no errors were logged
 
-  Scenario: the kit, turned north, east, south and west
+  Scenario: the kit turned to each of the four facings
     When Teshi Renew: I spawn a female kit teshi at (142, 155) facing north
     And Teshi Renew: I spawn a female kit teshi at (145, 155) facing east
     And Teshi Renew: I spawn a female kit teshi at (148, 155) facing south
@@ -47,13 +52,16 @@ Feature: The teshi draws on every facing
     Then no errors were logged
 
   # The Wildness line of the port. The offline suite shows the stat exists and accepts 0.50; the game only shows
-  # that it reads <Wildness> under statBases into the animal, and 01-loads asserts the value the game computes.
-  # 50 % is what the card must say; the capture is what a person reads it off. Pickle's pawn-stat step looks
-  # colonists up by nickname, so it cannot read an animal: the card is the only route to the pawn.
-  Scenario: the information card of a wild teshi says Wildness 50 %
+  # that it reads <Wildness> under statBases into the animal, and that is asserted here off the living animal.
+  # The first run's capture of the card did NOT show a Wildness line: the list is longer than the card's window
+  # and Wildness sits below the fold. So the value is asserted, and the capture shows only that the card opens
+  # and reads in English; it is not offered as proof of 50 %. Pickle's pawn-stat step looks colonists up by
+  # nickname, so it cannot read an animal, hence the local step.
+  Scenario: a wild teshi reads Wildness 50 percent and its information card opens
     Given Teshi Renew: a female adult teshi stands at (146, 155)
+    Then Teshi Renew: the teshi's stat "Wildness" is 0.5
     When Teshi Renew: I select the teshi
     And Teshi Renew: I open the information card of the teshi
     And Teshi Renew: I let 10 frames pass
-    And I take a screenshot "teshi information card wildness"
+    And I take a screenshot "teshi information card"
     Then no errors were logged

@@ -371,6 +371,39 @@ namespace TeshiRenew.PickleSteps
             ctx.Assert(labels.Contains(label), $"no attack of the teshi is labelled \"{label}\"; its labelled attacks read [{string.Join(", ", labels.Where(l => l != null))}]");
         }
 
+        // ---- the Wildness stat ---------------------------------------------------------------------
+
+        /// <summary>
+        /// The value the game computes for a race from its parsed statBases. Pickle's own step of this shape
+        /// refuses "Teshi", which names both the ThingDef and the PawnKindDef, so the type is in the phrase.
+        /// </summary>
+        [Then("Teshi Renew: the ThingDef {string} has the stat {string} at {float}")]
+        public void DefHasStat(PickleContext ctx, string defName, string statDefName, float expected)
+        {
+            var stat = Stat(ctx, statDefName);
+            var actual = Def(ctx, defName).GetStatValueAbstract(stat);
+            ctx.Assert(Math.Abs(actual - expected) < 0.001f, $"{defName} has {statDefName} {actual}, expected {expected}");
+        }
+
+        /// <summary>
+        /// The same stat off a living animal. Pickle's pawn-stat step looks colonists up by nickname, so it
+        /// cannot read an animal.
+        /// </summary>
+        [Then("Teshi Renew: the teshi's stat {string} is {float}")]
+        public void TeshiStat(PickleContext ctx, string statDefName, float expected)
+        {
+            var stat = Stat(ctx, statDefName);
+            var actual = TheTeshi(ctx).GetStatValue(stat);
+            ctx.Assert(Math.Abs(actual - expected) < 0.001f, $"the teshi has {statDefName} {actual}, expected {expected}");
+        }
+
+        private static StatDef Stat(PickleContext ctx, string defName)
+        {
+            var stat = DefDatabase<StatDef>.GetNamedSilentFail(defName);
+            ctx.Assert(stat != null, $"no StatDef named {defName}");
+            return stat;
+        }
+
         // ---- the optional integration --------------------------------------------------------------
 
         /// <summary>

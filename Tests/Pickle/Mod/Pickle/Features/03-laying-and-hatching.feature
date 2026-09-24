@@ -18,7 +18,7 @@ Feature: A mated teshi lays, and the eggs hatch into colony kits
     And Teshi Renew: a male adult teshi belonging to the colony stands at (149, 155)
     And game speed is ultrafast
 
-  Scenario: a mated female lays one stack of two fertilized eggs, for the colony
+  Scenario: a mated female lays one stack of two fertilized eggs for the colony
     When Teshi Renew: the female teshi is mated with the male teshi
     And Teshi Renew: the female teshi's egg progress is set to full
     And Teshi Renew: I wait for the female teshi to lay
