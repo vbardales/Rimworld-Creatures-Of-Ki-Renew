@@ -1,0 +1,6 @@
+# The optional-integration pass: the minimal set, plus A Dog Said... Animal Prosthetics 2 by its Workshop id.
+# The mod has to be downloaded into the WSL game first (scripts/download-workshop-wsl.sh, a queued job of its
+# own); the staging copies it from there. The mod under test declares it in loadBefore, and it declares no
+# incompatibility, so this is the only integration pass.
+nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
+SamBucher.ADogSaidAnimalProsthetics2  3238353862

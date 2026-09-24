@@ -371,6 +371,31 @@ namespace TeshiRenew.PickleSteps
             ctx.Assert(labels.Contains(label), $"no attack of the teshi is labelled \"{label}\"; its labelled attacks read [{string.Join(", ", labels.Where(l => l != null))}]");
         }
 
+        // ---- the optional integration --------------------------------------------------------------
+
+        /// <summary>
+        /// A Dog Said... Animal Prosthetics 2 lets an animal receive prostheses by listing it in abstract
+        /// recipe categories. The recipes a race is offered are those whose recipeUsers list it, so this is
+        /// the game's own answer to "did the patch land". The comparison is with an animal that mod already
+        /// puts in category 3: the same count means the teshi is in it, and a count of zero fails on its own.
+        /// </summary>
+        [Then("Teshi Renew: the teshi offers as many recipes from the mod {string} as the {string}")]
+        public void OffersAsManyAs(PickleContext ctx, string packageId, string otherDefName)
+        {
+            var mine = RecipesFrom(Def(ctx, KindDefName), packageId);
+            var other = RecipesFrom(Def(ctx, otherDefName), packageId);
+            ctx.Assert(other.Count > 0, $"{otherDefName} is offered no recipe from {packageId}: is the mod loaded, and is {otherDefName} still in its category 3?");
+            ctx.Assert(mine.Count == other.Count,
+                $"the teshi is offered {mine.Count} recipes from {packageId}, {otherDefName} is offered {other.Count}");
+        }
+
+        private static List<RecipeDef> RecipesFrom(ThingDef race, string packageId)
+        {
+            return (race.AllRecipes ?? new List<RecipeDef>())
+                .Where(r => r.modContentPack != null && string.Equals(r.modContentPack.PackageId, packageId, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
         private static Def Lookup(PickleContext ctx, string defType, string defName)
         {
             var type = GenTypes.GetTypeInAnyAssembly(defType);

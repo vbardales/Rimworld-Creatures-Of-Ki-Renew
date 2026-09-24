@@ -142,11 +142,28 @@ Nothing in the port touched these, so this is a regression check rather than a v
 - `predator` is true: a wild teshi should hunt, not graze.
 - `nuzzleMtbHours` is 12: a tame one should nuzzle colonists within a day or so.
 
+## 8. The optional integration with A Dog Said... Animal Prosthetics 2
+
+Only with that mod (`SamBucher.ADogSaidAnimalProsthetics2`, Workshop 3238353862) enabled, in the load order
+RimWorld computes: this mod loads before it, because `About.xml` says so and its page asks for it.
+`Patches/ADS2_Categories.xml` writes the teshi into the categories that mod uses to decide which animals may
+receive prostheses.
+
+Spawn a teshi and a grizzly bear, select each, open the Health tab and look at *Add bill* → operations.
+
+**Expect:** the teshi is offered the same prosthetic and bionic recipes as the grizzly bear, which that mod
+already puts in category 3. Whether a given prosthesis applies is decided by the parts of the teshi's body,
+which is that mod's arithmetic.
+
+**Fails if:** the teshi is offered none of that mod's recipes, or fewer than the bear, or an error names
+`ADS_Cat3` or the patch at startup. And with the other mod **absent**, the mod must load exactly as in
+scenario 1: the patch finds nothing and must log nothing.
+
 ---
 
 ## What to send back
 
-The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. All seven scenarios still require an actual game session.
+The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. All eight scenarios still require an actual game session.
 
 ## Translation display — English and French
 
@@ -160,15 +177,17 @@ French, formatting and clipping. Record results and Player.log evidence in STATU
 ## What `tested` requires
 
 Read from `../AUDIT.md`, transition `done -> tested`. Nothing below has been done: the mod has never
-run, and no Pickle suite exists yet. That is pending work, not a pass.
+run, and the Pickle suite written for it has never been played. That is pending work, not a pass.
 
 - Every scenario above is played in the game, or is listed here as not applicable with its reason.
 - The Pickle suites run green, and their `@review` captures are opened and looked at. Read `exitReason`
   before the counts, and compare the scenarios played with the features discovered.
 - No scenario is left tagged `@wip`: it is repaired and replayed, or deleted with its justification.
-- Every conditional scenario (`@requires:<packageId>`) has had its pass. This mod declares no optional
-  mod and needs no DLC, so there is none to play, and the DLC in `loadAfter` is ordering only.
-- No manual test is left to validate. Each of the seven scenarios becomes a green Pickle scenario or
+- Every conditional scenario (`@requires:<packageId>`) has had its pass, with the map that mounts that
+  mod. There is one, `08-ads2-integration`, which needs A Dog Said... Animal Prosthetics 2: a run without
+  it skips the scenario, and a skipped scenario is not a passed one. The mod needs no DLC, and the DLC in
+  `loadAfter` are ordering only.
+- No manual test is left to validate. Each of the eight scenarios becomes a green Pickle scenario or
   a listed not-applicable. The suite is in `Tests/Pickle/`, written on 2026-09-24 and never run: see its README and the table below.
 - Both languages are played, one pass each (`-Language English`, `-Language French`), in developer
   mode: accented gibberish means a key missing from the active language, clean English inside French
@@ -189,6 +208,7 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | 5. The egg hatches | Pickle, `@slow` | `03-laying-and-hatching` | Two kits that belong to the colony, from the eggs she laid. Needs the hatcher's own tick. |
 | 6. Dessicated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
 | 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
+| 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear. |
 | Save and reload | Pickle | `05-save-reload` | An animal and an egg survive a round trip; the fixture colony, saved without the mod, is the mod added to an existing colony. |
 | FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side. |
 

@@ -23,6 +23,7 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 | `03-laying-and-hatching` (`@slow`) | English | A mated colony female lays by the game's own job, one stack of two fertilized eggs and no unfertilized egg, for the colony. Those eggs then hatch into two colony kits | Time, the egg-layer and hatcher comps, and the faction rule |
 | `04-dessicated-corpse` (`@review`) | English | A killed, dessicated female draws with the borrowed dromedary sprite | The game does not ship that texture in the clear, so no file names it |
 | `05-save-reload` | English | An animal and an egg survive a round trip, in a colony saved without the mod | Scribe behaviour |
+| `08-ads2-integration` (`@requires`) | English, with the other mod | The teshi is offered as many of A Dog Said... Animal Prosthetics 2's recipes as a grizzly bear, which that mod already puts in category 3; this mod loads before it; no warning, no error | The offline suite has no copy of the other mod: it cannot show the categories still exist under those names, nor that the patch landed |
 | `06-labels-en`, `07-labels-fr` (`@review`) | one each | The labels and descriptions **on the loaded defs**, and the health tab with each claw and ear on its own side | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
@@ -35,12 +36,13 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 | Every path the defs name resolves, case for case | `Run-Functional-Tests.ps1` | A file check. `02-draws` shows the game draws them |
 | The pawn's Wildness read by Pickle's pawn-stat step | none | That step looks up colonists by nickname, so it cannot read an animal |
 | An upgrade from a previous revision | none | The only earlier upload, 0.1.0, held the same `Mod/` as the tree under test |
-| A pass with optional mods, an incompatibility pass, a pass without a DLC | none | The mod declares no dependency, no optional mod and no incompatibility, and has no DLC guard. The DLC in `loadAfter` are ordering only |
+| An incompatibility pass, a pass without a DLC | none | The mod declares no incompatibility and has no DLC guard. The DLC in `loadAfter` are ordering only |
+| Taming, and the surgery itself, on the other mod | none | Those are that mod's recipes. What this mod answers for is that the teshi is in its category, which `08` reads off the recipes the game offers |
 | Switching language inside a scenario | none | The language is a startup choice: one pass per language (`../../../AUDIT.md`, "On ne teste pas le jeu") |
 
 ## The local steps
 
-`Source/TeshiSteps.cs`, 22 steps, all prefixed `Teshi Renew:` because Pickle matches on text alone across every
+`Source/TeshiSteps.cs`, 23 steps, all prefixed `Teshi Renew:` because Pickle matches on text alone across every
 suite loaded. Each exists because no stock or shared step does it:
 
 - **spawn a teshi of a chosen sex and life stage**, wild and facing a chosen way, or belonging to the colony;
@@ -52,7 +54,8 @@ suite loaded. Each exists because no stock or shared step does it:
 - **kill a female and dessicate her corpse** through the rot comp's own method;
 - **select, injure and read the animal by body part label**, one part per label or the step fails;
 - **open the information card**;
-- **read a def's label, description, the kit's label and plural, and the attack labels**, off the loaded defs.
+- **read a def's label, description, the kit's label and plural, and the attack labels**, off the loaded defs;
+- **count the recipes of another mod that a race is offered**, to compare the teshi with a grizzly bear.
 
 The two private fields (`eggProgress`, `gestateProgress`) are written through reflection that fails loudly if the
 game renames them, rather than writing nothing and passing.
@@ -72,10 +75,20 @@ powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 
 ## Passes
 
-One mod set, two languages. The mod declares no dependency, no `loadAfter` on a mod, no `incompatibleWith`, so
-the only map is `wsl-deps.sans-facultatifs.map`, which stages the one shared tool the health tab needs. Tags
-decide what runs where: `@en-only` and `@fr-only` follow the language of the labels they name, and everything
-that does not depend on the language (`02` to `05`) is `@en-only`, so it is played once.
+Three passes. The mod declares no dependency and no `incompatibleWith`, and one optional integration, in
+`loadBefore`: A Dog Said... Animal Prosthetics 2.
+
+| Pass | Map | What it establishes |
+|---|---|---|
+| Minimal, English | `wsl-deps.sans-facultatifs.map` | The mod stands alone. Stages the one shared tool the health tab needs |
+| Minimal, French | the same | The French DefInjected files are found and read |
+| Optional integration, English | `wsl-deps.avec-ads2.map` | The teshi lands in the other mod's categories, in the setting where it will really be loaded |
+
+Tags decide what runs where: `@en-only` and `@fr-only` follow the language of the labels they name, and
+everything that does not depend on the language (`02` to `05`, `08`) is `@en-only`, so it is played once.
+`08` carries `@requires:SamBucher.ADogSaidAnimalProsthetics2`, so the two minimal passes skip it, and a skipped
+scenario is not a passed one: it has to be played in the third pass. That mod has to be downloaded into the WSL
+game first, a queued job of its own (`scripts/download-workshop-wsl.sh`), which has not been done.
 
 Never start RimWorld by hand and never a second instance (`../../../AUDIT.md`). From the collection root, one at
 a time, each through the shared queue:
@@ -84,13 +97,15 @@ a time, each through the shared queue:
 powershell.exe -ExecutionPolicy Bypass -File scripts/Pickle-Status.ps1
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-english
 powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@en-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-french
+powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-english-ads2
 ```
 
 A session waits for its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`, never
 with a cron and never with a script launched in the background from a shell. Read `exitReason` before the counts,
-and compare the scenarios played with the scenarios discovered for the filter: 13 scenarios are written, 11 of
-them in the English pass and 3 in the French one, `01-loads` being played in both. The two laying scenarios are
-`@slow` and carry the longest deadline (`@timeout:900`).
+and compare the scenarios played with the scenarios discovered for the filter: 14 scenarios are written. The
+minimal English pass discovers 12 and plays 11, `08` being skipped by its requirement; the French pass plays 3,
+`01-loads` being in both; the integration pass plays 12. The two laying scenarios are `@slow` and carry the
+longest deadline (`@timeout:900`).
 
 ## Evidence
 
@@ -117,3 +132,6 @@ None of this was seen running. These are the assumptions a green first run confi
 7. **Reading the label of a def in French returns the injected text**, with no accented gibberish, and the
    health tab keeps the longer French labels on one line.
 8. **Killing a spawned animal is quiet**: no letter, dialog or thought blocks the next step.
+9. **The other mod keeps its category names.** `ADS_Cat1`, `ADS_Cat2` and `ADS_Cat3` are read from its repository
+   as of 2026-09-24, not from an installed copy. If they change, the patch finds nothing and does nothing, `08`
+   fails on the count, and the failure message says which side is at zero.

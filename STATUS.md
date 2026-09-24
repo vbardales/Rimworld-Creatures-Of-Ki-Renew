@@ -21,12 +21,13 @@ tested_on:
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-24, Pickle scenarios written, stage back to done, kept by the session that holds this mod
+updated:      2026-09-24, optional integration with A Dog Said... Animal Prosthetics 2 built in, kept by the session that holds this mod
 remaining:
   - unverified: English and French runtime display (animal, eggs, life stage, attacks and health body parts).
-  - unverified: all seven TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
+  - unverified: all eight TESTS.md scenarios await an actual RimWorld 1.6 session and Player.log.
   - unverified: new-game loading and existing-save loading, saving and reloading with teshi and eggs; no current runtime evidence.
-  - unverified: to reach tested (AUDIT.md transition 9), the two Pickle passes in Tests/Pickle/README.md must run green, English then French, with exitReason read before the counts and the 13 scenarios played against the 13 discovered; every @review capture opened and looked at; no @wip (none exists); no conditional scenario (the mod declares no optional mod). No manual test is left to validate, since each of the seven TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7). Nothing has run.
+  - unverified: to reach tested (AUDIT.md transition 9), three Pickle passes in Tests/Pickle/README.md must run green, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, with exitReason read before the counts and the scenarios played against the scenarios discovered; every @review capture opened and looked at; no @wip (none exists); the one conditional scenario, 08-ads2-integration, played in the third pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7). Nothing has been played.
+  - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 (Mod/Patches/ADS2_Categories.xml, loadBefore in About.xml) has been checked offline for its shape only. The category names ADS_Cat1 to ADS_Cat3 were read from that mod's repository on 2026-09-24, not from an installed copy; that the patch lands, and that the teshi is offered the same recipes as a grizzly bear, is what 08-ads2-integration shows. That mod is not yet downloaded into the WSL game, a queued job of its own that has not been started. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
   - unverified: the egg texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml now say what CompEggLayer.ProduceEgg does in the compiled game, a mated teshi lays one stack of two fertilized eggs and never the unfertilized one, and that reading has not been played; 03-laying-and-hatching settles it. The Steam page of item 3806709627 still carries the old paragraph, which SetItemDescription sent at creation and only a hand edit can change, and the private item carries the old About.xml.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
   - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item's page has not been read by a session.
@@ -35,20 +36,47 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Optional integration — 2026-09-24
+
+Newest entry; where it disagrees with the sections below, it wins. The owner asked for the mod to take
+[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862)
+into account natively. Read from the Steam item, its API record and its repository (no installed copy):
+
+- **What that mod asks.** An animal receives prostheses by being listed in one of three abstract recipe
+  categories, `ADS_Cat1` to `ADS_Cat3`, that nest; category 3 also gets bionics and holds the trainable
+  animals, the bears, wolves, wargs and cougars among them. The page asks any mod that builds compatibility
+  in to load **before** it.
+- **What was built.** `Mod/Patches/ADS2_Categories.xml`, one `PatchOperationConditional` on the category
+  existing in the merged defs, that writes `Teshi` into all three lists; `loadBefore` on
+  `SamBucher.ADogSaidAnimalProsthetics2` in About.xml; a Compatibility paragraph in About.xml, README.md,
+  CHANGELOG.md and ATTRIBUTION.md. Nothing is required: no `modDependencies`, no `LoadFolders.xml`, and with
+  the other mod absent the patch finds nothing and logs nothing.
+- **The judgement call.** Category 3, because the teshi is trainable to intermediate and as large as a bear, and
+  the bears are category 3 there. The owner may prefer category 2 (simple prostheses without bionics).
+- **`dependencies` stays `none`.** The field's vocabulary is for a hard dependency that is missing or
+  undeclared; this is an optional integration, declared in `loadBefore` as the other mod asks.
+- **Checked without a game.** `Run-Functional-Tests.ps1` has a new test, 21 in all, 0 failed: the patch is one
+  conditional operation, adds only this mod's own animal to the three categories, About loads it before the
+  other mod and declares no hard dependency. It was seen to go red on a copy with the `loadBefore` removed and
+  the animal name misspelt. The Pickle suite has a new scenario and a pass map, `08-ads2-integration` and
+  `wsl-deps.avec-ads2.map`; the assembly rebuilds and every one of the 152 step lines resolves to one step.
+- **Not done.** The other mod is not in the WSL game, and no run of that pass has been queued.
+
 ## Pickle scenarios written — 2026-09-24, back to `done`
 
-Newest entry; where it disagrees with the sections below, it wins. The audit below found `preTest` for one
+Older than the entry above. The audit below found `preTest` for one
 reason, the Pickle scenarios not being written. They are now, so **the stage is `done` again** (transition 8).
 Nothing else in that audit changed, and its checks stand.
 
 - **The suite** is `Tests/Pickle/`: a companion mod (`Creatures of Ki - Teshi Renew - Pickle tests`), seven
-  features and 13 scenarios, 22 local steps in `Source/TeshiSteps.cs`, one pass map, and `Check-Steps.ps1`.
+  features and 13 scenarios (14 with the integration entry above), 23 local steps in `Source/TeshiSteps.cs`, two pass maps, and `Check-Steps.ps1`.
   `README.md` there says what each feature shows and why it needs a game, what is deliberately not in Gherkin,
   the two passes, and eight assumptions a first run confirms or breaks. The scope is justified in `TESTS.md`.
 - **Checked without a game**: the step assembly builds against the installed game and Pickle with no warning,
   and `Check-Steps.ps1` reports every one of the 146 step lines resolving to exactly one step and every local
   pattern compiling. It was seen to go red on an undefined step. `Run-Functional-Tests.ps1` still passes.
-  **Nothing was played**: no RimWorld was started, by any route, and no Pickle ticket is held.
+  **Nothing was played**: no RimWorld was started by hand, by any route. Two tickets were queued afterwards through
+  the shared launcher, English and French, and were still waiting for the lock with about thirty runs ahead.
 - **A finding that changes documents**: the mated laying makes one stack of two fertilized eggs, not one
   fertilized and one unfertilized. TESTS.md, README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml
   were corrected to that reading in a later commit of the same day, each keeping the history of what it used to
