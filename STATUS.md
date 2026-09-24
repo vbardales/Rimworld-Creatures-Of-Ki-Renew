@@ -36,9 +36,26 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Pickle tickets — 2026-09-24
+
+Newest entry; where it disagrees with the sections below, it wins. The owner asked for the runs to go through the
+ticket dispatcher (`Rimworld-Ticket-Dispatcher/`, `docs/WELCOME.md`), with no follow-up task in this session, and
+for small tickets: a validation plays every scenario of its pass, a fix or an exploration as few as it can.
+
+- **Registered** with the dispatcher by message (`REGISTER local_ebbf6354-e959-4188-bafe-63729c5190ff`). Its answer
+  has not arrived at the time of writing.
+- **Three requests dropped** with `Submit-PickleRun.ps1`, all first runs and so all scenarios of their pass:
+  `20260924-164447-947-54ad` English without the slow laying, `20260924-164448-628-681f` the slow laying and hatching
+  alone, `20260924-164449-372-9aa5` French. Evidence goes to `Tests/Pickle/Evidence/2026-09-24-english-fast`,
+  `-english-slow` and `-french`. Nothing has run.
+- **Two older direct tickets** are still in the queue, 40904 English and 42836 French, launched before the dispatcher
+  was known and labelled without a `local_<id>`. They are this session's and have played nothing. They are to be
+  withdrawn once the dispatcher has answered, so the same passes do not play twice.
+- **No watcher** is left: the Monitor that was armed has ended and none will be armed again.
+
 ## Optional integration — 2026-09-24
 
-Newest entry; where it disagrees with the sections below, it wins. The owner asked for the mod to take
+Older than the entry above; where it disagrees with the sections below, it wins. The owner asked for the mod to take
 [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862)
 into account natively. Read from the Steam item, its API record and its repository (no installed copy):
 
@@ -75,8 +92,9 @@ Nothing else in that audit changed, and its checks stand.
 - **Checked without a game**: the step assembly builds against the installed game and Pickle with no warning,
   and `Check-Steps.ps1` reports every one of the 146 step lines resolving to exactly one step and every local
   pattern compiling. It was seen to go red on an undefined step. `Run-Functional-Tests.ps1` still passes.
-  **Nothing was played**: no RimWorld was started by hand, by any route. Two tickets were queued afterwards through
-  the shared launcher, English and French, and were still waiting for the lock with about thirty runs ahead.
+  **Nothing was played**: no RimWorld was started by hand, by any route. Two direct tickets were queued afterwards
+  through the shared launcher, then replaced by three small requests dropped with the ticket dispatcher (see the
+  entry above the integration one), and nothing has run.
 - **A finding that changes documents**: the mated laying makes one stack of two fertilized eggs, not one
   fertilized and one unfertilized. TESTS.md, README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml
   were corrected to that reading in a later commit of the same day, each keeping the history of what it used to

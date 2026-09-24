@@ -90,22 +90,38 @@ everything that does not depend on the language (`02` to `05`, `08`) is `@en-onl
 scenario is not a passed one: it has to be played in the third pass. That mod has to be downloaded into the WSL
 game first, a queued job of its own (`scripts/download-workshop-wsl.sh`), which has not been done.
 
-Never start RimWorld by hand and never a second instance (`../../../AUDIT.md`). From the collection root, one at
-a time, each through the shared queue:
+Never start RimWorld by hand and never a second instance (`../../../AUDIT.md`). A run is not launched from here
+and nothing is kept alive in the session: a request is dropped with the ticket dispatcher
+(`../../../Rimworld-Ticket-Dispatcher/README.md`, `docs/WELCOME.md`), which runs it through the shared queue and wakes
+the session by message at `START`, `END` and `RUN_DONE`. No `Monitor`, no heartbeat, no cron, no loop.
+
+**Small tickets.** Three small ones rather than one big one, and the scope follows what the ticket is for. A first or
+final validation plays every scenario of the pass, so no scenario filter. An exploration or a fix plays as few
+scenarios as it can, one `-Filter '::<scenario name>'`. The first run of this suite is a validation, split by what
+takes long, not by what it covers:
+
+| Ticket | Filter | Language | Scenarios |
+|---|---|---|---|
+| English, all but the slow laying | `Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only,!@slow` | English | `01`, `02`, `04`, `05`, `06`, and `08` skipped by its requirement |
+| English, the slow laying and hatching | `03-laying-and-hatching` | English | the two `@slow` scenarios, deadline 900 s each |
+| French, all | `Creatures of Ki - Teshi Renew - Pickle tests,!@en-only` | French | `01` and `07` |
+
+The integration pass is a fourth ticket, with `wsl-deps.avec-ads2.map` and the same English filter minus `!@slow`,
+once that mod is downloaded into the WSL game.
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File scripts/Pickle-Status.ps1
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-english
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@en-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-french
-powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod CreaturesOfKiRenew -DepMap wsl-deps.avec-ads2.map -Language English -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only' -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-english-ads2
+# from the collection root; the owner is this session's local_<id>, from get_session with "self"
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 `
+  -Mod CreaturesOfKiRenew -Owner local_<id> -Label "first run French, all" -Language French `
+  -DepMap wsl-deps.sans-facultatifs.map -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@en-only' `
+  -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-french
+powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -List
 ```
 
-A session waits for its ticket with the `Monitor` tool on a read-only poll of `scripts/Pickle-Status.ps1`, never
-with a cron and never with a script launched in the background from a shell. Read `exitReason` before the counts,
-and compare the scenarios played with the scenarios discovered for the filter: 14 scenarios are written. The
-minimal English pass discovers 12 and plays 11, `08` being skipped by its requirement; the French pass plays 3,
-`01-loads` being in both; the integration pass plays 12. The two laying scenarios are `@slow` and carry the
-longest deadline (`@timeout:900`).
+To see the machine without launching anything: `scripts/Pickle-Status.ps1`. Read `exitReason` before the counts, and
+compare the scenarios played with the scenarios discovered for the filter: 14 scenarios are written. The minimal
+English pass discovers 12 and plays 11, `08` being skipped by its requirement, which the two English tickets share
+between them; the French pass plays 3, `01-loads` being in both; the integration pass plays 12.
 
 ## Evidence
 
