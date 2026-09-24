@@ -1,0 +1,4 @@
+# The minimal set: Core, the DLCs, Pickle, and the one shared test tool this suite uses (the Health inspect tab).
+# The mod under test declares no dependency and no optional mod, so this is the only pass, run once in each
+# language. Add a line here only for a tool a feature really needs.
+nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
