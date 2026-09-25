@@ -17,6 +17,17 @@ conditional patch (Nocturnal Animals, below), so what is left, in this order:
    chosen, the step fails clearly with no colonist) and did not replay it, to spare the machine. The replay is this
    mod's, in a ticket of its own with `-Extra "-pickle-scenario-timeout=400"`. A new colony is random and used sparingly.
 
+## At `prepublished`, not before
+
+The CI/CD session announced on 2026-09-25 that the Steam description will have **one source**: a Markdown block under
+`## Steam description` in `PUBLICATION.md`, from which the CI generates the BBCode and the `<description>` of `About.xml`,
+every dry-run and publish stopping if `About.xml` differs. Nothing is forced now, and it is adopted at the next
+publication or when the owner asks. For this mod it means `Mod/README.template.md`, which the owner named as the source
+on 2026-09-25, moves into `PUBLICATION.md` (no code fence in it, last line `[Source code on GitHub](URL)`), and the
+hand-written `<description>` of `About.xml` is then regenerated, its diff read. The dry-run of the exact SHA must show
+a description that reads the same as the page, and a change note must carry the version on its first line. Do not edit
+`.github/` by hand. Details: `Rimworld-Release-Admin/docs/OPERATIONS.md`, "Changing where the Steam description comes from".
+
 ## Optional integrations
 
 Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
