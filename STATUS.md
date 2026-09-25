@@ -21,25 +21,41 @@ tested_on:     2026-09-25, the last Pickle run on the headless WSL game, partial
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, protocols reread, kept by the session that holds this mod
+updated:      2026-09-25, TESTING.md, description template and new-colony scenario, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the eight TESTS.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in Pickle, on 2026-09-24 and 2026-09-25, and 4b and 7 are not applicable. What remains is the final validation of all of them together, see the next line.
-  - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod; a new game started with the mod has not been played.
-  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one; it passed on 2026-09-25 once the map wrote the load order, and the final validation replays it with the rest. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
+  - unverified: of the nine TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in Pickle, on 2026-09-24 and 2026-09-25, 4b and 7 are not applicable, and 9, a new game with the mod, is written and not played. What remains is the final validation of all of them together, see the next lines.
+  - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod. The scenario for a colony that starts with the mod, 09-new-colony, was written on 2026-09-25 on the NewColony tool, which its own README says was written that day and never played, so a failure of its first run can be the tool's.
+  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the four passes green, with exitReason read before the counts, minimal English, minimal French, English with A Dog Said... Animal Prosthetics 2 mounted (already in the WSL cache), and the new-colony pass. TESTING.md declares them. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the two conditional scenarios, 08-ads2-integration and 09-new-colony, are played only in their own pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the nine TESTING.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
-  - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
-  - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation and only a hand edit can change. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
+  - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page has no Compatibility paragraph yet, and gets it from Mod/README.template.md at the next publish.
+  - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation. The owner said on 2026-09-25 that the page is corrected through Mod/README.template.md, not by hand, so it changes when a publish sends the description, which is opt-in and needs the owner's approval. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTING.md, Mod/About/About.xml and the template say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone, so whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. The 32 px readability check that AUDIT.md now asks for was run on 2026-09-25 on the delivered 128 x 128 file, 14,065 bytes, and by reading the picture the head, the wink, the horns and the ponytail stay distinguishable at 32 px; the owner decides, and nothing was changed.
-  - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10), a Workshop link on every named mod, and in THANKS the author of A Dog Said... Animal Prosthetics 2, since PUBLISHING.md asks it for every named or exercised integration, and Pickle, RimLogging and PickleTools, the last because a pass stages InspectTabs from it (Workshop 3806142401). Each of them with a public page also needs an entry in the comment registry. PUBLICATION.md, which carries all of that, does not exist yet. The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of it, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item page has not been read by a session.
+  - unverified: the Workshop description is now written in Mod/README.template.md, on the owner's word of 2026-09-25, in the order AUDIT.md transition 10 asks, the body, IF I GO QUIET, AI-GENERATED, THANKS with the authors of Creatures of Ki, A Dog Said... Animal Prosthetics 2, Pickle, RimLogging and PickleTools each linked, the ATTRIBUTION.md and LICENSE line, and the Source code on GitHub link last. It is 4,785 bytes, under Steam's 8,000, and Mod/.steamignore keeps the template out of the upload. The owner has not read it. One sentence rests on a gap, the AI-GENERATED line says the preview background is AI-generated artwork but no file I can read names the tool that made it, so the tool is not named. What is still to do at prepublished is PUBLICATION.md, which does not exist, with the order of the captures, the thanks comments, the adult content answers and the change note under a version heading, and an entry in the comment registry for each thanked author with a public page. The item page has not been read by a session.
   - unverified: the private 0.1.0 item was uploaded from the working tree and probably carries the nine .dds caches that git never held; check its file list.
 ---
 
 # Creatures of Ki - Teshi Renew — status
 
+## TESTING.md, description template, new colony — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. Three things the owner asked for, one answer each.
+
+- **`TESTS.md` is now `TESTING.md`**, because `AUDIT.md` expects the passes to be declared in a `TESTING.md`. Every reference
+  in the repository was updated, including the older sections of this file. The file gained "The passes this suite needs":
+  four passes, which scenarios each plays, and what each covers.
+- **The Steam description is corrected through `Mod/README.template.md`**, not by hand, at the owner's word. It carries the
+  sections and the links the workflow asks for. The three points recorded in `remaining` are that the owner has not read it,
+  that no file names the tool that generated the preview background, and that `PUBLICATION.md` does not exist. `Mod/.steamignore`
+  keeps the template and the generated `.dds` textures out of the upload.
+- **A scenario for a new game was needed**, so `09-new-colony` was written, with `wsl-deps.new-colony.map` and the NewColony
+  tool. The tool was written on 2026-09-25 and never played, so its first run is an exploration and a failure can be its own.
+
+Checked without a game: the step checker resolves all 161 step lines, and the 21 offline tests pass.
+
 ## ADS2 rerun — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. The single-scenario ticket `1ffa` played `08` again
+Older than the entry above; where it disagrees with the sections below, it wins. The single-scenario ticket `1ffa` played `08` again
 with A Dog Said... Animal Prosthetics 2 mounted and this mod ahead of it in the map, at revision `00e8617`, tree
 clean. **`exitReason` passed, 1 discovered, 1 played, 1 passed**, set `avec-ads2`.
 
@@ -208,7 +224,7 @@ Nothing else in that audit changed, and its checks stand.
 - **The suite** is `Tests/Pickle/`: a companion mod (`Creatures of Ki - Teshi Renew - Pickle tests`), seven
   features and 13 scenarios (14 with the integration entry above), 23 local steps in `Source/TeshiSteps.cs`, two pass maps, and `Check-Steps.ps1`.
   `README.md` there says what each feature shows and why it needs a game, what is deliberately not in Gherkin,
-  the two passes, and eight assumptions a first run confirms or breaks. The scope is justified in `TESTS.md`.
+  the two passes, and eight assumptions a first run confirms or breaks. The scope is justified in `TESTING.md`.
 - **Checked without a game**: the step assembly builds against the installed game and Pickle with no warning,
   and `Check-Steps.ps1` reports every one of the 146 step lines resolving to exactly one step and every local
   pattern compiling. It was seen to go red on an undefined step. `Run-Functional-Tests.ps1` still passes.
@@ -216,11 +232,11 @@ Nothing else in that audit changed, and its checks stand.
   through the shared launcher, then replaced by three small requests dropped with the ticket dispatcher (see the
   entry above the integration one), and nothing has run.
 - **A finding that changes documents**: the mated laying makes one stack of two fertilized eggs, not one
-  fertilized and one unfertilized. TESTS.md, README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml
+  fertilized and one unfertilized. TESTING.md, README.md, CHANGELOG.md, ATTRIBUTION.md and Mod/About/About.xml
   were corrected to that reading in a later commit of the same day, each keeping the history of what it used to
   say. The Steam page still holds the old paragraph: see `remaining`.
 - **Evidence**: still none to sort, since nothing has run. Pickle steps also cover Wildness now: the value the
-  game computes in `01-loads` and a capture of the information card in `02-draws`; TESTS.md 3 is no longer
+  game computes in `01-loads` and a capture of the information card in `02-draws`; TESTING.md 3 is no longer
   "not applicable".
 
 ## Audit — 2026-09-24, `done` -> `preTest`
@@ -252,7 +268,7 @@ fixes that followed the review of those four, in the commit that carries this se
 | -> options | Justified not applicable | No assembly, no C#, no settings class, no MainButton, no LoadFolders or patch in `Mod/`. Neither an empty page nor a shortcut can exist. `settings_audit: not_applicable`. |
 | -> l10n | Validated | `../scripts/Check-DefInjected.ps1 -TransMod Mod`: 31 keys, 0 errors. Independent count of the French files: 19 BodyDef, 9 ThingDef, 3 PawnKindDef, 31 in all. English is the native Def value. |
 | -> preTest | Validated | No dependency, none declared, none used: the suite resolves every reference against Core alone. `loadAfter` lists the DLC for ordering only. |
-| preTest -> done | **Not reached** | Scenarios written (TESTS.md, seven), automated and XML tests green, results tied to the shipped `Mod/`. Pickle scenarios not written and their scope not justified as a suite: see below. |
+| preTest -> done | **Not reached** | Scenarios written (TESTING.md, seven), automated and XML tests green, results tied to the shipped `Mod/`. Pickle scenarios not written and their scope not justified as a suite: see below. |
 | done -> tested | Not evaluated | The mod has never run. |
 
 ### Checks run
@@ -289,13 +305,13 @@ The shared folders were searched on 2026-09-24, not just listed: the 17 folders 
 are named by time, eight of them `stalled-<Mod>` with a `Player.log` and none for this mod, and the
 `summary.md`, `summary.json` and `junit.xml` of the nine others and of `pickle-reports/`, plus its
 `Player.log`, hold neither `Creatures of Ki` nor `teshi`. The big files of those folders were not opened. `Tests/Pickle/Evidence/` and
-`evidence/` are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTS.md`
+`evidence/` are ignored ahead of the first run, and the proofs worth keeping are listed in `TESTING.md`
 ("Evidence to keep"). `_tools/audit-2026-09-13-*manifest.json` are audit records that this file points
 to: tracked, small, kept.
 
 ### The gates, measured
 
-- To reach `done`: write the Pickle scenarios, with their scope justified. `TESTS.md` proposes it:
+- To reach `done`: write the Pickle scenarios, with their scope justified. `TESTING.md` proposes it:
   scenarios 1, 2, 3, 4a, 5, 6 and one pass per language; 4b and 7 not applicable, with reasons.
 - To reach `tested`: no `@wip`; every conditional scenario has run (this mod has none, since it
   declares no optional mod); **manual tests left to validate: all seven scenarios**, each to become a
@@ -373,7 +389,7 @@ attack groups, texture presence and case, inheritance, named references, biomes 
 The old external Check-DefRefs/Check-XmlClasses/Check-XmlFields/Check-TypeRefs tools are not present
 in this repository; their historical results are not treated as a fresh run.
 
-TESTS.md provides seven manual scenarios with actions and expected outcomes: loading, directional
+TESTING.md provides seven manual scenarios with actions and expected outcomes: loading, directional
 rendering, Wildness, fertilized/unfertilized laying, hatching, dessicated corpse and animal behavior.
 They exist but have not been executed in game by this task. All remain unverified end to end,
 particularly rendering, actual egg laying/hatching and the borrowed dromedary corpse texture.
@@ -472,7 +488,7 @@ It does not mean tested in game or published.
   `.git` directory, and no superproject. Physical placement under the old workspace does
   not make this repository part of its Git history. No parent remote is required.
 - Audited HEAD: `f8fc3f24141f072707f04b04bbbfb182d3f8acbc`.
-  At audit start, `CHANGELOG.md`, `STATUS.md` and `TESTS.md` were modified; the three
+  At audit start, `CHANGELOG.md`, `STATUS.md` and `TESTING.md` were modified; the three
   `Mod/Languages/French/DefInjected/{BodyDef,PawnKindDef,ThingDef}/Teshi.xml` files were
   untracked. The delivered working tree, including those translations, was tested.
 - This audit changes only this status and adds `_tools/audit-2026-09-13-manifest.json`.
@@ -497,7 +513,7 @@ It does not mean tested in game or published.
 | preOptions -> options | Justified not applicable | Settings inventory below establishes no useful settings, empty page or MainButtons shortcut. Applicable automated checks passed; no runtime integration is claimed. |
 | options -> l10n | Validated | All 31 owned English Def text values reviewed against 31 nonempty unique French entries; injection validator passes all 31 paths without unresolved targets. |
 | l10n -> preTest | Validated | Five concrete definitions use vanilla classes and Core references. Core-only tests pass. No required third-party dependency, conditional patch, LoadFolders or version directory. About supports 1.6; DLC loadAfter entries are optional ordering, not requirements. |
-| preTest -> done | Validated | TESTS.md has seven functional scenarios with shared setup, actions and expected outcomes, plus FR/EN display checks. Automated suite and XML checks actually executed successfully on the manifest's working tree. |
+| preTest -> done | Validated | TESTING.md has seven functional scenarios with shared setup, actions and expected outcomes, plus FR/EN display checks. Automated suite and XML checks actually executed successfully on the manifest's working tree. |
 | done -> tested | Unverified | No game session was executed or reviewed in this audit; no matching Player.log, bilingual interface results or save-cycle results establish this gate. |
 
 ### Settings audit
@@ -557,7 +573,7 @@ Actual animal/save behavior remains in the final runtime gate.
 
 ### Remaining checks and separate publication/documentation observations
 
-**Next transition, done -> tested:** execute TESTS.md in RimWorld 1.6 with Core and this
+**Next transition, done -> tested:** execute TESTING.md in RimWorld 1.6 with Core and this
 mod, record actual results for all seven scenarios and FR/EN displays, inspect Player.log,
 and test a new game plus an existing save (including teshi/eggs across save/reload).
 Preserve game version, active mod list and evidence tied to the delivered manifest;

@@ -39,7 +39,7 @@ compaction of the context (`WELCOME.md`, section 5). Compare the hash below befo
 | Document | State |
 | --- | --- |
 | `STATUS.md`, `README.md`, `CHANGELOG.md`, `ATTRIBUTION.md`, `LICENSE`, `Mod/About/About.xml`, `docs/runs/`, `Tests/Pickle/` | Present and kept current. |
-| `TESTS.md` | The manual scenarios, what `tested` requires and the evidence to keep. `AUDIT.md` expects the passes to be declared in a `TESTING.md`: this mod declares them in `Tests/Pickle/README.md` and here, under another name. Renaming is proposed to the owner, not done. |
+| `TESTING.md` | Renamed from `TESTS.md` on 2026-09-25 at the owner's word, because `AUDIT.md` expects the passes to be declared in a `TESTING.md`. It carries the manual scenarios, the passes this suite needs, what `tested` requires and the evidence to keep. |
 | `PUBLICATION.md` | **Absent.** Needed at `prepublished`: the order of the captures, the thanks comments, the dependencies, the adult content answers, and the change note under `### <version>`. |
 | `BACKLOG.md`, `NOTES.md`, `BUGS.md` | **Absent**, and nothing needs them. The repository's own backlog is the `remaining` list of `STATUS.md`. The monorepo's `BACKLOG.md` is not this mod's. |
 | `docs/PROTOCOLS-READ.md` | This file. |

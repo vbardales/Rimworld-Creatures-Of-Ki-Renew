@@ -3,7 +3,7 @@
 # is left, all of the unfertilized def otherwise. The teshi has one fertilization and lays two, so the stack is
 # expected to be two FERTILIZED eggs, and no unfertilized egg at all: an unfertilized laying is also stopped
 # at 0.9 of its progress, so a female that has used her fertilization does not lay again until she is mated.
-# TESTS.md used to say one fertilized and one unfertilized. If this scenario fails on that, the game disagrees
+# TESTING.md used to say one fertilized and one unfertilized. If this scenario fails on that, the game disagrees
 # with the reading, and the failure message says how many stacks and of what.
 #
 # Fifteen game days of laying and fifteen of incubation do not fit a run, so the two progress fields are

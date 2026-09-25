@@ -3,7 +3,7 @@
   What the game actually does with this mod's defs, checked outside the game.
 
 .DESCRIPTION
-  TESTS.md next door is the other half of this: seven scenarios to play, which is the only way to
+  TESTING.md next door is the other half of this: seven scenarios to play, which is the only way to
   see the animal drawn and the only way to watch an egg hatch. This file asks the questions that do
   not need the game running, and answers them from the compiled game rather than from a claim in a
   document.
@@ -37,14 +37,14 @@
     - CompEggLayer.ProduceEgg and NextEggType both read eggUnfertilizedDef. With eggCountRange 2
       and eggFertilizationCountMax 1, a mated laying reaches it, so the def this port added is
       needed whatever happens to a lone female.
-    - and the lone female is settled here, which TESTS.md scenario 4b could not settle without
+    - and the lone female is settled here, which TESTING.md scenario 4b could not settle without
       playing: ProgressStoppedBecauseUnfertilized arms only when eggProgressUnfertilizedMax is
       below 1, the teshi's is 0.9, and CompTick reads the same field. Her progress stops at 90 %
       and she never lays at all.
 
   What this file CANNOT check, and does not pretend to: the game ships no loose textures - Core has
   only About, Defs and Languages on disk - so the dessicated sprite this mod borrows from the
-  dromedary cannot be resolved here. TESTS.md scenario 6 is the only check for it.
+  dromedary cannot be resolved here. TESTING.md scenario 6 is the only check for it.
 
   Exit code 0 when everything passes, 1 otherwise. A few seconds.
 
@@ -483,7 +483,7 @@ It 'a lone female never lays: the gate arms below 1, and this animal sits at 0.9
     if (-not $needsOne) { 'CanLayNow no longer requires a full 1 of eggProgress; the threshold a pinned female cannot reach has moved.' }
     $p = Get-Text $eggComp 'eggProgressUnfertilizedMax'
     if (-not $p) { return 'the comp no longer sets eggProgressUnfertilizedMax; it would inherit, and the conclusion below would not hold.' }
-    if ([double]$p -ge 1.0) { "eggProgressUnfertilizedMax is $p, which disarms the gate: a lone female WILL lay, and TESTS.md scenario 4b is written the wrong way round." }
+    if ([double]$p -ge 1.0) { "eggProgressUnfertilizedMax is $p, which disarms the gate: a lone female WILL lay, and TESTING.md scenario 4b is written the wrong way round." }
 }
 
 It 'the fertilized egg hatches into this mod own animal' {

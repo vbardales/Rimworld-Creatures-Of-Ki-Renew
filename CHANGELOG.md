@@ -34,6 +34,9 @@ through 1.4.
   the teshi into that mod's three animal categories, category 3 like the bears and the wolves, and
   `About.xml` loads this mod before it, as its page asks. It is optional and conditional: nothing is
   required, and with the other mod absent the patch finds nothing and logs nothing. Not yet played.
+- `Mod/README.template.md`, the source of the Workshop description, and `Mod/.steamignore`, which keeps it and the
+  generated `.dds` textures out of the upload. The description now says what was changed, credits the authors it owes,
+  and links every mod it names.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed

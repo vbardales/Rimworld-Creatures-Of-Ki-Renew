@@ -50,6 +50,6 @@ desktop.ini
 *.dds
 
 # Pickle evidence stays on disk, never in git: captures and Player.log grow without limit.
-# The durable record is one text line per run in docs/runs/ (see TESTS.md, "Evidence to keep").
+# The durable record is one text line per run in docs/runs/ (see TESTING.md, "Evidence to keep").
 Tests/Pickle/Evidence/
 evidence/

@@ -80,7 +80,7 @@ Two breakages, both silent in different ways.
   the second egg of a mated laying has nothing to be but unfertilized. Neither was right. The first went
   further than the evidence; the second was inferred from the two settings and never read off
   `ProduceEgg`, which builds one stack. `CompTick`, `CanLayNow`, `NextEggType` and `ProduceEgg` were
-  read in the compiled game, and `_tools/Run-Functional-Tests.ps1` covers the pinning. `TESTS.md`,
+  read in the compiled game, and `_tools/Run-Functional-Tests.ps1` covers the pinning. `TESTING.md`,
   scenario 4, and the Pickle scenario `03-laying-and-hatching` describe the in-game confirmation that
   remains to be performed.
 
@@ -103,7 +103,7 @@ compiled game: the fields these defs write are checked against the methods that 
 and the two changes this port made are checked against the code that made them necessary. Sixteen of the original seventeen have been watched failing against a deliberately broken copy of the mod; the
 seventeenth can only go red if RimWorld itself changes, and the file says so.
 
-`TESTS.md` is the layer no reflection reaches: eight scenarios to play, for everything that has to
+`TESTING.md` is the layer no reflection reaches: eight scenarios to play, for everything that has to
 be *seen* — the animal drawn from four sides, an egg hatching, a corpse drying out.
 
 ## Terms

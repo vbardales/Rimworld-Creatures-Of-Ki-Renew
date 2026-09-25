@@ -1,7 +1,7 @@
 # In-game scenarios, run by Pickle
 
 This companion is development-only: it lives beside `Mod/`, never inside it, and Steam never receives it.
-It turns the seven manual scenarios of `../../TESTS.md` into Gherkin scenarios that set a scene up, assert,
+It turns the seven manual scenarios of `../../TESTING.md` into Gherkin scenarios that set a scene up, assert,
 and leave a person to read only the `@review` captures.
 
 **Status: written on 2026-09-24, never run.** The step assembly compiles against the installed 1.6 game and
@@ -24,6 +24,7 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 | `04-dessicated-corpse` (`@review`) | English | A killed, dessicated female draws with the borrowed dromedary sprite | The game does not ship that texture in the clear, so no file names it |
 | `05-save-reload` | English | An animal and an egg survive a round trip, in a colony saved without the mod | Scribe behaviour |
 | `08-ads2-integration` (`@requires`) | English, with the other mod | The teshi is offered as many of A Dog Said... Animal Prosthetics 2's recipes as a grizzly bear, which that mod already puts in category 3; this mod loads before it; no warning, no error | The offline suite has no copy of the other mod: it cannot show the categories still exist under those names, nor that the patch landed |
+| `09-new-colony` (`@requires`) | English, with the NewColony tool | A colony started from the main menu with the mod enabled: the world and the first map generate, the teshi is defined, nothing from the mod is logged | The other scenarios load a fixture saved without the mod, so none of them starts a colony that has the mod from the beginning. The tool was written on 2026-09-25 and not played, so a failure can be its own |
 | `06-labels-en`, `07-labels-fr` (`@review`) | one each | The labels and descriptions **on the loaded defs**, and the health tab with each claw and ear on its own side | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
@@ -83,6 +84,7 @@ Three passes. The mod declares no dependency and no `incompatibleWith`, and one 
 | Minimal, English | `wsl-deps.sans-facultatifs.map` | The mod stands alone. Stages the one shared tool the health tab needs |
 | Minimal, French | the same | The French DefInjected files are found and read |
 | Optional integration, English | `wsl-deps.avec-ads2.map` | The teshi lands in the other mod's categories, in the setting where it will really be loaded |
+| New colony, English | `wsl-deps.new-colony.map` | A colony that starts with the mod, which no saved game reaches |
 
 **The load order of the third pass is written in its map.** The staging does not read `loadBefore` or `loadAfter`: it
 activates the mods a map names in the map's order, then the mod under test, then its suite. The first run of that pass
@@ -133,14 +135,14 @@ powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/
 ```
 
 To see the machine without launching anything: `scripts/Pickle-Status.ps1`. Read `exitReason` before the counts, and
-compare the scenarios played with the scenarios discovered for the filter: 14 scenarios are written. The minimal
-English pass discovers 12 and plays 11, `08` being skipped by its requirement, which the two English tickets share
-between them; the French pass plays 3, `01-loads` being in both; the integration pass plays 12.
+compare the scenarios played with the scenarios discovered for the filter: 15 scenarios are written. The minimal
+English pass discovers 13 and plays 11, `08` and `09` being skipped by their requirements, which the two English tickets share
+between them; the French pass plays 3, `01-loads` being in both; the integration pass discovers 13 and plays 12, `09` being skipped; the new-colony pass plays 1.
 
 ## Evidence
 
 Raw reports go to `Evidence/` under this folder, which `.gitignore` excludes. What to keep and what to delete is
-in `../../TESTS.md`, "Evidence to keep". The history is one text line per run in `docs/runs/`, never a folder.
+in `../../TESTING.md`, "Evidence to keep". The history is one text line per run in `docs/runs/`, never a folder.
 
 ## What the first run has to confirm
 
@@ -152,7 +154,7 @@ None of this was seen running. These are the assumptions a green first run confi
 2. **A paused game keeps what it is given.** A spawned animal keeps its facing, and ten frames are enough for
    every graphic to be built before the capture.
 3. **The laying reading is right.** `ProduceEgg` makes one stack of two fertilized eggs. If the game lays two
-   stacks or an unfertilized egg, `03` fails with the stacks it found, and the egg passages of TESTS.md,
+   stacks or an unfertilized egg, `03` fails with the stacks it found, and the egg passages of TESTING.md,
    README.md, CHANGELOG.md, ATTRIBUTION.md and About.xml, which now state that reading, are wrong again.
 4. **A colony teshi lays where it stands.** No egg box is needed, and the laying job is given within the deadline
    at ultrafast speed.

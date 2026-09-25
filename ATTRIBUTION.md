@@ -125,14 +125,15 @@ replacement would make this a rewrite rather than an update.
 
 ## Verification
 
-The standalone `_tools/Run-Functional-Tests.ps1` suite provides 20 automated checks,
+The standalone `_tools/Run-Functional-Tests.ps1` suite provides 21 automated checks,
 including XML parsing, Core references and inheritance, field existence and readers,
 egg behavior constraints, body coverage and texture paths. It uses installed Core data
 and reflection/IL inspection of RimWorld 1.6 assemblies. It does not launch or simulate
 the game. The successful run and its exact scope are recorded in `STATUS.md`.
 
-`TESTS.md` describes the remaining in-game validation, including rendering, laying,
-hatching and the dessicated corpse. Those scenarios have not yet been executed.
+`TESTING.md` describes the in-game validation, including rendering, laying, hatching and the
+dessicated corpse. The Pickle suite in `Tests/Pickle/` played most of those scenarios on 2026-09-24
+and 2026-09-25, and `STATUS.md` records what it found and what is still to be validated.
 
 ## Showcase artwork
 

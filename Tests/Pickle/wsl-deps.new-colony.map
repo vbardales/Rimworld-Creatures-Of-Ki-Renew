@@ -1,0 +1,4 @@
+# The new-colony pass: the minimal set plus the NewColony tool, a companion that holds the steps which start a new
+# colony from the main menu. No optional mod: the mod under test declares none in this pass. The tool is not in the
+# aggregate bundle, so a pass map has to stage it. Its own README says it was written on 2026-09-25 and not played.
+nelim.pickletools.newcolony   path:PickleTools/NewColony/Mod
