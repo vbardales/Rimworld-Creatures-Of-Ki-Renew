@@ -1,14 +1,15 @@
 # Backlog
 
 Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in [TESTING.md](TESTING.md).
-Nothing here is started, and nothing here blocks `tested`.
+Nothing here blocks `tested`.
 
 ## Optional integrations
 
-Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The first can, once one thing is
-decided. The second cannot be written yet, and what stops it is not technical.
+Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
+**crepuscular for the teshi, and no crossbreeding for now.** The first is decided and waits for the final validation to end,
+because a change under `Mod/` now would be read by the five requests filed at `ccd2685`. The second is parked.
 
-### 1. [XND] Nocturnal Animals (Continued) — feasible, waits for a rhythm
+### 1. [XND] Nocturnal Animals (Continued) — decided: crepuscular, to write after the last `RUN_DONE`
 
 Mod: `Mlie.XNDNocturnalAnimals`, Workshop 2269731409, has a 1.6 folder, needs Harmony.
 
@@ -32,15 +33,22 @@ Two rules from them:
 Unlike Animal Prosthetics 2, the patch touches only the mod's own def, so `About.xml` needs no `loadBefore` and no
 dependency.
 
-**The decision, the owner's.** Which rhythm. The source says only "a large, bipedal feathered predator", and no rhythm
-table in the collection lists the teshi. Any value but `Diurnal` is an invention of this port, so it is chosen, not
-derived. If the answer is "leave it diurnal", the item closes with a line in the README and no patch.
+**The rhythm, the owner's choice on 2026-09-25: `Crepuscular`.** The source says only "a large, bipedal feathered predator",
+and no rhythm table in the collection lists the teshi, so the value is the owner's, not derived from the source. The
+`bodyClock` above is therefore `Crepuscular`.
+
+**To do, in order, once the last `RUN_DONE` of the final validation is read:** the patch; the offline test on its shape;
+the pass map and the scenario; a README, CHANGELOG and ATTRIBUTION line saying the rhythm is a choice of this port. It
+changes `Mod/`, so it is a new revision that the final validation does not cover: a small ticket for the new scenario, and
+the affected passes again before `tested` is claimed for it.
 
 **Testing.** One pass map with Harmony and Nocturnal Animals, which are not in the WSL workshop cache today, one scenario
 `10-nocturnal` with `@requires`, and a local step that reads the extension off the def. One offline test for the shape
 of the patch, as for the ADS2 one. Small.
 
-### 2. Crossbreeding — first, which mod, and then a partner
+### 2. Crossbreeding — parked by the owner on 2026-09-25, "not for now"
+
+What follows is what to know when it comes back: which mod, and then a partner.
 
 Three things are called that, and they are not the same work.
 
