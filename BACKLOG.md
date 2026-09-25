@@ -5,9 +5,17 @@ Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in
 ## Done: `done → tested`, on 2026-09-26
 
 The final validation is read and every pass is green, `09-new-colony` included after the NewColony tool's fix. STATUS.md has
-the results. Nothing here is left for `tested`. One question stays with the owner: the passes of `ccd2685` (minimal fast, slow,
-French, and ADS2) were not replayed on the revision that holds the Nocturnal patch, which does nothing without the other mod
-and was covered by the Nocturnal pass and by `01-loads`. A fresh pass on the final SHA is four tickets if the owner wants it.
+the results. Nothing here is left for `tested`. The passes of `ccd2685` (minimal fast, slow, French, and ADS2) were not replayed
+on the revision that holds the Nocturnal patch, which does nothing without the other mod and was covered by the Nocturnal pass
+and by `01-loads`; the owner made their replay a non-regression run, after the publication (next section).
+
+## After the publication: the non-regression passes
+
+Decided by the owner on 2026-09-26. The passes of `ccd2685` (minimal English fast and slow, French, and Animal Prosthetics 2)
+were not replayed on the revision that holds the Nocturnal patch. They are a non-regression run, so **not required before the
+publish**, as the fail-fast policy of `AUDIT.md` has it, but **to be done once the item is published**, on the SHA that was
+published: four tickets, the same scope as the first validation (every scenario of the pass), each with its SHA in its label.
+Nothing is filed now.
 
 ## At `prepublished`, not before
 

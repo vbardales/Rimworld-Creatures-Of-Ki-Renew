@@ -58,7 +58,7 @@ tree of `1fcc51f` (`Mod/` and `Tests/Pickle/` did not change between them). **Al
   crepuscular teshi is the change most likely to touch them, and the minimal `01-loads` shows the new patch file is quiet
   without the other mod. The minimal fast, slow and French passes and the ADS2 pass are those of `ccd2685`: the patch is a
   `FindMod` that does nothing without the other mod, and AUDIT.md says a relevant change invalidates the checks it
-  concerns. That reading is this session's, and a fresh pass on the final SHA costs four tickets if the owner wants it.
+  concerns. That reading is this session's, and the owner ruled on 2026-09-26 that replaying them is a non-regression run, not required before the publish and to be done after it, on the published SHA (BACKLOG.md).
 - **Evidence.** Eight folders under `Tests/Pickle/Evidence/`, 3.5 MB together after minifying, and one line each in
   `docs/runs/`. The exploration folder and the red new-colony folder were deleted since the runs above replace them, and no
   field of this file pointed to them.
