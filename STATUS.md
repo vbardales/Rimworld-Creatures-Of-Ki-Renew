@@ -61,7 +61,18 @@ says so. **Written, not played.**
   Ideology on it chose no ideoligion and generated no starting pawns. It changed the step (commit 35b1252, not pushed to
   GitHub) and did not replay it, to keep a new colony sparing. The replay is this mod's, once, in a ticket of its own with
   `-Extra "-pickle-scenario-timeout=400"`.
-- **Next.** BACKLOG.md holds the order: `10` alone, then the Nocturnal pass fast and slow, the minimal `01-loads`, and `09`.
+- **Explored, 10 passes.** Ticket `6216`, revision `1fcc51f`, `exitReason` passed, 1 of 1: with Nocturnal Animals and Harmony
+  loaded the parsed teshi race carries the extension with `Crepuscular`, and nothing from the mod is logged, so the class name
+  and the field are what the sibling patches write. Evidence is 0.1 MB, with its line in `docs/runs/`.
+- **Final validation of this revision filed at `0d2fa54`** (`Mod/` and `Tests/Pickle/` unchanged since `1fcc51f`), four small
+  requests. Nothing under `Mod/` or `Tests/Pickle/` changes until the last `RUN_DONE`.
+
+| Request | Pass | Plays |
+|---|---|---|
+| `20260925-225233-232-5485` | Nocturnal, English | the fast set, `10` included |
+| `20260925-225234-084-36c1` | Nocturnal, English | the slow laying and hatching, with a crepuscular teshi |
+| `20260925-225234-863-262a` | minimal, English | `01-loads`, the patch file read with the other mod absent |
+| `20260925-225235-640-dcb2` | new colony, English | `09-new-colony`, once, with the fixed tool, timeout 400 |
 
 ## Final validation read — 2026-09-25
 
