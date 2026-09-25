@@ -21,14 +21,14 @@ tested_on:     2026-09-25, the last Pickle run on the headless WSL game, partial
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, ADS2 exploration read, kept by the session that holds this mod
+updated:      2026-09-25, ADS2 rerun read, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the eight TESTS.md scenarios, 1, 2, 3, 4a, 5 and 6 have passed in Pickle, on 2026-09-24 and 2026-09-25; 4b and 7 are not applicable; 8 needs A Dog Said... Animal Prosthetics 2 and its exploration ticket has not answered yet.
+  - unverified: of the eight TESTS.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in Pickle, on 2026-09-24 and 2026-09-25, and 4b and 7 are not applicable. What remains is the final validation of all of them together, see the next line.
   - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod; a new game started with the mod has not been played.
-  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one, and its first play failed on the harness load order and is being rerun with the order written in the map. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
+  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one; it passed on 2026-09-25 once the map wrote the load order, and the final validation replays it with the rest. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
-  - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 (Mod/Patches/ADS2_Categories.xml, loadBefore in About.xml) has been checked offline for its shape only. The category names ADS_Cat1 to ADS_Cat3 were read from that mod's repository on 2026-09-24, not from an installed copy; that the patch lands, and that the teshi is offered the same recipes as a grizzly bear, is what 08-ads2-integration shows. That mod is already in the WSL cache, found on 2026-09-24 (packageId SamBucher.ADogSaidAnimalProsthetics2, a 1.6 folder), so the pass only had to be queued. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
+  - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation and only a hand edit can change. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
   - unverified: the icon Mod/About/ModIcon.png was edited by a session on 2026-09-13 with the built-in image tool, and AUDIT.md reserves icon generation to the owner alone; whether the owner accepts that edit is not known. The previous icon is kept at Art/ModIcon-before-2026-09-13.png. Not touched by this audit.
   - unverified: prepublished will need the Workshop description to carry, after the body, the IF I GO QUIET, AI-GENERATED and THANKS sections, the ATTRIBUTION.md line and the final Source code on GitHub link (AUDIT.md transition 10). The 0.1.0 upload sent the About.xml of 3449ee5, which holds none of the three headings, and SetItemDescription is only called at creation, so any change is by hand on the Steam page. The item's page has not been read by a session.
@@ -37,9 +37,27 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## ADS2 rerun — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. The single-scenario ticket `1ffa` played `08` again
+with A Dog Said... Animal Prosthetics 2 mounted and this mod ahead of it in the map, at revision `00e8617`, tree
+clean. **`exitReason` passed, 1 discovered, 1 played, 1 passed**, set `avec-ads2`.
+
+- **The integration lands.** The load order in the log reads this mod, then ADS2, then the test companion, and the
+  teshi is offered as many of ADS2's recipes as a grizzly bear, which that mod already puts in category 3, with no
+  warning from the mod and no error. The teshi is in no list of that mod by itself, so the count comes from
+  `Mod/Patches/ADS2_Categories.xml`. It is the first time that patch is seen to work, and it also shows the
+  category names read from the repository were right, since the conditional found its target.
+- **What it does not show.** No surgery was played, and which recipes a surgeon may apply to the teshi's body is
+  decided by its parts, read from the recipes in an earlier entry: the leg, ear, eye, heart, kidney, lung, spine,
+  stomach, tail, jaw and paw recipes, not the arms.
+- **The launcher fix works.** The evidence copy finished this time, with the report and the log; the scenario takes no
+  capture. Evidence is 0.1 MB for this run after minifying, and `docs/runs/2026-09-25.md` has its line.
+- **The stage stays `done`.** `tested` needs the final validation of every scenario of the three passes.
+
 ## ADS2 exploration — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. The single-scenario ticket `e32f` played `08` with
+Older than the entry above; where it disagrees with the sections below, it wins. The single-scenario ticket `e32f` played `08` with
 A Dog Said... Animal Prosthetics 2 mounted, at revision `bb50ad1`, tree clean. **`exitReason` failed, 1 discovered,
 1 played, 0 passed.** The failure is the harness's, not the mod's, and it is fixed in the map; the mod's patch has
 still not been seen to land.

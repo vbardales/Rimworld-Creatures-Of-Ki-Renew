@@ -48,9 +48,10 @@ Content mod: removing it mid-save will lose any teshi and any teshi eggs already
   Which prostheses apply is decided by the parts of the body. Read from that mod's recipes, the teshi's body
   has the parts for its leg, ear, eye, heart, kidney, lung, spine, stomach, tail and jaw recipes, and for the two
   that target a paw (the wooden paw and the power claw). Its arm recipes, simple and bionic, target a
-  `Shoulder`, which this mod's body does not have, so the front limbs get the paw recipes only. The patch has been
-  checked offline for its shape and has not been played: the Pickle scenario `08-ads2-integration` needs that
-  mod mounted.
+  `Shoulder`, which this mod's body does not have, so the front limbs get the paw recipes only. The patch was played
+  on 2026-09-25 with that mod mounted and this mod ahead of it: the teshi is offered as many of its recipes as a
+  grizzly bear (Pickle scenario `08-ads2-integration`). Which of those recipes the game then lets a surgeon apply,
+  and the surgery itself, were not played.
 
 ## What is not included
 
