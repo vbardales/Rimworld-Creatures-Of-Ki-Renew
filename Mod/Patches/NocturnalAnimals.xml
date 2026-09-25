@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- The optional integration with [XND] Nocturnal Animals (Continued), Mlie.XNDNocturnalAnimals, Workshop
+       2269731409. That mod gives an animal a circadian rhythm through a def extension it owns. The source of the
+       teshi gives it none, so the crepuscular rhythm below is a choice of this port, made by its owner on
+       2026-09-25: a large feathered predator that is up at dawn and at dusk. With the mod absent, nothing changes.
+
+       The patch is under PatchOperationFindMod, and that is not a precaution of comfort: the class belongs to
+       Nocturnal Animals, and when it cannot be found the game does not just ignore the extension, it drops the
+       whole def. Written straight into the def, this would remove the teshi for every player without the mod.
+
+       FindMod compares the <name> of the mod, not its packageId, hence the two entries: the original title and the
+       one Mlie's continuation carries. It touches only this mod's own def, so About.xml needs no loadBefore and no
+       dependency, unlike the Animal Prosthetics 2 patch, which edits another mod's abstract recipes. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[XND] Nocturnal Animals</li>
+      <li>[XND] Nocturnal Animals (Continued)</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="Teshi"]</xpath>
+      <value>
+        <li Class="NocturnalAnimals.ExtendedRaceProperties">
+          <bodyClock>Crepuscular</bodyClock>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

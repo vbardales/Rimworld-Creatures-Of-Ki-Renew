@@ -30,7 +30,7 @@ It adds one animal and its eggs.
 Taming failure turns it manhunter one time in twenty; damaging it, three times in four. It is a
 predator with four times a human's health pool, so that matters.
 
-No DLC required. No Harmony, no framework, no mandatory dependency. One optional integration is built
+No DLC required. No Harmony, no framework, no mandatory dependency. Two optional integrations are built
 in, described below.
 
 Content mod: removing it mid-save will lose any teshi and any teshi eggs already in play.
@@ -52,6 +52,16 @@ Content mod: removing it mid-save will lose any teshi and any teshi eggs already
   on 2026-09-25 with that mod mounted and this mod ahead of it: the teshi is offered as many of its recipes as a
   grizzly bear (Pickle scenario `08-ads2-integration`). Which of those recipes the game then lets a surgeon apply,
   and the surgery itself, were not played.
+
+- **[XND] Nocturnal Animals (Continued)** ([Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409),
+  `Mlie.XNDNocturnalAnimals`), built in. That mod gives an animal a circadian rhythm through a def extension it
+  owns. `Mod/Patches/NocturnalAnimals.xml` gives the teshi the **crepuscular** one, awake at dawn and at dusk.
+  **That rhythm is a choice of this port**, made by its owner on 2026-09-25: the source gives the teshi none, so it
+  stays diurnal, the default, wherever the mod is absent. The patch is one `PatchOperationFindMod` on the two
+  names of that mod, and it must stay one: the extension's class belongs to Nocturnal Animals, and written into
+  the def it would make the game drop the teshi for everyone without that mod. It touches only this mod's own
+  def, so `About.xml` needs no `loadBefore` and no dependency for it. Pickle scenario
+  `10-nocturnal-integration` reads the parsed race for the extension and its value.
 
 ## What is not included
 
@@ -98,7 +108,7 @@ Run the standalone technical suite:
 powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
 ```
 
-Twenty-one tests, no game launch. It does not simulate RimWorld — it reads the
+Twenty-two tests, no game launch. It does not simulate RimWorld — it reads the
 compiled game: the fields these defs write are checked against the methods that still read them,
 and the two changes this port made are checked against the code that made them necessary. Sixteen of the original seventeen have been watched failing against a deliberately broken copy of the mod; the
 seventeenth can only go red if RimWorld itself changes, and the file says so.

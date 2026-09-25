@@ -20,6 +20,8 @@ No DLC and no dependencies.
 
 [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) is supported and optional. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive that mod's prosthetic limbs and bionics wherever its body has the matching part. Its front limbs get the paw recipes only, because that mod's arm recipes target a shoulder the teshi's body does not have. This mod loads before it, as that mod's page asks, and does nothing when it is absent.
 
+[XND] Nocturnal Animals (Continued) is supported and optional. With it, the teshi is crepuscular: awake at dawn and at dusk. That rhythm is my choice, since the original gives the teshi none, and without that mod nothing changes.
+
 ## What changed in the 1.6 update
 
 - **Wildness stopped being a race property.** In 1.6 it is a Wildness stat declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
@@ -42,6 +44,7 @@ The 1.6 update, its tests and its documentation were written with Claude Code (A
 - Shooki, for the teshi: its design, its textures and its defs.
 - Mlie, who kept [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) alive through 1.4 and published it under the MIT terms this update relies on.
 - SamBucher, for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose category system this mod plugs into.
+- XeoNovaDan, for [XND] Nocturnal Animals, and Mlie again, who continues it as [XND] Nocturnal Animals (Continued): [the original](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and [the continuation](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
 - The tools used to test it, for development only and never a dependency of this mod: [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [Nelim's Pickle Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401).
 
 What is reused and how it differs is detailed in [ATTRIBUTION.md](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/blob/main/ATTRIBUTION.md), and [LICENSE](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/blob/main/LICENSE) says what the MIT grant covers, the upstream notice included.

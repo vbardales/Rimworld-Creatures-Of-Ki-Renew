@@ -1,38 +1,43 @@
 # Backlog
 
 Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in [TESTING.md](TESTING.md).
-Nothing here blocks `tested`.
 
 ## Before `done → tested`
 
-The final validation at `ccd2685` is read: three passes green, the new colony red. One item is left.
+The final validation at `ccd2685` is read: three passes green, the new colony red. The revision has since changed by one
+conditional patch (Nocturnal Animals, below), so what is left, in this order:
 
-**Replay `09-new-colony` green, once, in a ticket of its own, when the NewColony tool has changed.** Its first run failed in
-the tool, not in the mod: with Ideology on it starts a game with no ideoligion and no starting pawns, so vanilla throws in
-the starting meals. The tool's session was told on 2026-09-25 with the evidence. Nothing to do here until it answers, and no
-replay before, since a new colony is random and used sparingly.
+1. **Play `10-nocturnal-integration` alone** in the Nocturnal pass: an exploration, since the step and the pass are new.
+2. **Then, one ticket each, on the revision that holds the patch**: the Nocturnal pass, English fast set, and its slow
+   laying and hatching, since a crepuscular teshi is the change most likely to touch the laying; the minimal English `01-loads`,
+   since the patch file is read in every pass and must log nothing without the other mod; and `09-new-colony`.
+3. **`09-new-colony` green, once**, with the changed NewColony tool. Its first run failed in the tool, not in the mod: with
+   Ideology on it started a game with no ideoligion and no starting pawns, and vanilla threw in the starting meals. The
+   tool's session answered on 2026-09-25 that it is fixed (commit 35b1252 in PickleTools, the classic ideoligion is
+   chosen, the step fails clearly with no colonist) and did not replay it, to spare the machine. The replay is this
+   mod's, in a ticket of its own with `-Extra "-pickle-scenario-timeout=400"`. A new colony is random and used sparingly.
 
 ## Optional integrations
 
 Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
-**crepuscular for the teshi, and no crossbreeding for now.** The first is decided and waits for the final validation to end,
-because a change under `Mod/` now would be read by the five requests filed at `ccd2685`. The second is parked.
+**crepuscular for the teshi, and no crossbreeding for now.**
 
-### 1. [XND] Nocturnal Animals (Continued) — decided: crepuscular, to write after the last `RUN_DONE`
+### 1. [XND] Nocturnal Animals (Continued) — written, crepuscular, not yet played
 
-Mod: `Mlie.XNDNocturnalAnimals`, Workshop 2269731409, has a 1.6 folder, needs Harmony.
+Mod: `Mlie.XNDNocturnalAnimals`, Workshop 2269731409, has a 1.6 folder, needs Harmony. Fetched into the WSL cache on
+2026-09-25 with `scripts/download-workshop-wsl.sh`.
 
-**How.** `Mod/Patches/NocturnalAnimals.xml`, one `PatchOperationFindMod` that adds the extension to the teshi:
+`Mod/Patches/NocturnalAnimals.xml` is one `PatchOperationFindMod` that adds this to the teshi:
 
 ```xml
 <li Class="NocturnalAnimals.ExtendedRaceProperties">
-  <bodyClock>Nocturnal</bodyClock>
+  <bodyClock>Crepuscular</bodyClock>
 </li>
 ```
 
 `Diurnal` is the default of the enum, so a diurnal teshi needs nothing. The precedents in this collection are
 `SquirrelVarietyPackRenew/Mod/Patches/NocturnalAnimals.xml` and `AnimalsAsNatural/Mod/Patches/Rythme.xml`.
-Two rules from them:
+Two rules from them, both checked by the offline suite:
 
 - **The patch must sit under `PatchOperationFindMod`.** The class belongs to Nocturnal Animals, and when it is missing the
   game drops the whole def instead of ignoring the extension. On 2026-09-10 that took 47 vanilla animals with it.
@@ -42,18 +47,13 @@ Two rules from them:
 Unlike Animal Prosthetics 2, the patch touches only the mod's own def, so `About.xml` needs no `loadBefore` and no
 dependency.
 
-**The rhythm, the owner's choice on 2026-09-25: `Crepuscular`.** The source says only "a large, bipedal feathered predator",
-and no rhythm table in the collection lists the teshi, so the value is the owner's, not derived from the source. The
-`bodyClock` above is therefore `Crepuscular`.
+**The rhythm is the owner's choice of 2026-09-25, not the source's.** The source says only "a large, bipedal feathered
+predator", and no rhythm table in the collection lists the teshi. README, CHANGELOG, ATTRIBUTION, About.xml and the
+Steam template say so.
 
-**To do, in order, once the last `RUN_DONE` of the final validation is read:** the patch; the offline test on its shape;
-the pass map and the scenario; a README, CHANGELOG and ATTRIBUTION line saying the rhythm is a choice of this port. It
-changes `Mod/`, so it is a new revision that the final validation does not cover: a small ticket for the new scenario, and
-the affected passes again before `tested` is claimed for it.
-
-**Testing.** One pass map with Harmony and Nocturnal Animals, which are not in the WSL workshop cache today, one scenario
-`10-nocturnal` with `@requires`, and a local step that reads the extension off the def. One offline test for the shape
-of the patch, as for the ADS2 one. Small.
+**Written:** the patch, the offline test on its shape (22 checks now), the local step that reads the extension off the
+parsed race, `10-nocturnal-integration`, `wsl-deps.avec-nocturnal.map`, and the documents. **Not played.** Whether the
+class name and the field are exactly as the sibling patches write them is what the first run shows.
 
 ### 2. Crossbreeding — parked by the owner on 2026-09-25, "not for now"
 

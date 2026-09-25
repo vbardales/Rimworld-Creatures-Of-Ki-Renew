@@ -33,7 +33,12 @@ through 1.4.
 - Built-in compatibility with **A Dog Said... Animal Prosthetics 2**. `Patches/ADS2_Categories.xml` writes
   the teshi into that mod's three animal categories, category 3 like the bears and the wolves, and
   `About.xml` loads this mod before it, as its page asks. It is optional and conditional: nothing is
-  required, and with the other mod absent the patch finds nothing and logs nothing. Not yet played.
+  required, and with the other mod absent the patch finds nothing and logs nothing. Played in game on
+  2026-09-25: the teshi is offered as many of that mod's recipes as a grizzly bear.
+- Built-in compatibility with **[XND] Nocturnal Animals (Continued)**. `Patches/NocturnalAnimals.xml` gives the teshi the
+  crepuscular body clock, awake at dawn and at dusk. The rhythm is a choice of this port, made by the owner: the source
+  gives none. It is one `PatchOperationFindMod` on the two names of that mod and touches only the teshi, so with the
+  other mod absent nothing changes, and nothing is required.
 - `Mod/README.template.md`, the source of the Workshop description, and `Mod/.steamignore`, which keeps it and the
   generated `.dds` textures out of the upload. The description now says what was changed, credits the authors it owes,
   and links every mod it names.

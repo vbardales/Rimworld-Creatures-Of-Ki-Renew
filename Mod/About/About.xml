@@ -33,6 +33,7 @@ No balance value was changed.
 Compatibility
 
 - A Dog Said... Animal Prosthetics 2: built in. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive the mod's prosthetic limbs and bionics wherever its body has the matching part. It is an optional integration: this mod needs nothing else, loads before it as that mod asks, and does nothing when it is absent.
+- [XND] Nocturnal Animals (Continued): built in. The teshi is crepuscular, awake at dawn and at dusk. Its source gives it no rhythm, so this is a choice of this port. It is an optional integration: this mod needs nothing else and does nothing when it is absent.
 
 Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
 

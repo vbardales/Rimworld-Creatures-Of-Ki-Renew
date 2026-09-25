@@ -1,14 +1,14 @@
 # In-game scenarios, run by Pickle
 
 This companion is development-only: it lives beside `Mod/`, never inside it, and Steam never receives it.
-It turns the seven manual scenarios of `../../TESTING.md` into Gherkin scenarios that set a scene up, assert,
+It turns the manual scenarios of `../../TESTING.md` into Gherkin scenarios that set a scene up, assert,
 and leave a person to read only the `@review` captures.
 
-**Status: written on 2026-09-24, never run.** The step assembly compiles against the installed 1.6 game and
-Pickle, and every step line of the features resolves to exactly one step (`Check-Steps.ps1`, which was seen
-to go red on an undefined step). Whether each step does what its scenario hopes is what the first run
-settles; the list at the end names the assumptions it will confirm or break. Running the suite is the work of
-`done -> tested`, not of `done`.
+**Status: played since 2026-09-24.** The step assembly compiles against the installed 1.6 game and Pickle, and every
+step line of the features resolves to exactly one step (`Check-Steps.ps1`, which was seen to go red on an undefined
+step). The final validation at `ccd2685` on 2026-09-25 played the minimal English and French passes and the pass with
+A Dog Said... Animal Prosthetics 2 green; the new-colony pass failed in its tool, which has since been changed. The
+list at the end names the assumptions the first runs confirmed or broke. `STATUS.md` is the current record.
 
 ## What is in Gherkin, and why it needs a game
 
@@ -25,6 +25,7 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 | `05-save-reload` | English | An animal and an egg survive a round trip, in a colony saved without the mod | Scribe behaviour |
 | `08-ads2-integration` (`@requires`) | English, with the other mod | The teshi is offered as many of A Dog Said... Animal Prosthetics 2's recipes as a grizzly bear, which that mod already puts in category 3; this mod loads before it; no warning, no error | The offline suite has no copy of the other mod: it cannot show the categories still exist under those names, nor that the patch landed |
 | `09-new-colony` (`@requires`) | English, with the NewColony tool | A colony started from the main menu with the mod enabled: the world and the first map generate, the teshi is defined, nothing from the mod is logged | The other scenarios load a fixture saved without the mod, so none of them starts a colony that has the mod from the beginning. The colony is random, never the same twice, so the scenario asserts only what the draw cannot change and is played sparingly. The tool failed at its first run on 2026-09-25 (no ideoligion and no starting pawns with Ideology on), so a red can still be its own |
+| `10-nocturnal-integration` (`@requires`) | English, with the other mod | The parsed race of the teshi carries the `NocturnalAnimals.ExtendedRaceProperties` extension with `bodyClock` `Crepuscular`; no warning, no error | The offline suite has no copy of the other mod: it cannot show the class still exists under that name, nor that the extension was parsed and the def kept |
 | `06-labels-en`, `07-labels-fr` (`@review`) | one each | The labels and descriptions **on the loaded defs**, and the health tab with each claw and ear on its own side | A language folder the game does not find is silent, above all on Linux and the Steam Deck. The English feature adds nothing about the English text, which is the XML itself: it is the control that a pass claiming English really ran in English, as the French one is for French |
 
 ## What is deliberately not in Gherkin
@@ -43,7 +44,7 @@ repeats it. Each feature exists because the game itself has to act on the defs.
 
 ## The local steps
 
-`Source/TeshiSteps.cs`, 23 steps, all prefixed `Teshi Renew:` because Pickle matches on text alone across every
+`Source/TeshiSteps.cs`, 26 steps, all prefixed `Teshi Renew:` because Pickle matches on text alone across every
 suite loaded. Each exists because no stock or shared step does it:
 
 - **spawn a teshi of a chosen sex and life stage**, wild and facing a chosen way, or belonging to the colony;
@@ -56,7 +57,9 @@ suite loaded. Each exists because no stock or shared step does it:
 - **select, injure and read the animal by body part label**, one part per label or the step fails;
 - **read a stat** off a race, and off a living animal, and **open the information card**;
 - **read a def's label, description, the kit's label and plural, and the attack labels**, off the loaded defs;
-- **count the recipes of another mod that a race is offered**, to compare the teshi with a grizzly bear.
+- **count the recipes of another mod that a race is offered**, to compare the teshi with a grizzly bear;
+- **read a def extension of the race by its type name and one of its fields**, by reflection, so the steps do not
+  reference the assembly of the mod that owns it (the body clock of Nocturnal Animals).
 
 The two private fields (`eggProgress`, `gestateProgress`) are written through reflection that fails loudly if the
 game renames them, rather than writing nothing and passing.
@@ -76,14 +79,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
 
 ## Passes
 
-Three passes. The mod declares no dependency and no `incompatibleWith`, and one optional integration, in
-`loadBefore`: A Dog Said... Animal Prosthetics 2.
+Five passes. The mod declares no dependency and no `incompatibleWith`, and two optional integrations: A Dog Said...
+Animal Prosthetics 2, in `loadBefore`, and [XND] Nocturnal Animals (Continued), which needs no declaration since its patch
+touches only this mod's own def.
 
 | Pass | Map | What it establishes |
 |---|---|---|
 | Minimal, English | `wsl-deps.sans-facultatifs.map` | The mod stands alone. Stages the one shared tool the health tab needs |
 | Minimal, French | the same | The French DefInjected files are found and read |
 | Optional integration, English | `wsl-deps.avec-ads2.map` | The teshi lands in the other mod's categories, in the setting where it will really be loaded |
+| Optional integration, English | `wsl-deps.avec-nocturnal.map` | The teshi carries the crepuscular body clock, and the mod keeps working beside that mod. The mod is in the WSL cache since 2026-09-25 (`scripts/download-workshop-wsl.sh`, packageId `Mlie.XNDNocturnalAnimals`) |
 | New colony, English | `wsl-deps.new-colony.map` | A colony that starts with the mod, which no saved game reaches. Random, so used sparingly: an initial or a final validation, never a fix loop |
 
 **The load order of the third pass is written in its map.** The staging does not read `loadBefore` or `loadAfter`: it
@@ -135,9 +140,10 @@ powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/
 ```
 
 To see the machine without launching anything: `scripts/Pickle-Status.ps1`. Read `exitReason` before the counts, and
-compare the scenarios played with the scenarios discovered for the filter: 15 scenarios are written. The minimal
-English pass discovers 13 and plays 11, `08` and `09` being skipped by their requirements, which the two English tickets share
-between them; the French pass plays 3, `01-loads` being in both; the integration pass discovers 13 and plays 12, `09` being skipped; the new-colony pass plays 1.
+compare the scenarios played with the scenarios discovered for the filter: 16 scenarios are written (the first
+validation at `ccd2685` had 15, the tenth came after it). The minimal
+English pass discovers 14 and plays 11, `08`, `09` and `10` being skipped by their requirements, which the two English tickets share
+between them; the French pass plays 3, `01-loads` being in both; the ADS2 integration pass discovers 14 and plays 12, `09` and `10` being skipped; the Nocturnal pass plays the English set, 12 of 14 discovered with the slow ones in their own ticket; the new-colony pass plays 1.
 
 ## Evidence
 
@@ -146,7 +152,7 @@ in `../../TESTING.md`, "Evidence to keep". The history is one text line per run 
 
 ## What the first run has to confirm
 
-None of this was seen running. These are the assumptions a green first run confirms and a red one names.
+These were the assumptions of the first run; the runs of 2026-09-24 and 2026-09-25 confirmed 1 to 8 (with the corrections noted in `STATUS.md`) and 9. Kept as the record of what each one rested on.
 
 1. **The fixture has room.** Cells (142..151, 155) and (146, 153) are clear, walkable and in view of a camera
    centred on (146, 155) in `test-colony`. The cells come from another suite's use of the same fixture, not from

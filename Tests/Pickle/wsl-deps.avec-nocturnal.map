@@ -1,0 +1,7 @@
+# The optional-integration pass for [XND] Nocturnal Animals (Continued): the minimal set, plus that mod by its Workshop id.
+# It was fetched into the WSL cache, ~/workshop-cache/steamapps/workshop/content/294100/2269731409, on 2026-09-25 with
+# scripts/download-workshop-wsl.sh, packageId Mlie.XNDNocturnalAnimals; the staging copies it from there. Harmony,
+# which that mod needs, is in every pass already. The patch is a FindMod on the mod's <name> and touches only this mod's
+# own def, so the mod under test declares neither a loadBefore nor a dependency for it, and the order does not matter.
+nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
+Mlie.XNDNocturnalAnimals              2269731409

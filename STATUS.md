@@ -21,12 +21,12 @@ tested_on:     2026-09-25, the final validation at ccd2685, three passes green a
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, the final validation read, kept by the session that holds this mod
+updated:      2026-09-25, the Nocturnal Animals integration written and not played, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the nine TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in the final validation at ccd2685 on 2026-09-25, 4b and 7 are not applicable, and 9, a new game with the mod, failed at its first run in the NewColony tool and has no green replay, so it is not counted. Nothing else stands between this mod and tested.
+  - unverified: of the ten TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in the final validation at ccd2685 on 2026-09-25, 4b and 7 are not applicable, 9, a new game with the mod, failed at its first run in the NewColony tool and has no green replay, and 10, the Nocturnal Animals integration, is written and not played. Neither 9 nor 10 is counted.
   - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 and again in the final validation (05-save-reload), in a fixture colony saved without the mod. The colony that starts with the mod, 09-new-colony, failed on 2026-09-25 at its first run, and the cause read from the report is the NewColony tool's, not the mod's. The tool starts a game with Ideology on, without an ideoligion and without starting pawns, so vanilla throws a NullReferenceException in the starting meals, and no line of this mod is in the stack. The tool's session was told. It is replayed once, in a ticket of its own, when the tool changes, a new colony being random and used sparingly.
-  - unverified: to reach tested (AUDIT.md transition 9), the final validation played three passes green on 2026-09-25 at ccd2685, with exitReason read before the counts, minimal English (9 played, 2 skipped), the slow laying and hatching (2 played), minimal French (3 played) and English with A Dog Said... Animal Prosthetics 2 (12 played, 1 skipped), and the review captures were looked at. What is left is the fourth pass, the new colony, red for the tool's reason, and AUDIT.md allows no red without a green replay. No @wip exists and no manual test is left to validate.
+  - unverified: to reach tested (AUDIT.md transition 9), the final validation played three passes green on 2026-09-25 at ccd2685, with exitReason read before the counts, minimal English (9 played, 2 skipped), the slow laying and hatching (2 played), minimal French (3 played) and English with A Dog Said... Animal Prosthetics 2 (12 played, 1 skipped), and the review captures were looked at. Since then the revision changed by one conditional patch, so what is left is BACKLOG.md, in order, 10 alone, then the Nocturnal pass fast and slow, the minimal 01-loads, and 09 once with the changed NewColony tool. AUDIT.md allows no red without a green replay. No @wip exists and no manual test is left to validate.
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page has no Compatibility paragraph yet, and gets it from Mod/README.template.md at the next publish.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation. The owner said on 2026-09-25 that the page is corrected through Mod/README.template.md, not by hand, so it changes when a publish sends the description, which is opt-in and needs the owner's approval. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTING.md, Mod/About/About.xml and the template say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
@@ -37,9 +37,35 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Nocturnal Animals written, crepuscular — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. The owner chose the **crepuscular** rhythm for the teshi and
+**no crossbreeding for now**. The rhythm is a choice of this port, since the source gives the teshi none, and every document
+says so. **Written, not played.**
+
+- **What changed under `Mod/`.** `Patches/NocturnalAnimals.xml`, one `PatchOperationFindMod` on both names of
+  [XND] Nocturnal Animals (Continued) that adds `NocturnalAnimals.ExtendedRaceProperties` with `bodyClock` `Crepuscular` to
+  the teshi, and a paragraph in About.xml and in the Steam template. It touches only this mod's own def, so no `loadBefore`
+  and no dependency, and it is inert when the other mod is absent. This is a new revision: the final validation below does
+  not cover it.
+- **Offline.** The suite is 22 checks, 0 failed. The new one checks the patch is one `FindMod` on both names, targets only a
+  ThingDef of this mod, holds `Crepuscular`, that no Defs file names a Nocturnal Animals class, and that About.xml declares no
+  dependency on it. It was seen to fail when the value was changed to `Nocturnal`, then restored. The step checker resolves
+  all 166 step lines.
+- **In game.** `10-nocturnal-integration`, `wsl-deps.avec-nocturnal.map` and a local step that reads the extension off the
+  parsed race by its type name, so the steps do not reference the other mod's assembly. Nocturnal Animals was fetched into the
+  WSL cache (`Mlie.XNDNocturnalAnimals`, 2269731409, 936 KB) with `scripts/download-workshop-wsl.sh`. Nothing was played.
+  What the first run shows is whether the class name and the field are exactly as the two sibling patches in this
+  collection write them.
+- **The new-colony tool answered.** The PickleTools session read the report and agreed the fault was the tool's: with
+  Ideology on it chose no ideoligion and generated no starting pawns. It changed the step (commit 35b1252, not pushed to
+  GitHub) and did not replay it, to keep a new colony sparing. The replay is this mod's, once, in a ticket of its own with
+  `-Extra "-pickle-scenario-timeout=400"`.
+- **Next.** BACKLOG.md holds the order: `10` alone, then the Nocturnal pass fast and slow, the minimal `01-loads`, and `09`.
+
 ## Final validation read — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. The five requests filed at `ccd2685` are back. The tree they
+Older than the entry above; where it disagrees with the sections below, it wins. The five requests filed at `ccd2685` are back. The tree they
 read is the one filed, since only documents changed afterwards (`git diff ccd2685` on `Mod/` and `Tests/Pickle/` shows one
 README line). **Three of the four passes are green. The fourth, the new colony, is red, for a reason that is the tool's.**
 

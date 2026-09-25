@@ -1,9 +1,9 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-The standalone suite `_tools/Run-Functional-Tests.ps1` provides 21 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
+The standalone suite `_tools/Run-Functional-Tests.ps1` provides 22 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
 
 `_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
-reads the compiled game and runs twenty-one checks this document used to have to ask of a
+reads the compiled game and runs twenty-two checks this document used to have to ask of a
 play session — including the one scenario 4b was written to settle, which is now settled below.
 Run it first; it takes seconds and it costs nothing.
 
@@ -21,16 +21,17 @@ C:\Users\nelim\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player
 
 ## The passes this suite needs
 
-Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Four passes, filed as small tickets.
+Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Five passes, filed as small tickets.
 
 | Pass | Map | Language | Plays | Covers |
 |---|---|---|---|---|
 | Minimal, English | `wsl-deps.sans-facultatifs.map` | English | 11 of 13 discovered, in two tickets: everything but the slow laying, then the laying and hatching | The mod stands alone with Core, the DLC and the shared tools |
 | Minimal, French | the same | French | 3 | The French translations are found and read by the game |
 | Optional integration | `wsl-deps.avec-ads2.map` | English | 12 of 13 discovered | A Dog Said... Animal Prosthetics 2 mounted, this mod ahead of it |
+| Optional integration | `wsl-deps.avec-nocturnal.map` | English | 1 to 12 of 14 discovered | [XND] Nocturnal Animals (Continued) mounted: the teshi carries the crepuscular body clock. An exploration plays only `10`, a validation plays the English set |
 | New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added. **Random: never the same colony twice, so used sparingly** |
 
-Fifteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
+Sixteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
 skipped scenario is not a passed one. There is no incompatibility pass, since the mod declares no incompatibility, and no
 pass without a DLC, since it has no DLC guard. `Tests/Pickle/README.md` has the commands and the reasons.
 
@@ -197,11 +198,24 @@ the colonists come out differently at each start, whatever seed the scenario nam
 - It is played in an initial or a final validation, once, and never in a fix or an exploration loop, where a fix would be
   judged against a different colony each time. Anything that has to repeat is played on the fixture colony instead.
 
+## 10. The optional integration with Nocturnal Animals
+
+Only with [XND] Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, Workshop 2269731409) enabled.
+`Patches/NocturnalAnimals.xml` gives the teshi the crepuscular body clock, which is the owner's choice and not the
+source's. Select a teshi and open its information card.
+
+**Expect:** the card names the crepuscular rhythm, and the teshi is awake at dawn and at dusk. Nothing from this mod is
+logged. With the other mod **absent**, the mod must load exactly as in scenario 1: the patch is a `FindMod` and
+must log nothing.
+
+**Fails if:** the teshi is missing from the game, which is what a missing extension class does when the patch is
+not under `FindMod`, or its rhythm is not crepuscular, or an error names the patch at startup.
+
 ---
 
 ## What to send back
 
-The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. Scenarios 1 to 9 are listed here, and the Pickle suite plays them; a session by hand plays what it did not.
+The `Player.log` from the session, plus one line per scenario saying what happened — including game version and mod list. Scenarios 1 to 10 are listed here, and the Pickle suite plays them; a session by hand plays what it did not.
 
 ## Translation display — English and French
 
@@ -214,19 +228,20 @@ French, formatting and clipping. Record results and Player.log evidence in STATU
 
 ## What `tested` requires
 
-Read from `../AUDIT.md`, transition `done -> tested`. Nothing below has been done: the mod has never
-run, and the Pickle suite written for it has never been played. That is pending work, not a pass.
+Read from `../AUDIT.md`, transition `done -> tested`. The Pickle suite has been played since 2026-09-24, and
+STATUS.md says what it found and what is still open. What is not yet played is pending work, not a pass.
 
 - Every scenario above is played in the game, or is listed here as not applicable with its reason.
 - The Pickle suites run green, and their `@review` captures are opened and looked at. Read `exitReason`
   before the counts, and compare the scenarios played with the features discovered.
 - No scenario is left tagged `@wip`: it is repaired and replayed, or deleted with its justification.
 - Every conditional scenario (`@requires:<packageId>`) has had its pass, with the map that mounts that
-  mod. There is one, `08-ads2-integration`, which needs A Dog Said... Animal Prosthetics 2: a run without
-  it skips the scenario, and a skipped scenario is not a passed one. The mod needs no DLC, and the DLC in
+  mod. There are three: `08-ads2-integration`, which needs A Dog Said... Animal Prosthetics 2, `09-new-colony`, which needs
+  the NewColony tool, and `10-nocturnal-integration`, which needs [XND] Nocturnal Animals (Continued). A run without
+  the mod skips the scenario, and a skipped scenario is not a passed one. The mod needs no DLC, and the DLC in
   `loadAfter` are ordering only.
-- No manual test is left to validate. Each of the nine scenarios becomes a green Pickle scenario or
-  a listed not-applicable. The suite is in `Tests/Pickle/`, written on 2026-09-24 and never run: see its README and the table below.
+- No manual test is left to validate. Each of the ten scenarios becomes a green Pickle scenario or
+  a listed not-applicable. The suite is in `Tests/Pickle/`: see its README and the table below.
 - Both languages are played, one pass each (`-Language English`, `-Language French`), in developer
   mode: accented gibberish means a key missing from the active language, clean English inside French
   means a string that never went through translation.
@@ -248,6 +263,7 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
 | 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear. |
 | 9. A new game with the mod | Pickle, `@requires`, own pass | `09-new-colony` | No saved game reaches a colony that starts with the mod: the world and the first map are generated with the animal in them. Random, so played once in a validation and not in fix loops. Its first run, on 2026-09-25, failed in the tool, which starts a game with Ideology on and no ideoligion and no starting pawns, so it is replayed once when the tool changes. |
+| 10. Optional integration with Nocturnal Animals | Pickle, `@requires`, own pass | `10-nocturnal-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape, and that the extension is written nowhere but in a `FindMod`. Only the game shows the class was found, the extension parsed and the teshi kept. |
 | Save and reload | Pickle | `05-save-reload` | An animal and an egg survive a round trip; the fixture colony, saved without the mod, is the mod added to an existing colony. |
 | FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side. |
 

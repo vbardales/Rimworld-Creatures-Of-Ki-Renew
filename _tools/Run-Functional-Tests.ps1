@@ -400,6 +400,40 @@ It 'the A Dog Said... Animal Prosthetics 2 integration is one conditional patch,
     if (Test-Path -LiteralPath (Join-Path $modDir 'LoadFolders.xml')) { 'a LoadFolders.xml exists: the integration does not need one' }
 }
 
+It 'the Nocturnal Animals integration is one FindMod patch on both names of that mod, and touches only the own def' {
+    # The class belongs to Nocturnal Animals, and when it cannot be found the game drops the whole def instead of
+    # ignoring the extension, so the extension must never be written into a def, only added by a patch that runs
+    # when the mod is there. FindMod reads the name of a mod and not its packageId, hence two names.
+    $patchFile = Join-Path $modDir 'Patches/NocturnalAnimals.xml'
+    if (-not (Test-Path -LiteralPath $patchFile)) { 'Patches/NocturnalAnimals.xml is missing'; return }
+    $p = New-Object System.Xml.XmlDocument
+    $p.Load($patchFile)
+    $ops = @($p.SelectNodes('/Patch/Operation'))
+    if ($ops.Count -ne 1) { "expected one operation, found $($ops.Count)" }
+    foreach ($op in $ops) {
+        if ($op.GetAttribute('Class') -cne 'PatchOperationFindMod') { 'the operation is not a PatchOperationFindMod: with the other mod absent it would drop the teshi' }
+        $names = @($op.SelectNodes('mods/li') | ForEach-Object { $_.InnerText.Trim() })
+        foreach ($n in '[XND] Nocturnal Animals', '[XND] Nocturnal Animals (Continued)') {
+            if ($names -cnotcontains $n) { "FindMod does not name '${n}': it compares the mod's name, so the mod under that title would be missed" }
+        }
+        $add = $op.SelectSingleNode('match')
+        if (-not $add -or $add.GetAttribute('Class') -cne 'PatchOperationAddModExtension') { 'the match is not a PatchOperationAddModExtension'; continue }
+        $mine = @($defNodes | Where-Object { $_.LocalName -eq 'ThingDef' } | ForEach-Object { Get-Text $_ 'defName' })
+        if ($add.xpath -notmatch 'ThingDef\[defName="([^"]+)"\]$') { "the target '$($add.xpath)' is not one ThingDef by its defName" }
+        elseif ($mine -cnotcontains $Matches[1]) { "the patch targets '$($Matches[1])', which is no ThingDef of this mod" }
+        $ext = $add.SelectSingleNode('value/li')
+        if (-not $ext -or $ext.GetAttribute('Class') -cne 'NocturnalAnimals.ExtendedRaceProperties') { 'the value is not a NocturnalAnimals.ExtendedRaceProperties extension' }
+        elseif ($ext.bodyClock -cne 'Crepuscular') { "the body clock is '$($ext.bodyClock)': the owner chose Crepuscular on 2026-09-25" }
+    }
+    foreach ($f in Get-ChildItem -LiteralPath (Join-Path $modDir 'Defs') -Recurse -Filter *.xml) {
+        if ((Get-Content -LiteralPath $f.FullName -Raw) -match 'NocturnalAnimals\.') { "$($f.Name) names a Nocturnal Animals class: written into a def it would drop the def for every player without that mod" }
+    }
+    $about = New-Object System.Xml.XmlDocument
+    $about.Load((Join-Path $modDir 'About/About.xml'))
+    $dep = @($about.SelectNodes('/ModMetaData/modDependencies/li/packageId') | ForEach-Object { $_.InnerText.Trim() })
+    if ($dep -ccontains 'Mlie.XNDNocturnalAnimals') { 'About.xml declares Nocturnal Animals as a dependency: the integration is optional' }
+}
+
 Section "The port's two changes, read off the game"
 # =============================================================================================
 

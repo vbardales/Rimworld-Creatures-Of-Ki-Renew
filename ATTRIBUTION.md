@@ -111,6 +111,18 @@ may receive prostheses in the abstract recipe categories `ADS_Cat1`, `ADS_Cat2` 
 any mod that builds compatibility in to load before it. Only those names and that rule are used; no def, code or
 asset of that mod is copied. The mod is not a dependency: `About.xml` names it in `loadBefore` only.
 
+### A second optional integration, written here
+
+`Patches/NocturnalAnimals.xml` is new and is not from the original. It gives the teshi a body clock in the format of
+**[XND] Nocturnal Animals**, by XeoNovaDan ([Workshop 2004368312](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312)),
+continued by Mlie ([Workshop 2269731409](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409),
+[repository](https://github.com/emipa606/XNDNocturnalAnimals)). Only the extension's class name,
+`NocturnalAnimals.ExtendedRaceProperties`, its `bodyClock` field and the two names the mod has carried are used,
+the same way two sibling mods of this collection use them; no def, code or asset of that mod is copied. **The rhythm,
+`Crepuscular`, is not the original's and not that mod's: the source gives the teshi none, and the owner chose this one on
+2026-09-25.** Read from the pages and the sibling patches, then seen in game only once a Pickle pass has mounted the mod.
+The mod is not a dependency and `About.xml` names it nowhere.
+
 ### Nothing else
 
 No balance value was touched. No stat, no biome weight, no combat power, no life stage, no
@@ -125,7 +137,7 @@ replacement would make this a rewrite rather than an update.
 
 ## Verification
 
-The standalone `_tools/Run-Functional-Tests.ps1` suite provides 21 automated checks,
+The standalone `_tools/Run-Functional-Tests.ps1` suite provides 22 automated checks,
 including XML parsing, Core references and inheritance, field existence and readers,
 egg behavior constraints, body coverage and texture paths. It uses installed Core data
 and reflection/IL inspection of RimWorld 1.6 assemblies. It does not launch or simulate

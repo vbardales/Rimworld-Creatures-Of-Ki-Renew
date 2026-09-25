@@ -422,6 +422,24 @@ namespace TeshiRenew.PickleSteps
                 $"the teshi is offered {mine.Count} recipes from {packageId}, {otherDefName} is offered {other.Count}");
         }
 
+        /// <summary>
+        /// [XND] Nocturnal Animals reads a body clock from a def extension it owns. The steps do not reference its
+        /// assembly, so the extension is found by its type name among the race's modExtensions and its bodyClock
+        /// field is read by reflection: this is the game's own parsed def, after the patch, not the patch file.
+        /// </summary>
+        [Then("Teshi Renew: the teshi's race carries the extension {string} with {word} {string}")]
+        public void RaceCarriesExtension(PickleContext ctx, string extensionType, string fieldName, string expected)
+        {
+            var race = Def(ctx, KindDefName);
+            var extension = (race.modExtensions ?? new List<DefModExtension>()).FirstOrDefault(e => e.GetType().FullName == extensionType);
+            ctx.Assert(extension != null,
+                $"the teshi's race has no extension {extensionType}: it has {string.Join(", ", (race.modExtensions ?? new List<DefModExtension>()).Select(e => e.GetType().FullName))}");
+            var field = extension.GetType().GetField(fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            ctx.Assert(field != null, $"{extensionType} has no field {fieldName}");
+            var actual = field.GetValue(extension)?.ToString();
+            ctx.Assert(actual == expected, $"the teshi's {fieldName} is {actual}, expected {expected}");
+        }
+
         private static List<RecipeDef> RecipesFrom(ThingDef race, string packageId)
         {
             return (race.AllRecipes ?? new List<RecipeDef>())
