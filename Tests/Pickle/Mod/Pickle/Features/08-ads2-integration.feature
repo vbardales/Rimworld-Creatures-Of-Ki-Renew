@@ -11,9 +11,9 @@
 # It needs the other mod mounted: the pass map wsl-deps.avec-ads2.map. In the minimal passes the scenario is
 # skipped by its requirement, and a skipped scenario is not a passed one.
 @requires:SamBucher.ADogSaidAnimalProsthetics2 @en-only
-Feature: The teshi is in the categories of A Dog Said... Animal Prosthetics 2
+Feature: The ADS2 integration
 
-  Scenario: the teshi is offered the same prosthetic recipes as a grizzly bear
+  Scenario: the teshi gets the same recipes as a grizzly bear
     Given the save "test-colony" is loaded
     Then mod "SamBucher.ADogSaidAnimalProsthetics2" is loaded
     And mod "nelim.creaturesofkirenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"

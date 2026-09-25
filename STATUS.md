@@ -21,12 +21,12 @@ tested_on:     2026-09-25, the last Pickle run on the headless WSL game, partial
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, fix rerun read, kept by the session that holds this mod
+updated:      2026-09-25, ADS2 exploration read, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
   - unverified: of the eight TESTS.md scenarios, 1, 2, 3, 4a, 5 and 6 have passed in Pickle, on 2026-09-24 and 2026-09-25; 4b and 7 are not applicable; 8 needs A Dog Said... Animal Prosthetics 2 and its exploration ticket has not answered yet.
   - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod; a new game started with the mod has not been played.
-  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
+  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one, and its first play failed on the harness load order and is being rerun with the order written in the map. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 (Mod/Patches/ADS2_Categories.xml, loadBefore in About.xml) has been checked offline for its shape only. The category names ADS_Cat1 to ADS_Cat3 were read from that mod's repository on 2026-09-24, not from an installed copy; that the patch lands, and that the teshi is offered the same recipes as a grizzly bear, is what 08-ads2-integration shows. That mod is already in the WSL cache, found on 2026-09-24 (packageId SamBucher.ADogSaidAnimalProsthetics2, a 1.6 folder), so the pass only had to be queued. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation and only a hand edit can change. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
@@ -37,9 +37,33 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## ADS2 exploration — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. The single-scenario ticket `e32f` played `08` with
+A Dog Said... Animal Prosthetics 2 mounted, at revision `bb50ad1`, tree clean. **`exitReason` failed, 1 discovered,
+1 played, 0 passed.** The failure is the harness's, not the mod's, and it is fixed in the map; the mod's patch has
+still not been seen to land.
+
+- **What failed.** The scenario stopped on its first assertion. The load order it read was ADS2 first, then this
+  mod. The staging does not read `loadBefore`: it activates a map's mods in the map's order, then the mod under
+  test. So ADS2 was ahead of this mod, which is the order its author warns against, since its own patch copies the
+  category lists into the recipes before ours could add the teshi. The recipe count was never reached.
+- **The fix.** `wsl-deps.avec-ads2.map` names this mod's own packageId ahead of ADS2, which puts it there and makes
+  the staging skip its own copy. The declared `loadBefore` stays as it is; it is what a player's sort reads, and an
+  offline test asserts it. The scenario is rerun, alone.
+- **The evidence copy broke.** A failure capture named after the feature and the scenario came to 226 characters,
+  over the Windows path limit, the launcher stopped copying, and the folder holds the report files and the
+  `Player.log` but no capture. Feature and scenario names are shortened, all under 120 characters. The dispatcher
+  has reported the copy fault to the owner.
+- **Archive.** This run's archive, `pickle-reports-archive/0925-1119`, held 1,762 files and 1.8 GB, a full copy of
+  the shared folder. It was listed, checked against this run's summary, and deleted with an extended-length path
+  because some names were over the limit. The other archives were left alone. The kept evidence is the run's
+  `junit.xml`, `summary.json`, `summary.md` and `Player.log`, 0.1 MB, and `docs/runs/2026-09-25.md` has its line.
+- **Nothing else changed.** The stage stays `done`.
+
 ## Fix rerun — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. The one small ticket for the fix, `1e4b`, was
+Older than the entry above; where it disagrees with the sections below, it wins. The one small ticket for the fix, `1e4b`, was
 played by the dispatcher on the minimal English set at revision `8a0dbcf`, tree clean, and `docs/runs/2026-09-25.md`
 has its line. **`exitReason` passed, 3 discovered, 3 played, 3 passed.** The fewest scenarios that test the fix
 were chosen, as an exploration or a fix ticket should.

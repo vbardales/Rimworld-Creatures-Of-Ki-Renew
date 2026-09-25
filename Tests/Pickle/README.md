@@ -84,6 +84,19 @@ Three passes. The mod declares no dependency and no `incompatibleWith`, and one 
 | Minimal, French | the same | The French DefInjected files are found and read |
 | Optional integration, English | `wsl-deps.avec-ads2.map` | The teshi lands in the other mod's categories, in the setting where it will really be loaded |
 
+**The load order of the third pass is written in its map.** The staging does not read `loadBefore` or `loadAfter`: it
+activates the mods a map names in the map's order, then the mod under test, then its suite. The first run of that pass
+loaded ADS2 before this mod, the order its author warns against, and `08` failed on its first assertion, the order
+itself. `wsl-deps.avec-ads2.map` now names this mod's own packageId ahead of ADS2, which puts it there and makes the
+staging skip its own copy. That is what the declared `loadBefore` produces once the game's sort has run, which the
+harness does not do. The other order, ADS2 first, is the one a player gets from a bad sort, and testing what the other
+mod does then is not this mod's business.
+
+**Keep scenario and feature names short.** A failure capture is named after the feature and the scenario, and the
+launcher copies the evidence to a Windows path. A name of 226 characters put the copy over the 260-character limit,
+the copy stopped, and no capture of that run was kept. Every name here is now under 120 characters, with the evidence
+folder's own 119 that stays under 240.
+
 Tags decide what runs where: `@en-only` and `@fr-only` follow the language of the labels they name, and
 everything that does not depend on the language (`02` to `05`, `08`) is `@en-only`, so it is played once.
 `08` carries `@requires:SamBucher.ADogSaidAnimalProsthetics2`, so the two minimal passes skip it, and a skipped

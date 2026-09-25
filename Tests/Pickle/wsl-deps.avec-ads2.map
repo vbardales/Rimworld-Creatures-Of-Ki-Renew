@@ -1,7 +1,16 @@
 # The optional-integration pass: the minimal set, plus A Dog Said... Animal Prosthetics 2 by its Workshop id.
 # The mod is already in the WSL cache, ~/workshop-cache/steamapps/workshop/content/294100/3238353862, with
 # packageId SamBucher.ADogSaidAnimalProsthetics2 and a 1.6 folder (seen on 2026-09-24); the staging copies it
-# from there. The mod under test declares it in loadBefore, and it declares no
-# incompatibility, so this is the only integration pass.
+# from there. The mod under test declares it in loadBefore, and it declares no incompatibility, so this is the
+# only integration pass.
+#
+# THE ORDER IS WRITTEN HERE, ON PURPOSE. The staging (scripts/stage-pickle-wsl.sh) does not read loadBefore or
+# loadAfter: it activates the mods a map names in the map's order, then the mod under test, then its suite. The
+# first run of this pass, on 2026-09-24, therefore loaded A Dog Said... Animal Prosthetics 2 BEFORE this mod,
+# which is the order its author warns against, and the scenario failed on its first assertion, the load order.
+# That was the harness's order and not the mod's: a player's mod manager sorts on loadBefore. Naming this mod's
+# own packageId as an overlay puts it where the line stands, ahead of the other mod, and the staging then skips
+# its own copy of it. This is what the declared loadBefore produces once the game's sort has run.
 nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
+nelim.creaturesofkirenew              path:CreaturesOfKiRenew/Mod
 SamBucher.ADogSaidAnimalProsthetics2  3238353862

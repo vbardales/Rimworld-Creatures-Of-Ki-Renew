@@ -10,7 +10,7 @@
 # written by name; the laying, the egg's faction and the hatching are still the game's. The mating is only its
 # effect, Fertilize, which is what PawnUtility.Mated ends in.
 @en-only @slow @timeout:900
-Feature: A mated teshi lays, and the eggs hatch into colony kits
+Feature: A mated teshi lays and its eggs hatch
 
   Background:
     Given the save "test-colony" is loaded
@@ -18,7 +18,7 @@ Feature: A mated teshi lays, and the eggs hatch into colony kits
     And Teshi Renew: a male adult teshi belonging to the colony stands at (149, 155)
     And game speed is ultrafast
 
-  Scenario: a mated female lays one stack of two fertilized eggs for the colony
+  Scenario: a mated female lays two fertilized eggs for the colony
     When Teshi Renew: the female teshi is mated with the male teshi
     And Teshi Renew: the female teshi's egg progress is set to full
     And Teshi Renew: I wait for the female teshi to lay
@@ -26,7 +26,7 @@ Feature: A mated teshi lays, and the eggs hatch into colony kits
     And Teshi Renew: the laid eggs belong to the colony
     And no errors were logged
 
-  Scenario: the eggs she laid hatch into two teshi kits that belong to the colony
+  Scenario: her eggs hatch into two kits of the colony
     When Teshi Renew: the female teshi is mated with the male teshi
     And Teshi Renew: the female teshi's egg progress is set to full
     And Teshi Renew: I wait for the female teshi to lay
