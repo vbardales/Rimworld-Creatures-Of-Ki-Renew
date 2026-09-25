@@ -53,8 +53,9 @@ still not been seen to land.
   offline test asserts it. The scenario is rerun, alone.
 - **The evidence copy broke.** A failure capture named after the feature and the scenario came to 226 characters,
   over the Windows path limit, the launcher stopped copying, and the folder holds the report files and the
-  `Player.log` but no capture. Feature and scenario names are shortened, all under 120 characters. The dispatcher
-  has reported the copy fault to the owner.
+  `Player.log` but no capture. Feature and scenario names are shortened, all under 120 characters. The dispatcher's
+  session then fixed the launcher (`Run-PickleWsl.ps1`, commit 443ae07b), so the next runs copy their captures
+  normally; this run's evidence stays partial.
 - **Archive.** This run's archive, `pickle-reports-archive/0925-1119`, held 1,762 files and 1.8 GB, a full copy of
   the shared folder. It was listed, checked against this run's summary, and deleted with an extended-length path
   because some names were over the limit. The other archives were left alone. The kept evidence is the run's
