@@ -28,7 +28,7 @@ Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Fou
 | Minimal, English | `wsl-deps.sans-facultatifs.map` | English | 11 of 13 discovered, in two tickets: everything but the slow laying, then the laying and hatching | The mod stands alone with Core, the DLC and the shared tools |
 | Minimal, French | the same | French | 3 | The French translations are found and read by the game |
 | Optional integration | `wsl-deps.avec-ads2.map` | English | 12 of 13 discovered | A Dog Said... Animal Prosthetics 2 mounted, this mod ahead of it |
-| New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added |
+| New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added. **Random: never the same colony twice, so used sparingly** |
 
 Fifteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
 skipped scenario is not a passed one. There is no incompatibility pass, since the mod declares no incompatibility, and no
@@ -186,6 +186,17 @@ starts with it.
 
 **Fails if:** an error or a warning names the mod during the start, or the teshi is not defined afterwards.
 
+**It is random, and it is used sparingly.** A new colony is never the same colony twice: the world, the starting tile and
+the colonists come out differently at each start, whatever seed the scenario names. Three consequences.
+
+- A green shows that one draw was clean, not that every draw is. A red may not come back on a rerun, and a rerun that goes
+  green does not clear it: read the run's `new-colony` attachment, which names the choices, the tile and the colonists,
+  and keep it with the report.
+- It asserts only what the draw cannot change: the defs, and that nothing from the mod is logged. Anything that depends on
+  what the colony holds does not belong in it.
+- It is played in an initial or a final validation, once, and never in a fix or an exploration loop, where a fix would be
+  judged against a different colony each time. Anything that has to repeat is played on the fixture colony instead.
+
 ---
 
 ## What to send back
@@ -236,7 +247,7 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | 6. Dessicated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
 | 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
 | 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear. |
-| 9. A new game with the mod | Pickle, `@requires`, own pass | `09-new-colony` | No saved game reaches a colony that starts with the mod: the world and the first map are generated with the animal in them. Uses a tool that was written and not played. |
+| 9. A new game with the mod | Pickle, `@requires`, own pass | `09-new-colony` | No saved game reaches a colony that starts with the mod: the world and the first map are generated with the animal in them. Random, so played once in a validation and not in fix loops. Uses a tool that was written and not played. |
 | Save and reload | Pickle | `05-save-reload` | An animal and an egg survive a round trip; the fixture colony, saved without the mod, is the mod added to an existing colony. |
 | FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side. |
 
