@@ -53,6 +53,18 @@ Newest entry; where it disagrees with the sections below, it wins. Three things 
 
 Checked without a game: the step checker resolves all 161 step lines, and the 21 offline tests pass.
 
+**The final validation was filed at `ccd2685`, tree clean, as five small requests**, one per pass or per duration, each playing
+every scenario of its pass and carrying the SHA in its label. Nothing under `Mod/` or `Tests/Pickle/` changes until the
+last `RUN_DONE`, since a request reads the tree when it is played.
+
+| Request | Pass | Plays |
+|---|---|---|
+| `20260925-181154-242-be70` | minimal, English | everything but the slow laying |
+| `20260925-181157-998-9ae8` | minimal, English | the slow laying and hatching |
+| `20260925-181200-136-4313` | minimal, French | all |
+| `20260925-181201-797-7d51` | with A Dog Said... Animal Prosthetics 2, English | all |
+| `20260925-181203-532-0c23` | new colony, English | `09-new-colony`, the first run of the NewColony tool |
+
 ## ADS2 rerun — 2026-09-25
 
 Older than the entry above; where it disagrees with the sections below, it wins. The single-scenario ticket `1ffa` played `08` again
