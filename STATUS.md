@@ -17,16 +17,16 @@ licence_github_detection: Other (NOASSERTION)
 licence_at:   LICENSE and Mod/LICENSE, copyright 2020 Mlie
 dependencies: none
 showcase:     complete
-tested_on:     2026-09-25, the last Pickle run on the headless WSL game, partial, see the entry at the top
+tested_on:     2026-09-25, the final validation at ccd2685, three passes green and the new-colony pass red in the tool, see the entry at the top
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, TESTING.md, description template and new-colony scenario, kept by the session that holds this mod
+updated:      2026-09-25, the final validation read, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the nine TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in Pickle, on 2026-09-24 and 2026-09-25, 4b and 7 are not applicable, and 9, a new game with the mod, is written and not played. What remains is the final validation of all of them together, see the next lines.
-  - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod. The scenario for a colony that starts with the mod, 09-new-colony, was written on 2026-09-25 on the NewColony tool, which its own README says was written that day and never played, so a failure of its first run can be the tool's. A new colony is random, never the same twice, so a green shows one clean draw and a red may not replay; it is played sparingly, in a validation and not in a fix loop.
-  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the four passes green, with exitReason read before the counts, minimal English, minimal French, English with A Dog Said... Animal Prosthetics 2 mounted (already in the WSL cache), and the new-colony pass. TESTING.md declares them. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the two conditional scenarios, 08-ads2-integration and 09-new-colony, are played only in their own pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the nine TESTING.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
+  - unverified: of the nine TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in the final validation at ccd2685 on 2026-09-25, 4b and 7 are not applicable, and 9, a new game with the mod, failed at its first run in the NewColony tool and has no green replay, so it is not counted. Nothing else stands between this mod and tested.
+  - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 and again in the final validation (05-save-reload), in a fixture colony saved without the mod. The colony that starts with the mod, 09-new-colony, failed on 2026-09-25 at its first run, and the cause read from the report is the NewColony tool's, not the mod's. The tool starts a game with Ideology on, without an ideoligion and without starting pawns, so vanilla throws a NullReferenceException in the starting meals, and no line of this mod is in the stack. The tool's session was told. It is replayed once, in a ticket of its own, when the tool changes, a new colony being random and used sparingly.
+  - unverified: to reach tested (AUDIT.md transition 9), the final validation played three passes green on 2026-09-25 at ccd2685, with exitReason read before the counts, minimal English (9 played, 2 skipped), the slow laying and hatching (2 played), minimal French (3 played) and English with A Dog Said... Animal Prosthetics 2 (12 played, 1 skipped), and the review captures were looked at. What is left is the fourth pass, the new colony, red for the tool's reason, and AUDIT.md allows no red without a green replay. No @wip exists and no manual test is left to validate.
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page has no Compatibility paragraph yet, and gets it from Mod/README.template.md at the next publish.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation. The owner said on 2026-09-25 that the page is corrected through Mod/README.template.md, not by hand, so it changes when a publish sends the description, which is opt-in and needs the owner's approval. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTING.md, Mod/About/About.xml and the template say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
@@ -37,9 +37,41 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Final validation read — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. The five requests filed at `ccd2685` are back. The tree they
+read is the one filed, since only documents changed afterwards (`git diff ccd2685` on `Mod/` and `Tests/Pickle/` shows one
+README line). **Three of the four passes are green. The fourth, the new colony, is red, for a reason that is the tool's.**
+
+| Request | Pass | `exitReason` | Result |
+|---|---|---|---|
+| `be70` | minimal, English, without the slow laying | passed | 11 discovered, 9 played, 9 passed, 0 failed, 2 skipped (08 and 09, which belong to other passes) |
+| `9ae8` | minimal, English, the slow laying and hatching | passed | 2 played, 2 passed |
+| `4313` | minimal, French | passed | 3 played, 3 passed |
+| `7d51` | with A Dog Said... Animal Prosthetics 2, English | passed | 13 discovered, 12 played, 12 passed, 1 skipped (09), 08 included |
+| `0c23` | new colony, English | failed | 1 played, 0 passed, 1 failed |
+
+- **Captures looked at.** The male, the female, the kit, the dessicated corpse, the information card and the English health tab
+  of `be70`, the French health tab of `4313`, and the female and the health tab of `7d51`. No pink box, the four facings draw,
+  each ear and claw is named on its own side, and the French reads without accented gibberish. The log of each run holds no
+  line of this mod, only the notice that the two assembly-only companion mods load no content.
+- **The red is the NewColony tool's.** `09-new-colony` failed with a `NullReferenceException` in vanilla
+  `FoodUtility.HasHumanMeatEatingRequiredPrecept`, reached from the starting meals of Crashlanded, and the tool's own
+  attachment reads `0 colonists`. With Ideology on, the tool starts a game with no ideoligion and no starting pawns, so vanilla
+  has nothing to hand to the meals. No line of this mod is in the stack. This is read from the report and from the tool's source, not
+  proven by a fix. The tool's session was told, with the evidence and the likely cause. The scenario is replayed once, in a
+  ticket of its own, when the tool changes: a new colony is random and used sparingly.
+- **What this means for the stage.** It stays `done`. AUDIT.md allows no red without a green replay, and `tested` needs every
+  conditional scenario played. Nothing else is missing.
+- **Evidence.** Five folders under `Tests/Pickle/Evidence/` named `2026-09-25-final-*`, 2.3 MB together after minifying, and one
+  line each in `docs/runs/2026-09-25.md`. Six older folders that these runs replace (five of 2026-09-24 and the ADS2 one of 2026-09-25)
+  were deleted, and no field of this file pointed to them.
+- **Next.** The patch for Nocturnal Animals, crepuscular, chosen by the owner, described in BACKLOG.md. It changes `Mod/`, so
+  it is a new revision and gets its own scenario before anything is claimed for it.
+
 ## TESTING.md, description template, new colony — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. Three things the owner asked for, one answer each.
+Older than the entry above; where it disagrees with the sections below, it wins. Three things the owner asked for, one answer each.
 
 - **`TESTS.md` is now `TESTING.md`**, because `AUDIT.md` expects the passes to be declared in a `TESTING.md`. Every reference
   in the repository was updated, including the older sections of this file. The file gained "The passes this suite needs":

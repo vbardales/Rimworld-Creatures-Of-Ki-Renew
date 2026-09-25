@@ -3,6 +3,15 @@
 Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in [TESTING.md](TESTING.md).
 Nothing here blocks `tested`.
 
+## Before `done → tested`
+
+The final validation at `ccd2685` is read: three passes green, the new colony red. One item is left.
+
+**Replay `09-new-colony` green, once, in a ticket of its own, when the NewColony tool has changed.** Its first run failed in
+the tool, not in the mod: with Ideology on it starts a game with no ideoligion and no starting pawns, so vanilla throws in
+the starting meals. The tool's session was told on 2026-09-25 with the evidence. Nothing to do here until it answers, and no
+replay before, since a new colony is random and used sparingly.
+
 ## Optional integrations
 
 Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
