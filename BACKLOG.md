@@ -2,22 +2,21 @@
 
 Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in [TESTING.md](TESTING.md).
 
-## Before `done → tested`
+## Done: `done → tested`, on 2026-09-26
 
-The final validation at `ccd2685` is read: three passes green, the new colony red. The revision has since changed by one
-conditional patch (Nocturnal Animals, below), so what is left, in this order:
-
-1. **Play `10-nocturnal-integration` alone** in the Nocturnal pass: an exploration, since the step and the pass are new.
-2. **Then, one ticket each, on the revision that holds the patch**: the Nocturnal pass, English fast set, and its slow
-   laying and hatching, since a crepuscular teshi is the change most likely to touch the laying; the minimal English `01-loads`,
-   since the patch file is read in every pass and must log nothing without the other mod; and `09-new-colony`.
-3. **`09-new-colony` green, once**, with the changed NewColony tool. Its first run failed in the tool, not in the mod: with
-   Ideology on it started a game with no ideoligion and no starting pawns, and vanilla threw in the starting meals. The
-   tool's session answered on 2026-09-25 that it is fixed (commit 35b1252 in PickleTools, the classic ideoligion is
-   chosen, the step fails clearly with no colonist) and did not replay it, to spare the machine. The replay is this
-   mod's, in a ticket of its own with `-Extra "-pickle-scenario-timeout=400"`. A new colony is random and used sparingly.
+The final validation is read and every pass is green, `09-new-colony` included after the NewColony tool's fix. STATUS.md has
+the results. Nothing here is left for `tested`. One question stays with the owner: the passes of `ccd2685` (minimal fast, slow,
+French, and ADS2) were not replayed on the revision that holds the Nocturnal patch, which does nothing without the other mod
+and was covered by the Nocturnal pass and by `01-loads`. A fresh pass on the final SHA is four tickets if the owner wants it.
 
 ## At `prepublished`, not before
+
+`PUBLICATION.md` does not exist yet: the order of the captures with what each shows, the thanks comments (one per author, under
+1000 characters, posted once the item is public), the dependency and DLC answers, the adult-content answers and the change
+note under a version heading. The owner reads `Mod/README.template.md`. The other decisions are the owner's and are listed in
+STATUS.md `remaining`: the icon edited on 2026-09-13, category 2 or 3 for Animal Prosthetics 2, whether to add `Arm` to its arm
+recipes (which rewrites another mod's recipes, and is not done), and the Steam page, which changes only through a publish with
+`update_description` that the owner approves.
 
 The CI/CD session announced on 2026-09-25 that the Steam description will have **one source**: a Markdown block under
 `## Steam description` in `PUBLICATION.md`, from which the CI generates the BBCode and the `<description>` of `About.xml`,
@@ -33,7 +32,7 @@ a description that reads the same as the page, and a change note must carry the 
 Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
 **crepuscular for the teshi, and no crossbreeding for now.**
 
-### 1. [XND] Nocturnal Animals (Continued) — written, crepuscular, not yet played
+### 1. [XND] Nocturnal Animals (Continued) — done, crepuscular, played green on 2026-09-26
 
 Mod: `Mlie.XNDNocturnalAnimals`, Workshop 2269731409, has a 1.6 folder, needs Harmony. Fetched into the WSL cache on
 2026-09-25 with `scripts/download-workshop-wsl.sh`.
@@ -63,8 +62,9 @@ predator", and no rhythm table in the collection lists the teshi. README, CHANGE
 Steam template say so.
 
 **Written:** the patch, the offline test on its shape (22 checks now), the local step that reads the extension off the
-parsed race, `10-nocturnal-integration`, `wsl-deps.avec-nocturnal.map`, and the documents. **Not played.** Whether the
-class name and the field are exactly as the sibling patches write them is what the first run shows.
+parsed race, `10-nocturnal-integration`, `wsl-deps.avec-nocturnal.map`, and the documents. **Played:** the class name and the
+field are as the sibling patches write them, the whole English set and the slow laying pass with the other mod mounted, and
+`01-loads` passes with it absent.
 
 ### 2. Crossbreeding — parked by the owner on 2026-09-25, "not for now"
 

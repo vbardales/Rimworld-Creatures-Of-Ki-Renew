@@ -10,23 +10,23 @@ remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        tested
 licence:      open
 licence_spdx: MIT
 licence_github_detection: Other (NOASSERTION)
 licence_at:   LICENSE and Mod/LICENSE, copyright 2020 Mlie
 dependencies: none
 showcase:     complete
-tested_on:     2026-09-25, the final validation at ccd2685, three passes green and the new-colony pass red in the tool, see the entry at the top
+tested_on:     2026-09-26, the final validation of the revision 1fcc51f, every pass green, see the entry at the top
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-25, the Nocturnal Animals integration written and not played, kept by the session that holds this mod
+updated:      2026-09-26, the final validation read and the stage moved to tested, kept by the session that holds this mod
 remaining:
-  - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the ten TESTING.md scenarios, 1, 2, 3, 4a, 5, 6 and 8 have passed in the final validation at ccd2685 on 2026-09-25, 4b and 7 are not applicable, 9, a new game with the mod, failed at its first run in the NewColony tool and has no green replay, and 10, the Nocturnal Animals integration, is written and not played. Neither 9 nor 10 is counted.
-  - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 and again in the final validation (05-save-reload), in a fixture colony saved without the mod. The colony that starts with the mod, 09-new-colony, failed on 2026-09-25 at its first run, and the cause read from the report is the NewColony tool's, not the mod's. The tool starts a game with Ideology on, without an ideoligion and without starting pawns, so vanilla throws a NullReferenceException in the starting meals, and no line of this mod is in the stack. The tool's session was told. It is replayed once, in a ticket of its own, when the tool changes, a new colony being random and used sparingly.
-  - unverified: to reach tested (AUDIT.md transition 9), the final validation played three passes green on 2026-09-25 at ccd2685, with exitReason read before the counts, minimal English (9 played, 2 skipped), the slow laying and hatching (2 played), minimal French (3 played) and English with A Dog Said... Animal Prosthetics 2 (12 played, 1 skipped), and the review captures were looked at. Since then the revision changed by one conditional patch, so what is left is BACKLOG.md, in order, 10 alone, then the Nocturnal pass fast and slow, the minimal 01-loads, and 09 once with the changed NewColony tool. AUDIT.md allows no red without a green replay. No @wip exists and no manual test is left to validate.
+  - unverified: English and French display of the animal, its eggs and its kit in the game's own panels, only in part. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both, with no accented gibberish, and the information card was seen in English; the egg and kit names and the information card in French were not seen on screen. AUDIT.md asks for the interface checked in FR and EN, and this is read as met by the def assertions and the health tab, which the owner may overrule.
+  - verified: every TESTING.md scenario is played or not applicable. 1, 2, 3, 4a, 5, 6 and 8 passed in the final validation at ccd2685 on 2026-09-25, 4b and 7 are not applicable, and 9 and 10 passed on 2026-09-26 at 1fcc51f, 9 being a replay of a first run that failed in the NewColony tool and is green since its fix. 9 is one clean draw of a random colony, not every draw.
+  - verified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 and again in the final validation (05-save-reload), in a fixture colony saved without the mod. A colony that starts with the mod, 09-new-colony, passed on 2026-09-26 with the NewColony tool after its ideoligion fix, three colonists, classic ideoligion, no error. Its first run failed on 2026-09-25 for the tool's reason, no ideoligion and no starting pawns with Ideology on, and left no line of this mod in the stack.
+  - verified: AUDIT.md transition 9 is met. The final validation played the minimal English pass (9 played, 2 skipped, and the slow laying, 2), the minimal French pass (3), the pass with A Dog Said... Animal Prosthetics 2 (12 played, 1 skipped) at ccd2685, then the Nocturnal Animals pass (fast 10 played and 2 skipped, slow 2), the minimal 01-loads and the new colony (1) at 1fcc51f, with exitReason read before the counts, the review captures looked at, no @wip and no manual test left. The patch added between the two revisions is a FindMod that does nothing without the other mod, so the checks it concerns were replayed on the new revision (01-loads without the mod, every scenario with it) and the other passes were not, AUDIT.md saying a relevant change invalidates the checks concerned and not every independent validation.
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 landed in game on 2026-09-25, the teshi being offered as many of its recipes as a grizzly bear with this mod loaded ahead of it, but no surgery was played, so which recipes a surgeon may apply to the teshi is not seen. The Steam page has no Compatibility paragraph yet, and gets it from Mod/README.template.md at the next publish.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation. The owner said on 2026-09-25 that the page is corrected through Mod/README.template.md, not by hand, so it changes when a publish sends the description, which is opt-in and needs the owner's approval. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTING.md, Mod/About/About.xml and the template say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
@@ -37,9 +37,38 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Final validation done, stage tested — 2026-09-26
+
+Newest entry; where it disagrees with the sections below, it wins. The four requests filed at `0d2fa54` are back on the
+tree of `1fcc51f` (`Mod/` and `Tests/Pickle/` did not change between them). **All green. The stage moves to `tested`.**
+
+| Request | Pass | `exitReason` | Result |
+|---|---|---|---|
+| `5485` | Nocturnal, English, fast set | passed | 12 discovered, 10 played, 10 passed, 2 skipped (08 and 09, their own passes), `10` included |
+| `36c1` | Nocturnal, English, slow laying and hatching | passed | 2 played, 2 passed, with a crepuscular teshi |
+| `262a` | minimal, English, `01-loads` | passed | 1 of 1, the patch file read with the other mod absent, no warning, no error |
+| `dcb2` | new colony, English | passed | 1 of 1, the red of `0c23` is gone |
+
+- **The new colony.** The attachment reads Crashlanded, seed `teshi-renew`, tile 2541, three colonists (Jec, Tomboy, Fjellsmel),
+  classic ideoligion, generated in 4.1 s. The NullReferenceException of the first run does not come back, so the tool's fix
+  worked, which is what the PickleTools session could not check. It is one clean draw of a random colony, not every draw,
+  and it is not to be replayed except in a validation.
+- **Captures.** The health tab and the kit of the Nocturnal fast set were looked at, the same as without the other mod.
+- **What was replayed and what was not.** The Nocturnal pass plays the whole English set and the slow laying, since a
+  crepuscular teshi is the change most likely to touch them, and the minimal `01-loads` shows the new patch file is quiet
+  without the other mod. The minimal fast, slow and French passes and the ADS2 pass are those of `ccd2685`: the patch is a
+  `FindMod` that does nothing without the other mod, and AUDIT.md says a relevant change invalidates the checks it
+  concerns. That reading is this session's, and a fresh pass on the final SHA costs four tickets if the owner wants it.
+- **Evidence.** Eight folders under `Tests/Pickle/Evidence/`, 3.5 MB together after minifying, and one line each in
+  `docs/runs/`. The exploration folder and the red new-colony folder were deleted since the runs above replace them, and no
+  field of this file pointed to them.
+- **One residual, in `remaining`.** The information card and the egg and kit names were not seen on screen in French.
+- **Next.** `prepublished`: `PUBLICATION.md`, which does not exist, the description read by the owner, the comment registry,
+  and the owner's decisions listed in `remaining`. BACKLOG.md has them. No session approves a publish.
+
 ## Nocturnal Animals written, crepuscular — 2026-09-25
 
-Newest entry; where it disagrees with the sections below, it wins. The owner chose the **crepuscular** rhythm for the teshi and
+Older than the entry above; where it disagrees with the sections below, it wins. The owner chose the **crepuscular** rhythm for the teshi and
 **no crossbreeding for now**. The rhythm is a choice of this port, since the source gives the teshi none, and every document
 says so. **Written, not played.**
 

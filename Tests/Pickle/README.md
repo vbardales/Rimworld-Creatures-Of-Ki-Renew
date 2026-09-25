@@ -7,8 +7,8 @@ and leave a person to read only the `@review` captures.
 **Status: played since 2026-09-24.** The step assembly compiles against the installed 1.6 game and Pickle, and every
 step line of the features resolves to exactly one step (`Check-Steps.ps1`, which was seen to go red on an undefined
 step). The final validation at `ccd2685` on 2026-09-25 played the minimal English and French passes and the pass with
-A Dog Said... Animal Prosthetics 2 green; the new-colony pass failed in its tool, which has since been changed. The
-list at the end names the assumptions the first runs confirmed or broke. `STATUS.md` is the current record.
+A Dog Said... Animal Prosthetics 2 green. The new-colony pass failed in its tool, which was changed, and passed on
+2026-09-26, as did the Nocturnal Animals pass. The list at the end names the assumptions the first runs confirmed or broke. `STATUS.md` is the current record.
 
 ## What is in Gherkin, and why it needs a game
 
