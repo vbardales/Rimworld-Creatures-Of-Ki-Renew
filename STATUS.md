@@ -17,16 +17,16 @@ licence_github_detection: Other (NOASSERTION)
 licence_at:   LICENSE and Mod/LICENSE, copyright 2020 Mlie
 dependencies: none
 showcase:     complete
-tested_on:     2026-09-24, the first Pickle runs on the headless WSL game, partial, see the entry at the top
+tested_on:     2026-09-25, the last Pickle run on the headless WSL game, partial, see the entry at the top
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
-updated:      2026-09-24, first Pickle runs read, kept by the session that holds this mod
+updated:      2026-09-25, fix rerun read, kept by the session that holds this mod
 remaining:
   - unverified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both on 2026-09-24, with no accented gibberish; the egg and kit names and the information card in French were not seen on screen.
-  - unverified: of the eight TESTS.md scenarios, 2 drew, 4a laid, 5 hatched and 6 drew on 2026-09-24; 1 and 3 failed on a test defect and are being rerun; 4b and 7 are not applicable; 8 needs A Dog Said... Animal Prosthetics 2 and has not been played.
+  - unverified: of the eight TESTS.md scenarios, 1, 2, 3, 4a, 5 and 6 have passed in Pickle, on 2026-09-24 and 2026-09-25; 4b and 7 are not applicable; 8 needs A Dog Said... Animal Prosthetics 2 and its exploration ticket has not answered yet.
   - unverified: new-game loading. Saving and reloading a colony with a teshi and an egg passed on 2026-09-24 (05-save-reload), in a fixture colony saved without the mod; a new game started with the mod has not been played.
-  - unverified: to reach tested (AUDIT.md transition 9), 01-loads must pass, which needs its rerun with the corrected step, and then every scenario of the three passes must be green in one final validation, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. Every @review capture opened and looked at again for the ones the fix changes, since it adds a zoom. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
+  - unverified: to reach tested (AUDIT.md transition 9), one final validation must play every scenario of the three passes green, with exitReason read before the counts, minimal English, minimal French, and English with A Dog Said... Animal Prosthetics 2 mounted, which is already in the WSL cache. The scenarios that failed on 2026-09-24 pass since the fix rerun, but the final validation replays them with the rest. The captures of the female, the kit and the corpse were taken before the zoom was added and are to be replaced and looked at again. No @wip exists; the one conditional scenario, 08-ads2-integration, is played only in the third pass, since a skipped scenario is not a passed one. No manual test is left to validate, since each of the eight TESTS.md scenarios is a Pickle scenario or a listed not-applicable (4b, 7).
   - feature: the teshi cannot receive the simple or the bionic arm from A Dog Said... Animal Prosthetics 2, whose two arm recipes target a `Shoulder` that this mod's body does not have; only the paw recipes reach its front limbs. Adding `Arm` to those two recipes' appliedOnFixedBodyParts would give it the arms, but it rewrites another mod's recipes for every animal with an Arm, so it is left for the owner to decide and not done.
   - unverified: the optional integration with A Dog Said... Animal Prosthetics 2 (Mod/Patches/ADS2_Categories.xml, loadBefore in About.xml) has been checked offline for its shape only. The category names ADS_Cat1 to ADS_Cat3 were read from that mod's repository on 2026-09-24, not from an installed copy; that the patch lands, and that the teshi is offered the same recipes as a grizzly bear, is what 08-ads2-integration shows. That mod is already in the WSL cache, found on 2026-09-24 (packageId SamBucher.ADogSaidAnimalProsthetics2, a 1.6 folder), so the pass only had to be queued. The Steam page of item 3806709627 has no Compatibility paragraph, and only a hand edit can add it.
   - unverified: the Steam page of item 3806709627 and the private item still carry the old egg paragraph, which SetItemDescription sent at creation and only a hand edit can change. The texts of README.md, CHANGELOG.md, ATTRIBUTION.md, TESTS.md and Mod/About/About.xml say what CompEggLayer.ProduceEgg does, and 03-laying-and-hatching confirmed it in game on 2026-09-24, a mated teshi lays one stack of two fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
@@ -37,9 +37,34 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## Fix rerun — 2026-09-25
+
+Newest entry; where it disagrees with the sections below, it wins. The one small ticket for the fix, `1e4b`, was
+played by the dispatcher on the minimal English set at revision `8a0dbcf`, tree clean, and `docs/runs/2026-09-25.md`
+has its line. **`exitReason` passed, 3 discovered, 3 played, 3 passed.** The fewest scenarios that test the fix
+were chosen, as an exploration or a fix ticket should.
+
+- **`01-loads` passes.** With the two local steps it reached the Wildness: the game computes 0.5 for the race.
+  The same value was then read off a living animal in the second scenario and passed. This is the first time the
+  port's Wildness change has been seen in the running game.
+- **The zoom works, modestly.** The adult male row is about a third larger than in the first run and still shows
+  all four facings with no pink box. The animals stay small on a 1920 pixel capture; it is readable, not
+  generous.
+- **The information card capture still does not show Wildness**, as expected, since its list scrolls. It shows the
+  card opening with the English description. Its scenario is named for what it asserts, and the capture is not
+  proof of 50 %.
+- **Log.** Nothing names this mod except the test companion's "did not load any content" error, which every
+  step-only mod produces. The companion's missing-download-URL warning is gone.
+- **Evidence.** The first run's zoom-less adult male capture and its information card capture were deleted, replaced
+  by this run's, after listing them; this run's two captures were re-encoded and its report files removed.
+  `Tests/Pickle/Evidence/` is 1.3 MB. The first run's female, kit, corpse and health captures stay until the final
+  validation replaces them.
+- **The stage stays `done`.** `tested` needs the final validation and the ADS2 pass. The exploration ticket for
+  `08` (`e32f`) is still queued.
+
 ## First Pickle runs — 2026-09-24
 
-Newest entry; where it disagrees with the sections below, it wins. The dispatcher played the three requests on
+Older than the entry above; where it disagrees with the sections below, it wins. The dispatcher played the three requests on
 the headless WSL game at revision `bce0ee2`, tree clean. `docs/runs/2026-09-24.md` has one line per run.
 
 | Run | `exitReason` | Discovered | Passed | Failed | Skipped |
