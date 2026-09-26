@@ -21,10 +21,10 @@ Nothing is filed now.
 
 `PUBLICATION.md` does not exist yet: the order of the captures with what each shows, the thanks comments (one per author, under
 1000 characters, posted once the item is public), the dependency and DLC answers, the adult-content answers and the change
-note under a version heading. The owner reads `Mod/README.template.md`. The other decisions are the owner's and are listed in
-STATUS.md `remaining`: the icon edited on 2026-09-13, category 2 or 3 for Animal Prosthetics 2, whether to add `Arm` to its arm
-recipes (which rewrites another mod's recipes, and is not done), and the Steam page, which changes only through a publish with
-`update_description` that the owner approves.
+note under a version heading. The owner read `Mod/README.template.md` and found it good on 2026-09-26, and confirmed the icon the same day. Decided the
+same day: category 3 for Animal Prosthetics 2 stays, and `Arm` is added to its two arm recipes (`Patches/ADS2_Arms.xml`, played
+or not: see STATUS.md). The Steam page changes only through a publish with `update_description` that the owner approves. The
+description's Compatibility paragraph still says the front limbs get paw recipes only, and is rewritten when the arm scenario is green.
 
 The CI/CD session announced on 2026-09-25 that the Steam description will have **one source**: a Markdown block under
 `## Steam description` in `PUBLICATION.md`, from which the CI generates the BBCode and the `<description>` of `About.xml`,
