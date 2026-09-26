@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!--
+    The teshi has two arms, each ending in a front claw, and no shoulder. A Dog Said... Animal Prosthetics 2
+    (packageId SamBucher.ADogSaidAnimalProsthetics2, Workshop 3238353862) installs its simple and its bionic
+    animal arm on a Shoulder only, so without this the teshi is offered the arm recipes and cannot receive them
+    (the paw recipes do reach its front claws). Each operation adds Arm to the parts one recipe applies on.
+
+    This edits two recipes of the other mod, which is the owner's decision of 2026-09-26. The effect reaches any
+    animal in the three categories that has an Arm part and no Shoulder; the animals that have a Shoulder already
+    match the recipe and are not changed.
+
+    Each operation is a PatchOperationConditional on the recipe existing, not on a mod name: with the other mod
+    absent, or a recipe renamed, it finds nothing and does nothing, and no log line is written.
+  -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[defName="InstallSimpleProstheticArmAnimal"]/appliedOnFixedBodyParts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName="InstallSimpleProstheticArmAnimal"]/appliedOnFixedBodyParts</xpath>
+      <value>
+        <li>Arm</li>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[defName="InstallBionicArmAnimal"]/appliedOnFixedBodyParts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName="InstallBionicArmAnimal"]/appliedOnFixedBodyParts</xpath>
+      <value>
+        <li>Arm</li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

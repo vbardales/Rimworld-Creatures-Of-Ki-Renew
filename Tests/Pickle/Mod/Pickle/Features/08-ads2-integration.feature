@@ -20,3 +20,18 @@ Feature: The ADS2 integration
     And Teshi Renew: the teshi offers as many recipes from the mod "SamBucher.ADogSaidAnimalProsthetics2" as the "Bear_Grizzly"
     And no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
+
+  # The teshi has arms and no shoulder, and ADS2's two arm recipes apply on a Shoulder. Mod/Patches/ADS2_Arms.xml adds
+  # Arm to both, on the owner's word of 2026-09-26. The recipe worker's answer is what the health tab's operation menu
+  # reads; then the operation's effect is applied to one arm of each kind, and the arm carries the prosthesis.
+  Scenario: the teshi can receive the simple and the bionic arm, one on each arm
+    Given the save "test-colony" is loaded
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (146, 155)
+    Then Teshi Renew: the recipe "InstallSimpleProstheticArmAnimal" can be applied to the teshi's "left arm"
+    And Teshi Renew: the recipe "InstallBionicArmAnimal" can be applied to the teshi's "right arm"
+    When Teshi Renew: the recipe "InstallSimpleProstheticArmAnimal" is applied to the teshi's "left arm"
+    And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
+    Then Teshi Renew: the teshi's "left arm" carries the hediff "SimpleProstheticArmAnimal"
+    And Teshi Renew: the teshi's "right arm" carries the hediff "BionicArmAnimal"
+    And no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged

@@ -400,6 +400,27 @@ It 'the A Dog Said... Animal Prosthetics 2 integration is one conditional patch,
     if (Test-Path -LiteralPath (Join-Path $modDir 'LoadFolders.xml')) { 'a LoadFolders.xml exists: the integration does not need one' }
 }
 
+It 'the arm recipes of A Dog Said... Animal Prosthetics 2 get Arm through conditional patches, and the teshi has an Arm' {
+    $patchFile = Join-Path $modDir 'Patches/ADS2_Arms.xml'
+    if (-not (Test-Path -LiteralPath $patchFile)) { 'Patches/ADS2_Arms.xml is missing'; return }
+    $p = New-Object System.Xml.XmlDocument
+    $p.Load($patchFile)
+    $ops = @($p.SelectNodes('/Patch/Operation'))
+    if ($ops.Count -ne 2) { "expected two operations, one per arm recipe, found $($ops.Count)" }
+    foreach ($op in $ops) {
+        if ($op.GetAttribute('Class') -cne 'PatchOperationConditional') { 'an operation is not a PatchOperationConditional: with the other mod absent it would fail and log' }
+        $add = $op.SelectSingleNode('match')
+        if (-not $add -or $add.GetAttribute('Class') -cne 'PatchOperationAdd') { 'a match is not a PatchOperationAdd'; continue }
+        if ($add.xpath -notmatch 'appliedOnFixedBodyParts') { 'an operation does not target appliedOnFixedBodyParts' }
+        if (@($add.SelectNodes('value/li') | Where-Object { $_.InnerText.Trim() -ceq 'Arm' }).Count -ne 1) { 'an operation does not add exactly the body part Arm' }
+    }
+    foreach ($r in 'InstallSimpleProstheticArmAnimal', 'InstallBionicArmAnimal') {
+        if (@($ops | Where-Object { $_.xpath -match [regex]::Escape($r) }).Count -ne 1) { "no single operation for the recipe $r" }
+    }
+    $armCount = @($defNodes | Where-Object { $_.LocalName -eq 'BodyDef' } | ForEach-Object { $_.SelectNodes('.//def') } | Where-Object { $_.InnerText.Trim() -ceq 'Arm' }).Count
+    if ($armCount -lt 1) { 'the teshi body has no Arm part, so the recipes could not apply' }
+}
+
 It 'the Nocturnal Animals integration is one FindMod patch on both names of that mod, and touches only the own def' {
     # The class belongs to Nocturnal Animals, and when it cannot be found the game drops the whole def instead of
     # ignoring the extension, so the extension must never be written into a def, only added by a patch that runs

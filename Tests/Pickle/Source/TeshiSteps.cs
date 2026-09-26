@@ -421,6 +421,51 @@ namespace TeshiRenew.PickleSteps
 
         // ---- the optional integration --------------------------------------------------------------
 
+        private static RecipeDef Recipe(PickleContext ctx, string defName)
+        {
+            var def = DefDatabase<RecipeDef>.GetNamedSilentFail(defName);
+            ctx.Assert(def != null, $"no RecipeDef named {defName}: is the mod that defines it loaded?");
+            return def;
+        }
+
+        /// <summary>
+        /// The game's own answer to "may a surgeon install this on that part": the recipe worker lists the parts
+        /// it applies on, which is what the health tab's operation menu reads.
+        /// </summary>
+        [Then("Teshi Renew: the recipe {string} can be applied to the teshi's {string}")]
+        public void RecipeAppliesTo(PickleContext ctx, string recipeDefName, string partLabel)
+        {
+            var pawn = TheTeshi(ctx);
+            var recipe = Recipe(ctx, recipeDefName);
+            var part = Part(ctx, pawn, partLabel);
+            var parts = recipe.Worker.GetPartsToApplyOn(pawn, recipe).ToList();
+            ctx.Assert(parts.Contains(part),
+                $"{recipeDefName} cannot be applied to the teshi's {partLabel} ({part.def.defName}); it applies on: {string.Join(", ", parts.Select(p => p.Label))}");
+        }
+
+        /// <summary>
+        /// The effect of the operation, and only that: the recipe worker's own ApplyOnPawn, with no surgeon and no
+        /// ingredient, as a finished surgery ends. The bill, the doctor and the medicine are the game's and are
+        /// not replayed here.
+        /// </summary>
+        [When("Teshi Renew: the recipe {string} is applied to the teshi's {string}")]
+        public void ApplyRecipe(PickleContext ctx, string recipeDefName, string partLabel)
+        {
+            var pawn = TheTeshi(ctx);
+            var recipe = Recipe(ctx, recipeDefName);
+            var part = Part(ctx, pawn, partLabel);
+            recipe.Worker.ApplyOnPawn(pawn, part, null, new List<Thing>(), null);
+        }
+
+        [Then("Teshi Renew: the teshi's {string} carries the hediff {string}")]
+        public void PartCarriesHediff(PickleContext ctx, string partLabel, string hediffDefName)
+        {
+            var pawn = TheTeshi(ctx);
+            var part = Part(ctx, pawn, partLabel);
+            ctx.Assert(pawn.health.hediffSet.hediffs.Any(h => h.def.defName == hediffDefName && h.Part == part),
+                $"the teshi's {partLabel} carries none of {hediffDefName}; it carries: {string.Join(", ", pawn.health.hediffSet.hediffs.Where(h => h.Part == part).Select(h => h.def.defName))}");
+        }
+
         /// <summary>
         /// A Dog Said... Animal Prosthetics 2 lets an animal receive prostheses by listing it in abstract
         /// recipe categories. The recipes a race is offered are those whose recipeUsers list it, so this is
