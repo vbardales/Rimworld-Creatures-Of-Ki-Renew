@@ -49,3 +49,17 @@ Feature: The teshi, read in English
     Then Nelim's Pickle Tools: the "Health" inspect tab is open
     When I take a screenshot "teshi health tab en"
     Then no errors were logged
+
+  Scenario: the information card of the kit
+    Given Teshi Renew: a female kit teshi stands at (146, 155)
+    When Teshi Renew: I select the teshi
+    And Teshi Renew: I open the information card of the teshi
+    And Teshi Renew: I let 10 frames pass
+    And I take a screenshot "teshi kit information card"
+    Then no errors were logged
+
+  Scenario: the information card of the fertilized egg
+    When Teshi Renew: I open the information card of a "EggTeshiFertilized" at (146, 155)
+    And Teshi Renew: I let 10 frames pass
+    And I take a screenshot "teshi egg information card"
+    Then no errors were logged

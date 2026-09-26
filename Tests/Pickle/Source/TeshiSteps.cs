@@ -334,6 +334,21 @@ namespace TeshiRenew.PickleSteps
             Find.WindowStack.Add(new Dialog_InfoCard(TheTeshi(ctx)));
         }
 
+        /// <summary>
+        /// The card of a thing that is not a pawn, the egg a player sees in a stockpile. The item is spawned
+        /// where the scenario says and its card is the one the info button opens, so its name and its
+        /// description are the ones a player reads.
+        /// </summary>
+        [When("Teshi Renew: I open the information card of a {string} at \\({int}, {int}\\)")]
+        public void OpenThingInfoCard(PickleContext ctx, string defName, int x, int z)
+        {
+            var def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
+            ctx.Assert(def != null, $"no ThingDef named {defName}");
+            var thing = ThingMaker.MakeThing(def);
+            GenSpawn.Spawn(thing, new IntVec3(x, 0, z), Map(ctx));
+            Find.WindowStack.Add(new Dialog_InfoCard(thing));
+        }
+
         // ---- the labels the loaded defs carry ------------------------------------------------------
 
         /// <summary>
