@@ -19,21 +19,13 @@ Nothing is filed now.
 
 ## At `prepublished`, not before
 
-`PUBLICATION.md` does not exist yet: the order of the captures with what each shows, the thanks comments (one per author, under
-1000 characters, posted once the item is public), the dependency and DLC answers, the adult-content answers and the change
-note under a version heading. The owner read `Mod/README.template.md` and found it good on 2026-09-26, and confirmed the icon the same day. Decided the
-same day: category 3 for Animal Prosthetics 2 stays, and `Arm` is added to its two arm recipes (`Patches/ADS2_Arms.xml`, played
-or not: see STATUS.md). The Steam page changes only through a publish with `update_description` that the owner approves. The
-description's Compatibility paragraph still says the front limbs get paw recipes only, and is rewritten when the arm scenario is green.
-
-The CI/CD session announced on 2026-09-25 that the Steam description will have **one source**: a Markdown block under
-`## Steam description` in `PUBLICATION.md`, from which the CI generates the BBCode and the `<description>` of `About.xml`,
-every dry-run and publish stopping if `About.xml` differs. Nothing is forced now, and it is adopted at the next
-publication or when the owner asks. For this mod it means `Mod/README.template.md`, which the owner named as the source
-on 2026-09-25, moves into `PUBLICATION.md` (no code fence in it, last line `[Source code on GitHub](URL)`), and the
-hand-written `<description>` of `About.xml` is then regenerated, its diff read. The dry-run of the exact SHA must show
-a description that reads the same as the page, and a change note must carry the version on its first line. Do not edit
-`.github/` by hand. Details: `Rimworld-Release-Admin/docs/OPERATIONS.md`, "Changing where the Steam description comes from".
+`PUBLICATION.md` is written (2026-09-27, this session). Left as TO DO in it: the gallery captures (none exist), the
+content-box answer (not yet re-checked against the images immediately before a dry-run), and the Compatibility paragraph of
+the description, which still needs rewriting once the arm-recipe scenario of ADS2's two arm recipes plays green. The
+thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted; the three other
+thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once posted, per
+WORKSHOP_COMMENTS.md. The workflow itself is not generated yet (`generate-publish-workflow.sh`, command in
+PUBLICATION.md). Nothing is dispatched: no session approves a publish.
 
 ## Optional integrations
 
