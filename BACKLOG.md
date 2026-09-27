@@ -20,9 +20,10 @@ Nothing is filed now.
 ## At `prepublished`, not before
 
 `PUBLICATION.md` is written (2026-09-27, this session). The gallery-capture scenarios played green (ticket `8f97`,
-`11-workshop-captures.feature`, `wsl-deps.studio.map`) but too far, per the owner's read of the images; the feature
-was rewritten the same day with a closer camera, away from the studio's own actor, and a fresh exploration ticket is
-queued (PUBLICATION.md has the detail). The arm-recipe scenario of ADS2's two arm recipes played green on
+`11-workshop-captures.feature`, `wsl-deps.studio.map`) but too far, per the owner's read of the images; rewritten
+twice the same day, first with a closer camera away from the studio's own actor, then to sit on a 3x3 patch of only
+orange daylilies, found at runtime rather than guessed (the owner asked for the orange bed specifically). A fresh
+exploration ticket is queued (PUBLICATION.md has the detail). The arm-recipe scenario of ADS2's two arm recipes played green on
 2026-09-27 (ticket `a747`), and the Compatibility paragraph of the description, `README.md`, `Mod/README.template.md`
 and `STATUS.md` were rewritten to match. Left as TO DO: the reframed gallery captures to be played, and the
 content-box answer (not yet re-checked against the images immediately before a dry-run). The

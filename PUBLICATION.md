@@ -135,17 +135,19 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**First played on 2026-09-27 (ticket `8f97`), reframed the same day after the owner read the images and found
-them too far.** The first version used the "flowers" preset's default camera (size 12), which left the teshi
-small in a wide frame, at the exact spot where the studio's own actor Miel is stationed, so she stood in shots
-1 and 2 uninvited. The feature now spawns the scene at (170,92), about 17 cells from Miel's spot, and a local
-step (`Teshi Renew: the camera looks at (x, z) at zoom {int}`) centres the camera there at zoom 5-6, a close-up
-rather than a whole-scene shot, the same pattern DrumBathHygiene's own capture scenario uses. Shot 3 (the
-Health tab) now also clears the letters and alerts and turns developer mode off for the capture, through
-`nelim.pickletools.screenshotmode` (added to `wsl-deps.studio.map`; itself a port of DrumBathHygiene's own local
-step, made shared on 2026-09-27). Not played again yet: a fresh exploration ticket is queued. Whether (170,92)
-actually sits among the flower clusters or on plain grass was not read from the fixture before this rewrite and
-is what that run will show; the owner may still ask for a different spot once the new images are opened.
+**Two rewrites so far, both 2026-09-27, not played again yet.** First played (ticket `8f97`): the "flowers"
+preset's default camera (size 12) left the teshi small in a wide frame, at the exact spot where the studio's
+own actor Miel is stationed, so she stood in shots 1 and 2 uninvited. Rewritten with a closer camera (a local
+step, `Teshi Renew: the camera looks at (x, z) at zoom {int}`, the same pattern DrumBathHygiene's own capture
+scenario uses) centred on (170,92), about 17 cells from Miel's spot. The owner then asked for the scene to sit
+on the orange flower bed specifically, only orange, over a 3x3 block: the studio mixes dandelions (yellow),
+daylilies (orange, `Plant_Daylily`) and roses (red) at random per cell, so no fixed coordinate is reliably one
+colour. `Teshi Renew: a 3x3 patch of only {string} is found near (x, z)` now searches outward from (170,92) at
+scenario start for the nearest 3x3 block that is only daylilies, and the scene and camera use that found patch.
+Shot 3 (the Health tab) also clears the letters and alerts and turns developer mode off for the capture,
+through `nelim.pickletools.screenshotmode` (added to `wsl-deps.studio.map`; itself a port of DrumBathHygiene's
+own local step, made shared on 2026-09-27). A fresh exploration ticket is queued; whether a qualifying 3x3
+patch exists within the search radius of (170,92) is what that run will show.
 
 `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
 reusable photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the test colony — the

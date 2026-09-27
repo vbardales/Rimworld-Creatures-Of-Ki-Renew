@@ -357,6 +357,16 @@ namespace TeshiRenew.PickleSteps
         // ---- a closer camera, for a gallery capture --------------------------------------------------
 
         private static FloatRange? cameraRangeBefore;
+        private static IntVec3? foundCell;
+
+        private static void JumpAndZoom(IntVec3 cell, int zoom)
+        {
+            var config = Find.CameraDriver.config;
+            if (cameraRangeBefore == null) cameraRangeBefore = config.sizeRange;
+            config.sizeRange = new FloatRange(Math.Min(zoom, config.sizeRange.min), config.sizeRange.max);
+            Find.CameraDriver.JumpToCurrentMapLoc(cell);
+            Find.CameraDriver.SetRootSize(zoom);
+        }
 
         /// <summary>
         /// The studio's own presets ("flowers" and the rest) frame a whole scene, size 12, too far for a
@@ -368,12 +378,86 @@ namespace TeshiRenew.PickleSteps
         public async Task CameraLooksAt(PickleContext ctx, int x, int z, int zoom)
         {
             ctx.Require(zoom >= 4 && zoom <= 60, $"zoom {zoom} is outside the camera's root size range");
-            var config = Find.CameraDriver.config;
-            if (cameraRangeBefore == null) cameraRangeBefore = config.sizeRange;
-            config.sizeRange = new FloatRange(Math.Min(zoom, config.sizeRange.min), config.sizeRange.max);
-            Find.CameraDriver.JumpToCurrentMapLoc(new IntVec3(x, 0, z));
-            Find.CameraDriver.SetRootSize(zoom);
+            JumpAndZoom(new IntVec3(x, 0, z), zoom);
             await ctx.WaitFrames(3);
+        }
+
+        /// <summary>
+        /// The studio's flower beds mix dandelions (yellow), daylilies (orange) and roses (red) at random per
+        /// cell (ScreenshotStudio's own StudioSteps.cs), so no fixed coordinate is one colour reliably. This
+        /// searches outward from the given cell for the nearest 3x3 block whose every cell carries exactly the
+        /// named plant and nothing else, so a capture can be asked for "only orange" without reading the saved
+        /// fixture by hand first.
+        /// </summary>
+        [When("Teshi Renew: a 3x3 patch of only {string} is found near \\({int}, {int}\\)")]
+        public void FindFlowerPatch(PickleContext ctx, string plantDefName, int x, int z)
+        {
+            var map = Map(ctx);
+            var def = DefDatabase<ThingDef>.GetNamedSilentFail(plantDefName);
+            ctx.Assert(def != null, $"no ThingDef named {plantDefName}");
+            var origin = new IntVec3(x, 0, z);
+            IntVec3? best = null;
+            int bestDistSq = int.MaxValue;
+            const int radius = 30;
+            for (int dx = -radius; dx <= radius; dx++)
+            {
+                for (int dz = -radius; dz <= radius; dz++)
+                {
+                    var center = origin + new IntVec3(dx, 0, dz);
+                    bool ok = true;
+                    for (int ox = -1; ox <= 1 && ok; ox++)
+                    {
+                        for (int oz = -1; oz <= 1 && ok; oz++)
+                        {
+                            var cell = center + new IntVec3(ox, 0, oz);
+                            if (!cell.InBounds(map)) { ok = false; break; }
+                            var plant = cell.GetPlant(map);
+                            if (plant == null || plant.def != def) ok = false;
+                        }
+                    }
+                    if (!ok) continue;
+                    int distSq = dx * dx + dz * dz;
+                    if (distSq < bestDistSq) { bestDistSq = distSq; best = center; }
+                }
+            }
+            ctx.Assert(best.HasValue,
+                $"no 3x3 patch of only {plantDefName} was found within {radius} cells of ({x},{z})");
+            foundCell = best;
+        }
+
+        private static IntVec3 FoundCell(PickleContext ctx)
+        {
+            ctx.Require(foundCell.HasValue, "no cell was found yet: a step naming a found patch must run first");
+            return foundCell.Value;
+        }
+
+        [When("Teshi Renew: the camera looks at the found patch at zoom {int}")]
+        public async Task CameraLooksAtFoundPatch(PickleContext ctx, int zoom)
+        {
+            ctx.Require(zoom >= 4 && zoom <= 60, $"zoom {zoom} is outside the camera's root size range");
+            JumpAndZoom(FoundCell(ctx), zoom);
+            await ctx.WaitFrames(3);
+        }
+
+        [Given("Teshi Renew: a {word} {word} teshi belonging to the colony stands at the found patch")]
+        public void SpawnTameAtFoundPatch(PickleContext ctx, string sex, string stage)
+        {
+            var cell = FoundCell(ctx);
+            Spawn(ctx, Sex(ctx, sex), stage, cell.x, cell.z, Rot4.South, colony: true);
+        }
+
+        [Given("Teshi Renew: a {word} {word} teshi stands at the found patch")]
+        public void SpawnWildAtFoundPatch(PickleContext ctx, string sex, string stage)
+        {
+            var cell = FoundCell(ctx);
+            Spawn(ctx, Sex(ctx, sex), stage, cell.x, cell.z, Rot4.South, colony: false);
+        }
+
+        [When("Teshi Renew: a {string} lies one cell from the found patch")]
+        public void ThingLiesNearFoundPatch(PickleContext ctx, string defName)
+        {
+            var cell = FoundCell(ctx);
+            SpawnThing(ctx, defName, cell.x + 1, cell.z + 1);
         }
 
         [When("Teshi Renew: the camera's zoom limits are restored")]
