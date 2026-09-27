@@ -135,7 +135,20 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**Written, not played.** `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
+**Played green on 2026-09-27 (ticket `8f97`, 3 of 3, evidence `Tests/Pickle/Evidence/2026-09-27-gallery-captures`),
+composition not good enough to upload as taken.** All three scenarios ran and asserted clean; opening the three
+images shows the "flowers" preset's default framing (camera size 12, unchanged by this feature) leaves the
+animal small in a wide, mostly bare frame, with the flower clusters off to the sides rather than around it as
+the studio's own actor Miel — present and named in shot 1 and 2, which the scene did not ask to be alone — and,
+in shot 3, the full colonist roster and every current alert are visible above the Health tab. None of this is
+a defect of the mod; it is the framing this exploration wrote. Before these go in `Art/WorkshopScreenshots/`,
+the feature needs a closer camera (`Find.CameraDriver`, as DrumBathHygiene's own capture scenario does with a
+zoom and a shift), `Find.Selector.ClearSelection()` before framing shots 1 and 2 so Miel is not standing in
+them, and, for shot 3, clearing the alerts the way DrumBathHygiene's suite does ("the letters and the alerts
+are cleared from the screen") — this mod has no such step yet and would need one, or PickleTools' own if it
+gains one. Left for a follow-up pass; the owner may prefer a different scene entirely.
+
+`Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
 reusable photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the test colony — the
 precedent and the reason are `DrumBathHygiene/Tests/Pickle/Mod/Pickle/Features/07-workshop-captures.feature`,
 whose first pair of shots on `test-colony` was refused. Three scenarios, unfilmed, each a screenshot named for
