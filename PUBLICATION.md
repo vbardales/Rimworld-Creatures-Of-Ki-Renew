@@ -78,22 +78,22 @@ No balance value was changed. The dessicated teshi corpse draws with a dromedary
 
 Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
 
-[b]IF I GO QUIET[/b]
+## IF I GO QUIET
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
-[b]AI-GENERATED[/b]
+## AI-GENERATED
 
 The 1.6 update, its tests and its documentation were written with Claude Code (Anthropic), and Codex (OpenAI) also contributed to the repository. The showcase images, the preview background and the icon, are AI-generated artwork; the icon was later edited with OpenAI's built-in image tool, and the preview was lettered afterwards in HTML. Working with these tools is part of how I make mods.
 
-[b]THANKS[/b]
+## THANKS
 
 Shooki, for the teshi: its design, its textures and its defs.
 Mlie, who kept [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) alive through 1.4 and published it under the MIT terms this update relies on.
 SamBucher, for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose category system this mod plugs into.
 XeoNovaDan, for [XND] Nocturnal Animals, and Mlie again, who continues it as [XND] Nocturnal Animals (Continued): [the original](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and [the continuation](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
 
-Tested with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678]Pickle[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696]RimLogging[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401]Nelim's Pickle Tools[/url], thanks to their authors: development only, never a dependency of this mod.
+Tested with [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [Nelim's Pickle Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), thanks to their authors: development only, never a dependency of this mod.
 
 What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE says what the MIT grant covers, the upstream notice included.
 

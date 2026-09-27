@@ -37,16 +37,18 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
-## Note from the CI/CD session — 2026-09-27
+## Note from the CI/CD session, resolved — 2026-09-27
 
-The manual publish workflow (`publish-tag.yml`) is now in place (defs-only mod: `--require Defs
---forbid Assemblies`, no build). **`Mod/About/About.xml`'s `<description>` was deliberately left
-unsynced.** Running `node .github/scripts/sync-about-description.mjs --write` produces a real
-content diff, not a BBCode-to-plain-text reformat: `PUBLICATION.md`'s `## Steam description` block
-has been substantively rewritten since `About.xml` was last aligned with it (see its 2026-09-27
-compatibility-paragraph note). Deciding what that diff should say is a content call, left for a
-human. Until it's resolved, any dry-run with `update_description` on will report the mismatch —
-that's the workflow doing its job, not a defect.
+The manual publish workflow (`publish-tag.yml`) is in place (defs-only mod: `--require Defs
+--forbid Assemblies`, no build). CI/CD flagged `Mod/About/About.xml`'s `<description>` as
+deliberately left unsynced from `PUBLICATION.md`'s `## Steam description` block. Read here: the
+diff was a real content difference, but of the wrong kind — three section headers of that block
+were written as raw BBCode (`[b]IF I GO QUIET[/b]` etc.) and one thanks line as raw `[url=...]`,
+copied from an older mod's pre-single-source `PUBLICATION.md`, instead of the Markdown (`## `
+headers, `[text](url)` links) the rest of the block already used and that `--about-from-description`
+expects. Fixed in the block itself, not by accepting the diff: `node
+.github/scripts/sync-about-description.mjs --write` now reports the description already matches.
+`sync-about-description.mjs --check` is clean.
 
 ## Final validation done, stage tested — 2026-09-26
 
