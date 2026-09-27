@@ -137,12 +137,22 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**TO DO.** No `Art/WorkshopScreenshots/` folder exists yet and none is committed. The existing captures
-(`Tests/Pickle/Evidence/`) are Pickle report screenshots at UI resolution, taken for review, not composed for
-the gallery, and that folder is gitignored. Before the upload, decide and take: the teshi standing in its
-biome, the information card (now written as a scenario, `06-labels-en.feature` and `07-labels-fr.feature`,
-not yet played), and, once played, the health tab or the arm prosthesis in the Health tab of a colonist teshi.
-The owner picks the scene and the order; none is taken yet.
+**Written, not played.** `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
+reusable photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the test colony — the
+precedent and the reason are `DrumBathHygiene/Tests/Pickle/Mod/Pickle/Features/07-workshop-captures.feature`,
+whose first pair of shots on `test-colony` was refused. Three scenarios, unfilmed, each a screenshot named for
+its order:
+
+1. **`workshop-1-the-teshi`** — the adult standing in the flower glade, presentation mode (no interface).
+2. **`workshop-2-the-kit-and-the-egg`** — a kit beside a fertilized egg, presentation mode: "and its eggs" of
+   the description.
+3. **`workshop-3-the-health-tab`** — the Health tab of an adult with one claw cut, interface kept, since the
+   tab is the subject.
+
+Once played and reviewed, the chosen images are copied and converted to JPEG into
+`Art/WorkshopScreenshots/` (`01-…`, `02-…`, `03-…`, that alphabetical order also being the page's), which does
+not exist yet, and every image is opened once against the "no adult content" claim below before it is
+committed. The owner picks the final order and may ask for a different scene; none is taken yet.
 
 ## The preview image
 

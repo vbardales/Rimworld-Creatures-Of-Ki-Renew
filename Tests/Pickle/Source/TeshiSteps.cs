@@ -335,6 +335,26 @@ namespace TeshiRenew.PickleSteps
         }
 
         /// <summary>
+        /// A non-pawn item, the egg a player sees in a stockpile, spawned where the scenario says. Shared by the
+        /// information-card step and by the gallery captures, which want the egg sitting on the ground and
+        /// nothing more.
+        /// </summary>
+        private static Thing SpawnThing(PickleContext ctx, string defName, int x, int z)
+        {
+            var def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
+            ctx.Assert(def != null, $"no ThingDef named {defName}");
+            var thing = ThingMaker.MakeThing(def);
+            GenSpawn.Spawn(thing, new IntVec3(x, 0, z), Map(ctx));
+            return thing;
+        }
+
+        [When("Teshi Renew: a {string} lies at \\({int}, {int}\\)")]
+        public void ThingLiesAt(PickleContext ctx, string defName, int x, int z)
+        {
+            SpawnThing(ctx, defName, x, z);
+        }
+
+        /// <summary>
         /// The card of a thing that is not a pawn, the egg a player sees in a stockpile. The item is spawned
         /// where the scenario says and its card is the one the info button opens, so its name and its
         /// description are the ones a player reads.
@@ -342,10 +362,7 @@ namespace TeshiRenew.PickleSteps
         [When("Teshi Renew: I open the information card of a {string} at \\({int}, {int}\\)")]
         public void OpenThingInfoCard(PickleContext ctx, string defName, int x, int z)
         {
-            var def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
-            ctx.Assert(def != null, $"no ThingDef named {defName}");
-            var thing = ThingMaker.MakeThing(def);
-            GenSpawn.Spawn(thing, new IntVec3(x, 0, z), Map(ctx));
+            var thing = SpawnThing(ctx, defName, x, z);
             Find.WindowStack.Add(new Dialog_InfoCard(thing));
         }
 

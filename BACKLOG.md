@@ -19,9 +19,11 @@ Nothing is filed now.
 
 ## At `prepublished`, not before
 
-`PUBLICATION.md` is written (2026-09-27, this session). Left as TO DO in it: the gallery captures (none exist), the
-content-box answer (not yet re-checked against the images immediately before a dry-run), and the Compatibility paragraph of
-the description, which still needs rewriting once the arm-recipe scenario of ADS2's two arm recipes plays green. The
+`PUBLICATION.md` is written (2026-09-27, this session). The gallery-capture scenarios are now written too
+(`11-workshop-captures.feature`, `wsl-deps.studio.map`), not yet played: ticket `20260927-…` queued (see STATUS.md).
+Left as TO DO: the content-box answer (not yet re-checked against the images immediately before a dry-run), and the
+Compatibility paragraph of the description, which still needs rewriting once the arm-recipe scenario of ADS2's two arm
+recipes plays green. The
 thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted; the three other
 thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once posted, per
 WORKSHOP_COMMENTS.md. The workflow itself is not generated yet (`generate-publish-workflow.sh`, command in

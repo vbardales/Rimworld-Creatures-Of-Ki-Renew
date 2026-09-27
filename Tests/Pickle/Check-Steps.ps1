@@ -52,13 +52,25 @@ $registry = [Activator]::CreateInstance($registryType)
 function New-Expr($pattern) { New-Object CucumberExpressions.CucumberExpression($pattern, $registry) }
 
 # The attribute argument is a C# literal: undo its escaping to get the pattern Pickle sees. The optional
-# TimeoutSeconds argument after the pattern is allowed for.
+# TimeoutSeconds argument after the pattern is allowed for. Some shared PickleTools steps (ScreenshotStudio)
+# write the attribute as `Prefix + "..."`, a compile-time constant concatenation Pickle's own reflection
+# resolves fine but this regex would otherwise miss: matched separately below and joined to the literal
+# value of that file's own `private const string Prefix = "..."`.
 $attr = '\[(?:Given|When|Then)\("((?:[^"\\]|\\.)*)"[^\]]*\]'
+$attrPrefixed = '\[(?:Given|When|Then)\((\w+)\s*\+\s*"((?:[^"\\]|\\.)*)"[^\]]*\]'
 function Read-Patterns($dir, $source) {
     foreach ($f in Get-ChildItem -LiteralPath $dir -Filter *.cs -ErrorAction SilentlyContinue) {
         $text = [IO.File]::ReadAllText($f.FullName)
         foreach ($m in [regex]::Matches($text, $attr)) {
             [pscustomobject]@{ Source = $source; File = $f.Name; Pattern = ($m.Groups[1].Value -replace '\\\\', '\' -replace '\\"', '"') }
+        }
+        foreach ($m in [regex]::Matches($text, $attrPrefixed)) {
+            $constName = $m.Groups[1].Value
+            $constMatch = [regex]::Match($text, "const\s+string\s+$constName\s*=\s*`"((?:[^`"\\]|\\.)*)`"")
+            if (-not $constMatch.Success) { continue }
+            $prefix = $constMatch.Groups[1].Value -replace '\\\\', '\' -replace '\\"', '"'
+            $rest = $m.Groups[2].Value -replace '\\\\', '\' -replace '\\"', '"'
+            [pscustomobject]@{ Source = $source; File = $f.Name; Pattern = ($prefix + $rest) }
         }
     }
 }

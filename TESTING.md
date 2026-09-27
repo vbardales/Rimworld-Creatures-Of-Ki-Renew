@@ -1,6 +1,6 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-The standalone suite `_tools/Run-Functional-Tests.ps1` provides 22 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
+The standalone suite `_tools/Run-Functional-Tests.ps1` provides 23 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
 
 `_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
 reads the compiled game and runs twenty-two checks this document used to have to ask of a
