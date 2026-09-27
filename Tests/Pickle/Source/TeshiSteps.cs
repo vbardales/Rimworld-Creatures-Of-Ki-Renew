@@ -354,6 +354,36 @@ namespace TeshiRenew.PickleSteps
             SpawnThing(ctx, defName, x, z);
         }
 
+        // ---- a closer camera, for a gallery capture --------------------------------------------------
+
+        private static FloatRange? cameraRangeBefore;
+
+        /// <summary>
+        /// The studio's own presets ("flowers" and the rest) frame a whole scene, size 12, too far for a
+        /// single animal to read as the subject: the first captures of 2026-09-27 left it small in a mostly
+        /// bare frame. This centres the camera on the given cell instead and lowers the zoom floor so a small
+        /// size is allowed, as DrumBathHygiene's own capture scenario does for the same reason.
+        /// </summary>
+        [When("Teshi Renew: the camera looks at \\({int}, {int}\\) at zoom {int}")]
+        public async Task CameraLooksAt(PickleContext ctx, int x, int z, int zoom)
+        {
+            ctx.Require(zoom >= 4 && zoom <= 60, $"zoom {zoom} is outside the camera's root size range");
+            var config = Find.CameraDriver.config;
+            if (cameraRangeBefore == null) cameraRangeBefore = config.sizeRange;
+            config.sizeRange = new FloatRange(Math.Min(zoom, config.sizeRange.min), config.sizeRange.max);
+            Find.CameraDriver.JumpToCurrentMapLoc(new IntVec3(x, 0, z));
+            Find.CameraDriver.SetRootSize(zoom);
+            await ctx.WaitFrames(3);
+        }
+
+        [When("Teshi Renew: the camera's zoom limits are restored")]
+        public void RestoreCameraZoom(PickleContext ctx)
+        {
+            if (cameraRangeBefore == null) return;
+            Find.CameraDriver.config.sizeRange = cameraRangeBefore.Value;
+            cameraRangeBefore = null;
+        }
+
         /// <summary>
         /// The card of a thing that is not a pawn, the egg a player sees in a stockpile. The item is spawned
         /// where the scenario says and its card is the one the info button opens, so its name and its

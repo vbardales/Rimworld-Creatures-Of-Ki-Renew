@@ -135,18 +135,17 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**Played green on 2026-09-27 (ticket `8f97`, 3 of 3, evidence `Tests/Pickle/Evidence/2026-09-27-gallery-captures`),
-composition not good enough to upload as taken.** All three scenarios ran and asserted clean; opening the three
-images shows the "flowers" preset's default framing (camera size 12, unchanged by this feature) leaves the
-animal small in a wide, mostly bare frame, with the flower clusters off to the sides rather than around it as
-the studio's own actor Miel — present and named in shot 1 and 2, which the scene did not ask to be alone — and,
-in shot 3, the full colonist roster and every current alert are visible above the Health tab. None of this is
-a defect of the mod; it is the framing this exploration wrote. Before these go in `Art/WorkshopScreenshots/`,
-the feature needs a closer camera (`Find.CameraDriver`, as DrumBathHygiene's own capture scenario does with a
-zoom and a shift), `Find.Selector.ClearSelection()` before framing shots 1 and 2 so Miel is not standing in
-them, and, for shot 3, clearing the alerts the way DrumBathHygiene's suite does ("the letters and the alerts
-are cleared from the screen") — this mod has no such step yet and would need one, or PickleTools' own if it
-gains one. Left for a follow-up pass; the owner may prefer a different scene entirely.
+**First played on 2026-09-27 (ticket `8f97`), reframed the same day after the owner read the images and found
+them too far.** The first version used the "flowers" preset's default camera (size 12), which left the teshi
+small in a wide frame, at the exact spot where the studio's own actor Miel is stationed, so she stood in shots
+1 and 2 uninvited. The feature now spawns the scene at (170,92), about 17 cells from Miel's spot, and a local
+step (`Teshi Renew: the camera looks at (x, z) at zoom {int}`) centres the camera there at zoom 5-6, a close-up
+rather than a whole-scene shot, the same pattern DrumBathHygiene's own capture scenario uses. Shot 3 (the
+Health tab) now also clears the letters and alerts and turns developer mode off for the capture, through
+`nelim.pickletools.screenshotmode` (added to `wsl-deps.studio.map`; itself a port of DrumBathHygiene's own local
+step, made shared on 2026-09-27). Not played again yet: a fresh exploration ticket is queued. Whether (170,92)
+actually sits among the flower clusters or on plain grass was not read from the fixture before this rewrite and
+is what that run will show; the owner may still ask for a different spot once the new images are opened.
 
 `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
 reusable photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the test colony — the

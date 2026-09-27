@@ -1,4 +1,6 @@
 # The gallery-capture pass, for the Workshop page (PUBLICATION.md, "Captures for the Workshop page"). Stages the
-# reusable photographic colony and the shared inspect-tab step; neither is a gameplay dependency of this mod.
+# reusable photographic colony, the shared inspect-tab step, and the shared screenshot-tidying steps (dev mode
+# off, letters and alerts cleared) used for the Health tab shot. None is a gameplay dependency of this mod.
 nelim.pickletools.screenshotstudio    path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
+nelim.pickletools.screenshotmode      path:PickleTools/ScreenshotMode/Mod
