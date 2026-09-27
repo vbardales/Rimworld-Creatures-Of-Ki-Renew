@@ -2,10 +2,9 @@
 
 **Written 2026-09-27. The mod is at `tested`. The Workshop item exists (`3806709627`, created by the 0.1.0
 prepublication, private as Steam creates them) and `Mod/About/PublishedFileId.txt` is committed. What is
-still ahead: the items below marked TO DO, the arm recipes of Animal Prosthetics 2 to be played (STATUS.md),
-the upload by the CI, the switch to public, and the thanks comments.** This sheet holds what the Workshop
-page asks for and the repository holds nowhere else, so that it can be used again at the next update and by
-whoever picks the mod up.
+still ahead: the items below marked TO DO, the upload by the CI, the switch to public, and the thanks
+comments.** This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that
+it can be used again at the next update and by whoever picks the mod up.
 
 This is an **update of an existing item**, not a first creation (`../PUBLISHING.md`, "Publier par la CI").
 Steam already holds the 0.1.0 content; the payload of the next upload is `Mod/` as it stands once the arm
@@ -39,10 +38,9 @@ it good; moving it here changes nothing but its location, so no further re-read 
 dry-run reprints it. Every publish with `update_description` on overwrites the page: this block stays the
 single source, and a hand edit on Steam afterward would be lost.
 
-**Pending edit before the upload:** the Compatibility paragraph below still says the front limbs get the paw
-recipes only. `Mod/Patches/ADS2_Arms.xml` (2026-09-26, ticket `20260926-234650-051-a747` queued) adds the arm
-recipes too; once that scenario is played green, this paragraph and the matching lines of `README.md`,
-`CHANGELOG.md` and `Mod/About/About.xml` are rewritten together, in one commit, before any dry-run is taken.
+The Compatibility paragraph below was rewritten on 2026-09-27 once ticket `a747` played
+`Mod/Patches/ADS2_Arms.xml` green: the teshi now receives all four prostheses of its category, arms
+included, and the paragraph no longer singles out the paw recipes.
 
 ## Steam description
 
@@ -67,7 +65,7 @@ No DLC and no dependencies.
 
 ## Compatibility
 
-[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) is supported and optional. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive that mod's prosthetic limbs and bionics wherever its body has the matching part. Its front limbs get the paw recipes only, because that mod's arm recipes target a shoulder the teshi's body does not have. This mod loads before it, as that mod's page asks, and does nothing when it is absent.
+[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) is supported and optional. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive that mod's prosthetic limbs and bionics wherever its body has the matching part, arms included. This mod loads before it, as that mod's page asks, and does nothing when it is absent.
 
 [XND] Nocturnal Animals (Continued) is supported and optional. With it, the teshi is crepuscular: awake at dawn and at dusk. That rhythm is my choice, since the original gives the teshi none, and without that mod nothing changes.
 

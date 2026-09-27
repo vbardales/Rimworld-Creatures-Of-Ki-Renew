@@ -34,7 +34,9 @@ through 1.4.
   the teshi into that mod's three animal categories, category 3 like the bears and the wolves, and
   `About.xml` loads this mod before it, as its page asks. It is optional and conditional: nothing is
   required, and with the other mod absent the patch finds nothing and logs nothing. Played in game on
-  2026-09-25: the teshi is offered as many of that mod's recipes as a grizzly bear.
+  2026-09-25: the teshi is offered as many of that mod's recipes as a grizzly bear. `Patches/ADS2_Arms.xml`
+  (2026-09-26) adds `Arm` to that mod's two arm recipes, which target a `Shoulder` this mod's body does not
+  have, so the front limbs can receive them too; played green on 2026-09-27.
 - Built-in compatibility with **[XND] Nocturnal Animals (Continued)**. `Patches/NocturnalAnimals.xml` gives the teshi the
   crepuscular body clock, awake at dawn and at dusk. The rhythm is a choice of this port, made by the owner: the source
   gives none. It is one `PatchOperationFindMod` on the two names of that mod and touches only the teshi, so with the
