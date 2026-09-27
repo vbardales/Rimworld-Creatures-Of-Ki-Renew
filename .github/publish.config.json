@@ -1,0 +1,19 @@
+{
+  "templateStamp": "a8ca11cdd9a3",
+  "workshopId": "3806709627",
+  "packageId": "nelim.creaturesofkirenew",
+  "releaseTitle": "Creatures of Ki - Teshi Renew {version}",
+  "requirePaths": [
+    "Defs"
+  ],
+  "forbidPaths": [
+    "Assemblies"
+  ],
+  "previewFile": "About/Preview.png",
+  "aboutFromDescription": true,
+  "description": {
+    "file": "PUBLICATION.md",
+    "format": "markdown",
+    "heading": "^## Steam description$"
+  }
+}
