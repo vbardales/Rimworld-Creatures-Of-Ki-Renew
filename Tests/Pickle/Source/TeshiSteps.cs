@@ -359,6 +359,19 @@ namespace TeshiRenew.PickleSteps
         private static FloatRange? cameraRangeBefore;
         private static IntVec3? foundCell;
 
+        /// <summary>
+        /// Both fields are static, so a scenario that fails between the zoom and its restore step would leave the
+        /// lowered zoom floor and the old found cell to every later scenario of the run.
+        /// </summary>
+        [AfterScenario]
+        public void ResetGalleryState()
+        {
+            if (cameraRangeBefore != null && Find.CameraDriver != null)
+                Find.CameraDriver.config.sizeRange = cameraRangeBefore.Value;
+            cameraRangeBefore = null;
+            foundCell = null;
+        }
+
         private static void JumpAndZoom(IntVec3 cell, int zoom)
         {
             var config = Find.CameraDriver.config;
@@ -389,7 +402,8 @@ namespace TeshiRenew.PickleSteps
         /// first version asked for that and found none within 30 cells, twice (2026-09-27). This searches
         /// outward for the nearest 3x3 block in which at least the given number of cells carry the named
         /// plant and every other cell is bare or grass, so no other flower (and no tree or bush) shares the
-        /// frame: "only orange" as the eye reads it, not nine of nine.
+        /// frame: "only orange" as the eye reads it, not nine of nine. Every cell of the block must also be
+        /// standable, so a wall or a building in it cannot receive the animal.
         /// </summary>
         [When("Teshi Renew: a 3x3 patch with at least {int} {string} and no other flower is found near \\({int}, {int}\\)")]
         public void FindFlowerPatch(PickleContext ctx, int atLeast, string plantDefName, int x, int z)
@@ -415,7 +429,7 @@ namespace TeshiRenew.PickleSteps
                         for (int oz = -1; oz <= 1 && ok; oz++)
                         {
                             var cell = center + new IntVec3(ox, 0, oz);
-                            if (!cell.InBounds(map)) { ok = false; break; }
+                            if (!cell.InBounds(map) || !cell.Standable(map)) { ok = false; break; }
                             var plant = cell.GetPlant(map);
                             if (plant == null || plant.def.defName == "Plant_Grass") continue;
                             if (plant.def == def) wanted++;
@@ -466,7 +480,7 @@ namespace TeshiRenew.PickleSteps
         public void ThingLiesNearFoundPatch(PickleContext ctx, string defName)
         {
             var cell = FoundCell(ctx);
-            SpawnThing(ctx, defName, cell.x + 1, cell.z + 1);
+            SpawnThing(ctx, defName, cell.x + 2, cell.z);
         }
 
         [When("Teshi Renew: the camera's zoom limits are restored")]
