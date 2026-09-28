@@ -10,6 +10,14 @@ None of that earlier reading is relied on here.
 Re-read `AUDIT.md`, `AGENTS.md` and `Rimworld-Ticket-Dispatcher/docs/WELCOME.md` at the start of a session and after every
 compaction of the context (`WELCOME.md`, section 5). Compare the hash below before rereading anything else.
 
+**Correction, 2026-09-28.** The protocol documents left the monorepo: their repository is now
+`Documents/rimworld-protocols.git`, worked in `Documents/rimworld`, and the "version" column below names commits of the old
+monorepo (`90d51374`), which are not this repository's history. The current version of a file is
+`git --git-dir=C:/Users/nelim/Documents/rimworld-protocols.git --work-tree=C:/Users/nelim/Documents/rimworld log -1 -- AUDIT.md`
+(`c5ca0c0`, 2026-09-26, for `AUDIT.md`). `AUDIT.md` also carries an uncommitted section on 2026-09-28, "Icônes locales des
+dossiers Windows", a local convention that is not a state criterion: this repository only ignores `Art/*.ico`. The
+rows below were not reread against the new repository.
+
 ## Read, in the monorepo (`Documents/rimworld`, HEAD `9afdc758`)
 
 | Document | Version read | Lines | Verdict |

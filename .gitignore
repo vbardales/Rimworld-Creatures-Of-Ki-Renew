@@ -53,3 +53,6 @@ desktop.ini
 # The durable record is one text line per run in docs/runs/ (see TESTING.md, "Evidence to keep").
 Tests/Pickle/Evidence/
 evidence/
+
+# Local Windows folder icons (AUDIT.md, "Icônes locales des dossiers Windows"): derived from the PNGs, never published.
+Art/*.ico
