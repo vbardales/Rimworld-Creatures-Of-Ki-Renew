@@ -24,7 +24,7 @@ Nothing is filed now.
 twice the same day, first with a closer camera away from the studio's own actor, then to sit on a 3x3 patch of only
 orange daylilies, found at runtime rather than guessed (the owner asked for the orange bed specifically). A fresh
 exploration ticket is queued (PUBLICATION.md has the detail). The arm-recipe scenario of ADS2's two arm recipes played green on
-2026-09-27 (ticket `a747`), and the Compatibility paragraph of the description, `README.md`, `Mod/README.template.md`
+2026-09-27 (ticket `a747`), and the Compatibility paragraph of the description, `README.md`
 and `STATUS.md` were rewritten to match. Left as TO DO: the reframed gallery captures to be played, and the
 content-box answer (not yet re-checked against the images immediately before a dry-run). The
 thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted; the three other

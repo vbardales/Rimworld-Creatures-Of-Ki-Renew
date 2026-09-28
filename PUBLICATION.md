@@ -25,7 +25,7 @@ recipes land, plus this description.
   go into `STATUS.md`. `publish` takes the full 40-character SHA, and refuses without a green dry-run of that
   exact SHA; **only Virginie approves `steam-production`**. **Any commit after the dry-run changes the SHA and
   needs a new one.**
-- **The CI sends `Mod/`** minus what `Mod/.steamignore` excludes (`README.template.md`, `README.md`, and the
+- **The CI sends `Mod/`** minus what `Mod/.steamignore` excludes (`README.md`, and the
   generated `.dds` texture copies). The workflow's opt-in inputs are off by default and turned on only for
   this dispatch, on the owner's word: `update_description` (below), `update_preview` off (below).
 
@@ -33,7 +33,7 @@ recipes land, plus this description.
 
 The single source is the Markdown block below. The CI turns it into Steam BBCode for the page and into the
 plain-text `<description>` of `Mod/About/About.xml` (`sync-about-description.mjs`), verified to match at every
-dry-run: no hand-kept copy. The owner read the content on 2026-09-26 (as `Mod/README.template.md`) and found
+dry-run: no hand-kept copy. The owner read the content on 2026-09-26 (as `Mod/README.template.md`, deleted on 2026-09-28: the block below is now its only copy) and found
 it good; moving it here changes nothing but its location, so no further re-read is asked before the next
 dry-run reprints it. Every publish with `update_description` on overwrites the page: this block stays the
 single source, and a hand edit on Steam afterward would be lost.

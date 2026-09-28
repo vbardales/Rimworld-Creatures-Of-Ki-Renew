@@ -41,9 +41,9 @@ through 1.4.
   crepuscular body clock, awake at dawn and at dusk. The rhythm is a choice of this port, made by the owner: the source
   gives none. It is one `PatchOperationFindMod` on the two names of that mod and touches only the teshi, so with the
   other mod absent nothing changes, and nothing is required.
-- `Mod/README.template.md`, the source of the Workshop description, and `Mod/.steamignore`, which keeps it and the
-  generated `.dds` textures out of the upload. The description now says what was changed, credits the authors it owes,
-  and links every mod it names.
+- The Workshop description, written once in `PUBLICATION.md` (the block under `## Steam description`, from which the CI
+  generates the Steam page and `Mod/About/About.xml`), and `Mod/.steamignore`, which keeps the generated `.dds` textures
+  out of the upload. The description says what was changed, credits the authors it owes, and links every mod it names.
 - `LICENSE`, the upstream MIT notice, which is what MIT asks in exchange for redistribution.
 
 ### Changed
