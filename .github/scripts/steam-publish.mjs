@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { aboutName, tagsFor } from './about.mjs';
@@ -10,7 +10,7 @@ import { LIMITS, checkBytes } from './limits.mjs';
 import { digest, checkPreview } from './preview.mjs';
 import { formatDiff, isIdentical, lineDiff } from './line-diff.mjs';
 import { relocatingExec } from './relocate-vdf.mjs';
-import { formatSummary, topLevelSummary } from './stage-summary.mjs';
+import { formatSummary, measure, topLevelSummary } from './stage-summary.mjs';
 import { fetchImageDigest, fetchPage } from './steam-page.mjs';
 
 const APP_ID = '294100';
@@ -19,23 +19,6 @@ function required(name) {
   const value = process.env[name];
   if (!value) throw new Error(`${name} is required`);
   return value;
-}
-
-async function totalSize(dir) {
-  let files = 0;
-  let bytes = 0;
-  for (const entry of await readdir(dir, { withFileTypes: true })) {
-    const path = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      const sub = await totalSize(path);
-      files += sub.files;
-      bytes += sub.bytes;
-    } else {
-      files += 1;
-      bytes += (await stat(path)).size;
-    }
-  }
-  return { files, bytes };
 }
 
 const flag = (name) => process.env[name] === 'true';
@@ -67,7 +50,7 @@ if (typeof uploadWorkshopItem !== 'function' || typeof createWorkshopVdf !== 'fu
   throw new Error('semantic-release-steam does not export the upload functions this script relies on');
 }
 const stagePath = await stageModContent({ modPath });
-const { files, bytes } = await totalSize(stagePath);
+const { files, bytes } = await measure(stagePath);
 console.log(`staged ${files} files, ${(bytes / 1e6).toFixed(2)} MB, from ${modPath}`);
 console.log(`content by top-level entry:\n${formatSummary(await topLevelSummary(stagePath))}`);
 console.log(`target: Workshop item ${config.workshopId} (app ${APP_ID}); visibility is never sent`);
