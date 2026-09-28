@@ -21,7 +21,7 @@ C:\Users\nelim\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player
 
 ## The passes this suite needs
 
-Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Five passes, filed as small tickets.
+Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Six passes, filed as small tickets.
 
 | Pass | Map | Language | Plays | Covers |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Fiv
 | Optional integration | `wsl-deps.avec-ads2.map` | English | 12 of 13 discovered | A Dog Said... Animal Prosthetics 2 mounted, this mod ahead of it |
 | Optional integration | `wsl-deps.avec-nocturnal.map` | English | 1 to 12 of 14 discovered | [XND] Nocturnal Animals (Continued) mounted: the teshi carries the crepuscular body clock. An exploration plays only `10`, a validation plays the English set |
 | New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added. **Random: never the same colony twice, so used sparingly** |
+| Gallery captures | `wsl-deps.studio.map` | English | 3 | The three images of the Workshop page (`11-workshop-captures`), on the photographic studio colony. Presentation, not a check of the mod: every capture is opened before use |
 
 Sixteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
 skipped scenario is not a passed one. There is no incompatibility pass, since the mod declares no incompatibility, and no
@@ -173,6 +174,11 @@ Spawn a teshi and a grizzly bear, select each, open the Health tab and look at *
 already puts in category 3. Whether a given prosthesis applies is decided by the parts of the teshi's body,
 which is that mod's arithmetic.
 
+**Also, since 2026-09-26:** the two arm recipes of that mod target a `Shoulder` the teshi's body does not have, and
+`Patches/ADS2_Arms.xml` adds `Arm` to both. The scenario asks the recipe worker whether each recipe applies to each arm and
+applies its effect, then reads the hediff on the arm. A bill given to a doctor, with the medicine and the skill check, is
+not played: it is the game's own job and the scenario stops at the recipe's effect.
+
 **Fails if:** the teshi is offered none of that mod's recipes, or fewer than the bear, or an error names
 `ADS_Cat3` or the patch at startup. And with the other mod **absent**, the mod must load exactly as in
 scenario 1: the patch finds nothing and must log nothing.
@@ -261,11 +267,11 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | 5. The egg hatches | Pickle, `@slow` | `03-laying-and-hatching` | Two kits that belong to the colony, from the eggs she laid. Needs the hatcher's own tick. |
 | 6. Dessicated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
 | 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
-| 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear. |
+| 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear, and, since `ADS2_Arms.xml`, that both arm recipes apply to each arm and leave their hediff (played 2026-09-27). |
 | 9. A new game with the mod | Pickle, `@requires`, own pass | `09-new-colony` | No saved game reaches a colony that starts with the mod: the world and the first map are generated with the animal in them. Random, so played once in a validation and not in fix loops. Its first run, on 2026-09-25, failed in the tool, which started a game with Ideology on and no ideoligion and no starting pawns; it passed on 2026-09-26 once the tool was fixed. |
 | 10. Optional integration with Nocturnal Animals | Pickle, `@requires`, own pass | `10-nocturnal-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape, and that the extension is written nowhere but in a `FindMod`. Only the game shows the class was found, the extension parsed and the teshi kept. |
 | Save and reload | Pickle | `05-save-reload` | An animal and an egg survive a round trip; the fixture colony, saved without the mod, is the mod added to an existing colony. |
-| FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side. |
+| FR / EN display | Pickle, one pass per language | `06-labels-en`, `07-labels-fr` | Labels and descriptions read off the loaded defs, and the health tab with each claw and ear on its own side; and since 2026-09-27 the information card of the kit and of the fertilized egg in both languages, and of the adult in French, seen on screen. |
 
 ## Evidence to keep
 
