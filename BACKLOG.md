@@ -90,3 +90,11 @@ egg layer, or only of a pregnancy, has to be read in the decompiled `CompEggLaye
 
 **Proposal.** Do nothing until the owner names a partner and says which of the three. Nothing is lost meanwhile: the mod
 declares no cross, so the teshi breeds only with its own kind, as in the source.
+
+## Upstream PR: not possible, repository archived — 2026-09-28
+
+PUBLISHING.md asks that a fix go back to the source repository as a pull request when one exists (rule of 2026-09-28).
+Done: forked `emipa606/CreaturesOfKi`, branch `teshi-1.6-support` on `vbardales/CreaturesOfKi`, the teshi's three 1.6
+defs (Wildness moved to `statBases`, `EggTeshiUnfertilized` added) and the full French DefInjected files, Kija and
+Humanoid Alien Races untouched. `gh pr create` refused: the repository is archived (read-only since 2024-04-25), so
+no pull request can exist. Nothing more to do here unless the owner unarchives it; the branch stays on the fork.

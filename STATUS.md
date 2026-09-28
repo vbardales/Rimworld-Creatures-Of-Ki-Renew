@@ -17,6 +17,7 @@ licence_github_detection: Other (NOASSERTION)
 licence_at:   LICENSE and Mod/LICENSE, copyright 2020 Mlie
 upstream_mod_remotes:
   - https://github.com/emipa606/CreaturesOfKi
+upstream_pr:  attempted 2026-09-28, refused (repository archived, read-only). Branch kept on vbardales/CreaturesOfKi teshi-1.6-support
 dependencies: none
 showcase:     complete
 tested_on:     2026-09-26, the final validation of the revision 1fcc51f, every pass green, see the entry at the top

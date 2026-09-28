@@ -15,6 +15,12 @@
 The upstream repository carries an MIT licence, copyright Mlie 2020. That notice ships with this
 mod, which is what MIT asks in exchange for redistribution.
 
+**Upstream PR, attempted 2026-09-28.** PUBLISHING.md asks that a fix go back to the source repository as a pull
+request when one exists. A branch was prepared on a fork (`vbardales/CreaturesOfKi`, `teshi-1.6-support`) with the
+teshi's 1.6 defs (the `Wildness` stat move, the unfertilized egg) and the French DefInjected files, Kija/HAR left
+untouched. `gh pr create` refused: `emipa606/CreaturesOfKi` is **archived** (read-only since 2024-04-25), so no PR
+can be opened. The branch is pushed and kept on the fork in case the repository is ever unarchived.
+
 ## What was taken
 
 Three def files and nine textures were taken from the original; a fourth def file
