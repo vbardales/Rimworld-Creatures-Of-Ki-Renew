@@ -135,36 +135,22 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**Two rewrites so far, both 2026-09-27, not played again yet.** First played (ticket `8f97`): the "flowers"
-preset's default camera (size 12) left the teshi small in a wide frame, at the exact spot where the studio's
-own actor Miel is stationed, so she stood in shots 1 and 2 uninvited. Rewritten with a closer camera (a local
-step, `Teshi Renew: the camera looks at (x, z) at zoom {int}`, the same pattern DrumBathHygiene's own capture
-scenario uses) centred on (170,92), about 17 cells from Miel's spot. The owner then asked for the scene to sit
-on the orange flower bed specifically, only orange, over a 3x3 block: the studio mixes dandelions (yellow),
-daylilies (orange, `Plant_Daylily`) and roses (red) at random per cell, so no fixed coordinate is reliably one
-colour. `Teshi Renew: a 3x3 patch of only {string} is found near (x, z)` now searches outward from (170,92) at
-scenario start for the nearest 3x3 block that is only daylilies, and the scene and camera use that found patch.
-Shot 3 (the Health tab) also clears the letters and alerts and turns developer mode off for the capture,
-through `nelim.pickletools.screenshotmode` (added to `wsl-deps.studio.map`; itself a port of DrumBathHygiene's
-own local step, made shared on 2026-09-27). A fresh exploration ticket is queued; whether a qualifying 3x3
-patch exists within the search radius of (170,92) is what that run will show.
+**One image taken, on 2026-09-28: `Art/WorkshopScreenshots/01-the-teshi.jpg`.** The owner picked it from the played
+run `761c` (evidence `Tests/Pickle/Evidence/2026-09-28-gallery-captures-v4b`, image `workshop-1-the-teshi`, JPEG at quality
+92, 1920 x 1080, 641,388 bytes): the adult teshi close up, on a 3x3 block of orange daylilies, interface hidden. It shows
+one feathered animal on grass and flowers, no colonist, no wound and nothing else, so the "no adult content" answer below
+holds for it. Steam shows it first and large.
 
-`Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` (2026-09-27), on the
-reusable photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the test colony — the
-precedent and the reason are `DrumBathHygiene/Tests/Pickle/Mod/Pickle/Features/07-workshop-captures.feature`,
-whose first pair of shots on `test-colony` was refused. Three scenarios, unfilmed, each a screenshot named for
-its order:
+The other two scenes of `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` are played and green but not taken,
+the owner having asked for the first only: the kit beside a fertilized egg (the kit reads small at zoom 5 and the egg lands
+on yellow dandelions, not orange) and the Health tab of an injured adult (the hover tooltip covers the body, and the colonist
+bar and the tutorial box stay in frame). They are the two to rework if the page is to carry more than one image.
 
-1. **`workshop-1-the-teshi`** — the adult standing in the flower glade, presentation mode (no interface).
-2. **`workshop-2-the-kit-and-the-egg`** — a kit beside a fertilized egg, presentation mode: "and its eggs" of
-   the description.
-3. **`workshop-3-the-health-tab`** — the Health tab of an adult with one claw cut, interface kept, since the
-   tab is the subject.
-
-Once played and reviewed, the chosen images are copied and converted to JPEG into
-`Art/WorkshopScreenshots/` (`01-…`, `02-…`, `03-…`, that alphabetical order also being the page's), which does
-not exist yet, and every image is opened once against the "no adult content" claim below before it is
-committed. The owner picks the final order and may ask for a different scene; none is taken yet.
+How the scene is found: the feature runs on the photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the
+test colony, as `DrumBathHygiene/Tests/Pickle/Mod/Pickle/Features/07-workshop-captures.feature` did after its first pair of
+shots on `test-colony` was refused. A step searches within 40 cells of (170,92), far from the studio actor Miel's spot, for the
+nearest 3x3 block with at least four `Plant_Daylily` and no other flower, tree or bush, all cells standable; the camera and
+the animal use that block. Nine daylilies of nine has about one chance in 200,000 and was found nowhere.
 
 ## The preview image
 
@@ -174,10 +160,10 @@ proposed here because no problem with the current image is on record.
 
 ## Content boxes (adult content, violence)
 
-**TO DO, not yet opened for this pass.** `Preview.png`, `ModIcon.png` and any capture stills must be opened
-once more immediately before the dry-run that will carry them, and the answer written here. On what is known
-of the subject (a feathered animal, no colonist figure, no gore), the expected answer is **no adult content**,
-but this line is not itself the check the workflow protocol asks for.
+Answer **no adult content**, none to declare. Opened on 2026-09-28: `Art/WorkshopScreenshots/01-the-teshi.jpg` (one animal
+on flowers). `Preview.png` and `ModIcon.png` were opened earlier and the owner confirmed the icon on 2026-09-26, but
+`Preview.png` was not opened again this session: **open it and any image added later immediately before the dry-run that
+carries it**, since the boxes commit the page.
 
 ## Thanks to post, after the item is public
 

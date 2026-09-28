@@ -19,14 +19,10 @@ Nothing is filed now.
 
 ## At `prepublished`, not before
 
-`PUBLICATION.md` is written (2026-09-27, this session). The gallery-capture scenarios played green (ticket `8f97`,
-`11-workshop-captures.feature`, `wsl-deps.studio.map`) but too far, per the owner's read of the images; rewritten
-twice the same day, first with a closer camera away from the studio's own actor, then to sit on a 3x3 patch of only
-orange daylilies, found at runtime rather than guessed (the owner asked for the orange bed specifically). A fresh
-exploration ticket is queued (PUBLICATION.md has the detail). The arm-recipe scenario of ADS2's two arm recipes played green on
-2026-09-27 (ticket `a747`), and the Compatibility paragraph of the description, `README.md`
-and `STATUS.md` were rewritten to match. Left as TO DO: the reframed gallery captures to be played, and the
-content-box answer (not yet re-checked against the images immediately before a dry-run). The
+`PUBLICATION.md` is written (2026-09-27, this session). One gallery image is taken (2026-09-28, the owner's pick):
+`Art/WorkshopScreenshots/01-the-teshi.jpg`. The other two scenes are played but not taken (PUBLICATION.md says why and
+what to rework). The arm-recipe scenario played green on 2026-09-27 (ticket `a747`) and the description was rewritten to
+match. Left as TO DO: reopen `Preview.png` and every image immediately before the dry-run for the content-box answer. The
 thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted; the three other
 thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once posted, per
 WORKSHOP_COMMENTS.md. The workflow itself is not generated yet (`generate-publish-workflow.sh`, command in
