@@ -16,7 +16,7 @@ Feature: The ADS2 integration
   Scenario: the teshi gets the same recipes as a grizzly bear
     Given the save "test-colony" is loaded
     Then mod "SamBucher.ADogSaidAnimalProsthetics2" is loaded
-    And mod "nelim.creaturesofkirenew" loads before "SamBucher.ADogSaidAnimalProsthetics2"
+    And mod "nelim.creaturesofki" loads before "SamBucher.ADogSaidAnimalProsthetics2"
     And Teshi Renew: the teshi offers as many recipes from the mod "SamBucher.ADogSaidAnimalProsthetics2" as the "Bear_Grizzly"
     And no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged

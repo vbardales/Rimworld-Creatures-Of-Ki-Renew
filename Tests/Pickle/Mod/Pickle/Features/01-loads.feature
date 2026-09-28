@@ -6,7 +6,7 @@
 Feature: Creatures of Ki - Teshi Renew loads on its own
 
   Scenario: the mod and its five defs load without a warning or an error
-    Then mod "nelim.creaturesofkirenew" is loaded
+    Then mod "nelim.creaturesofki" is loaded
     And def "Teshi" of type "ThingDef" exists
     And def "Teshi" of type "PawnKindDef" exists
     And def "EggTeshiFertilized" of type "ThingDef" exists

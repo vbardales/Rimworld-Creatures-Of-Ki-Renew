@@ -12,5 +12,5 @@
 # own packageId as an overlay puts it where the line stands, ahead of the other mod, and the staging then skips
 # its own copy of it. This is what the declared loadBefore produces once the game's sort has run.
 nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
-nelim.creaturesofkirenew              path:CreaturesOfKiRenew/Mod
+nelim.creaturesofki              path:CreaturesOfKiRenew/Mod
 SamBucher.ADogSaidAnimalProsthetics2  3238353862

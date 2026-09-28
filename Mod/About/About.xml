@@ -2,7 +2,7 @@
 <ModMetaData>
   <name>Creatures of Ki - Teshi Renew</name>
   <author>Shooki, Mlie - 1.6 adapted by Nelim</author>
-  <packageId>nelim.creaturesofkirenew</packageId>
+  <packageId>nelim.creaturesofki</packageId>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -53,7 +53,7 @@ THANKS
 Shooki, for the teshi: its design, its textures and its defs.
 Mlie, who kept Creatures of Ki (https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) alive through 1.4 and published it under the MIT terms this update relies on.
 SamBucher, for A Dog Said... Animal Prosthetics 2 (https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose category system this mod plugs into.
-XeoNovaDan, for [XND] Nocturnal Animals, and Mlie again, who continues it as [XND] Nocturnal Animals (Continued): the original (https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and the continuation (https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
+XeoNovaDan, for XND Nocturnal Animals, and Mlie again, who continues it as XND Nocturnal Animals (Continued): the original (https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and the continuation (https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
 
 Tested with Pickle (https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), RimLogging (https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and Nelim's Pickle Tools (https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), thanks to their authors: development only, never a dependency of this mod.
 

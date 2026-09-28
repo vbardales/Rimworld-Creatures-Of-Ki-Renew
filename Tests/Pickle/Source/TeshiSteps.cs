@@ -384,27 +384,32 @@ namespace TeshiRenew.PickleSteps
 
         /// <summary>
         /// The studio's flower beds mix dandelions (yellow), daylilies (orange) and roses (red) at random per
-        /// cell (ScreenshotStudio's own StudioSteps.cs), so no fixed coordinate is one colour reliably. This
-        /// searches outward from the given cell for the nearest 3x3 block whose every cell carries exactly the
-        /// named plant and nothing else, so a capture can be asked for "only orange" without reading the saved
-        /// fixture by hand first.
+        /// cell (ScreenshotStudio's own StudioSteps.cs), so no fixed coordinate is one colour reliably, and a
+        /// 3x3 block of nine daylilies has about one chance in 200,000 (0.26 per cell, to the ninth power): the
+        /// first version asked for that and found none within 30 cells, twice (2026-09-27). This searches
+        /// outward for the nearest 3x3 block in which at least the given number of cells carry the named
+        /// plant and every other cell is bare or grass, so no other flower (and no tree or bush) shares the
+        /// frame: "only orange" as the eye reads it, not nine of nine.
         /// </summary>
-        [When("Teshi Renew: a 3x3 patch of only {string} is found near \\({int}, {int}\\)")]
-        public void FindFlowerPatch(PickleContext ctx, string plantDefName, int x, int z)
+        [When("Teshi Renew: a 3x3 patch with at least {int} {string} and no other flower is found near \\({int}, {int}\\)")]
+        public void FindFlowerPatch(PickleContext ctx, int atLeast, string plantDefName, int x, int z)
         {
             var map = Map(ctx);
             var def = DefDatabase<ThingDef>.GetNamedSilentFail(plantDefName);
             ctx.Assert(def != null, $"no ThingDef named {plantDefName}");
+            ctx.Require(atLeast >= 1 && atLeast <= 9, $"at least {atLeast} of nine cells is not a patch");
             var origin = new IntVec3(x, 0, z);
             IntVec3? best = null;
             int bestDistSq = int.MaxValue;
-            const int radius = 30;
+            int mostSeen = 0;
+            const int radius = 40;
             for (int dx = -radius; dx <= radius; dx++)
             {
                 for (int dz = -radius; dz <= radius; dz++)
                 {
                     var center = origin + new IntVec3(dx, 0, dz);
                     bool ok = true;
+                    int wanted = 0;
                     for (int ox = -1; ox <= 1 && ok; ox++)
                     {
                         for (int oz = -1; oz <= 1 && ok; oz++)
@@ -412,16 +417,20 @@ namespace TeshiRenew.PickleSteps
                             var cell = center + new IntVec3(ox, 0, oz);
                             if (!cell.InBounds(map)) { ok = false; break; }
                             var plant = cell.GetPlant(map);
-                            if (plant == null || plant.def != def) ok = false;
+                            if (plant == null || plant.def.defName == "Plant_Grass") continue;
+                            if (plant.def == def) wanted++;
+                            else ok = false;
                         }
                     }
                     if (!ok) continue;
+                    if (wanted > mostSeen) mostSeen = wanted;
+                    if (wanted < atLeast) continue;
                     int distSq = dx * dx + dz * dz;
                     if (distSq < bestDistSq) { bestDistSq = distSq; best = center; }
                 }
             }
             ctx.Assert(best.HasValue,
-                $"no 3x3 patch of only {plantDefName} was found within {radius} cells of ({x},{z})");
+                $"no 3x3 patch with at least {atLeast} {plantDefName} and no other plant than grass was found within {radius} cells of ({x},{z}); the best block had {mostSeen}");
             foundCell = best;
         }
 

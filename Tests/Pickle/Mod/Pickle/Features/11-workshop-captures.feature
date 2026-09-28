@@ -11,11 +11,12 @@
 # which left the teshi small in a wide frame at the exact spot where the studio's own actor Miel is stationed
 # (ScreenshotStudio's StudioSteps.cs), so she stood in shot uninvited. The second moved the scene to (170,92)
 # and added a local camera-zoom step, but that spot's own colour was never read from the fixture. The owner then
-# asked for the orange flower bed specifically, only orange, over a 3x3 block: the studio mixes dandelions
-# (yellow), daylilies (orange, `Plant_Daylily`) and roses (red) at random per cell, so no fixed coordinate is
-# reliably one colour. `Teshi Renew: a 3x3 patch of only {string} is found near (x, z)` searches outward from
-# (170,92) for the nearest 3x3 block that is only daylilies and stores it; the scene and the camera then use
-# that found patch instead of a hand-picked coordinate.
+# asked for the orange flower bed specifically: the studio mixes dandelions (yellow), daylilies (orange,
+# `Plant_Daylily`) and roses (red) at random per cell, so no fixed coordinate is reliably one colour. The first
+# search asked for nine daylilies of nine, about one chance in 200,000 per block, and found none within 30 cells
+# (tickets 1d61 and d7ea, both red on that message). It now asks for at least four daylilies in the 3x3 block with
+# only grass or bare ground in the other cells, no other flower, tree or bush, within 40 cells of (170,92); the
+# scene and the camera use the block found.
 #
 # wsl-deps.studio.map stages ScreenshotStudio, the shared inspect-tab step, and the shared screenshot-tidying
 # steps (dev mode off, letters and alerts cleared), so this feature belongs to a `studio` pass of its own, not
@@ -27,7 +28,7 @@ Feature: the images of the Workshop page
   Background:
     Given the save "nelim-zen-meadow-studio" is loaded
     And game speed is paused
-    And Teshi Renew: a 3x3 patch of only "Plant_Daylily" is found near (170, 92)
+    And Teshi Renew: a 3x3 patch with at least 4 "Plant_Daylily" and no other flower is found near (170, 92)
 
   # The first image of the page: the animal itself, on the orange flowers, nothing to explain. Presentation
   # mode hides the interface, as DrumBathHygiene's precedent does; nothing else needs to be cleared, since

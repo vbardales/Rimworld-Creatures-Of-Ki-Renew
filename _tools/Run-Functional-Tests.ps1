@@ -343,7 +343,7 @@ It 'all shipped XML parses and About identifies this standalone mod' {
     }
     $about = New-Object System.Xml.XmlDocument
     $about.Load((Join-Path $modDir 'About/About.xml'))
-    if ($about.ModMetaData.packageId -cne 'nelim.creaturesofkirenew') { 'unexpected packageId' }
+    if ($about.ModMetaData.packageId -cne 'nelim.creaturesofki') { 'unexpected packageId' }
     $url = 'https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew'
     if ($about.ModMetaData.url -cne $url -or -not $about.ModMetaData.description.Contains($url)) { 'GitHub URL missing or inconsistent' }
     if ((Get-FileHash (Join-Path $ModRoot 'LICENSE')).Hash -ne (Get-FileHash (Join-Path $modDir 'LICENSE')).Hash) { 'distributed license differs from repository license' }

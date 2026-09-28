@@ -17,7 +17,7 @@ recipes land, plus this description.
   GitHub release's notes. The tag `v1.0.0` and the release are created **by the CI after a successful
   upload**, never by hand.
 - **The workflow.** Not generated yet: `Rimworld-Release-Admin/scripts/generate-publish-workflow.sh
-  <path-to-this-repo> --workshop-id 3806709627 --package-id nelim.creaturesofkirenew --release-title
+  <path-to-this-repo> --workshop-id 3806709627 --package-id nelim.creaturesofki --release-title
   "Creatures of Ki - Teshi Renew {version}" --description-markdown PUBLICATION.md --description-heading
   '^## Steam description$' --about-from-description`, on the owner's word of 2026-09-27 (`../PUBLISHING.md`,
   "Source unique de la description"). This mod has no compiled assembly, so no `--require`. `dry-run` first,
@@ -91,7 +91,7 @@ The 1.6 update, its tests and its documentation were written with Claude Code (A
 Shooki, for the teshi: its design, its textures and its defs.
 Mlie, who kept [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) alive through 1.4 and published it under the MIT terms this update relies on.
 SamBucher, for [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862), whose category system this mod plugs into.
-XeoNovaDan, for [XND] Nocturnal Animals, and Mlie again, who continues it as [XND] Nocturnal Animals (Continued): [the original](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and [the continuation](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
+XeoNovaDan, for XND Nocturnal Animals, and Mlie again, who continues it as XND Nocturnal Animals (Continued): [the original](https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312) and [the continuation](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409), whose body clocks this mod plugs into.
 
 Tested with [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [Nelim's Pickle Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), thanks to their authors: development only, never a dependency of this mod.
 
