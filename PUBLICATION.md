@@ -135,11 +135,14 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**One image taken, on 2026-09-28: `Art/WorkshopScreenshots/01-the-teshi.jpg`.** The owner picked it from the played
-run `761c` (evidence `Tests/Pickle/Evidence/2026-09-28-gallery-captures-v4b`, image `workshop-1-the-teshi`, JPEG at quality
-92, 1920 x 1080, 641,388 bytes): the adult teshi close up, on a 3x3 block of orange daylilies, interface hidden. It shows
-one feathered animal on grass and flowers, no colonist, no wound and nothing else, so the "no adult content" answer below
-holds for it. Steam shows it first and large.
+**Two images now, `00-` first per the owner's convention of 2026-09-29.** `Art/WorkshopScreenshots/00-the-preview.jpg`
+is a JPEG copy of `Mod/About/Preview.png` as it stood before the icon composite below (the finished header capsule:
+title, summary, "1.6" badge, no ModIcon), quality 92, 896 x 504, 92,649 bytes — the showcase's own convention is that
+slide 0 repeats the header. `01-the-teshi.jpg` was taken on 2026-09-28 from the played run `761c` (evidence
+`Tests/Pickle/Evidence/2026-09-28-gallery-captures-v4b`, image `workshop-1-the-teshi`, JPEG at quality 92, 1920 x 1080,
+641,388 bytes): the adult teshi close up, on a 3x3 block of orange daylilies, interface hidden. Both show one feathered
+animal (or none) on grass, flowers or the mod's own artwork, no colonist, no wound and nothing else, so the "no adult
+content" answer below holds for both. Steam shows `00` first and large.
 
 The other two scenes of `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` are played and green but not taken,
 the owner having asked for the first only: the kit beside a fertilized egg (the kit reads small at zoom 5 and the egg lands
@@ -154,9 +157,21 @@ the animal use that block. Nine daylilies of nine has about one chance in 200,00
 
 ## The preview image
 
-`Mod/About/Preview.png` exists (665,299 bytes) and was not touched in this session. Whether it needs
-re-rendering, and whether `update_preview` is turned on for this dispatch, is the owner's call; nothing is
-proposed here because no problem with the current image is on record.
+**Changed 2026-09-29, approved by the owner.** The showcase convention: `Mod/About/Preview.png` gets
+`ModIcon.png`, cut out, composited into whichever bottom corner reads emptier, tilted as if climbing out of it
+(left corner +15°, right corner -15°; the icon's side and bottom edges overflow the frame). Read off the header:
+the left corner (title/summary area) is far more uniform than the right (the teshi and the ground), so the icon
+went bottom-left at +15°. Built with Sharp (`Art/compose-preview-icon.cjs`, `NODE_PATH` pointing at a mod's own
+`node_modules/sharp` since none is installed globally in this checkout): `ModIcon.png`'s background is a flat
+near-black square, and the icon's own outline stroke is the same near-black, touching it — a plain luminance key
+would strip the outline along with the background. So the cutout floods from the four border edges through dark
+pixels only (background, connected to the edges) and leaves interior dark pixels (eyes, mouth, the outline where
+it does not touch the border) alone; the outline pixels that do touch the border get removed with the
+background too, so the mask is dilated by 2 px and that ring is repainted black, reconstructing the silhouette's
+outline (`Art/ModIcon-cutout.png`, committed so the composite step does not need Sharp again). The rotated cutout
+gets a light blur (0.6) to soften the jagged edges of a 128 px source stepped up to 260 px then rotated, then is
+composited 30% of its rotated width past the left edge and 28% of its rotated height past the bottom edge. New
+file is 896 x 504, PNG, under 1 MiB (`preview.mjs`'s limit).
 
 ## Content boxes (adult content, violence)
 

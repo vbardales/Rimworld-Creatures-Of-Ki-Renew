@@ -19,14 +19,16 @@ Nothing is filed now.
 
 ## At `prepublished`, not before
 
-`PUBLICATION.md` is written (2026-09-27, this session). One gallery image is taken (2026-09-28, the owner's pick):
-`Art/WorkshopScreenshots/01-the-teshi.jpg`. The other two scenes are played but not taken (PUBLICATION.md says why and
-what to rework). The arm-recipe scenario played green on 2026-09-27 (ticket `a747`) and the description was rewritten to
-match. Left as TO DO: reopen `Preview.png` and every image immediately before the dry-run for the content-box answer. The
-thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted; the three other
-thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once posted, per
-WORKSHOP_COMMENTS.md. The workflow itself is not generated yet (`generate-publish-workflow.sh`, command in
-PUBLICATION.md). Nothing is dispatched: no session approves a publish.
+`PUBLICATION.md` is written (2026-09-27, this session). Two gallery images now: `Art/WorkshopScreenshots/00-the-preview.jpg`
+(the header capsule, the owner's showcase convention of 2026-09-29) and `01-the-teshi.jpg` (2026-09-28, the owner's pick).
+The other two played scenes of `11-workshop-captures.feature` are not taken (PUBLICATION.md says why and what to rework).
+`Mod/About/Preview.png` was changed the same day, 2026-09-29: `ModIcon.png`, cut out, composited into its bottom-left
+corner, tilted +15° (`Art/compose-preview-icon.cjs`) — **approved by the owner**. The arm-recipe scenario played green
+on 2026-09-27 (ticket `a747`) and the description was rewritten to match. `.github/` is generated
+(`generate-publish-workflow.sh`, up to date as of 2026-09-28) and no dry-run has run yet. Left as TO DO: reopening
+`Preview.png` and every image immediately before the dry-run for the content-box answer. The thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted;
+the three other thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once
+posted, per WORKSHOP_COMMENTS.md. Nothing is dispatched: no session approves a publish.
 
 ## Optional integrations
 
