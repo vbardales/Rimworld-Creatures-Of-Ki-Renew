@@ -40,6 +40,22 @@ remaining:
 
 # Creatures of Ki - Teshi Renew — status
 
+## 1.0.0 sent to Steam by the CI — 2026-10-02
+
+Newest entry. Dry-run [36979726964](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36979726964)
+green on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`, version 1.0.0, `update_preview` and `update_description` on, log read.
+Publish run [36982893195](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36982893195) on the same SHA,
+approved by Virginie: `publish` and `tag-and-release` both succeeded. Steam log: new content uploaded to item 3806709627
+(manifest 6682224070142369171), new preview uploaded, "Upload finished: OK". Tag `v1.0.0` and the GitHub release point at
+the published SHA. Convention (c), decided by Virginie: publish the dry-run SHA, record it here afterwards, so this note is
+a later docs-only commit and not part of what shipped.
+
+- **Not checked by a session:** the public Steam page (description, change note, images), and the item's visibility, which
+  stays private until Virginie flips it. `stage` stays `prepublished` until she does; `published` needs the item public,
+  the thanks posted and `PublishedFileId.txt` already committed.
+- **Non-regression** (decided 2026-09-26, after the publish): four tickets on `49d9a72`, filed 2026-10-02, see `docs/runs/`.
+  A red result is a defect of the published version and means a rollback publication (AUDIT.md, fail fast).
+
 ## Translation audit — 2026-09-30, French gender-agreement rule and Virginie's review
 
 TRANSLATIONS.md changed on 2026-09-30 (French gender-agreement rule with middle-dot neutral, and the systematic
