@@ -23,13 +23,13 @@
     "file": "echo.png",
     "preSized": true,
     "color": "var(--accent)",
-    "width": 220,
-    "height": 170,
+    "width": 210,
+    "height": 189,
     "opacity": 1,
     "veil": false,
     "panelTop": 2,
     "panelRight": -1,
-    "panelWidth": 42,
+    "panelWidth": 40,
     "flipX": true
   },
   "iconBadge": {

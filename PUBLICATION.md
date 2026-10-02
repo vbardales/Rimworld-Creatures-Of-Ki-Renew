@@ -157,8 +157,9 @@ the animal use that block. Nine daylilies of nine has about one chance in 200,00
 ## The preview image
 
 The current showcase uses the shared preview renderer and `Art/preview-copy.json`. Its compact top-left panel uses
-the RimWorld title font, Segoe UI for `Renew` and the description, and the committed 220 x 170 `Art/echo.png`
-line-art mask with `flipX: true`. The echo is limited to 42% of the panel and has no directional fade.
+the RimWorld title font, Segoe UI for `Renew` and the description, and the committed 210 x 189 `Art/echo.png`
+line-art mask redrawn from the teshi visible in `Art/Gallery/1-the-teshi.jpg`, with `flipX: true`. The echo
+is limited to 40% of the panel and has no directional fade or renderer-side cleanup.
 
 `Art/ModIcon-cutout.png` is a regenerated transparent RGBA master rather than a border flood-fill. The renderer
 places it bottom-left at 180 px, rotates it +15°, applies the standard local veil and lets it bleed slightly outside
