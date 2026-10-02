@@ -1,102 +1,18 @@
 # Backlog
 
-Work not yet done. What is being tested is in [STATUS.md](STATUS.md), and how in [TESTING.md](TESTING.md).
+Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TESTING.md), publishing in [PUBLICATION.md](PUBLICATION.md).
 
-## Done: `done → tested`, on 2026-09-26
+## Now
 
-The final validation is read and every pass is green, `09-new-colony` included after the NewColony tool's fix. STATUS.md has
-the results. Nothing here is left for `tested`. The passes of `ccd2685` (minimal fast, slow, French, and ADS2) were not replayed
-on the revision that holds the Nocturnal patch, which does nothing without the other mod and was covered by the Nocturnal pass
-and by `01-loads`; the owner made their replay a non-regression run, after the publication (next section).
+- **Non-regression after the 1.0.0 publish** (fail fast, decided 2026-09-26): four tickets filed 2026-10-02, `a432`, `4a86`,
+  `e92c`, `9c7d`. Read each `exitReason` and the counts; verdicts go to `STATUS.md` and `docs/runs/`. A red result is a defect
+  of 1.0.0: roll back by a new publication, then fix.
+- **Preview.** `e8b3a89` redrew the Preview echo after the publish; the owner decides whether to ship it in a 1.0.1
+  (`update_preview`, own dry-run) or restore the published one. `Art/Gallery/0-preview.png` must stay identical to it.
+- **Register.** Write the `2726461020` row in `../WORKSHOP_COMMENTS.md` (thanks to Shooki and Mlie, posted by Virginie).
 
-## After the publication: the non-regression passes
+## Parked
 
-Decided by the owner on 2026-09-26. The passes of `ccd2685` (minimal English fast and slow, French, and Animal Prosthetics 2)
-were not replayed on the revision that holds the Nocturnal patch. They are a non-regression run, so **not required before the
-publish**, as the fail-fast policy of `AUDIT.md` has it, but **to be done once the item is published**, on the SHA that was
-published: four tickets, the same scope as the first validation (every scenario of the pass), each with its SHA in its label.
-Nothing is filed now.
-
-## At `prepublished`, not before
-
-`PUBLICATION.md` is written (2026-09-27, this session). Two gallery images now: `Art/WorkshopScreenshots/00-the-preview.jpg`
-(the header capsule, the owner's showcase convention of 2026-09-29) and `01-the-teshi.jpg` (2026-09-28, the owner's pick).
-The other two played scenes of `11-workshop-captures.feature` are not taken (PUBLICATION.md says why and what to rework).
-`Mod/About/Preview.png` was changed the same day, 2026-09-29: `ModIcon.png`, cut out, composited into its bottom-left
-corner, tilted +15° (`Art/compose-preview-icon.cjs`) — **approved by the owner**. The arm-recipe scenario played green
-on 2026-09-27 (ticket `a747`) and the description was rewritten to match. `.github/` is generated
-(`generate-publish-workflow.sh`, up to date as of 2026-09-28) and no dry-run has run yet. Left as TO DO: reopening
-`Preview.png` and every image immediately before the dry-run for the content-box answer. The thanks draft for Shooki and Mlie (Creatures of Ki (Continued), Workshop 2726461020) is ready and not posted;
-the three other thanks (Animal Prosthetics 2, Nocturnal Animals and its continuation) reuse another mod's draft once
-posted, per WORKSHOP_COMMENTS.md. Nothing is dispatched: no session approves a publish.
-
-## Optional integrations
-
-Asked on 2026-09-25: can the mod also handle Nocturnal Animals and Crossbreeding? The owner's answer the same day:
-**crepuscular for the teshi, and no crossbreeding for now.**
-
-### 1. [XND] Nocturnal Animals (Continued) — done, crepuscular, played green on 2026-09-26
-
-Mod: `Mlie.XNDNocturnalAnimals`, Workshop 2269731409, has a 1.6 folder, needs Harmony. Fetched into the WSL cache on
-2026-09-25 with `scripts/download-workshop-wsl.sh`.
-
-`Mod/Patches/NocturnalAnimals.xml` is one `PatchOperationFindMod` that adds this to the teshi:
-
-```xml
-<li Class="NocturnalAnimals.ExtendedRaceProperties">
-  <bodyClock>Crepuscular</bodyClock>
-</li>
-```
-
-`Diurnal` is the default of the enum, so a diurnal teshi needs nothing. The precedents in this collection are
-`SquirrelVarietyPackRenew/Mod/Patches/NocturnalAnimals.xml` and `AnimalsAsNatural/Mod/Patches/Rythme.xml`.
-Two rules from them, both checked by the offline suite:
-
-- **The patch must sit under `PatchOperationFindMod`.** The class belongs to Nocturnal Animals, and when it is missing the
-  game drops the whole def instead of ignoring the extension. On 2026-09-10 that took 47 vanilla animals with it.
-- `FindMod` compares the mod's `<name>`, not its packageId, so both names go in: `[XND] Nocturnal Animals` and
-  `[XND] Nocturnal Animals (Continued)`.
-
-Unlike Animal Prosthetics 2, the patch touches only the mod's own def, so `About.xml` needs no `loadBefore` and no
-dependency.
-
-**The rhythm is the owner's choice of 2026-09-25, not the source's.** The source says only "a large, bipedal feathered
-predator", and no rhythm table in the collection lists the teshi. README, CHANGELOG, ATTRIBUTION, About.xml and the
-Steam template say so.
-
-**Written:** the patch, the offline test on its shape (22 checks now), the local step that reads the extension off the
-parsed race, `10-nocturnal-integration`, `wsl-deps.avec-nocturnal.map`, and the documents. **Played:** the class name and the
-field are as the sibling patches write them, the whole English set and the slow laying pass with the other mod mounted, and
-`01-loads` passes with it absent.
-
-### 2. Crossbreeding — parked by the owner on 2026-09-25, "not for now"
-
-What follows is what to know when it comes back: which mod, and then a partner.
-
-Three things are called that, and they are not the same work.
-
-| What | Where | What it needs from this mod |
-| --- | --- | --- |
-| Vanilla cross-breeding, 1.6 | `<canCrossBreedWith>` on the race, used once in Odyssey | a partner species, in XML, no dependency |
-| Better Crossbreeding, 3520675842 | a modExtension per partner: maternal, paternal, random, or another species from a list | the same partner, and it does nothing on its own. It reads only the mother's extension, so both species must declare it |
-| Crossbreeding, 3039384154 | not read, the page refused the request | unknown |
-
-**What stops it.** Every form needs a partner species. The source teshi has none, so the partner and the outcome would be
-invented, and adding the teshi to another mod's list edits that mod's def, as the arm recipes of Animal Prosthetics 2 would.
-That is the owner's call, and there is nothing to derive.
-
-**What is unknown, and to read before promising anything.** How an egg layer behaves in a cross. The teshi lays
-`EggTeshiFertilized`, which hatches into a teshi through `CompHatcher`. Whether vanilla's cross replaces the offspring of an
-egg layer, or only of a pregnancy, has to be read in the decompiled `CompEggLayer` and `CompHatcher`. The field name of
-`canCrossBreedWith` is from the 1.6 modding page and is to be confirmed on `Assembly-CSharp` too.
-
-**Proposal.** Do nothing until the owner names a partner and says which of the three. Nothing is lost meanwhile: the mod
-declares no cross, so the teshi breeds only with its own kind, as in the source.
-
-## Upstream PR: not possible, repository archived — 2026-09-28
-
-PUBLISHING.md asks that a fix go back to the source repository as a pull request when one exists (rule of 2026-09-28).
-Done: forked `emipa606/CreaturesOfKi`, branch `teshi-1.6-support` on `vbardales/CreaturesOfKi`, the teshi's three 1.6
-defs (Wildness moved to `statBases`, `EggTeshiUnfertilized` added) and the full French DefInjected files, Kija and
-Humanoid Alien Races untouched. `gh pr create` refused: the repository is archived (read-only since 2024-04-25), so
-no pull request can exist. Nothing more to do here unless the owner unarchives it; the branch stays on the fork.
+- **Crossbreeding**: parked by the owner on 2026-09-25, "not for now". It needs a partner species the source does not have; the
+  owner names it, or nothing is done. Read `CompEggLayer` and `CompHatcher` before promising anything.
+- **Upstream PR**: not possible, `emipa606/CreaturesOfKi` is archived. The branch stays on the fork `vbardales/CreaturesOfKi`.

@@ -82,3 +82,10 @@ this table.
 | `STYLE_RIMWORLD.md`, `WORKSHOP_COMMENTS.md`, `scripts/SEARCHING.md`, `PickleTools/*`, `Headless/README.md`, `docs/steps.md`, `OPERATIONS.md`, `SUBMIT.md` | **Not reread** | Not needed for this change set; earlier verdicts above stand. Read before the next run or the publish. |
 
 Local trap: the PowerShell tool blocks `robocopy ... /MIR` and `rmdir` as protected removals. `[IO.Directory]::Delete("\?\<path>", $true)` deleted long-path evidence folders.
+
+## Cleanup at `published`, 2026-10-02
+
+`STATUS.md` now holds the current state only; its dated sections are one line each in `docs/runs/status-history.md` (full text
+at `git show 98afac9:STATUS.md`). `PUBLICATION.md` lost its posted drafts and its first-upload notes; `BACKLOG.md` lost what is
+done. `TESTING.md` already describes only the current revision. This file's tables above are the 2026-09-25 reading and are
+superseded by the 2026-10-02 section; they are kept as a record of which documents helped.
