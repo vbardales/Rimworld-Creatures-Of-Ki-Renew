@@ -483,6 +483,49 @@ namespace TeshiRenew.PickleSteps
             SpawnThing(ctx, defName, cell.x + 2, cell.z);
         }
 
+        // ---- the nest: one set for the whole gallery series -------------------------------------------
+
+        // Offsets from the found patch, east and north. The same cells for every image of the series, so
+        // the background is the same from one picture to the next.
+        private static readonly int[][] HayCells =
+        {
+            new[] { -1, 0 }, new[] { 1, 0 }, new[] { 0, -1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { 1, 1 }, new[] { 1, -1 },
+        };
+        private const int TorchDx = -2, TorchDz = 2;
+
+        /// <summary>
+        /// The set of the series: a ring of hay around the animal and a lit torch at the nest's corner, so the
+        /// frame tells a story (a nest kept at dusk) instead of a bare flower bed. Spawned fresh in every
+        /// scenario, which a reloaded save makes the same set each time; nothing is saved.
+        /// </summary>
+        [Given("Teshi Renew: the nest is set around the found patch")]
+        public void SetNest(PickleContext ctx)
+        {
+            var c = FoundCell(ctx);
+            var map = Map(ctx);
+            var hayDef = DefDatabase<ThingDef>.GetNamedSilentFail("Hay");
+            ctx.Assert(hayDef != null, "no ThingDef named Hay");
+            foreach (var o in HayCells)
+            {
+                var hay = ThingMaker.MakeThing(hayDef);
+                hay.stackCount = 12;
+                GenSpawn.Spawn(hay, new IntVec3(c.x + o[0], 0, c.z + o[1]), map);
+            }
+            var torchDef = DefDatabase<ThingDef>.GetNamedSilentFail("TorchLamp");
+            ctx.Assert(torchDef != null, "no ThingDef named TorchLamp");
+            var torch = ThingMaker.MakeThing(torchDef);
+            GenSpawn.Spawn(torch, new IntVec3(c.x + TorchDx, 0, c.z + TorchDz), map);
+            var fuel = torch.TryGetComp<CompRefuelable>();
+            if (fuel != null) fuel.Refuel(fuel.Props.fuelCapacity);
+        }
+
+        [When("Teshi Renew: a {string} lies in the nest")]
+        public void ThingLiesInNest(PickleContext ctx, string defName)
+        {
+            var c = FoundCell(ctx);
+            SpawnThing(ctx, defName, c.x + 1, c.z);
+        }
+
         [When("Teshi Renew: the camera's zoom limits are restored")]
         public void RestoreCameraZoom(PickleContext ctx)
         {
