@@ -56,7 +56,11 @@ a later docs-only commit and not part of what shipped.
   ("tag v1.0.0 already exists on this commit", the anti-double-publication guard), sent nothing, and is not a publication.
   A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
 - **Public, 2026-10-02:** Virginie switched item 3806709627 to public (her word in chat; no session read the page).
-- **Still open:** the thanks. `stage` stays `prepublished` until they are posted; `published` needs the item public, the
+- **Thanks already covered, 2026-10-02:** the register shows A Dog Said... Animal Prosthetics 2 (3238353862) and
+  Nocturnal Animals (Continued) (2269731409, Mlie and XeoNovaDan in one message) as `posted` from A Certain Series, so this
+  mod posts nothing there and is added to their `Covers` (WORKSHOP_COMMENTS.md, protocols repository, edit uncommitted).
+  Pickle and RimLogging are `posted`, Pickle Tools `not_applicable`. Only Creatures of Ki (Continued), 2726461020, is left.
+- **Still open:** the thanks to Shooki and Mlie. `stage` stays `prepublished` until they are posted; `published` needs the item public, the
   thanks posted and `PublishedFileId.txt` committed (it is, 98a7c49). Drafts for the three recipients with a page are
   proposed in chat and not yet in `PUBLICATION.md` or the register, awaiting Virginie's word on the texts.
 - **Non-regression** (decided 2026-09-26, after the publish): four tickets on `49d9a72`, filed 2026-10-02, see `docs/runs/`.
