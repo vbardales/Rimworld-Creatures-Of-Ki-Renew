@@ -25,6 +25,8 @@ Feature: the images of the Workshop page
   Background:
     Given the save "nelim-zen-meadow-studio" is loaded
     And game speed is paused
+    And I set the hour to 18
+    And I set the weather to "Clear"
     And Teshi Renew: a 3x3 patch with at least 4 "Plant_Daylily" and no other flower is found near (170, 92)
 
   # Image 1: the mother at her nest, the subject alone in the set. Presentation mode hides the interface.
