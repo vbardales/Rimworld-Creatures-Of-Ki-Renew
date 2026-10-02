@@ -5,8 +5,7 @@
     { "text": "Creatures", "scale": 1 },
     { "text": "of", "scale": 0.62 },
     { "text": "Ki", "scale": 1 },
-    { "break": true },
-    { "text": "Teshi", "scale": 1 },
+    { "text": "Teshi", "scale": 1, "breakBefore": true },
     { "text": "Renew", "scale": 0.65, "font": "ui", "color": "secondary" }
   ],
   "suffix": "",
@@ -40,6 +39,7 @@
     "veil": "radial",
     "veilSize": 275,
     "veilLeft": -55,
-    "veilBottom": -61
+    "veilBottom": -61,
+    "translate": "-5%, 5%"
   }
 }
