@@ -24,7 +24,7 @@ showcase:     complete
 tested_on:     2026-09-26, the final validation of the revision 1fcc51f, every pass green, see the entry at the top
 workshop:     3806709627
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
-session:      local_ebbf6354-e959-4188-bafe-63729c5190ff
+session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-09-26, the final validation read and the stage moved to tested, kept by the session that holds this mod
 remaining:
   - verified: English and French display of the animal, its eggs and its kit in the game's own panels. The labels and descriptions of the loaded defs were asserted in both languages and the health tab was seen in both, with no accented gibberish. The information card of the adult, the kit and the fertilized egg were seen in French on 2026-09-27 (ticket `be19`, exploration on `404faf3`, 5 of 5 played, evidence `Tests/Pickle/Evidence/2026-09-26-cards-fr`): "Teshi", "Petit teshi" and "Œuf de teshi (fécondé)", each with a clean French description, no gibberish. The ticket's filter did not exclude `06-labels-en`'s `@en-only` scenarios, so the kit and egg cards also ran once under French by accident (harmless: they assert nothing language-specific, and their captures show the same clean French text) — a filter for a future validation must add `!@en-only` when running French and `!@fr-only` when running English, which the minimal-pass filters already do and this exploration's ad hoc one did not. The English card was already seen open in `02-draws`; ticket `6d76` (2026-09-27, evidence `Tests/Pickle/Evidence/2026-09-26-cards-en`) played the mirrored 5 of 5 green, English text clean throughout, closing the pair.
@@ -50,9 +50,13 @@ approved by Virginie: `publish` and `tag-and-release` both succeeded. Steam log:
 the published SHA. Convention (c), decided by Virginie: publish the dry-run SHA, record it here afterwards, so this note is
 a later docs-only commit and not part of what shipped.
 
-- **Not checked by a session:** the public Steam page (description, change note, images), and the item's visibility, which
-  stays private until Virginie flips it. `stage` stays `prepublished` until she does; `published` needs the item public,
-  the thanks posted and `PublishedFileId.txt` already committed.
+- **Page check, 2026-10-02:** Virginie checked https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627 and said
+  "C'est bon". Relayed to this session by Ticket Manager, not read by a session (Steam answers 429 to the CI). CI/CD's
+  log read: preview 666772 bytes sent, description 5252 characters, "Success.". Run `37019682829` failed on purpose
+  ("tag v1.0.0 already exists on this commit", the anti-double-publication guard), sent nothing, and is not a publication.
+  A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
+- **Still open:** the item's visibility, which stays private until Virginie flips it. `stage` stays `prepublished` until
+  then; `published` needs the item public, the thanks posted and `PublishedFileId.txt` already committed.
 - **Non-regression** (decided 2026-09-26, after the publish): four tickets on `49d9a72`, filed 2026-10-02, see `docs/runs/`.
   A red result is a defect of the published version and means a rollback publication (AUDIT.md, fail fast).
 
