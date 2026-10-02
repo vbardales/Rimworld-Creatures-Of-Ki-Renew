@@ -71,7 +71,7 @@ A new publication needs a new version (1.0.1+) on a new commit, with its own dry
   does. Not read on Steam.
 - **Icon and Preview.** `Mod/About/ModIcon.png`, 128 x 128, edited by a session on 2026-09-13; the owner confirmed it on
   2026-09-26 and again on 2026-10-02. The 32 px check was run on 2026-09-25. The Preview carries the ModIcon bottom-left,
-  tilted, and the owner confirmed it on 2026-10-02. Previous icon at `Art/ModIcon-before-2026-09-13.png`.
+  tilted, and the owner confirmed it on 2026-10-02. The previous icon and the old composition files were removed from `Art/` on 2026-10-02 (still in git history before that commit).
 
 ## Identity and title
 

@@ -146,14 +146,15 @@ the animal use that block. Nine daylilies of nine has about one chance in 200,00
 
 ## The preview image
 
-The current showcase uses the shared preview renderer and `Art/preview-copy.json`. Its compact top-left panel uses
+The current showcase uses the shared preview renderer (`scripts/Render-Preview.cjs` of the monorepo) and
+`Art/Preview.config.json`, over `Art/Preview-source.png`. Its compact top-left panel uses
 the RimWorld title font, Segoe UI for `Renew` and the description, and the committed 210 x 189 `Art/echo.png`
 line-art mask redrawn from the teshi visible in `Art/Gallery/1-the-teshi.jpg`, with `flipX: true`. The echo
 is limited to 40% of the panel and has no directional fade or renderer-side cleanup.
 
-`Art/ModIcon-cutout.png` is a regenerated transparent RGBA master rather than a border flood-fill. The renderer
-places it bottom-left at 180 px, rotates it +15°, applies the standard local veil and lets it bleed slightly outside
-the frame. Intentional black linework remains opaque while true gaps are transparent. The final image is 896 x 504,
+The badge is `Art/ModIcon-source.png`, which the renderer places bottom-left at 180 px (`iconBadge` in the config), rotates
++15°, veils locally and lets bleed slightly outside the frame; the old `ModIcon-cutout.png` master and the earlier
+composition scripts were removed on 2026-10-02. The renderer's diagnostics go to `Art/.render/`, ignored by git. The final image is 896 x 504,
 PNG, under 1 MiB; `Art/Gallery/0-preview.png` must remain byte-identical to it.
 
 ## Content boxes (adult content, violence)

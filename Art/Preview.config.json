@@ -15,7 +15,7 @@
   ],
   "layout": "panel",
   "panelAnchor": "top-left",
-  "backgroundFile": "Preview.png",
+  "backgroundFile": "Preview-source.png",
   "backgroundPosition": "center",
   "backgroundSize": "cover",
   "echo": {
@@ -32,7 +32,7 @@
     "flipX": true
   },
   "iconBadge": {
-    "file": "ModIcon-cutout.png",
+    "file": "ModIcon-source.png",
     "corner": "bottom-left",
     "width": 180,
     "outline": false,
@@ -41,5 +41,12 @@
     "veilLeft": -55,
     "veilBottom": -61,
     "translate": "-5%, 5%"
+  },
+  "palette": {
+    "veil": "#503F2F",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#E9BD82",
+    "accent": "#69BCE6",
+    "badgeInk": "#17120E"
   }
 }
