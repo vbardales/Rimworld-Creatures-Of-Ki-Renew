@@ -1,124 +1,98 @@
 {
-  "date": "2026-09-12",
-  "dimensions": [
-    896,
-    504
-  ],
   "version": "1.6",
-  "fonts": {
-    "h1 .primary": [
-      {
-        "familyName": "Segoe UI Semibold",
-        "postScriptName": "SegoeUI-Semibold",
-        "isCustomFont": false,
-        "glyphCount": 9
-      }
-    ],
-    "h1 .suffix": [
-      {
-        "familyName": "Segoe UI Semibold",
-        "postScriptName": "SegoeUI-Semibold",
-        "isCustomFont": false,
-        "glyphCount": 5
-      }
-    ],
-    "p": [
-      {
-        "familyName": "Segoe UI",
-        "postScriptName": "SegoeUI",
-        "isCustomFont": false,
-        "glyphCount": 48
-      }
-    ],
-    ".version": [
-      {
-        "familyName": "Segoe UI",
-        "postScriptName": "SegoeUI-Bold",
-        "isCustomFont": false,
-        "glyphCount": 3
-      }
-    ]
-  },
-  "regions": [
-    {
-      "text": "Creatures",
-      "x": 50,
-      "y": 48,
-      "width": 198,
-      "height": 62,
-      "color": "rgb(242, 236, 225)",
-      "worstContrast": 8.33,
-      "worstPoint": [
-        225,
-        55
+  "paletteSource": "Art/preview-palette.json",
+  "copySource": "Art/preview-copy.json",
+  "iconBadgeCorner": "bottom-left",
+  "elements": {
+    ".title-main": {
+      "bounds": {
+        "x": 48,
+        "y": 30,
+        "width": 416.796875,
+        "height": 94.59375
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI Semibold",
+          "postScriptName": "SegoeUI-Semibold",
+          "isCustomFont": false,
+          "glyphCount": 5
+        },
+        {
+          "familyName": "RimWordFont",
+          "postScriptName": "RimWordFont",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
       ]
     },
-    {
-      "text": "of",
-      "x": 260.65625,
-      "y": 66,
-      "width": 27.671875,
-      "height": 40,
-      "color": "rgb(242, 236, 225)",
-      "worstContrast": 8.56,
-      "worstPoint": [
-        283,
-        77
+    ".suffix": {
+      "bounds": null,
+      "fonts": []
+    },
+    ".tag": {
+      "bounds": null,
+      "fonts": []
+    },
+    "p": {
+      "bounds": {
+        "x": 48,
+        "y": 161.1875,
+        "width": 362.25,
+        "height": 60.875
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI",
+          "postScriptName": "SegoeUI",
+          "isCustomFont": false,
+          "glyphCount": 47
+        }
       ]
     },
-    {
-      "text": "Ki -",
-      "x": 300.984375,
-      "y": 48,
-      "width": 71.25,
-      "height": 62,
-      "color": "rgb(242, 236, 225)",
-      "worstContrast": 8.56,
-      "worstPoint": [
-        343,
-        51
-      ]
-    },
-    {
-      "text": "Teshi",
-      "x": 50,
-      "y": 98.59375,
-      "width": 103.984375,
-      "height": 62,
-      "color": "rgb(242, 236, 225)",
-      "worstContrast": 8.59,
-      "worstPoint": [
-        71,
-        99
-      ]
-    },
-    {
-      "text": "Renew",
-      "x": 166.640625,
-      "y": 116.59375,
-      "width": 89.65625,
-      "height": 40,
-      "color": "rgb(233, 189, 130)",
-      "worstContrast": 5.8,
-      "worstPoint": [
-        203,
-        119
-      ]
-    },
-    {
-      "text": "The teshi of the forest planet Ki, and its eggs.",
-      "x": 50,
-      "y": 194.1875,
-      "width": 430,
-      "height": 30.4375,
-      "color": "rgb(242, 236, 225)",
-      "worstContrast": 5.67,
-      "worstPoint": [
-        470,
-        216
+    ".version": {
+      "bounds": {
+        "x": 846.7371826171875,
+        "y": 4.737185001373291,
+        "width": 44.525634765625,
+        "height": 44.52562856674194
+      },
+      "fonts": [
+        {
+          "familyName": "Segoe UI",
+          "postScriptName": "SegoeUI-Bold",
+          "isCustomFont": false,
+          "glyphCount": 3
+        }
       ]
     }
-  ],
-  "badgeContrast": 8.8,
-  "method": "All background pixels within each text bounding rectangle, text hidden; conservative minimum. Badge uses its opaque fill."
+  },
+  "layout": {
+    "panel": {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 519.671875,
+        "height": 243.0625
+      }
+    },
+    "copy": {
+      "bounds": {
+        "x": 48,
+        "y": 30,
+        "width": 430,
+        "height": 192.0625
+      }
+    }
+  },
+  "iconBadgeAlpha": {
+    "width": 1153,
+    "height": 1097,
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1153,
+      "height": 1097
+    }
+  }
 }

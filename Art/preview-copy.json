@@ -1,0 +1,45 @@
+{
+  "title": "Creatures of Ki Teshi Renew",
+  "titleSize": 43,
+  "titleParts": [
+    { "text": "Creatures", "scale": 1 },
+    { "text": "of", "scale": 0.62 },
+    { "text": "Ki", "scale": 1 },
+    { "break": true },
+    { "text": "Teshi", "scale": 1 },
+    { "text": "Renew", "scale": 0.65, "font": "ui", "color": "secondary" }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": [
+    "The teshi of the forest planet Ki, and its eggs."
+  ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
+  "backgroundFile": "Preview.png",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "echo": {
+    "file": "echo.png",
+    "preSized": true,
+    "color": "var(--accent)",
+    "width": 220,
+    "height": 170,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 2,
+    "panelRight": -1,
+    "panelWidth": 42,
+    "flipX": true
+  },
+  "iconBadge": {
+    "file": "ModIcon-cutout.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 275,
+    "veilLeft": -55,
+    "veilBottom": -61
+  }
+}

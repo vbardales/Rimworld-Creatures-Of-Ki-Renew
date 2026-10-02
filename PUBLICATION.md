@@ -135,14 +135,13 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**Two images now, `00-` first per the owner's convention of 2026-09-29.** `Art/WorkshopScreenshots/00-the-preview.jpg`
-is a JPEG copy of `Mod/About/Preview.png` as it stood before the icon composite below (the finished header capsule:
-title, summary, "1.6" badge, no ModIcon), quality 92, 896 x 504, 92,649 bytes — the showcase's own convention is that
-slide 0 repeats the header. `01-the-teshi.jpg` was taken on 2026-09-28 from the played run `761c` (evidence
+**Two images, numbered from zero in `Art/Gallery/`.** `Art/Gallery/0-preview.png` is a byte-identical copy of
+`Mod/About/Preview.png`; regenerate and recopy it whenever the header changes. `1-the-teshi.jpg` was taken on
+2026-09-28 from the played run `761c` (evidence
 `Tests/Pickle/Evidence/2026-09-28-gallery-captures-v4b`, image `workshop-1-the-teshi`, JPEG at quality 92, 1920 x 1080,
 641,388 bytes): the adult teshi close up, on a 3x3 block of orange daylilies, interface hidden. Both show one feathered
 animal (or none) on grass, flowers or the mod's own artwork, no colonist, no wound and nothing else, so the "no adult
-content" answer below holds for both. Steam shows `00` first and large.
+content" answer below holds for both. Steam shows `0-preview.png` first and large.
 
 The other two scenes of `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` are played and green but not taken,
 the owner having asked for the first only: the kit beside a fertilized egg (the kit reads small at zoom 5 and the egg lands
@@ -157,25 +156,18 @@ the animal use that block. Nine daylilies of nine has about one chance in 200,00
 
 ## The preview image
 
-**Changed 2026-09-29, approved by the owner.** The showcase convention: `Mod/About/Preview.png` gets
-`ModIcon.png`, cut out, composited into whichever bottom corner reads emptier, tilted as if climbing out of it
-(left corner +15°, right corner -15°; the icon's side and bottom edges overflow the frame). Read off the header:
-the left corner (title/summary area) is far more uniform than the right (the teshi and the ground), so the icon
-went bottom-left at +15°. Built with Sharp (`Art/compose-preview-icon.cjs`, `NODE_PATH` pointing at a mod's own
-`node_modules/sharp` since none is installed globally in this checkout): `ModIcon.png`'s background is a flat
-near-black square, and the icon's own outline stroke is the same near-black, touching it — a plain luminance key
-would strip the outline along with the background. So the cutout floods from the four border edges through dark
-pixels only (background, connected to the edges) and leaves interior dark pixels (eyes, mouth, the outline where
-it does not touch the border) alone; the outline pixels that do touch the border get removed with the
-background too, so the mask is dilated by 2 px and that ring is repainted black, reconstructing the silhouette's
-outline (`Art/ModIcon-cutout.png`, committed so the composite step does not need Sharp again). The rotated cutout
-gets a light blur (0.6) to soften the jagged edges of a 128 px source stepped up to 260 px then rotated, then is
-composited 30% of its rotated width past the left edge and 28% of its rotated height past the bottom edge. New
-file is 896 x 504, PNG, under 1 MiB (`preview.mjs`'s limit).
+The current showcase uses the shared preview renderer and `Art/preview-copy.json`. Its compact top-left panel uses
+the RimWorld title font, Segoe UI for `Renew` and the description, and the committed 220 x 170 `Art/echo.png`
+line-art mask with `flipX: true`. The echo is limited to 42% of the panel and has no directional fade.
+
+`Art/ModIcon-cutout.png` is a regenerated transparent RGBA master rather than a border flood-fill. The renderer
+places it bottom-left at 180 px, rotates it +15°, applies the standard local veil and lets it bleed slightly outside
+the frame. Intentional black linework remains opaque while true gaps are transparent. The final image is 896 x 504,
+PNG, under 1 MiB; `Art/Gallery/0-preview.png` must remain byte-identical to it.
 
 ## Content boxes (adult content, violence)
 
-Answer **no adult content**, none to declare. Opened on 2026-09-28: `Art/WorkshopScreenshots/01-the-teshi.jpg` (one animal
+Answer **no adult content**, none to declare. Opened on 2026-09-28: `Art/Gallery/1-the-teshi.jpg` (one animal
 on flowers). `Preview.png` and `ModIcon.png` were opened earlier and the owner confirmed the icon on 2026-09-26, but
 `Preview.png` was not opened again this session: **open it and any image added later immediately before the dry-run that
 carries it**, since the boxes commit the page.
