@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: tested
+workflow_stage: prepublished
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -11,7 +11,7 @@ remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes
-stage:        tested
+stage:        prepublished
 licence:      open
 licence_spdx: MIT
 licence_github_detection: Other (NOASSERTION)
