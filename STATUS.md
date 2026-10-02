@@ -28,15 +28,22 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-02, moved to published and cleaned (history in docs/runs/status-history.md)
 remaining:
-  - unverified: non-regression after the publish (fail fast, AUDIT.md). Four tickets filed 2026-10-02 with `49d9a72` in the label (`a432` minimal English fast, `4a86` slow laying and hatching, `e92c` minimal French, `9c7d` A Dog Said... Animal Prosthetics 2). They stage `Mod/` from the working tree when played, and `Mod/About/Preview.png` changed in `e8b3a89` after the publish, so the SHA in the labels is no longer exact for them (a Preview changes no behaviour). A red result is a defect of 1.0.0 and means a rollback publication, then a fix.
+  - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
   - feature: `e8b3a89` redrew the Preview's echo after the publish. Published Preview is the 666772-byte one; the repository now holds a 661685-byte one and `Art/Gallery/0-preview.png` must stay identical to it. Needs the owner's decision: restore, or ship it in a 1.0.1 with `update_preview`.
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
-  - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); the register row in `WORKSHOP_COMMENTS.md` (protocols repository) is not written yet. ADS2 (3238353862) and Nocturnal Animals (2269731409, 2004368312) were already `posted` from A Certain Series: this mod is added to their `Covers` there, edit uncommitted in the protocols repository.
+  - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 ---
 
 # Creatures of Ki - Teshi Renew — status
 
 ## Current state — 2026-10-02
+
+**Non-regression, done 2026-10-02 (fail fast).** Four tickets filed with `49d9a72` in the label (`a432` minimal English fast,
+`4a86` slow laying and hatching, `e92c` minimal French, `9c7d` ADS2), staged from the working tree when played, so with the
+Preview of `e8b3a89` (no behaviour change). Every real scenario passed: 11 + 2 + 6 + 15 = all of 01 to 08 in both languages.
+`exitReason` is `failed` on three of them only because of the three `11-workshop-captures` gallery scenarios ("Fixture
+'nelim-zen-meadow-studio' not found"), which my ticket filters did not exclude and which need `wsl-deps.studio.map`: a ticket
+mistake, not a defect of 1.0.0, and no rollback. Lines in `docs/runs/2026-10-02.md`.
 
 Published. Dry-run [36979726964](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36979726964) then
 publish [36982893195](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36982893195), both on
