@@ -55,8 +55,10 @@ a later docs-only commit and not part of what shipped.
   log read: preview 666772 bytes sent, description 5252 characters, "Success.". Run `37019682829` failed on purpose
   ("tag v1.0.0 already exists on this commit", the anti-double-publication guard), sent nothing, and is not a publication.
   A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
-- **Still open:** the item's visibility, which stays private until Virginie flips it. `stage` stays `prepublished` until
-  then; `published` needs the item public, the thanks posted and `PublishedFileId.txt` already committed.
+- **Public, 2026-10-02:** Virginie switched item 3806709627 to public (her word in chat; no session read the page).
+- **Still open:** the thanks. `stage` stays `prepublished` until they are posted; `published` needs the item public, the
+  thanks posted and `PublishedFileId.txt` committed (it is, 98a7c49). Drafts for the three recipients with a page are
+  proposed in chat and not yet in `PUBLICATION.md` or the register, awaiting Virginie's word on the texts.
 - **Non-regression** (decided 2026-09-26, after the publish): four tickets on `49d9a72`, filed 2026-10-02, see `docs/runs/`.
   A red result is a defect of the published version and means a rollback publication (AUDIT.md, fail fast).
 
