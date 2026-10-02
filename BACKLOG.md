@@ -4,8 +4,9 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 
 ## Now
 
-- **Preview.** `e8b3a89` redrew the Preview echo after the publish; the owner decides whether to ship it in a 1.0.1
-  (`update_preview`, own dry-run) or restore the published one. `Art/Gallery/0-preview.png` must stay identical to it.
+- **1.0.1, future.** Ships the Preview redrawn in `e8b3a89` (owner, 2026-10-02): `update_preview`, a new commit, its own
+  dry-run, `CHANGELOG.md` section dated. `Art/Gallery/0-preview.png` must stay identical to the Preview. The published
+  Steam gallery images 0 and 1 are the owner's, uploaded by hand.
 - **Gallery filter.** The next ticket on this mod excludes `11-workshop-captures` (`!11-workshop-captures`) unless it uses
   `wsl-deps.studio.map`: the three gallery scenarios fail on any other map.
 

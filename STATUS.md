@@ -29,7 +29,7 @@ session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-02, moved to published and cleaned (history in docs/runs/status-history.md)
 remaining:
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
-  - feature: `e8b3a89` redrew the Preview's echo after the publish. Published Preview is the 666772-byte one; the repository now holds a 661685-byte one and `Art/Gallery/0-preview.png` must stay identical to it. Needs the owner's decision: restore, or ship it in a 1.0.1 with `update_preview`.
+  - feature: 1.0.1, future, not scheduled (owner, 2026-10-02). It ships the Preview redrawn in `e8b3a89` (661685 bytes, the published one is 666772) with `update_preview`, its own dry-run on a new commit; `Art/Gallery/0-preview.png` is identical to it today and must stay so. Whatever else changes under `Mod/` by then goes in the same version.
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 ---
