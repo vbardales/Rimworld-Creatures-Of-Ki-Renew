@@ -4,9 +4,10 @@ Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it
 in game.
 
-## [1.0.0] — unreleased
+## [1.0.0] — 2026-10-02
 
-On release: create the `v1.0.0` tag and the matching GitHub release.
+Sent to Steam by the CI on 2026-10-02 (publish run 36982893195, commit `49d9a72`, item `3806709627`), tag `v1.0.0` and
+the GitHub release created by the same run.
 
 First release of the 1.6 update of the teshi from **Creatures of Ki**, by Shooki, continued by Mlie
 through 1.4.
@@ -29,7 +30,8 @@ through 1.4.
   Two earlier wordings of this entry were wrong. One said `CompEggLayer` throws whenever an animal lays
   without having been fertilized, which was stated too absolutely. The other said the second egg of a
   mated laying has nothing to be but unfertilized, inferred from the two settings without reading
-  `ProduceEgg`, which makes one stack. The in-game confirmation is still to be performed.
+  `ProduceEgg`, which makes one stack. Confirmed in game on 2026-09-24: a mated teshi lays one stack of two
+  fertilized eggs and no unfertilized egg, and they hatch into two kits that belong to the colony.
 - Built-in compatibility with **A Dog Said... Animal Prosthetics 2**. `Patches/ADS2_Categories.xml` writes
   the teshi into that mod's three animal categories, category 3 like the bears and the wolves, and
   `About.xml` loads this mod before it, as its page asks. It is optional and conditional: nothing is
