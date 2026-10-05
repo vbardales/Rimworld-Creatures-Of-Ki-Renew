@@ -72,6 +72,10 @@ A new publication needs a new version (1.0.1+) on a new commit, with its own dry
 - **0.1.0 prepublication.** It was uploaded from the working tree and probably carried nine `.dds` caches. The 1.0.0 content is
   staged by the CI from a git checkout, which holds no `.dds` (none is tracked, `*.dds` is ignored), so the item no longer
   does. Not read on Steam.
+- **Icon and Preview, regenerated 2026-10-05** at the owner's request after her `Art/ModIcon-source.png` changed: the Preview by
+  `node ../scripts/Render-Preview.cjs` (666485 bytes, `Art/Gallery/0-preview.png` identical, both `.ico` rewritten), the
+  `Mod/About/ModIcon.png` by a mechanical reduction of her source (1286 x 1223 to 128 x 122, centred in 128 x 128, 33090
+  bytes), no retouching. Both were looked at. Not in the published 1.0.0; they ship with the future 1.0.1.
 - **Icon and Preview.** `Mod/About/ModIcon.png`, 128 x 128, edited by a session on 2026-09-13; the owner confirmed it on
   2026-09-26 and again on 2026-10-02. The 32 px check was run on 2026-09-25. The Preview carries the ModIcon bottom-left,
   tilted, and the owner confirmed it on 2026-10-02. The previous icon and the old composition files were removed from `Art/` on 2026-10-02 (still in git history before that commit).
