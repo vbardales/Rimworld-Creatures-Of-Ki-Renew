@@ -53,6 +53,9 @@ Convention (c), decided by Virginie: the dry-run SHA is published, and this reco
 Run `37019682829` failed on purpose ("tag v1.0.0 already exists", the anti-double-publication guard) and sent nothing.
 A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
 
+- **Code review, 2026-10-05.** Low-effort `/code-review` of the `Mod/` diff since the 0.1.0 prepublication (`98a7c49`, hunks
+  only, `Preview.png`, `ModIcon.png`, `Languages/` and tests excluded) at `c342ee91ca41574d075e9b480817714cb7901163`
+  (HEAD at the time; the Art tidy-up commit): no finding. A review, not a test: nothing was run.
 - **Gates.** Settings: `not_applicable` (the mod has no settings, no page, no MainButtons shortcut; checked in the sources).
   Localization, English and French: complete. Virginie reviewed the French of `47c401e` (`FRENCH_REVIEW.md`, 24 rows): natural
   French, correct anatomical terms, no pawn agreement, no correction. Any later change to a French file sets
