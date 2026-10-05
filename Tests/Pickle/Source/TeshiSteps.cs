@@ -357,11 +357,10 @@ namespace TeshiRenew.PickleSteps
         // ---- a closer camera, for a gallery capture --------------------------------------------------
 
         private static FloatRange? cameraRangeBefore;
-        private static IntVec3? foundCell;
 
         /// <summary>
-        /// Both fields are static, so a scenario that fails between the zoom and its restore step would leave the
-        /// lowered zoom floor and the old found cell to every later scenario of the run.
+        /// The field is static, so a scenario that fails between the zoom and its restore step would leave the
+        /// lowered zoom floor to every later scenario of the run.
         /// </summary>
         [AfterScenario]
         public void ResetGalleryState()
@@ -369,7 +368,6 @@ namespace TeshiRenew.PickleSteps
             if (cameraRangeBefore != null && Find.CameraDriver != null)
                 Find.CameraDriver.config.sizeRange = cameraRangeBefore.Value;
             cameraRangeBefore = null;
-            foundCell = null;
         }
 
         private static void JumpAndZoom(IntVec3 cell, int zoom)
@@ -393,137 +391,6 @@ namespace TeshiRenew.PickleSteps
             ctx.Require(zoom >= 4 && zoom <= 60, $"zoom {zoom} is outside the camera's root size range");
             JumpAndZoom(new IntVec3(x, 0, z), zoom);
             await ctx.WaitFrames(3);
-        }
-
-        /// <summary>
-        /// The studio's flower beds mix dandelions (yellow), daylilies (orange) and roses (red) at random per
-        /// cell (ScreenshotStudio's own StudioSteps.cs), so no fixed coordinate is one colour reliably, and a
-        /// 3x3 block of nine daylilies has about one chance in 200,000 (0.26 per cell, to the ninth power): the
-        /// first version asked for that and found none within 30 cells, twice (2026-09-27). This searches
-        /// outward for the nearest 3x3 block in which at least the given number of cells carry the named
-        /// plant and every other cell is bare or grass, so no other flower (and no tree or bush) shares the
-        /// frame: "only orange" as the eye reads it, not nine of nine. Every cell of the block must also be
-        /// standable, so a wall or a building in it cannot receive the animal.
-        /// </summary>
-        [When("Teshi Renew: a 3x3 patch with at least {int} {string} and no other flower is found near \\({int}, {int}\\)")]
-        public void FindFlowerPatch(PickleContext ctx, int atLeast, string plantDefName, int x, int z)
-        {
-            var map = Map(ctx);
-            var def = DefDatabase<ThingDef>.GetNamedSilentFail(plantDefName);
-            ctx.Assert(def != null, $"no ThingDef named {plantDefName}");
-            ctx.Require(atLeast >= 1 && atLeast <= 9, $"at least {atLeast} of nine cells is not a patch");
-            var origin = new IntVec3(x, 0, z);
-            IntVec3? best = null;
-            int bestDistSq = int.MaxValue;
-            int mostSeen = 0;
-            const int radius = 40;
-            for (int dx = -radius; dx <= radius; dx++)
-            {
-                for (int dz = -radius; dz <= radius; dz++)
-                {
-                    var center = origin + new IntVec3(dx, 0, dz);
-                    bool ok = true;
-                    int wanted = 0;
-                    for (int ox = -1; ox <= 1 && ok; ox++)
-                    {
-                        for (int oz = -1; oz <= 1 && ok; oz++)
-                        {
-                            var cell = center + new IntVec3(ox, 0, oz);
-                            if (!cell.InBounds(map) || !cell.Standable(map)) { ok = false; break; }
-                            var plant = cell.GetPlant(map);
-                            if (plant == null || plant.def.defName == "Plant_Grass") continue;
-                            if (plant.def == def) wanted++;
-                            else ok = false;
-                        }
-                    }
-                    if (!ok) continue;
-                    if (wanted > mostSeen) mostSeen = wanted;
-                    if (wanted < atLeast) continue;
-                    int distSq = dx * dx + dz * dz;
-                    if (distSq < bestDistSq) { bestDistSq = distSq; best = center; }
-                }
-            }
-            ctx.Assert(best.HasValue,
-                $"no 3x3 patch with at least {atLeast} {plantDefName} and no other plant than grass was found within {radius} cells of ({x},{z}); the best block had {mostSeen}");
-            foundCell = best;
-        }
-
-        private static IntVec3 FoundCell(PickleContext ctx)
-        {
-            ctx.Require(foundCell.HasValue, "no cell was found yet: a step naming a found patch must run first");
-            return foundCell.Value;
-        }
-
-        [When("Teshi Renew: the camera looks at the found patch at zoom {int}")]
-        public async Task CameraLooksAtFoundPatch(PickleContext ctx, int zoom)
-        {
-            ctx.Require(zoom >= 4 && zoom <= 60, $"zoom {zoom} is outside the camera's root size range");
-            JumpAndZoom(FoundCell(ctx), zoom);
-            await ctx.WaitFrames(3);
-        }
-
-        [Given("Teshi Renew: a {word} {word} teshi belonging to the colony stands at the found patch")]
-        public void SpawnTameAtFoundPatch(PickleContext ctx, string sex, string stage)
-        {
-            var cell = FoundCell(ctx);
-            Spawn(ctx, Sex(ctx, sex), stage, cell.x, cell.z, Rot4.South, colony: true);
-        }
-
-        [Given("Teshi Renew: a {word} {word} teshi stands at the found patch")]
-        public void SpawnWildAtFoundPatch(PickleContext ctx, string sex, string stage)
-        {
-            var cell = FoundCell(ctx);
-            Spawn(ctx, Sex(ctx, sex), stage, cell.x, cell.z, Rot4.South, colony: false);
-        }
-
-        [When("Teshi Renew: a {string} lies one cell from the found patch")]
-        public void ThingLiesNearFoundPatch(PickleContext ctx, string defName)
-        {
-            var cell = FoundCell(ctx);
-            SpawnThing(ctx, defName, cell.x + 2, cell.z);
-        }
-
-        // ---- the nest: one set for the whole gallery series -------------------------------------------
-
-        // Offsets from the found patch, east and north. The same cells for every image of the series, so
-        // the background is the same from one picture to the next.
-        private static readonly int[][] HayCells =
-        {
-            new[] { -1, 0 }, new[] { 1, 0 }, new[] { 0, -1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { 1, 1 }, new[] { 1, -1 },
-        };
-        private const int TorchDx = -2, TorchDz = 2;
-
-        /// <summary>
-        /// The set of the series: a ring of hay around the animal and a lit torch at the nest's corner, so the
-        /// frame tells a story (a nest kept at dusk) instead of a bare flower bed. Spawned fresh in every
-        /// scenario, which a reloaded save makes the same set each time; nothing is saved.
-        /// </summary>
-        [Given("Teshi Renew: the nest is set around the found patch")]
-        public void SetNest(PickleContext ctx)
-        {
-            var c = FoundCell(ctx);
-            var map = Map(ctx);
-            var hayDef = DefDatabase<ThingDef>.GetNamedSilentFail("Hay");
-            ctx.Assert(hayDef != null, "no ThingDef named Hay");
-            foreach (var o in HayCells)
-            {
-                var hay = ThingMaker.MakeThing(hayDef);
-                hay.stackCount = 12;
-                GenSpawn.Spawn(hay, new IntVec3(c.x + o[0], 0, c.z + o[1]), map);
-            }
-            var torchDef = DefDatabase<ThingDef>.GetNamedSilentFail("TorchLamp");
-            ctx.Assert(torchDef != null, "no ThingDef named TorchLamp");
-            var torch = ThingMaker.MakeThing(torchDef);
-            GenSpawn.Spawn(torch, new IntVec3(c.x + TorchDx, 0, c.z + TorchDz), map);
-            var fuel = torch.TryGetComp<CompRefuelable>();
-            if (fuel != null) fuel.Refuel(fuel.Props.fuelCapacity);
-        }
-
-        [When("Teshi Renew: a {string} lies in the nest")]
-        public void ThingLiesInNest(PickleContext ctx, string defName)
-        {
-            var c = FoundCell(ctx);
-            SpawnThing(ctx, defName, c.x + 1, c.z);
         }
 
         [When("Teshi Renew: the camera's zoom limits are restored")]

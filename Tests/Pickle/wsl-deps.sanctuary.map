@@ -1,0 +1,8 @@
+# The gallery-capture pass on Nelim's tribe (fixture Nelims-tribe.rws from PickleTools, copied into Fixtures, not committed).
+# Replaces wsl-deps.studio.map for 11-workshop-captures (2026-10-05, PickleTools' decision): the sanctuary names its places,
+# StageDecor places and removes the set, ScreenshotMode frames the windows, InspectTabs opens the Health tab.
+nelim.pickletools.screenshotstudio    path:PickleTools/ScreenshotStudio/Mod
+nelim.pickletools.camerazoom          path:PickleTools/CameraZoom/Mod
+nelim.pickletools.stagedecor          path:PickleTools/StageDecor/Mod
+nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
+nelim.pickletools.screenshotmode      path:PickleTools/ScreenshotMode/Mod

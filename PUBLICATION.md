@@ -138,11 +138,10 @@ the owner having asked for the first only: the kit beside a fertilized egg (the 
 on yellow dandelions, not orange) and the Health tab of an injured adult (the hover tooltip covers the body, and the colonist
 bar and the tutorial box stay in frame). They are the two to rework if the page is to carry more than one image.
 
-How the scene is found: the feature runs on the photographic colony `nelim-zen-meadow-studio` (`wsl-deps.studio.map`), not the
-test colony, as `DrumBathHygiene/Tests/Pickle/Mod/Pickle/Features/07-workshop-captures.feature` did after its first pair of
-shots on `test-colony` was refused. A step searches within 40 cells of (170,92), far from the studio actor Miel's spot, for the
-nearest 3x3 block with at least four `Plant_Daylily` and no other flower, tree or bush, all cells standable; the camera and
-the animal use that block. Nine daylilies of nine has about one chance in 200,000 and was found nowhere.
+How the scene is staged (2026-10-05): the feature runs on Nelim's tribe, fixture `Nelims-tribe` (`wsl-deps.sanctuary.map`), not the
+test colony, at the sanctuary's "podium" frame (centre (197, 152), the free square of bare earth). StageDecor places seven cells of hay, a torch at
+the corner and, lit, the egg lies in the hay; hour 18 and clear weather are set by the scenario, the fixture being saved at noon. The same
+set and the same camera serve images 1 and 2, and StageDecor removes it after each scenario. Image 3, the health tab, is a menu and is not staged.
 
 ## The preview image
 

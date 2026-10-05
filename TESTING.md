@@ -30,7 +30,7 @@ Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Six
 | Optional integration | `wsl-deps.avec-ads2.map` | English | 12 of 13 discovered | A Dog Said... Animal Prosthetics 2 mounted, this mod ahead of it |
 | Optional integration | `wsl-deps.avec-nocturnal.map` | English | 1 to 12 of 14 discovered | [XND] Nocturnal Animals (Continued) mounted: the teshi carries the crepuscular body clock. An exploration plays only `10`, a validation plays the English set |
 | New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added. **Random: never the same colony twice, so used sparingly** |
-| Gallery captures | `wsl-deps.studio.map` | English | 3 | The three images of the Workshop page (`11-workshop-captures`), on the photographic studio colony. Presentation, not a check of the mod: every capture is opened before use |
+| Gallery captures | `wsl-deps.sanctuary.map` | English | 3 | The three images of the Workshop page (`11-workshop-captures`), on Nelim's tribe (the sanctuary, "podium" frame), staged as a series: a nest of hay and a lit torch placed by StageDecor, hour 18, clear weather. Presentation, not a check of the mod: every capture is opened before use |
 
 Sixteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
 skipped scenario is not a passed one. There is no incompatibility pass, since the mod declares no incompatibility, and no
