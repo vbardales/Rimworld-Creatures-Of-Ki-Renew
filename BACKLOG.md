@@ -4,10 +4,9 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 
 ## Now
 
-- **Gallery series, played (2026-10-06).** One story in six images (dawn, nest, kit, dusk, Health tab, ADS2 bionic arm), run 6212 green and read; waiting for the owner to choose which images go to Steam, then copy them into `Art/Gallery/` (`0-preview.png` first, numbered `1-` to `6-`) and upload by hand. The published gallery still holds images 0 and 1 of 2026-09-28.
 - **1.0.1, future.** Ships the Preview redrawn in `e8b3a89` (owner, 2026-10-02): `update_preview`, a new commit, its own
   dry-run, `CHANGELOG.md` section dated. `Art/Gallery/0-preview.png` must stay identical to the Preview. The published
-  Steam gallery images 0 and 1 are the owner's, uploaded by hand.
+  Steam gallery holds the six images of the story, uploaded by hand by the owner on 2026-10-06 (`Art/Gallery/0-preview.png`, `1-dawn.jpg` to `6-the-bionic-arm.jpg`); the Preview is the published one until 1.0.1.
 - **Gallery filter.** The next ticket on this mod excludes `11-workshop-captures` (`!11-workshop-captures`) unless it uses
   `wsl-deps.sanctuary.map`: the three gallery scenarios fail on any other map.
 
