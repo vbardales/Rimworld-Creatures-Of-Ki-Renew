@@ -265,10 +265,12 @@ namespace TeshiRenew.PickleSteps
             ctx.Require(first != second, "a teshi does not mate with itself: name the two sexes");
             first.rotationTracker.FaceCell(second.Position);
             second.rotationTracker.FaceCell(first.Position);
-            FleckMaker.ThrowMetaIcon(first.Position, Map(ctx), FleckDefOf.Heart);
-            FleckMaker.ThrowMetaIcon(second.Position, Map(ctx), FleckDefOf.Heart);
-            // A fleck is drawn from the tick that follows its birth, and a paused game has none: give it one.
-            Find.TickManager.DoSingleTick();
+            FleckMaker.ThrowMetaIcon(first.Position, Map(ctx), FleckDefOf.Heart, 1.2f);
+            FleckMaker.ThrowMetaIcon(second.Position, Map(ctx), FleckDefOf.Heart, 1.2f);
+            // A fleck fades in over its first ticks, and a paused game has none: give it a dozen, then face the pair again.
+            for (var i = 0; i < 12; i++) Find.TickManager.DoSingleTick();
+            first.rotationTracker.FaceCell(second.Position);
+            second.rotationTracker.FaceCell(first.Position);
         }
 
         /// <summary>
