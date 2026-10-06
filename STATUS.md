@@ -42,7 +42,7 @@ remaining:
 `4a86` slow laying and hatching, `e92c` minimal French, `9c7d` ADS2), staged from the working tree when played, so with the
 Preview of `e8b3a89` (no behaviour change). Every real scenario passed: 11 + 2 + 6 + 15 = all of 01 to 08 in both languages.
 `exitReason` is `failed` on three of them only because of the three `11-workshop-captures` gallery scenarios ("Fixture
-'nelim-zen-meadow-studio' not found"), which my ticket filters did not exclude and which need `wsl-deps.studio.map`: a ticket
+'nelim-zen-meadow-studio' not found"), which my ticket filters did not exclude and which need the `Nelims-tribe` fixture (`wsl-deps.sanctuary.map`, which replaced the studio map on 2026-10-05): a ticket
 mistake, not a defect of 1.0.0, and no rollback. Lines in `docs/runs/2026-10-02.md`.
 
 Published. Dry-run [36979726964](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36979726964) then
