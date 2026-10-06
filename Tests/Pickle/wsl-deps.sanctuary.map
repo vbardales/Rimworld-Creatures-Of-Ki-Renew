@@ -1,8 +1,12 @@
 # The gallery-capture pass on Nelim's tribe (fixture Nelims-tribe.rws from PickleTools, copied into Fixtures, not committed).
-# Replaces wsl-deps.studio.map for 11-workshop-captures (2026-10-05, PickleTools' decision): the sanctuary names its places,
-# StageDecor places and removes the set, ScreenshotMode frames the windows, InspectTabs opens the Health tab.
+# The sanctuary names its places, StageDecor places and removes the set, ScreenshotMode frames the windows, InspectTabs opens
+# the Health tab. Image 6 of 11-workshop-captures needs A Dog Said... Animal Prosthetics 2, so the one pass holds the whole
+# series (2026-10-06). The order is written on purpose, as in wsl-deps.avec-ads2.map: the mod under test is named by its own
+# packageId so that it loads ahead of ADS2, as its loadBefore asks.
 nelim.pickletools.screenshotstudio    path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom          path:PickleTools/CameraZoom/Mod
 nelim.pickletools.stagedecor          path:PickleTools/StageDecor/Mod
 nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
 nelim.pickletools.screenshotmode      path:PickleTools/ScreenshotMode/Mod
+nelim.creaturesofki                   path:CreaturesOfKiRenew/Mod
+SamBucher.ADogSaidAnimalProsthetics2  3238353862
