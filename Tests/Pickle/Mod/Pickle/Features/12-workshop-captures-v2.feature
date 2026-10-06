@@ -11,7 +11,11 @@
 #   6. Evening. Nelim kneels by the kit and holds out a piece of meat, the mother watching.
 #   7. Dusk, the Health tab: a cut claw and the ADS2 bionic arm together (needs ADS2, so the feature carries @requires).
 #
-# OPEN POINTS, to read on the first run: whether EggBox takes a teshi egg placed on its cell, whether the hatched kit stays on
+# MODS, chosen for the props (both declare 1.6, both installed in the Windows Workshop folder, so the staging finds them by id):
+#   Large Animal Beds (cucumpear.animalbeds, 1111387020): CCPLAnimalBed, a bed made for a large animal, under the sleeper and the mother.
+#   Stick Lantern (Continued) (Mlie.StickLantern, 2024351846): DR_StickLantern, a fuelled lantern that glows without power.
+#
+# OPEN POINTS, to read on the first run: whether CCPLAnimalBed accepts the placement and its stuff, whether the sleeper lies on it, whether EggBox takes a teshi egg placed on its cell, whether the hatched kit stays on
 # the cell beside the box, how Nelim reads when she stands holding meat. Filter: any ticket on a pass other than
 # wsl-deps.sanctuary.map excludes this suite (`!12-workshop-captures-v2`), as it does 11-workshop-captures.
 @review @requires:SamBucher.ADogSaidAnimalProsthetics2
@@ -42,6 +46,7 @@ Feature: the images of the Workshop page, second series
     Given I set the hour to 12
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (153, 172)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     And Teshi Renew: the female adult teshi lies down to sleep
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
@@ -58,8 +63,8 @@ Feature: the images of the Workshop page, second series
     Given I set the hour to 17
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
-    And Nelim's Pickle Tools: I place the decor "StandingLampColored" at (156, 171)
-    And Nelim's Pickle Tools: the decor "StandingLampColored" at (156, 171) is lit
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (156, 171)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (156, 171) is lit
     And Nelim's Pickle Tools: I place the decor "PlantPot" at (151, 173)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (152, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
@@ -93,8 +98,9 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
     And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (213, 186)
-    And Nelim's Pickle Tools: the decor "Brazier" at (213, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (216, 185)
     And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
     When Teshi Renew: the camera looks at (216, 185) at zoom 4
@@ -127,8 +133,9 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
     And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (213, 186)
-    And Nelim's Pickle Tools: the decor "Brazier" at (213, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (216, 185)
     And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
     When Teshi Renew: the eggs on the map are one tick from hatching
@@ -148,8 +155,8 @@ Feature: the images of the Workshop page, second series
   Scenario: evening, Nelim holds out a piece of meat to the kit while the mother watches
     Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (213, 186)
-    And Nelim's Pickle Tools: the decor "Brazier" at (213, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (211, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (214, 185)
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East

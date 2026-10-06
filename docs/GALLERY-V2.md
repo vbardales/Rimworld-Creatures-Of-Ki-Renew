@@ -24,14 +24,21 @@ Written in `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature` (r
 | # | Moment | Corner | What the animals do | Props |
 | --- | --- | --- | --- | --- |
 | 1 | dawn | pond, west bank | a close portrait: the head, four ears, banded tail | none |
-| 2 | noon | pond, west bank | the teshi asleep in the sun (LayDown job), the crepuscular animal at rest | none |
-| 3 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `StandingLampColored` lit, `PlantPot` |
-| 4 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, yellow grass, `Brazier` lit |
+| 2 | noon | pond, west bank | the teshi asleep in the sun (LayDown job), the crepuscular animal at rest | `CCPLAnimalBed` |
+| 3 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `DR_StickLantern` lit, `PlantPot` |
+| 4 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, `CCPLAnimalBed`, yellow grass, `DR_StickLantern` lit |
 | 5 | evening | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
-| 6 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `Brazier` lit |
+| 6 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `DR_StickLantern` lit |
 | 7 | dusk | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
 
 The collar of Animal Apparel Collars stays optional and unchecked. The sleeping image needs a new step (`the female adult teshi lies down to sleep`, the game's `LayDown` job, never played); with Nocturnal Animals in the pass it would also be the mod's own rhythm, but the picture does not need that mod.
+
+## Mods chosen (owner, 2026-10-06: any mod, not only hers)
+
+Both declare 1.6 and sit in the Windows Workshop folder, so the staging finds them by id; `wsl-deps.sanctuary.map` lists them.
+
+- **Large Animal Beds** (`cucumpear.animalbeds`, 1111387020): `CCPLAnimalBed`, under the sleeper (image 2) and the mother (images 4, 5).
+- **Stick Lantern (Continued)** (`Mlie.StickLantern`, 2024351846; original by DR): `DR_StickLantern`, a fuelled lantern that glows without power; it replaces the vanilla standing lamp (which needs power) and the brazier. If the gallery ships with them, the Steam description and its thanks name them and say that nothing staged is shipped with the mod; Mlie and the author of Large Animal Beds are thanked in the register `WORKSHOP_COMMENTS.md`.
 
 ## Steps
 

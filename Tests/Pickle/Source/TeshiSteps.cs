@@ -313,7 +313,9 @@ namespace TeshiRenew.PickleSteps
         public void LiesDown(PickleContext ctx, string sex)
         {
             var pawn = TheAdult(ctx, Sex(ctx, sex));
-            var job = JobMaker.MakeJob(JobDefOf.LayDown, pawn.Position);
+            // On a bed when one is on the cell, on the ground otherwise.
+            var bed = pawn.Position.GetThingList(Map(ctx)).OfType<Building_Bed>().FirstOrDefault();
+            var job = bed != null ? JobMaker.MakeJob(JobDefOf.LayDown, bed) : JobMaker.MakeJob(JobDefOf.LayDown, pawn.Position);
             job.forceSleep = true;
             pawn.jobs.StartJob(job, JobCondition.InterruptForced);
             for (var i = 0; i < 20; i++) Find.TickManager.DoSingleTick();
