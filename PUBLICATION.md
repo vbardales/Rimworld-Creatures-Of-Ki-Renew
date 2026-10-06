@@ -138,10 +138,8 @@ the owner having asked for the first only: the kit beside a fertilized egg (the 
 on yellow dandelions, not orange) and the Health tab of an injured adult (the hover tooltip covers the body, and the colonist
 bar and the tutorial box stay in frame). They are the two to rework if the page is to carry more than one image.
 
-How the scene is staged (2026-10-05): the feature runs on Nelim's tribe, fixture `Nelims-tribe` (`wsl-deps.sanctuary.map`), not the
-test colony, at the sanctuary's "podium" frame (centre (197, 152), the free square of bare earth). StageDecor places seven cells of hay, a torch at
-the corner and, lit, the egg lies in the hay; hour 18 and clear weather are set by the scenario, the fixture being saved at noon. The same
-set and the same camera serve images 1 and 2, and StageDecor removes it after each scenario. Image 3, the health tab, is a menu and is not staged.
+How the scene is staged (2026-10-05, place chosen 2026-10-06 from the sanctuary survey captures): the feature runs on Nelim's tribe, fixture `Nelims-tribe` (`wsl-deps.sanctuary.map`), at the sanctuary's "smiley-north" frame (centre (176, 202)): a clearing of orange carpet in the bamboo forest, so nothing is cleared or removed. StageDecor places seven cells of hay and a torch at the corner, lit, and the egg lies in the hay; hour 18 and clear weather are set by the scenario, the fixture being saved at 23h. The same
+set and the same camera serve images 1 and 2, and StageDecor removes it after each scenario. Image 3, the health tab, is a menu and is not staged. Not seen yet: no capture of this frame with the set exists, the first run decides.
 
 ## The preview image
 
