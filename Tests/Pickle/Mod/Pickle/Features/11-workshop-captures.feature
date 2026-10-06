@@ -5,20 +5,22 @@
 # Each image has its own corner of it and its own hour. Menus and interface windows are plain screenshots of what they
 # are. A Scenario is one image: it lays its set, takes the picture, and StageDecor removes the set afterwards.
 #
-# THE STORY: a day of the teshi in Nelim's sanctuary.
-#   1. Dawn. At the west bank of the pond a teshi stands alone, the water behind her: the animal, nothing else.
-#   2. Morning. On the bare earth east of the calm square she keeps a nest of tall grass with the egg she laid: "and its eggs".
-#   3. Noon. The egg has hatched: the kit stays close to its mother, between the flowers and the dry grass, in full sun.
-#   4. Dusk. She is back at the pond, awake as the light goes (the teshi is crepuscular with Nocturnal Animals), a torch lit.
+# THE STORY: an evening of the teshi in Nelim's sanctuary. The teshi is crepuscular (awake at dawn and at dusk, with Nocturnal
+# Animals), so the series shows what the animals DO when the light goes, not a clock:
+#   1. Dawn. A teshi stands alone on the west bank of the pond, the water behind her: the animal, nothing else.
+#   2. Late afternoon. The two parents meet on the bank and nuzzle, the speech bubble over them.
+#   3. Evening. The mother makes her nest of tall yellow grass on the bare earth east of the calm square, the egg in it,
+#      a torch lit beside: "and its eggs".
+#   4. Evening again. The egg has hatched and the mother brings the kit its first meal.
 #   5. Dusk, the health tab: what the mod gives the animal, a body that names each claw and ear (a cut on a claw).
-#   6. Dusk, the same tab after an operation: ADS2's bionic arm, which the integration offers (needs ADS2, so this
-#      scenario carries @requires and the pass map holds it).
+#   6. Dusk, the same tab after an operation: ADS2's bionic arm, which the integration offers (needs ADS2, so the
+#      feature carries @requires and the pass map holds it).
 #
 # THE PLACES, chosen from the empty-place photographs of PickleTools (2026-10-06, midi, Clear, no animals, no interface):
 #   water-garden: the west bank of the pond is brown earth (x 143-158, z 168-176, a burrow at (149, 173) to avoid), the
-#     water to its east; the teshi stands on it at root size 4.
+#     water to its east: the lone teshi (image 1) and the parents (image 2).
 #   smiley-north: the band of plain orange carpet between the eyes and the mouth, centre (176, 202), cells z 199-201 (the two menus).
-#   calm-zone: east of the cream square the earth is brown and plain (x 209-219, z 182-188), spiked with a few dry grasses and, to the west, flowers: the nest (image 2) and the kit with its mother (image 3).
+#   calm-zone: east of the cream square the earth is brown and plain (x 209-219, z 182-188), spiked with a few dry grasses and, to the west, flowers: the nest (image 3) and the kit with its mother (image 4).
 # The fixture is saved at 23h, so each scenario sets the hour and the weather itself.
 @review @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: the images of the Workshop page
@@ -44,64 +46,69 @@ Feature: the images of the Workshop page
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 2, morning: the nest of tall grass on the bare earth east of the calm square, the mother and the egg.
-  Scenario: morning, the mother keeps her nest and the egg on the bare earth east of the calm square
-    Given I set the hour to 9
+  # Image 2, late afternoon: the parents on the west bank of the pond, turned to each other, the nuzzle bubble over them.
+  Scenario: late afternoon, the two parents nuzzle on the west bank of the pond
+    Given I set the hour to 17
+    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (152, 172)
+    And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
+    When Teshi Renew: the camera looks at (153, 172) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.5
+    And Teshi Renew: the female adult teshi nuzzles the male adult teshi
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And I take a screenshot "workshop-2-the-parents"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 3, evening: the mother in the nest she made of tall yellow grass, the egg in it, a torch lit beside.
+  Scenario: evening, the mother makes her nest of yellow grass with the egg and a torch
+    Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 184)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 184)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (216, 184)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 184)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 184)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 185)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 185)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 185)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 185)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 186)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 186)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (216, 186)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 186)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (213, 186)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (213, 186) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (216, 185)
     And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
     When Teshi Renew: the camera looks at (216, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop-2-the-nest"
+    And I take a screenshot "workshop-3-the-nest"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 3, noon: the hatched kit beside its mother, between the flowers and the dry grass on the same earth.
-  Scenario: noon, the kit stays close to its mother between the flowers and the dry grass
-    Given I set the hour to 12
+  # Image 4, evening again: the egg has hatched, the mother brings the kit its first meal, between the flowers and the dry grass.
+  Scenario: evening, the mother brings the kit its first meal
+    Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (213, 186)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 185)
+    And Teshi Renew: the female adult teshi carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (211, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.5
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop-3-the-kit"
-    And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
-    And no errors were logged
-
-  # Image 4, dusk: back at the pond, a torch lit on the bank, the light going.
-  Scenario: dusk, the teshi is back at the pond with a torch lit on the bank
-    Given I set the hour to 18
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (155, 172)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (155, 172) is lit
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 171)
-    When Teshi Renew: the camera looks at (153, 171) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 4
-    And Teshi Renew: I let 10 frames pass
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop-4-dusk"
+    And I take a screenshot "workshop-4-the-meal"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged

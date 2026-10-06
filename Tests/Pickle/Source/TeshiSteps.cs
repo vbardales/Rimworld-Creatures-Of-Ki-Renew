@@ -250,6 +250,41 @@ namespace TeshiRenew.PickleSteps
                 ctx.Assert(kit.Faction == Faction.OfPlayer, $"a teshi kit belongs to {kit.Faction?.Name ?? "no faction"}, not to the colony");
         }
 
+        // ---- behaviours, frozen for a capture --------------------------------------------------------
+
+        /// <summary>
+        /// Two adults turned to each other, with the speech bubble the game draws when an animal nuzzles. The
+        /// interaction itself needs a job, a mood and a stretch of game time that a still picture does not;
+        /// the bubble and the facing are what the picture shows, so those are what is made.
+        /// </summary>
+        [When("Teshi Renew: the {word} adult teshi nuzzles the {word} adult teshi")]
+        public void Nuzzle(PickleContext ctx, string fromSex, string toSex)
+        {
+            var from = TheAdult(ctx, Sex(ctx, fromSex));
+            var to = TheAdult(ctx, Sex(ctx, toSex));
+            ctx.Require(from != to, "a teshi does not nuzzle itself: name the two sexes");
+            var def = DefDatabase<InteractionDef>.GetNamedSilentFail("Nuzzle");
+            ctx.Assert(def != null, "no InteractionDef named Nuzzle");
+            from.rotationTracker.FaceCell(to.Position);
+            to.rotationTracker.FaceCell(from.Position);
+            MoteMaker.MakeInteractionBubble(from, to, def.interactionMote, def.GetSymbol(from.Faction, from.Ideo));
+        }
+
+        /// <summary>
+        /// An adult holding a thing, as it stands when a job of carrying is in progress. The thing is made
+        /// here and put in the pawn's hands; no hauling job runs.
+        /// </summary>
+        [When("Teshi Renew: the {word} adult teshi carries {int} {string}")]
+        public void Carries(PickleContext ctx, string sex, int count, string defName)
+        {
+            var pawn = TheAdult(ctx, Sex(ctx, sex));
+            var thing = ThingMaker.MakeThing(Def(ctx, defName));
+            thing.stackCount = count;
+            var taken = pawn.carryTracker.TryStartCarry(thing, count, false);
+            ctx.Assert(taken == count && pawn.carryTracker.CarriedThing != null,
+                $"the {sex} teshi took {taken} of {count} {defName}: the game did not let it carry them");
+        }
+
         // ---- the corpse ----------------------------------------------------------------------------
 
         /// <summary>
