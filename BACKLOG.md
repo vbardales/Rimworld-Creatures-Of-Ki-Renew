@@ -12,6 +12,8 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 
 ## Parked
 
+- **Gallery, second series**: planned in `docs/GALLERY-V2.md` (ten images with vanilla props, the hatching, a colonist feeding the kit, the crepuscular rhythm). Waiting for the owner to open the toolbox (mods) and say go; two steps to write first.
+
 - **Crossbreeding**: parked by the owner on 2026-09-25, "not for now". It needs a partner species the source does not have; the
   owner names it, or nothing is done. Read `CompEggLayer` and `CompHatcher` before promising anything.
 - **Upstream PR**: not possible, `emipa606/CreaturesOfKi` is archived. The branch stays on the fork `vbardales/CreaturesOfKi`.
