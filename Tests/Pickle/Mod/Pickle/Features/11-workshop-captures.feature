@@ -8,7 +8,7 @@
 # THE STORY: an evening of the teshi in Nelim's sanctuary. The teshi is crepuscular (awake at dawn and at dusk, with Nocturnal
 # Animals), so the series shows what the animals DO when the light goes, not a clock:
 #   1. Dawn. A teshi stands alone on the west bank of the pond, the water behind her: the animal, nothing else.
-#   2. Late afternoon. The two parents meet on the bank and nuzzle, the speech bubble over them.
+#   2. Late afternoon. The two parents meet on the bank, the small hearts over them.
 #   3. Evening. The mother makes her nest of tall yellow grass on the bare earth east of the calm square, the egg in it,
 #      a torch lit beside: "and its eggs".
 #   4. Evening again. The egg has hatched and the mother brings the kit its first meal.
@@ -46,8 +46,8 @@ Feature: the images of the Workshop page
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 2, late afternoon: the parents on the west bank of the pond, turned to each other, the nuzzle bubble over them.
-  Scenario: late afternoon, the two parents nuzzle on the west bank of the pond
+  # Image 2, late afternoon: the parents on the west bank of the pond, turned to each other, the small hearts over them.
+  Scenario: late afternoon, the two parents mate on the west bank of the pond
     Given I set the hour to 17
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
@@ -55,7 +55,7 @@ Feature: the images of the Workshop page
     And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.5
-    And Teshi Renew: the female adult teshi nuzzles the male adult teshi
+    And Teshi Renew: the female adult teshi and the male adult teshi mate
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-2-the-parents"

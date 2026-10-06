@@ -253,21 +253,20 @@ namespace TeshiRenew.PickleSteps
         // ---- behaviours, frozen for a capture --------------------------------------------------------
 
         /// <summary>
-        /// Two adults turned to each other, with the speech bubble the game draws when an animal nuzzles. The
-        /// interaction itself needs a job, a mood and a stretch of game time that a still picture does not;
-        /// the bubble and the facing are what the picture shows, so those are what is made.
+        /// Two adults turned to each other with the small heart the game throws when animals mate
+        /// (JobDriver_Mate throws FleckDefOf.Heart over the pair). The mating job itself needs a mood and a stretch of
+        /// game time that a still picture does not; the hearts and the facing are what the picture shows.
         /// </summary>
-        [When("Teshi Renew: the {word} adult teshi nuzzles the {word} adult teshi")]
-        public void Nuzzle(PickleContext ctx, string fromSex, string toSex)
+        [When("Teshi Renew: the {word} adult teshi and the {word} adult teshi mate")]
+        public void CourtingPair(PickleContext ctx, string firstSex, string secondSex)
         {
-            var from = TheAdult(ctx, Sex(ctx, fromSex));
-            var to = TheAdult(ctx, Sex(ctx, toSex));
-            ctx.Require(from != to, "a teshi does not nuzzle itself: name the two sexes");
-            var def = DefDatabase<InteractionDef>.GetNamedSilentFail("Nuzzle");
-            ctx.Assert(def != null, "no InteractionDef named Nuzzle");
-            from.rotationTracker.FaceCell(to.Position);
-            to.rotationTracker.FaceCell(from.Position);
-            MoteMaker.MakeInteractionBubble(from, to, def.interactionMote, def.GetSymbol(from.Faction, from.Ideo));
+            var first = TheAdult(ctx, Sex(ctx, firstSex));
+            var second = TheAdult(ctx, Sex(ctx, secondSex));
+            ctx.Require(first != second, "a teshi does not mate with itself: name the two sexes");
+            first.rotationTracker.FaceCell(second.Position);
+            second.rotationTracker.FaceCell(first.Position);
+            FleckMaker.ThrowMetaIcon(first.Position, Map(ctx), FleckDefOf.Heart);
+            FleckMaker.ThrowMetaIcon(second.Position, Map(ctx), FleckDefOf.Heart);
         }
 
         /// <summary>
