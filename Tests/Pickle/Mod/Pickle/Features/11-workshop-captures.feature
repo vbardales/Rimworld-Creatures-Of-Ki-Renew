@@ -29,25 +29,25 @@ Feature: the images of the Workshop page
 
   # Image 1: the mother at her nest, the subject alone in the set. Presentation mode hides the interface.
   Scenario: the teshi standing at her nest in the north smiley, framed close for the page
-    Given Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 199)
+    Given Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 199)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 199)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 199)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 200)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 200)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 200)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 200)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 201)
-    And Nelim's Pickle Tools: the plants from (174, 199) to (178, 201) are fully grown
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (173, 201)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (173, 201) is lit
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (176, 200)
-    When Teshi Renew: the camera looks at (176, 200) at zoom 4
+    And Nelim's Pickle Tools: the plants from (173, 199) to (177, 201) are fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (172, 201)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (172, 201) is lit
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (175, 200)
+    When Teshi Renew: the camera looks at (175, 200) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I select the teshi
     And Teshi Renew: I let 10 frames pass
@@ -60,26 +60,26 @@ Feature: the images of the Workshop page
   # Image 2: "and its eggs". The same set and the same camera as image 1, the kit where the mother stood, the egg in
   # the hay beside it.
   Scenario: a teshi kit beside a fertilized egg, in the nest in the north smiley
-    Given Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 199)
+    Given Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 199)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 199)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 199)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 199)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 200)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 200)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 200)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 200)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (178, 201)
-    And Nelim's Pickle Tools: the plants from (174, 199) to (178, 201) are fully grown
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (173, 201)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (173, 201) is lit
-    And Teshi Renew: a female kit teshi stands at (176, 200)
-    And Teshi Renew: a "EggTeshiFertilized" lies at (177, 200)
-    When Teshi Renew: the camera looks at (176, 200) at zoom 4
+    And Nelim's Pickle Tools: the plants from (173, 199) to (177, 201) are fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (172, 201)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (172, 201) is lit
+    And Teshi Renew: a female kit teshi stands at (175, 200)
+    And Teshi Renew: a "EggTeshiFertilized" lies at (176, 200)
+    When Teshi Renew: the camera looks at (175, 200) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -92,7 +92,9 @@ Feature: the images of the Workshop page
   # sees it, one claw injured. The interface stays, since the tab is the subject, so the letters and alerts a fresh
   # load carries are cleared first, and developer mode (the runner starts with it on) is turned off.
   Scenario: the health tab of an injured teshi
-    Given Teshi Renew: a female adult teshi stands at (176, 200)
+    Given Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And Teshi Renew: a female adult teshi stands at (176, 200)
     When Teshi Renew: the camera looks at (176, 200) at zoom 6
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     Then Teshi Renew: the teshi has a "Cut" on its "front left claw"
