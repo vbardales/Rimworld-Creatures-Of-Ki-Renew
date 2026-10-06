@@ -111,6 +111,7 @@ Feature: the images of the Workshop page
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
     And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: the learning helper is hidden
+    And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     Then Teshi Renew: the teshi has a "Cut" on its "front left claw"
     When Teshi Renew: I select the teshi
@@ -134,6 +135,7 @@ Feature: the images of the Workshop page
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
     And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: the learning helper is hidden
+    And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
     Then Teshi Renew: the teshi's "right arm" carries the hediff "BionicArmAnimal"
     When Teshi Renew: I select the teshi
