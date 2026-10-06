@@ -1,4 +1,4 @@
-# Runtime checks only. _tools/Run-Functional-Tests.ps1 owns the XML contracts, the references and the DefInjected
+# Runtime checks only. scripts/Run-Functional-Tests.ps1 owns the XML contracts, the references and the DefInjected
 # paths. What only a running game shows is that the game's own loader kept every def, and that the Wildness the
 # game computes for the animal is the one the def states: in 1.6 the old <race><wildness> form is not an error,
 # it is silently not read, and the stat then falls back to -1. "Teshi" names both a ThingDef and a PawnKindDef,

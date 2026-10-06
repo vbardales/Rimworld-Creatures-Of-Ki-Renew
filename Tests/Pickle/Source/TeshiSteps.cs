@@ -267,6 +267,8 @@ namespace TeshiRenew.PickleSteps
             second.rotationTracker.FaceCell(first.Position);
             FleckMaker.ThrowMetaIcon(first.Position, Map(ctx), FleckDefOf.Heart);
             FleckMaker.ThrowMetaIcon(second.Position, Map(ctx), FleckDefOf.Heart);
+            // A fleck is drawn from the tick that follows its birth, and a paused game has none: give it one.
+            Find.TickManager.DoSingleTick();
         }
 
         /// <summary>
