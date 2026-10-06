@@ -132,16 +132,18 @@ tab, no adult content (the answer in "Content boxes" holds).
 
 **The series is one story, not a row of captures (owner, 2026-10-06).** Six images, told as a day of the teshi in Nelim's sanctuary. The only thing the images share is the sanctuary itself (fixture `Nelims-tribe`, `wsl-deps.sanctuary.map`); each image has its own corner and its own hour, so the series moves through the place and the day instead of repeating one frame. Staged images carry a decor of their own (StageDecor places it and removes it after the scenario); menus are plain screenshots.
 
-| # | Hour | Corner | Subject | Staged |
+| # | Moment | Corner | What the animals do | Staged |
 | --- | --- | --- | --- | --- |
-| 1 | dawn | by the river | the adult teshi alone, facing the water | yes |
-| 2 | morning | the nest in the bamboo clearing | the mother, the fertilized egg in a bed of tall grass | yes |
-| 3 | noon | a clearing of the south | the kit hatched | yes |
-| 4 | dusk | the pond, torches lit | the teshi awake at sunset (crepuscular with Nocturnal Animals) | yes |
-| 5 | night | any | the Health tab of an injured teshi, colonist bar and learning helper hidden | no, a menu |
-| 6 | night | any | the operation menu with the ADS2 arm, on a teshi that wears it | no, a menu |
+| 1 | dawn | the pond, west bank | one teshi alone, the water behind her | yes |
+| 2 | late afternoon | the pond, west bank | the two parents nuzzle (the game's bubble) | yes |
+| 3 | evening | bare earth east of the calm square | the mother in her nest of yellow grass, the egg, a torch lit | yes |
+| 4 | evening | the same earth, by the flowers | the kit and its mother, who brings it meat | yes |
+| 5 | dusk | north clearing | the Health tab, a cut claw, interface kept (colonist bar, tooltip and helper hidden) | no, a menu |
+| 6 | dusk | north clearing | the Health tab with the ADS2 bionic arm | no, a menu |
 
-Corners are chosen from the empty-place photographs of PickleTools (`docs/GALERIE.md`, `docs/SANCTUAIRE-LIEUX.md`), never from their names. Image 6 needs ADS2 loaded, so the series runs on one pass map that holds the sanctuary and ADS2. Every image is opened and read after its run; an anomaly of the scene or of the shared tools goes to PickleTools (NPT) with the capture, and the ticket is filed again only after its answer. State on 2026-10-06: a bed of tall grass (`Plant_TallGrass`) at camera root size 3 reads as a nest in the north clearing; the rest is being written. The published gallery still holds images 0 and 1 of 2026-09-28.
+The story is told in behaviours, not on a clock: the teshi is crepuscular, so the series shows what it does when the light goes. Two steps of the mod's own Pickle suite stage what no shared tool does (the nuzzle bubble, a carried thing).
+
+Corners are chosen from the empty-place photographs of PickleTools (`docs/GALERIE.md`, `docs/SANCTUAIRE-LIEUX.md`), never from their names. Image 6 needs ADS2 loaded, so the series runs on one pass map that holds the sanctuary and ADS2. Every image is opened and read after its run; an anomaly of the scene or of the shared tools goes to PickleTools (NPT) with the capture, and the ticket is filed again only after its answer. State on 2026-10-06: the six images are played (run 6a55) and read.
 
 ## The preview image
 
