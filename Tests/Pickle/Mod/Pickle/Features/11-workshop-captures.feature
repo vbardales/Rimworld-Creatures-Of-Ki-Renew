@@ -7,9 +7,8 @@
 #
 # THE STORY: a day of the teshi in Nelim's sanctuary.
 #   1. Dawn. At the west bank of the pond a teshi stands alone, the water behind her: the animal, nothing else.
-#   2. Morning. In the clearing of the bamboo, on Nelim's orange carpet, she keeps a nest of tall grass with the egg she
-#      laid: "and its eggs".
-#   3. Noon. The egg has hatched: a kit explores the bare earth east of the calm square, in full sun.
+#   2. Morning. On the bare earth east of the calm square she keeps a nest of tall grass with the egg she laid: "and its eggs".
+#   3. Noon. The egg has hatched: the kit stays close to its mother, between the flowers and the dry grass, in full sun.
 #   4. Dusk. She is back at the pond, awake as the light goes (the teshi is crepuscular with Nocturnal Animals), a torch lit.
 #   5. Dusk, the health tab: what the mod gives the animal, a body that names each claw and ear (a cut on a claw).
 #   6. Dusk, the same tab after an operation: ADS2's bionic arm, which the integration offers (needs ADS2, so this
@@ -18,8 +17,8 @@
 # THE PLACES, chosen from the empty-place photographs of PickleTools (2026-10-06, midi, Clear, no animals, no interface):
 #   water-garden: the west bank of the pond is brown earth (x 143-158, z 168-176, a burrow at (149, 173) to avoid), the
 #     water to its east; the teshi stands on it at root size 4.
-#   smiley-north: the band of plain orange carpet between the eyes and the mouth, centre (176, 202), cells z 199-201.
-#   calm-zone: east of the cream square the earth is brown and plain (x 209-219, z 182-188), spiked with a few dry grasses.
+#   smiley-north: the band of plain orange carpet between the eyes and the mouth, centre (176, 202), cells z 199-201 (the two menus).
+#   calm-zone: east of the cream square the earth is brown and plain (x 209-219, z 182-188), spiked with a few dry grasses and, to the west, flowers: the nest (image 2) and the kit with its mother (image 3).
 # The fixture is saved at 23h, so each scenario sets the hour and the weather itself.
 @review @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: the images of the Workshop page
@@ -45,23 +44,28 @@ Feature: the images of the Workshop page
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 2, morning: the nest of tall grass in the north clearing, the egg beside her.
-  Scenario: morning, the mother keeps her nest and the egg in the north clearing
+  # Image 2, morning: the nest of tall grass on the bare earth east of the calm square, the mother and the egg.
+  Scenario: morning, the mother keeps her nest and the egg on the bare earth east of the calm square
     Given I set the hour to 9
-    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 200)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 201)
-    And Nelim's Pickle Tools: the plants from (173, 200) to (177, 201) are fully grown
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (175, 201)
-    And Teshi Renew: a "EggTeshiFertilized" lies at (176, 201)
-    When Teshi Renew: the camera looks at (175, 201) at zoom 4
+    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (216, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (214, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (215, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (216, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (217, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (218, 186)
+    And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (216, 185)
+    And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
+    When Teshi Renew: the camera looks at (216, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -70,13 +74,14 @@ Feature: the images of the Workshop page
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 3, noon: the kit on the bare earth east of the calm square.
-  Scenario: noon, the kit explores the bare earth east of the calm square
+  # Image 3, noon: the hatched kit beside its mother, between the flowers and the dry grass on the same earth.
+  Scenario: noon, the kit stays close to its mother between the flowers and the dry grass
     Given I set the hour to 12
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Teshi Renew: a female kit teshi stands at (211, 185)
+    And Teshi Renew: a female kit teshi stands at (210, 185)
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 185)
     When Teshi Renew: the camera looks at (211, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2
+    And Nelim's Pickle Tools: the camera root size is set to 2.5
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-3-the-kit"
