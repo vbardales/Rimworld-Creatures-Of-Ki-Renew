@@ -106,10 +106,10 @@ Feature: the images of the Workshop page
   # fresh load carries are cleared, and developer mode (the runner starts with it on) is turned off.
   Scenario: dusk, the health tab of an injured teshi
     Given I set the hour to 18
+    And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
-    And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
@@ -130,10 +130,10 @@ Feature: the images of the Workshop page
   # Image 6, night: the same tab after an operation, ADS2's bionic arm on the right arm (the integration of the page).
   Scenario: dusk, the health tab of a teshi with a bionic arm from ADS2
     Given I set the hour to 18
+    And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
-    And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
