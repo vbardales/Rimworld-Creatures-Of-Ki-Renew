@@ -126,9 +126,7 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 ## Captures for the Workshop page
 
 Numbered from zero in `Art/Gallery/`. `0-preview.png` is a byte-identical copy of `Mod/About/Preview.png`; regenerate and
-recopy it whenever the header changes. `1-the-teshi.jpg` (2026-09-28, run `761c`, 1920 x 1080) is the first image published by
-hand. The images below replace it. Every image shows animals, plants or the mod's artwork only: no wound outside the Health
-tab, no adult content (the answer in "Content boxes" holds).
+recopy it whenever the header changes. `1-` to `6-` are the six images of the story below (JPEG, quality 92, 1920 x 1080, from run `6a55`; image 2 from the run that follows the change to the mating heart), uploaded by hand. The first published image, `1-the-teshi.jpg` of 2026-09-28 (run `761c`), left the folder on 2026-10-06; it stays in git history. Every image shows animals, plants or the mod's artwork only; image 5 shows a cut claw in the Health tab, which is a game menu (see "Content boxes").
 
 **The series is one story, not a row of captures (owner, 2026-10-06).** Six images, told as a day of the teshi in Nelim's sanctuary. The only thing the images share is the sanctuary itself (fixture `Nelims-tribe`, `wsl-deps.sanctuary.map`); each image has its own corner and its own hour, so the series moves through the place and the day instead of repeating one frame. Staged images carry a decor of their own (StageDecor places it and removes it after the scenario); menus are plain screenshots.
 
@@ -150,7 +148,7 @@ Corners are chosen from the empty-place photographs of PickleTools (`docs/GALERI
 The current showcase uses the shared preview renderer (`scripts/Render-Preview.cjs` of the monorepo) and
 `Art/Preview.config.json`, over `Art/Preview-source.png`. Its compact top-left panel uses
 the RimWorld title font, Segoe UI for `Renew` and the description, and the committed 210 x 189 `Art/echo.png`
-line-art mask redrawn from the teshi visible in `Art/Gallery/1-the-teshi.jpg`, with `flipX: true`. The echo
+line-art mask redrawn from the teshi visible in the former `Art/Gallery/1-the-teshi.jpg` (git history), with `flipX: true`. The echo
 is limited to 40% of the panel and has no directional fade or renderer-side cleanup.
 
 The badge is `Art/ModIcon-source.png`, which the renderer places bottom-left at 180 px (`iconBadge` in the config), rotates
@@ -160,8 +158,8 @@ PNG, under 1 MiB; `Art/Gallery/0-preview.png` must remain byte-identical to it.
 
 ## Content boxes (adult content, violence)
 
-Answer **no adult content**, none to declare. Opened on 2026-09-28: `Art/Gallery/1-the-teshi.jpg` (one animal
-on flowers). `Preview.png` and `ModIcon.png` were opened earlier and the owner confirmed the icon on 2026-09-26, but
+Answer **no adult content**, none to declare. Opened on 2026-09-28: the former `Art/Gallery/1-the-teshi.jpg` (one animal
+on flowers); the six images of 2026-10-06 were opened too (animals, a nest, a torch, two Health tabs with a cut claw and a bionic arm, no person shown). `Preview.png` and `ModIcon.png` were opened earlier and the owner confirmed the icon on 2026-09-26, but
 `Preview.png` was not opened again this session: **open it and any image added later immediately before the dry-run that
 carries it**, since the boxes commit the page.
 
