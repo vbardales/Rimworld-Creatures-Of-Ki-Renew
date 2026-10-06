@@ -125,21 +125,23 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-**Two images, numbered from zero in `Art/Gallery/`.** `Art/Gallery/0-preview.png` is a byte-identical copy of
-`Mod/About/Preview.png`; regenerate and recopy it whenever the header changes. `1-the-teshi.jpg` was taken on
-2026-09-28 from the played run `761c` (evidence
-`Tests/Pickle/Evidence/2026-09-28-gallery-captures-v4b`, image `workshop-1-the-teshi`, JPEG at quality 92, 1920 x 1080,
-641,388 bytes): the adult teshi close up, on a 3x3 block of orange daylilies, interface hidden. Both show one feathered
-animal (or none) on grass, flowers or the mod's own artwork, no colonist, no wound and nothing else, so the "no adult
-content" answer below holds for both. Steam shows `0-preview.png` first and large.
+Numbered from zero in `Art/Gallery/`. `0-preview.png` is a byte-identical copy of `Mod/About/Preview.png`; regenerate and
+recopy it whenever the header changes. `1-the-teshi.jpg` (2026-09-28, run `761c`, 1920 x 1080) is the first image published by
+hand. The images below replace it. Every image shows animals, plants or the mod's artwork only: no wound outside the Health
+tab, no adult content (the answer in "Content boxes" holds).
 
-The other two scenes of `Tests/Pickle/Mod/Pickle/Features/11-workshop-captures.feature` are played and green but not taken,
-the owner having asked for the first only: the kit beside a fertilized egg (the kit reads small at zoom 5 and the egg lands
-on yellow dandelions, not orange) and the Health tab of an injured adult (the hover tooltip covers the body, and the colonist
-bar and the tutorial box stay in frame). They are the two to rework if the page is to carry more than one image.
+**The series is one story, not a row of captures (owner, 2026-10-06).** Six images, told as a day of the teshi in Nelim's sanctuary. The only thing the images share is the sanctuary itself (fixture `Nelims-tribe`, `wsl-deps.sanctuary.map`); each image has its own corner and its own hour, so the series moves through the place and the day instead of repeating one frame. Staged images carry a decor of their own (StageDecor places it and removes it after the scenario); menus are plain screenshots.
 
-How the scene is staged (2026-10-05, place chosen 2026-10-06 from the sanctuary survey captures): the feature runs on Nelim's tribe, fixture `Nelims-tribe` (`wsl-deps.sanctuary.map`), at the sanctuary's "smiley-north" frame (centre (176, 202)): a clearing of orange carpet in the bamboo forest, so nothing is cleared or removed. StageDecor places seven cells of hay and a torch at the corner, lit, and the egg lies in the hay; hour 18 and clear weather are set by the scenario, the fixture being saved at 23h. The same
-set and the same camera serve images 1 and 2, and StageDecor removes it after each scenario. Image 3, the health tab, is a menu and is not staged. Not seen yet: no capture of this frame with the set exists, the first run decides.
+| # | Hour | Corner | Subject | Staged |
+| --- | --- | --- | --- | --- |
+| 1 | dawn | by the river | the adult teshi alone, facing the water | yes |
+| 2 | morning | the nest in the bamboo clearing | the mother, the fertilized egg in a bed of tall grass | yes |
+| 3 | noon | a clearing of the south | the kit hatched | yes |
+| 4 | dusk | the pond, torches lit | the teshi awake at sunset (crepuscular with Nocturnal Animals) | yes |
+| 5 | night | any | the Health tab of an injured teshi, colonist bar and learning helper hidden | no, a menu |
+| 6 | night | any | the operation menu with the ADS2 arm, on a teshi that wears it | no, a menu |
+
+Corners are chosen from the empty-place photographs of PickleTools (`docs/GALERIE.md`, `docs/SANCTUAIRE-LIEUX.md`), never from their names. Image 6 needs ADS2 loaded, so the series runs on one pass map that holds the sanctuary and ADS2. Every image is opened and read after its run; an anomaly of the scene or of the shared tools goes to PickleTools (NPT) with the capture, and the ticket is filed again only after its answer. State on 2026-10-06: a bed of tall grass (`Plant_TallGrass`) at camera root size 3 reads as a nest in the north clearing; the rest is being written. The published gallery still holds images 0 and 1 of 2026-09-28.
 
 ## The preview image
 
