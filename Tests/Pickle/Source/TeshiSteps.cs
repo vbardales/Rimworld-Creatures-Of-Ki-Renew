@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RimWorks.Pickle;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace TeshiRenew.PickleSteps
 {
@@ -302,6 +303,22 @@ namespace TeshiRenew.PickleSteps
             var taken = colonist.carryTracker.TryStartCarry(thing, count, false);
             ctx.Assert(taken == count && colonist.carryTracker.CarriedThing != null,
                 $"{name} took {taken} of {count} {defName}: the game did not let them carry them");
+        }
+
+        /// <summary>
+        /// An adult asleep on the ground where it stands, the way the game lays an animal down to sleep: the game's own
+        /// LayDown job, given at once and run for a few ticks so the drawer meets the lying pose. Not played yet.
+        /// </summary>
+        [When("Teshi Renew: the {word} adult teshi lies down to sleep")]
+        public void LiesDown(PickleContext ctx, string sex)
+        {
+            var pawn = TheAdult(ctx, Sex(ctx, sex));
+            var job = JobMaker.MakeJob(JobDefOf.LayDown, pawn.Position);
+            job.forceSleep = true;
+            pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+            for (var i = 0; i < 20; i++) Find.TickManager.DoSingleTick();
+            ctx.Assert(pawn.jobs.curJob != null && pawn.jobs.curJob.def == JobDefOf.LayDown,
+                $"the {sex} teshi is doing {pawn.jobs.curJob?.def.defName ?? "nothing"}, not lying down: the game refused or ended the job");
         }
 
         // ---- the corpse ----------------------------------------------------------------------------

@@ -1,14 +1,15 @@
 # SECOND SERIES for the Workshop page (docs/GALLERY-V2.md): the steps and props are prepared, nothing here has been played.
-# The gallery holds seven images at most, the Preview included, so six images. One story, told in behaviours; the sanctuary is
-# the only common set, each image has its own corner, its own props and its own hour. Menus are plain screenshots.
+# The gallery has no count limit, only a size one: the whole under 8 MB and each image under 2 MB (JPEG, quality 92, about
+# 350 KB each). The sanctuary is the only common set, each image has its own corner, props and hour. Menus are plain screenshots.
 #
 # THE STORY: the teshi is crepuscular, awake at dawn and at dusk, so the images show what it does when the light goes.
 #   1. Dawn. A close portrait by the pond: the head, the four banded ears, the tail.
-#   2. Late afternoon. The two parents nose to nose, the hearts, a coloured lamp lit and a pot of flowers beside them.
-#   3. Evening. The mother and her nesting box in a bed of yellow grass, a brazier lit, the egg in the box.
-#   4. Evening again. The egg hatches (the game's own hatching): the kit stands where it came out, the mother beside it.
-#   5. Evening. Nelim kneels by the kit and holds out a piece of meat, the mother watching.
-#   6. Dusk, the Health tab: a cut claw and the ADS2 bionic arm together (needs ADS2, so the feature carries @requires).
+#   2. Noon. The teshi sleeps in the sun on the bank, the crepuscular animal at rest (the game's LayDown job).
+#   3. Late afternoon. The two parents nose to nose, the hearts, a coloured lamp lit and a pot of flowers beside them.
+#   4. Evening. The mother and her nesting box in a bed of yellow grass, a brazier lit, the egg in the box.
+#   5. Evening again. The egg hatches (the game's own hatching): the kit stands where it came out, the mother beside it.
+#   6. Evening. Nelim kneels by the kit and holds out a piece of meat, the mother watching.
+#   7. Dusk, the Health tab: a cut claw and the ADS2 bionic arm together (needs ADS2, so the feature carries @requires).
 #
 # OPEN POINTS, to read on the first run: whether EggBox takes a teshi egg placed on its cell, whether the hatched kit stays on
 # the cell beside the box, how Nelim reads when she stands holding meat. Filter: any ticket on a pass other than
@@ -36,7 +37,23 @@ Feature: the images of the Workshop page, second series
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 2, late afternoon: the parents, nose to nose, with the hearts, on the west bank.
+  # Image 2, noon: the teshi asleep in the sun, the crepuscular animal at rest; the same bank as the dawn.
+  Scenario: noon, the teshi sleeps in the sun on the west bank of the pond
+    Given I set the hour to 12
+    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
+    And Teshi Renew: the female adult teshi lies down to sleep
+    When Teshi Renew: the camera looks at (153, 172) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And I take a screenshot "workshop2-2-asleep-at-noon"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 3, late afternoon: the parents, nose to nose, with the hearts, on the west bank.
   Scenario: late afternoon, the parents nose to nose by a lit lamp and a pot of flowers
     Given I set the hour to 17
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
@@ -51,12 +68,12 @@ Feature: the images of the Workshop page, second series
     And Teshi Renew: the female adult teshi and the male adult teshi mate
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop2-2-the-parents"
+    And I take a screenshot "workshop2-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 3, evening: the mother and her nesting box in the yellow grass, the egg in the box, a brazier lit.
+  # Image 4, evening: the mother and her nesting box in the yellow grass, the egg in the box, a brazier lit.
   Scenario: evening, the mother at her nesting box with the egg in it
     Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
@@ -84,12 +101,12 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop2-3-the-nesting-box"
+    And I take a screenshot "workshop2-4-the-nesting-box"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 4, evening again: the egg hatches by the game's own hatcher, the kit where it came out, the mother beside it.
+  # Image 5, evening again: the egg hatches by the game's own hatcher, the kit where it came out, the mother beside it.
   # The hatching needs ticks, so the speed is raised for it and the game is paused again before the picture.
   Scenario: evening, the egg hatches and the kit stands beside its mother
     Given I set the hour to 19
@@ -122,12 +139,12 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop2-4-the-hatching"
+    And I take a screenshot "workshop2-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 5, evening: Nelim kneels by the kit and holds out a piece of meat, the mother watching.
+  # Image 6, evening: Nelim kneels by the kit and holds out a piece of meat, the mother watching.
   Scenario: evening, Nelim holds out a piece of meat to the kit while the mother watches
     Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
@@ -141,12 +158,12 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop2-5-the-first-meal"
+    And I take a screenshot "workshop2-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 6, dusk: a menu, so a screenshot of what it is. The Health tab with a cut claw and the ADS2 bionic arm together;
+  # Image 7, dusk: a menu, so a screenshot of what it is. The Health tab with a cut claw and the ADS2 bionic arm together;
   # the interface stays, so the colonist bar, the learning helper and the tooltips are hidden.
   Scenario: dusk, the health tab of a teshi with a cut claw and a bionic arm
     Given I set the hour to 18
@@ -167,7 +184,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the letters and the alerts are cleared from the screen
     Then Nelim's Pickle Tools: the "Health" inspect tab is open
     When Nelim's Pickle Tools: I move the mouse to (5, 5)
-    And I take a screenshot "workshop2-6-the-health-tab"
+    And I take a screenshot "workshop2-7-the-health-tab"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"

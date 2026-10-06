@@ -125,7 +125,7 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Captures for the Workshop page
 
-Numbered from zero in `Art/Gallery/`. `0-preview.png` is a byte-identical copy of `Mod/About/Preview.png`; regenerate and
+Numbered from zero in `Art/Gallery/`. **Size limit (owner, 2026-10-06): as many images as wanted, the whole gallery under 8 MB and each image under 2 MB**, so JPEG at quality 92 (about 350 KB for a 1920 x 1080 capture), never the PNG of the evidence (3 MB). `0-preview.png` is a byte-identical copy of `Mod/About/Preview.png`; regenerate and
 recopy it whenever the header changes. `1-` to `6-` are the six images of the story below (JPEG, quality 92, 1920 x 1080, from run `6a55`; image 2 from the run that follows the change to the mating heart), uploaded by hand. The first published image, `1-the-teshi.jpg` of 2026-09-28 (run `761c`), left the folder on 2026-10-06; it stays in git history. Every image shows animals, plants or the mod's artwork only; image 5 shows a cut claw in the Health tab, which is a game menu (see "Content boxes").
 
 **The series is one story, not a row of captures (owner, 2026-10-06).** Six images, told as a day of the teshi in Nelim's sanctuary. The only thing the images share is the sanctuary itself (fixture `Nelims-tribe`, `wsl-deps.sanctuary.map`); each image has its own corner and its own hour, so the series moves through the place and the day instead of repeating one frame. Staged images carry a decor of their own (StageDecor places it and removes it after the scenario); menus are plain screenshots.

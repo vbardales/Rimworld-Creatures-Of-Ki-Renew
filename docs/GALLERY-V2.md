@@ -17,26 +17,25 @@ crepuscular rhythm).
 `EggTeshiFertilized` (this mod). Not checked in a picture yet: how each one reads at root size 3, nor whether `EggBox` takes a
 teshi egg stack.
 
-## The images (six: the gallery holds seven at most, the Preview included)
+## The images (seven; no count limit, but the whole under 8 MB and each image under 2 MB, owner 2026-10-06)
 
 Written in `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature` (resolved by `Check-Steps.ps1`, never played).
 
 | # | Moment | Corner | What the animals do | Props |
 | --- | --- | --- | --- | --- |
 | 1 | dawn | pond, west bank | a close portrait: the head, four ears, banded tail | none |
-| 2 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `StandingLampColored` lit, `PlantPot` |
-| 3 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, yellow grass, `Brazier` lit |
-| 4 | evening | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
-| 5 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `Brazier` lit |
-| 6 | dusk | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
+| 2 | noon | pond, west bank | the teshi asleep in the sun (LayDown job), the crepuscular animal at rest | none |
+| 3 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `StandingLampColored` lit, `PlantPot` |
+| 4 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, yellow grass, `Brazier` lit |
+| 5 | evening | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
+| 6 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `Brazier` lit |
+| 7 | dusk | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
 
-Dropped from the first plan to fit the limit: the sleeping-then-awake image (it needs a step that lays an animal down and
-Nocturnal Animals in the pass) and a second Health tab. The collar of Animal Apparel Collars stays optional and unchecked.
+The collar of Animal Apparel Collars stays optional and unchecked. The sleeping image needs a new step (`the female adult teshi lies down to sleep`, the game's `LayDown` job, never played); with Nocturnal Animals in the pass it would also be the mod's own rhythm, but the picture does not need that mod.
 
 ## Steps
 
-All exist. Written for this series in `Tests/Pickle/Source/TeshiSteps.cs`: the mating hearts, the teshi carrying a thing, and
-the colonist carrying a thing (`the colonist "Nelim" carries 1 "Meat_Chicken"`). `"Nelim" stands at (x, z) facing East` is
+All exist. Written for this series in `Tests/Pickle/Source/TeshiSteps.cs`: the mating hearts, the teshi carrying a thing, the colonist carrying a thing, and the teshi lying down (`the colonist "Nelim" carries 1 "Meat_Chicken"`). `"Nelim" stands at (x, z) facing East` is
 ColonistRace's (PickleTools); `wsl-deps.sanctuary.map` now holds it. A forced hatching is the game's own: the egg is set one
 tick from hatching, the speed is raised for the wait and paused again for the picture.
 
