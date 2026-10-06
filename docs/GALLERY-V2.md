@@ -17,51 +17,33 @@ crepuscular rhythm).
 `EggTeshiFertilized` (this mod). Not checked in a picture yet: how each one reads at root size 3, nor whether `EggBox` takes a
 teshi egg stack.
 
-## The images
+## The images (six: the gallery holds seven at most, the Preview included)
 
-| # | Moment | Corner | What the animals do | Props | Steps |
-| --- | --- | --- | --- | --- | --- |
-| 1 | dawn | pond, west bank | one teshi alone, the water behind her | none | exist |
-| 2 | late afternoon | pond, west bank | the parents, nose to nose, hearts | `StandingLampColored` lit, `PlantPot` | exist |
-| 3 | evening | bare earth east of the calm square | the mother in a nesting box lined with hay, two eggs | `EggBox`, `Hay`, `Brazier` lit | exist; check that `EggBox` takes the egg |
-| 4 | evening | same earth | the eggs hatch, the kits at the shells | `EggBox`, `Brazier` | exist (`the eggs on the map are one tick from hatching`, `I wait for the eggs to hatch`) |
-| 5 | evening | same earth | the mother brings the kit meat | `AnimalBed`, `Brazier` | exist |
-| 6 | evening | same earth | Nelim kneels and hand-feeds the kit | `Brazier` | **missing**: a colonist posed holding meat |
-| 7 | noon | pond, west bank | the teshi asleep in the sun, then image 2's dusk awake: the crepuscular rhythm | none | **missing**: an animal ordered to lie down; needs Nocturnal Animals in the pass |
-| 8 | dusk | pond, west bank | a close-up of the head, four ears, banded tail | `TorchLamp` | exist (`the camera root size is set to 1.5`) |
-| 9 | dusk | north clearing | Health tab, a cut claw | none, a menu | exist |
-| 10 | dusk | north clearing | Health tab, the ADS2 bionic arm | none, a menu | exist |
+Written in `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature` (resolved by `Check-Steps.ps1`, never played).
 
-Optional, not planned: a collar from Animal Apparel Collars on the mother (`AnimalApparelCollarsAndKitRenew` has the steps
-`is dressed in`; whether it dresses a teshi at all is unknown, its patches target other bodies).
+| # | Moment | Corner | What the animals do | Props |
+| --- | --- | --- | --- | --- |
+| 1 | dawn | pond, west bank | a close portrait: the head, four ears, banded tail | none |
+| 2 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `StandingLampColored` lit, `PlantPot` |
+| 3 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, yellow grass, `Brazier` lit |
+| 4 | evening | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
+| 5 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `Brazier` lit |
+| 6 | dusk | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
 
-## Missing steps to write (in this suite, `Tests/Pickle/Source/TeshiSteps.cs`, as the heart and the carried meat were)
+Dropped from the first plan to fit the limit: the sleeping-then-awake image (it needs a step that lays an animal down and
+Nocturnal Animals in the pass) and a second Health tab. The collar of Animal Apparel Collars stays optional and unchecked.
 
-- A colonist posed holding a thing and facing an animal: `Nelim carries 1 "Meat_Chicken"` (colonist, any pawn kind).
-- An animal asleep: lie the pawn down in a bed or on the ground with a lasting `LayDown` job and the drawn "Z", or tell
-  PickleTools if their Elsewhere notes (`DrumBathHygiene.md`) already cover it for animals. Read what they say about
-  `TryTakeOrderedJob` returning true for a job that ends inside StartJob before ordering one.
-- A forced hatching is the game's own (`gestateProgress` to 0.9999, then a wait); no new step.
+## Steps
 
-## Skeleton of the evening scenarios (Gherkin, to adapt, never run)
+All exist. Written for this series in `Tests/Pickle/Source/TeshiSteps.cs`: the mating hearts, the teshi carrying a thing, and
+the colonist carrying a thing (`the colonist "Nelim" carries 1 "Meat_Chicken"`). `"Nelim" stands at (x, z) facing East` is
+ColonistRace's (PickleTools); `wsl-deps.sanctuary.map` now holds it. A forced hatching is the game's own: the egg is set one
+tick from hatching, the speed is raised for the wait and paused again for the picture.
 
-```gherkin
-  # 3, evening: nesting box, hay, two eggs, the mother
-  Scenario: evening, the mother in her nesting box with the two eggs
-    Given I set the hour to 19
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: I place the decor "EggBox" at (216, 185)
-    And Nelim's Pickle Tools: I place the decor "Brazier" at (213, 186)
-    And Nelim's Pickle Tools: the decor "Brazier" at (213, 186) is lit
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
-    And Teshi Renew: a "EggTeshiFertilized" lies at (216, 185)
+## Open points for the first run
 
-  # 4, evening: the hatching, the real one
-  Scenario: evening, the eggs hatch in the nesting box
-    # same set as 3, then:
-    When Teshi Renew: the eggs on the map are one tick from hatching
-    And Teshi Renew: I wait for the eggs to hatch
-```
+Whether `EggBox` takes an egg placed on its cell; where the kit appears when it hatches; how Nelim reads standing and holding
+meat; whether a brazier and a coloured lamp tint the animals. A run that fails here means the set changes, not the suite.
 
 ## Before anything is played
 

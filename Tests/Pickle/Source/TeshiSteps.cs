@@ -288,6 +288,22 @@ namespace TeshiRenew.PickleSteps
                 $"the {sex} teshi took {taken} of {count} {defName}: the game did not let it carry them");
         }
 
+        /// <summary>
+        /// A free colonist, found by the short name the player reads, holding a thing: the hand-feeding of the
+        /// gallery. Like the teshi's, the thing is made here and put in the hands; no job runs.
+        /// </summary>
+        [When("Teshi Renew: the colonist {string} carries {int} {string}")]
+        public void ColonistCarries(PickleContext ctx, string name, int count, string defName)
+        {
+            var colonist = Map(ctx).mapPawns.FreeColonists.FirstOrDefault(p => p.Name != null && p.Name.ToStringShort == name);
+            ctx.Assert(colonist != null, $"no free colonist named {name} on the map");
+            var thing = ThingMaker.MakeThing(Def(ctx, defName));
+            thing.stackCount = count;
+            var taken = colonist.carryTracker.TryStartCarry(thing, count, false);
+            ctx.Assert(taken == count && colonist.carryTracker.CarriedThing != null,
+                $"{name} took {taken} of {count} {defName}: the game did not let them carry them");
+        }
+
         // ---- the corpse ----------------------------------------------------------------------------
 
         /// <summary>
