@@ -1,8 +1,8 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-The standalone suite `_tools/Run-Functional-Tests.ps1` provides 23 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
+The standalone suite `scripts/Run-Functional-Tests.ps1` provides 23 checks, including XML and Core references. The four external validators formerly cited here are absent from this repository; their historical results are not current verification.
 
-`_tools/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
+`scripts/Run-Functional-Tests.ps1` sits between the two. It cannot run the game either, but it
 reads the compiled game and runs twenty-two checks this document used to have to ask of a
 play session — including the one scenario 4b was written to settle, which is now settled below.
 Run it first; it takes seconds and it costs nothing.
@@ -254,7 +254,7 @@ STATUS.md says what it found and what is still open. What is not yet played is p
 
 ### Scope of the Pickle suite
 
-Only what a running game can show. The rest is already proved offline by `_tools/Run-Functional-Tests.ps1`.
+Only what a running game can show. The rest is already proved offline by `scripts/Run-Functional-Tests.ps1`.
 The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run them.
 
 | Scenario | Fate | Feature | Why |

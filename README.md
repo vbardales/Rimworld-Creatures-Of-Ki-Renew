@@ -92,7 +92,7 @@ Two breakages, both silent in different ways.
   the second egg of a mated laying has nothing to be but unfertilized. Neither was right. The first went
   further than the evidence; the second was inferred from the two settings and never read off
   `ProduceEgg`, which builds one stack. `CompTick`, `CanLayNow`, `NextEggType` and `ProduceEgg` were
-  read in the compiled game, and `_tools/Run-Functional-Tests.ps1` covers the pinning. `TESTING.md`,
+  read in the compiled game, and `scripts/Run-Functional-Tests.ps1` covers the pinning. `TESTING.md`,
   scenario 4, and the Pickle scenario `03-laying-and-hatching` describe the in-game confirmation that
   remains to be performed.
 
@@ -107,7 +107,7 @@ and each reference points at the right *type* of def. Checked with the standalon
 Run the standalone technical suite:
 
 ```bash
-powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Functional-Tests.ps1
 ```
 
 Twenty-two tests, no game launch. It does not simulate RimWorld — it reads the

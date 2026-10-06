@@ -60,7 +60,7 @@ A new publication needs a new version (1.0.1+) on a new commit, with its own dry
   Localization, English and French: complete. Virginie reviewed the French of `47c401e` (`FRENCH_REVIEW.md`, 24 rows): natural
   French, correct anatomical terms, no pawn agreement, no correction. Any later change to a French file sets
   `translation_fr` back to `unchecked`.
-- **Tests.** Offline suite `_tools/Run-Functional-Tests.ps1`, Pickle suite in `Tests/Pickle/`, passes declared in `TESTING.md`.
+- **Tests.** Offline suite `scripts/Run-Functional-Tests.ps1`, Pickle suite in `Tests/Pickle/`, passes declared in `TESTING.md`.
   Every scenario played green in the final validation, no `@wip`, the three `@requires` passes (08 ADS2, 09 new colony,
   10 Nocturnal) played, no manual test left. Lines in `docs/runs/`, evidence kept in `Tests/Pickle/Evidence/` (16 MB).
 - **Integrations.** A Dog Said... Animal Prosthetics 2: category patch plus `ADS2_Arms.xml` (adds `Arm` to its two arm

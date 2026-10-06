@@ -12,7 +12,7 @@ A Dog Said... Animal Prosthetics 2 green. The new-colony pass failed in its tool
 
 ## What is in Gherkin, and why it needs a game
 
-`../../_tools/Run-Functional-Tests.ps1` already proves what a file and the compiled game's code can prove: the
+`../../scripts/Run-Functional-Tests.ps1` already proves what a file and the compiled game's code can prove: the
 XML, the references, the texture paths, the DefInjected paths, and the reading of `CompEggLayer`. Nothing below
 repeats it. Each feature exists because the game itself has to act on the defs.
 

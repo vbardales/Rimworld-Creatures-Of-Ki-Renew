@@ -54,7 +54,7 @@
   game to find out.
 
 .EXAMPLE
-  powershell -NoProfile -ExecutionPolicy Bypass -File _tools/Run-Functional-Tests.ps1
+  powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Functional-Tests.ps1
 #>
 
 param(
