@@ -122,7 +122,8 @@ Feature: the images of the Workshop page
     When Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the letters and the alerts are cleared from the screen
     Then Nelim's Pickle Tools: the "Health" inspect tab is open
-    When I take a screenshot "workshop-5-the-health-tab"
+    When Nelim's Pickle Tools: I move the mouse to (5, 5)
+    And I take a screenshot "workshop-5-the-health-tab"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -144,7 +145,8 @@ Feature: the images of the Workshop page
     When Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: the letters and the alerts are cleared from the screen
     Then Nelim's Pickle Tools: the "Health" inspect tab is open
-    When I take a screenshot "workshop-6-the-bionic-arm"
+    When Nelim's Pickle Tools: I move the mouse to (5, 5)
+    And I take a screenshot "workshop-6-the-bionic-arm"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
