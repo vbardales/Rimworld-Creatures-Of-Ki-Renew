@@ -99,8 +99,8 @@ Feature: the images of the Workshop page
   Scenario: evening, the mother brings the kit its first meal
     Given I set the hour to 19
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (213, 186)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (213, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (216, 184)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (216, 184) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 185)
     And Teshi Renew: the female adult teshi carries 1 "Meat_Chicken"
