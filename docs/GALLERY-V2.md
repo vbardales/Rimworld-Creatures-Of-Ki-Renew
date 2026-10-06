@@ -17,19 +17,23 @@ crepuscular rhythm).
 `EggTeshiFertilized` (this mod). Not checked in a picture yet: how each one reads at root size 3, nor whether `EggBox` takes a
 teshi egg stack.
 
+## Time (PUBLISHING.md: the time flows through the series)
+
+One start hour, 16h, then a cumulative wait of 30 game minutes (1 250 ticks) per image, plus 60 ticks of setting up: every `Scenario:` reloads the save, sets 16h, waits its total at ultrafast speed, pauses, then places what lives in the scene (so it has not left the frame). Image 1 at 16h00, 2 at 16h30, 3 at 17h00, 4 at 17h30, 5 at 18h00, 6 at 18h30, the menu at 19h00. The first series set a different hour per image and predates that rule.
+
 ## The images (seven; no count limit, but the whole under 8 MB and each image under 2 MB, owner 2026-10-06)
 
 Written in `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature` (resolved by `Check-Steps.ps1`, never played).
 
 | # | Moment | Corner | What the animals do | Props |
 | --- | --- | --- | --- | --- |
-| 1 | dawn | pond, west bank | a close portrait: the head, four ears, banded tail | none |
-| 2 | noon | pond, west bank | the teshi asleep in the sun (LayDown job), the crepuscular animal at rest | `CCPLAnimalBed` |
-| 3 | late afternoon | pond, west bank | the parents nose to nose, the hearts | `DR_StickLantern` lit, `PlantPot` |
-| 4 | evening | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, `CCPLAnimalBed`, yellow grass, `DR_StickLantern` lit |
-| 5 | evening | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
-| 6 | evening | same earth | Nelim holds out meat to the kit, the mother watching | `DR_StickLantern` lit |
-| 7 | dusk | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
+| 1 | 16h00 | pond, west bank | the teshi asleep on a large animal bed (LayDown job), the crepuscular animal at rest | `CCPLAnimalBed` |
+| 2 | 16h30 | pond, west bank | awake, a close portrait: the head, four ears, banded tail | none |
+| 3 | 17h00 | pond, west bank | the parents nose to nose, the hearts | `DR_StickLantern` lit, `PlantPot` |
+| 4 | 17h30 | bare earth east of the calm square | the mother at her nesting box, the egg in it | `EggBox`, `CCPLAnimalBed`, yellow grass, `DR_StickLantern` lit |
+| 5 | 18h00 | same earth | the egg hatches (the game's own hatcher), the kit stands beside the mother | same set |
+| 6 | 18h30 | same earth | Nelim holds out meat to the kit, the mother watching | `DR_StickLantern` lit |
+| 7 | 19h00 | north clearing | the Health tab: a cut claw and the ADS2 bionic arm together | a menu, none |
 
 The collar of Animal Apparel Collars stays optional and unchecked. The sleeping image needs a new step (`the female adult teshi lies down to sleep`, the game's `LayDown` job, never played); with Nocturnal Animals in the pass it would also be the mod's own rhythm, but the picture does not need that mod.
 
