@@ -11,8 +11,8 @@
 #      laid: "and its eggs".
 #   3. Noon. The egg has hatched: a kit explores the bare earth east of the calm square, in full sun.
 #   4. Dusk. She is back at the pond, awake as the light goes (the teshi is crepuscular with Nocturnal Animals), a torch lit.
-#   5. Night, the health tab: what the mod gives the animal, a body that names each claw and ear (a cut on a claw).
-#   6. Night, the same tab after an operation: ADS2's bionic arm, which the integration offers (needs ADS2, so this
+#   5. Dusk, the health tab: what the mod gives the animal, a body that names each claw and ear (a cut on a claw).
+#   6. Dusk, the same tab after an operation: ADS2's bionic arm, which the integration offers (needs ADS2, so this
 #      scenario carries @requires and the pass map holds it).
 #
 # THE PLACES, chosen from the empty-place photographs of PickleTools (2026-10-06, midi, Clear, no animals, no interface):
@@ -33,6 +33,7 @@ Feature: the images of the Workshop page
   Scenario: dawn, the teshi stands alone on the west bank of the pond
     Given I set the hour to 6
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 4
@@ -57,12 +58,7 @@ Feature: the images of the Workshop page
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 201)
     And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 201)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (173, 202)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (174, 202)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (175, 202)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (176, 202)
-    And Nelim's Pickle Tools: I place the decor "Plant_TallGrass" at (177, 202)
-    And Nelim's Pickle Tools: the plants from (173, 200) to (177, 202) are fully grown
+    And Nelim's Pickle Tools: the plants from (173, 200) to (177, 201) are fully grown
     And Teshi Renew: a female adult teshi belonging to the colony stands at (175, 201)
     And Teshi Renew: a "EggTeshiFertilized" lies at (176, 201)
     When Teshi Renew: the camera looks at (175, 201) at zoom 4
@@ -78,9 +74,9 @@ Feature: the images of the Workshop page
   Scenario: noon, the kit explores the bare earth east of the calm square
     Given I set the hour to 12
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Teshi Renew: a female kit teshi stands at (214, 185)
-    When Teshi Renew: the camera looks at (214, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 3
+    And Teshi Renew: a female kit teshi stands at (211, 185)
+    When Teshi Renew: the camera looks at (211, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-3-the-kit"
@@ -92,8 +88,9 @@ Feature: the images of the Workshop page
   Scenario: dusk, the teshi is back at the pond with a torch lit on the bank
     Given I set the hour to 18
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (151, 174)
-    And Nelim's Pickle Tools: the decor "TorchLamp" at (151, 174) is lit
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (155, 172)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (155, 172) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 171)
     When Teshi Renew: the camera looks at (153, 171) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 4
@@ -107,13 +104,13 @@ Feature: the images of the Workshop page
   # Image 5, night: a menu, so a screenshot of what it is and not a staged scene: the health tab as a player sees it, one
   # claw injured. The interface stays, so the colonist bar and the learning helper are hidden, the letters and alerts a
   # fresh load carries are cleared, and developer mode (the runner starts with it on) is turned off.
-  Scenario: night, the health tab of an injured teshi
-    Given I set the hour to 22
-    And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: the learning helper is hidden
+  Scenario: dusk, the health tab of an injured teshi
+    Given I set the hour to 18
     And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     Then Teshi Renew: the teshi has a "Cut" on its "front left claw"
     When Teshi Renew: I select the teshi
@@ -130,13 +127,13 @@ Feature: the images of the Workshop page
     And no errors were logged
 
   # Image 6, night: the same tab after an operation, ADS2's bionic arm on the right arm (the integration of the page).
-  Scenario: night, the health tab of a teshi with a bionic arm from ADS2
-    Given I set the hour to 22
-    And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: the learning helper is hidden
+  Scenario: dusk, the health tab of a teshi with a bionic arm from ADS2
+    Given I set the hour to 18
     And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
     And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
     Then Teshi Renew: the teshi's "right arm" carries the hediff "BionicArmAnimal"
     When Teshi Renew: I select the teshi
