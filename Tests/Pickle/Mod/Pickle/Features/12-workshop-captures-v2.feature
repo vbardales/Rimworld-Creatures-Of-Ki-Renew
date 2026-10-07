@@ -183,6 +183,9 @@ Feature: the images of the Workshop page, second series
     And Teshi Renew: a female kit teshi stands at (210, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (236, 226, 200)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (96, 80, 62)
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (210, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.2
@@ -237,9 +240,12 @@ Feature: the images of the Workshop page, second series
     And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     And Teshi Renew: the female adult teshi lies down to sleep
-    And Nelim's Pickle Tools: "Nelim" stands at (139, 72) facing East
-    When Teshi Renew: the camera looks at (141, 72) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2.6
+    And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
+    When Teshi Renew: the camera looks at (141, 71) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 1.9
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-8-the-infirmary"
