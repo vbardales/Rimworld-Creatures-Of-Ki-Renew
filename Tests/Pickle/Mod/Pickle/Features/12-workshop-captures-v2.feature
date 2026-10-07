@@ -37,8 +37,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 60 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (153, 172)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     And Teshi Renew: the female adult teshi lies down to sleep
@@ -57,8 +57,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 1310 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 1.8
@@ -75,8 +75,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 2560 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (156, 171)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (156, 171) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (151, 173) fully grown
@@ -99,8 +99,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 3810 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
@@ -137,8 +137,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 5060 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
@@ -180,8 +180,8 @@ Feature: the images of the Workshop page, second series
     And game speed is ultrafast
     And I wait 6310 ticks
     And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
@@ -209,8 +209,8 @@ Feature: the images of the Workshop page, second series
     And I wait 8810 ticks
     And game speed is paused
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "hut"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
+    And Nelim's Sanctuary: I am at the sanctuary "hut"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "hut"
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" at (141, 72)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit

@@ -123,13 +123,27 @@ foreach ($p in 'the save {string} is loaded', 'I save and reload', 'I save and r
 $staged = @()
 foreach ($map in Get-ChildItem -LiteralPath $suite -Filter 'wsl-deps*.map') {
     foreach ($line in [IO.File]::ReadAllLines($map.FullName)) {
-        if ($line -match '^\s*(\S+)\s+path:PickleTools/([^/\s]+)/') { $staged += $Matches[2] }
+        # PickleTools/Tests/... is the StandaloneBase shell, not a tool with a Source folder.
+        if ($line -match '^\s*(\S+)\s+path:PickleTools/([^/\s]+)/' -and $Matches[2] -ne 'Tests') { $staged += $Matches[2] }
     }
 }
 foreach ($tool in $staged | Sort-Object -Unique) {
     $src = Join-Path $repo "PickleTools\$tool\Source"
     if (-not (Test-Path -LiteralPath $src)) { Write-Host "MISSING  the pass map stages PickleTools/$tool and $src does not exist" -ForegroundColor Red; $bad++; continue }
     foreach ($p in Read-Patterns $src ('tool:' + $tool)) { $others += $p }
+}
+
+# The Sanctuary's own steps (prefix "Nelim's Sanctuary: "): staged when a pass map names a path under SanctuaryBacklot/.
+$sanctuary = $false
+foreach ($map in Get-ChildItem -LiteralPath $suite -Filter 'wsl-deps*.map') {
+    foreach ($line in [IO.File]::ReadAllLines($map.FullName)) {
+        if ($line -match '^\s*(\S+)\s+path:SanctuaryBacklot/') { $sanctuary = $true }
+    }
+}
+if ($sanctuary) {
+    $src = Join-Path $repo 'SanctuaryBacklot\Source'
+    if (-not (Test-Path -LiteralPath $src)) { Write-Host "MISSING  the pass map stages SanctuaryBacklot and $src does not exist" -ForegroundColor Red; $bad++ }
+    else { foreach ($p in Read-Patterns $src 'tool:SanctuaryBacklot') { $others += $p } }
 }
 
 $otherExprs = @()

@@ -33,8 +33,8 @@ Feature: the images of the Workshop page
   # Image 1, dawn: the teshi alone on the west bank of the pond. Presentation mode hides the interface.
   Scenario: dawn, the teshi stands alone on the west bank of the pond
     Given I set the hour to 6
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 4
@@ -49,8 +49,8 @@ Feature: the images of the Workshop page
   # Image 2, late afternoon: the parents on the west bank of the pond, turned to each other, the small hearts over them.
   Scenario: late afternoon, the two parents mate on the west bank of the pond
     Given I set the hour to 17
-    And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Teshi Renew: a female adult teshi belonging to the colony stands at (152, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
@@ -66,7 +66,7 @@ Feature: the images of the Workshop page
   # Image 3, evening: the mother in the nest she made of tall yellow grass, the egg in it, a torch lit beside.
   Scenario: evening, the mother makes her nest of yellow grass with the egg and a torch
     Given I set the hour to 19
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
@@ -98,7 +98,7 @@ Feature: the images of the Workshop page
   # Image 4, evening again: the egg has hatched, the mother brings the kit its first meal, between the flowers and the dry grass.
   Scenario: evening, the mother brings the kit its first meal
     Given I set the hour to 19
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "TorchLamp" at (216, 184)
     And Nelim's Pickle Tools: the decor "TorchLamp" at (216, 184) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
@@ -119,7 +119,7 @@ Feature: the images of the Workshop page
   Scenario: dusk, the health tab of an injured teshi
     Given I set the hour to 18
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
+    And Nelim's Sanctuary: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
     And Nelim's Pickle Tools: the learning helper is hidden
@@ -143,7 +143,7 @@ Feature: the images of the Workshop page
   Scenario: dusk, the health tab of a teshi with a bionic arm from ADS2
     Given I set the hour to 18
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
+    And Nelim's Sanctuary: I am at the sanctuary "smiley-north"
     And Teshi Renew: a female adult teshi stands at (175, 200)
     When Teshi Renew: the camera looks at (175, 200) at zoom 6
     And Nelim's Pickle Tools: the learning helper is hidden

@@ -33,6 +33,9 @@ nelim.pickletools.inspecttabs         path:PickleTools/InspectTabs/Mod
 nelim.pickletools.screenshotmode      path:PickleTools/ScreenshotMode/Mod
 nelim.pickletools.clickdiagnostics    path:PickleTools/ClickDiagnostics/Mod
 nelim.pickletools.colonistrace        path:PickleTools/ColonistRace/Mod
+# Nelim's Sanctuary: its steps (place frames, empty, animals removed...) and the Nelims-tribe fixture (SanctuaryBacklot/Mod).
+# Prefix 'Nelim's Sanctuary: ' for these, 'Nelim's Pickle Tools: ' for the rest (NPT).
+nelim.sanctuarybacklot                path:SanctuaryBacklot/Mod
 # The mod under test, named by its own packageId so that it loads ahead of ADS2, as its loadBefore asks.
 nelim.creaturesofki                   path:CreaturesOfKiRenew/Mod
 SamBucher.ADogSaidAnimalProsthetics2  3238353862
