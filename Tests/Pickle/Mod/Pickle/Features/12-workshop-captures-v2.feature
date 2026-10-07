@@ -79,7 +79,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (156, 171)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (156, 171) is lit
-    And Nelim's Pickle Tools: I place the decor "PlantPot" at (151, 173)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (151, 173) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 173) fully grown
     And Teshi Renew: a female adult teshi belonging to the colony stands at (152, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
@@ -179,12 +180,12 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
-    And Teshi Renew: a female kit teshi stands at (211, 185)
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (214, 185)
-    And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
+    And Teshi Renew: a female kit teshi stands at (210, 185)
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 187)
+    And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
-    When Teshi Renew: the camera looks at (211, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 3
+    When Teshi Renew: the camera looks at (210, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-6-the-first-meal"
@@ -200,9 +201,10 @@ Feature: the images of the Workshop page, second series
     And I wait 7560 ticks
     And game speed is paused
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
-    And Teshi Renew: a female adult teshi stands at (175, 200)
-    When Teshi Renew: the camera looks at (175, 200) at zoom 6
+    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (200, 187)
+    When Teshi Renew: the camera looks at (200, 187) at zoom 6
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
