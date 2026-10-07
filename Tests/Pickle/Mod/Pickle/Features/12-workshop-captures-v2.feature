@@ -190,6 +190,10 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (236, 226, 200)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (96, 80, 62)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: "Nelim" facial expression is "SocialRelax"
+    And Nelim's Pickle Tools: I let 20 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (210, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.2
@@ -221,6 +225,10 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: I let 20 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
     When Teshi Renew: the camera looks at (139, 70) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.4
     And Nelim's Pickle Tools: the learning helper is hidden
