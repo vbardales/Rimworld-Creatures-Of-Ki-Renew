@@ -196,17 +196,28 @@ Feature: the images of the Workshop page, second series
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 7, 19h00, dusk: a menu, so a screenshot of what it is. The Health tab with a cut claw and the ADS2 bionic arm
-  # together; the interface stays, so the colonist bar, the learning helper and the tooltips are hidden.
-  Scenario: 19h00, the health tab of a teshi with a cut claw and a bionic arm
+  # Image 7, 19h30: the tea-house is the animal infirmary, and the Health tab is opened on the patient there (one image for both:
+  # the injured teshi on its bed, Nelim at its feet, the tab showing the cut claw and the ADS2 bionic arm). A menu on a staged
+  # scene: the interface stays, so the colonist bar, the learning helper and the tooltips are hidden.
+  Scenario: 19h30, in the tea-house infirmary the health tab of the injured teshi is open
     Given I set the hour to 16
     And game speed is ultrafast
-    And I wait 7560 ticks
+    And I wait 8810 ticks
     And game speed is paused
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
-    And Teshi Renew: a female adult teshi stands at (175, 200)
-    When Teshi Renew: the camera looks at (175, 200) at zoom 6
+    And Nelim's Pickle Tools: I am at the sanctuary "hut"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
+    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (141, 72)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
+    And Teshi Renew: the female adult teshi lies down to sleep
+    And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
+    When Teshi Renew: the camera looks at (141, 71) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.8
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
@@ -220,35 +231,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the letters and the alerts are cleared from the screen
     Then Nelim's Pickle Tools: the "Health" inspect tab is open
     When Nelim's Pickle Tools: I move the mouse to (5, 5)
-    And I take a screenshot "workshop2-7-the-health-tab"
+    And I take a screenshot "workshop2-7-the-infirmary-health-tab"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
-    And no errors were logged
-
-  # Image 8, 19h30: the tea-house turned into an animal infirmary. The injured teshi lies on a large animal bed, Nelim beside it.
-  Scenario: 19h30, the tea-house is an infirmary: Nelim tends an injured teshi on a bed
-    Given I set the hour to 16
-    And game speed is ultrafast
-    And I wait 8810 ticks
-    And game speed is paused
-    And Nelim's Pickle Tools: I am at the sanctuary "hut"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
-    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (141, 72)
-    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
-    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
-    And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
-    And Teshi Renew: the female adult teshi lies down to sleep
-    And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
-    And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
-    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
-    When Teshi Renew: the camera looks at (141, 71) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2.8
-    And Teshi Renew: I let 10 frames pass
-    And Nelim's Pickle Tools: studio presentation mode is enabled
-    And I take a screenshot "workshop2-8-the-infirmary"
-    And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
