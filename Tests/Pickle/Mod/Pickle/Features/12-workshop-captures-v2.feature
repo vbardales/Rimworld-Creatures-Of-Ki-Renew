@@ -222,3 +222,27 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: developer mode is restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
+
+  # Image 8, 19h30: the tea-house turned into an animal infirmary. The injured teshi lies on a large animal bed, Nelim beside it.
+  Scenario: 19h30, the tea-house is an infirmary: Nelim tends an injured teshi on a bed
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 8810 ticks
+    And game speed is paused
+    And Nelim's Pickle Tools: I am at the sanctuary "hut"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
+    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (141, 72)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
+    And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
+    And Teshi Renew: the female adult teshi lies down to sleep
+    And Nelim's Pickle Tools: "Nelim" stands at (139, 72) facing East
+    When Teshi Renew: the camera looks at (141, 72) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.6
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And I take a screenshot "workshop2-8-the-infirmary"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
