@@ -216,8 +216,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
-    When Teshi Renew: the camera looks at (141, 71) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2.8
+    When Teshi Renew: the camera looks at (141, 70) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.4
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
