@@ -245,7 +245,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
     When Teshi Renew: the camera looks at (141, 71) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 1.9
+    And Nelim's Pickle Tools: the camera root size is set to 2.8
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-8-the-infirmary"
