@@ -80,7 +80,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (156, 171)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (156, 171) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (151, 173) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 173) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (151, 174) fully grown
     And Teshi Renew: a female adult teshi belonging to the colony stands at (152, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (154, 172)
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
@@ -181,7 +181,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 187)
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (210, 185) at zoom 4
