@@ -17,10 +17,10 @@
 #   7. 19h00, dusk, the Health tab: a cut claw and the ADS2 bionic arm together (needs ADS2, so the feature carries @requires).
 #
 # MODS, chosen for the props (both declare 1.6, both installed in the Windows Workshop folder, so the staging finds them by id):
-#   Large Animal Beds (cucumpear.animalbeds, 1111387020): CCPLAnimalBed, a bed made for a large animal.
+#   More animal beds (Animal.BedsNew, 3107972819): GSAnimalBedBigPrestige, a bed made for a large animal.
 #   Stick Lantern (Continued) (Mlie.StickLantern, 2024351846): DR_StickLantern, a fuelled lantern that glows without power.
 #
-# OPEN POINTS, to read on the first run: whether CCPLAnimalBed accepts the placement and its stuff, whether the sleeper lies on it,
+# OPEN POINTS, to read on the first run: whether GSAnimalBedBigPrestige accepts the placement and its stuff, whether the sleeper lies on it,
 # whether EggBox takes a teshi egg placed on its cell, where the kit appears when it hatches, how Nelim reads holding meat, and
 # whether ultrafast waits of up to 7 560 ticks fit the run (the suite may need @slow and a timeout). Filter: any ticket on a pass
 # other than wsl-deps.sanctuary.map excludes this suite (`!12-workshop-captures-v2`), as it does 11-workshop-captures.
@@ -39,7 +39,7 @@ Feature: the images of the Workshop page, second series
     And game speed is paused
     And Nelim's Pickle Tools: I am at the sanctuary "water-garden"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "water-garden"
-    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (153, 172)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (153, 172)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (153, 172)
     And Teshi Renew: the female adult teshi lies down to sleep
     When Teshi Renew: the camera looks at (153, 172) at zoom 4
@@ -116,7 +116,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
     And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
-    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
@@ -153,7 +153,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
     And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
-    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
@@ -211,6 +211,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
+    And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     And Teshi Renew: the female adult teshi lies down to sleep
     And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
     And Nelim's Pickle Tools: "Nelim" body type is Female
@@ -220,7 +221,6 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 3.4
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
-    And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
     Then Teshi Renew: the teshi has a "Cut" on its "front left claw"
     And Teshi Renew: the teshi's "right arm" carries the hediff "BionicArmAnimal"
