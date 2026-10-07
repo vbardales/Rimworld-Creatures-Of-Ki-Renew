@@ -318,7 +318,10 @@ namespace TeshiRenew.PickleSteps
             var job = bed != null ? JobMaker.MakeJob(JobDefOf.LayDown, bed) : JobMaker.MakeJob(JobDefOf.LayDown, pawn.Position);
             job.forceSleep = true;
             pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+            // The animal walks to its place on the bed first: run until it is lying (a bed two cells wide takes longer than 20 ticks).
+            for (var i = 0; i < 400 && pawn.GetPosture() == PawnPosture.Standing; i++) Find.TickManager.DoSingleTick();
             for (var i = 0; i < 20; i++) Find.TickManager.DoSingleTick();
+            ctx.Assert(pawn.GetPosture() != PawnPosture.Standing, $"the {sex} teshi is still standing after 400 ticks: it did not lie down");
             ctx.Assert(pawn.jobs.curJob != null && pawn.jobs.curJob.def == JobDefOf.LayDown,
                 $"the {sex} teshi is doing {pawn.jobs.curJob?.def.defName ?? "nothing"}, not lying down: the game refused or ended the job");
         }

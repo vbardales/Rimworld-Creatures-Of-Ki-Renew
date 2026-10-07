@@ -100,6 +100,7 @@ Feature: the images of the Workshop page, second series
     And I wait 3810 ticks
     And game speed is paused
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
@@ -137,6 +138,7 @@ Feature: the images of the Workshop page, second series
     And I wait 5060 ticks
     And game speed is paused
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
@@ -178,6 +180,7 @@ Feature: the images of the Workshop page, second series
     And I wait 6310 ticks
     And game speed is paused
     And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
@@ -207,7 +210,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: I am at the sanctuary "hut"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
-    And Nelim's Pickle Tools: I place the decor "SUN_MedicalAnimalBed" at (141, 72)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBig" at (141, 72)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
