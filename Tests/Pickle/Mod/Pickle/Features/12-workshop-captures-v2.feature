@@ -158,12 +158,13 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
     When Teshi Renew: the eggs on the map are one tick from hatching
     And game speed is ultrafast
     And Teshi Renew: I wait for the eggs to hatch
     And game speed is paused
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
+    And Teshi Renew: I let 10 frames pass
     And Teshi Renew: the camera looks at (216, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3
     And Teshi Renew: I let 10 frames pass
@@ -220,7 +221,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
-    When Teshi Renew: the camera looks at (141, 70) at zoom 4
+    When Teshi Renew: the camera looks at (139, 70) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.4
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
