@@ -201,10 +201,9 @@ Feature: the images of the Workshop page, second series
     And I wait 7560 ticks
     And game speed is paused
     And Nelim's Pickle Tools: the colonist bar is hidden
-    And Nelim's Pickle Tools: I am at the sanctuary "calm-zone"
-    And Nelim's Pickle Tools: the animals are removed from the sanctuary "calm-zone"
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (200, 187)
-    When Teshi Renew: the camera looks at (200, 187) at zoom 6
+    And Nelim's Pickle Tools: I am at the sanctuary "smiley-north"
+    And Teshi Renew: a female adult teshi stands at (175, 200)
+    When Teshi Renew: the camera looks at (175, 200) at zoom 6
     And Nelim's Pickle Tools: the learning helper is hidden
     And Nelim's Pickle Tools: the tooltips are hidden
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
