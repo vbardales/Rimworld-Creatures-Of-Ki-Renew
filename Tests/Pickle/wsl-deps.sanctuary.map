@@ -8,7 +8,7 @@ tiagocc0.FemaleBodyVariants           3798082132
 tiagocc0.FemaleApparelVariants        3799726535
 wdi.realistic.bodies                  3527486510
 ab.vplrf                              2986402536
-nelim.venustouch.waistlines           path:TailorMadeWaistlines/Mod
+nelim.venustouch.waistlines           path:VenusTouchWaistlines/Mod
 nelim.pickletools.screenshotstudio    path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom          path:PickleTools/CameraZoom/Mod
 nelim.pickletools.stagedecor          path:PickleTools/StageDecor/Mod
