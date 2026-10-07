@@ -207,7 +207,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the colonist bar is hidden
     And Nelim's Pickle Tools: I am at the sanctuary "hut"
     And Nelim's Pickle Tools: the animals are removed from the sanctuary "hut"
-    And Nelim's Pickle Tools: I place the decor "CCPLAnimalBed" at (141, 72)
+    And Nelim's Pickle Tools: I place the decor "SUN_MedicalAnimalBed" at (141, 72)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (143, 73)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (143, 73) is lit
     And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
