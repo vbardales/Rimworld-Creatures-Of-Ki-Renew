@@ -196,6 +196,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Teshi Renew: a female kit teshi stands at (210, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (236, 226, 200)
@@ -231,6 +232,7 @@ Feature: the images of the Workshop page, second series
     And Teshi Renew: a female adult teshi belonging to the colony stands at (141, 72)
     And Teshi Renew: the teshi is given a "Cut" on its "front left claw"
     And Teshi Renew: the female adult teshi lies down to sleep
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
