@@ -15,12 +15,12 @@ Feature: The teshi, read in English
 
   Scenario: the defs carry their English labels and descriptions
     Then Teshi Renew: the ThingDef "Teshi" is labelled "teshi"
-    And Teshi Renew: the ThingDef "Teshi" reads "A large, bipedal feathered predator, originating from the sprawling forestplanet Ki."
+    And Teshi Renew: the ThingDef "Teshi" reads "A large, bipedal, feathered predator from Ki, a planet covered by sprawling forests."
     And Teshi Renew: the ThingDef "EggTeshiFertilized" is labelled "teshi egg (fert.)"
     And Teshi Renew: the ThingDef "EggTeshiFertilized" reads "A fertilized teshi egg. If all goes well, it should hatch into a baby teshi. It can be eaten raw, but it's much better cooked."
     And Teshi Renew: the ThingDef "EggTeshiUnfertilized" is labelled "teshi egg (unfert.)"
     And Teshi Renew: the ThingDef "EggTeshiUnfertilized" reads "An unfertilized teshi egg. It can be eaten raw, but it's much, much better cooked."
-    And Teshi Renew: the BodyDef "BipedAnimalWithClawsAndTail" is labelled "biped animal"
+    And Teshi Renew: the BodyDef "BipedAnimalWithClawsAndTail" is labelled "bipedal animal"
     And Teshi Renew: the teshi kit is labelled "teshi kit" and its plural "teshi kits"
     And Teshi Renew: the teshi has an attack labelled "left claw"
     And Teshi Renew: the teshi has an attack labelled "right claw"
