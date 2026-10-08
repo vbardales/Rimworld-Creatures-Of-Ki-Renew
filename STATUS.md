@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: published
+workflow_stage: preTest
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -11,7 +11,7 @@ remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes
-stage:        published
+stage:        preTest
 licence:      open
 licence_spdx: MIT
 licence_github_detection: Other (NOASSERTION)
@@ -28,6 +28,7 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
 remaining:
+  - update 1.0.1 (owner, 2026-10-08: "on va pouvoir faire une mise à jour"): the stage goes back to preTest. Mod/ changed since the 1.0.0 publication: two English texts (`bipedal animal`, the Teshi description), the regenerated Preview and ModIcon. To do in order: update the two assertions of 06-labels-en.feature (lines 18 and 23, they still read the old English) and replay 06 and 07 with the regressions; then tested; then prepublished (1.0.1 release notes, the second gallery series on the page with its credits, the Preview 666467 bytes sent with update_preview, description re-read); then the CI dry-run and publish.
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
   - feature: 1.0.1, future, not scheduled (owner, 2026-10-02). It ships the Preview redrawn in `e8b3a89` (661685 bytes, the published one is 666772) with `update_preview`, its own dry-run on a new commit; `Art/Gallery/0-preview.png` is identical to it today and must stay so. Whatever else changes under `Mod/` by then goes in the same version.
   - feature: 1.0.1, English texts (FRENCH_REVIEW, 2026-10-08): the body label `bipedal animal` and the teshi description reworded (no `forestplanet`); they are under `Mod/Defs/` and go in the same version as the redrawn Preview.
