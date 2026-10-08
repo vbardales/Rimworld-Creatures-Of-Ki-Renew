@@ -1,6 +1,6 @@
 # Gallery, second series
 
-State, 2026-10-08: **played, read, and in `Art/Gallery/`** (`1-candidate-asleep` to `7-candidate-the-infirmary-health-tab`, 2.4 MB), validated by the owner on 2026-10-08: 2, 3, 4, 5 and 7 (the `candidate-` part is dropped); 1 (the sleeper on its side) awaits her validation; 6 (the meal) is to be redone once the sweat on Nelim is solved (her word; asked of SanctuaryBacklot, ticket 0b1d tests the 20-degree step). Not yet on the Steam page.
+State, 2026-10-08: **played, read, and in `Art/Gallery/`** (`1-candidate-asleep` to `7-candidate-the-infirmary-health-tab`, 2.4 MB), validated by the owner on 2026-10-08: 1, 2, 3, 4, 5 and 7 (the `candidate-` part is dropped); 1 (the sleeper on its side) validated too (2026-10-08); 6 (the meal) is to be redone once the sweat on Nelim is solved (her word; asked of SanctuaryBacklot, ticket 0b1d tests the 20-degree step). Not yet on the Steam page.
 
 The plan is in the header of `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature` (the shooting plan, one line per image: place, moment, subject, composition, the living, what it says). It is not repeated here.
 
