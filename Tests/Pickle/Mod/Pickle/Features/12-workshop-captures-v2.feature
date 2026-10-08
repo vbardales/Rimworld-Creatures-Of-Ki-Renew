@@ -202,14 +202,14 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (236, 226, 200)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (96, 80, 62)
     And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
-    And Nelim's Pickle Tools: "Nelim" facial expression is "SocialRelax"
-    And Nelim's Pickle Tools: I let 20 ticks pass
+    And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (210, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+moodCheerful2"
     And I take a screenshot "workshop2-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
