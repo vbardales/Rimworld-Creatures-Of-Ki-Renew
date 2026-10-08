@@ -9,4 +9,4 @@ The plan is in the header of `Tests/Pickle/Mod/Pickle/Features/12-workshop-captu
 - **Pass**: `Tests/Pickle/wsl-deps.sanctuary.map`, built on SanctuaryBacklot's map, plus this mod's tools, ADS2 and the props (More animal beds, Stick Lantern). Seeds in `Tests/Pickle/config/sanctuary/`. Steps: `Nelim's Sanctuary: ` for the places, `Nelim's Pickle Tools: ` for the rest.
 - **Runs**: `docs/runs/2026-10-07.md` and `2026-10-08.md` (last: `gallery-v2-14` for images 1 to 5, `gallery-v2-16` for 6 and 7).
 - **Credits if it goes on the page**: see PUBLICATION.md, "Captures for the Workshop page".
-- **Open**: the series is not on the Steam page (the owner uploads by hand); the poses of the sleeper vary from one run to the next.
+- **Open**: the series is not on the Steam page (the owner uploads by hand); the pose of the sleeper varies from one run to the next (the owner prefers the one lying on its side, tail up: image 1 is that one, taken from the 2026-10-07 run `16c4` and kept from git history; a later run may draw another pose, so do not overwrite it with one).
