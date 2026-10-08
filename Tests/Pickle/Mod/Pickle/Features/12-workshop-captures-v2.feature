@@ -209,7 +209,9 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 2.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
-    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+moodCheerful2"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
     And I take a screenshot "workshop2-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
