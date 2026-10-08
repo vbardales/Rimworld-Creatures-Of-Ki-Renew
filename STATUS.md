@@ -55,6 +55,7 @@ Convention (c), decided by Virginie: the dry-run SHA is published, and this reco
 Run `37019682829` failed on purpose ("tag v1.0.0 already exists", the anti-double-publication guard) and sent nothing.
 A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
 
+- **French review, 2026-10-08.** FRENCH_REVIEW.md (generated at `8168d98`, regenerated with the mod name in its title) validated by the owner ("traduction validée", her word, relayed in chat). The two English texts it asked for (`bipedal animal`, the Teshi description) are in `Mod/Defs/` and ship with 1.0.1; the French already read as recommended.
 - **Code review, 2026-10-08.** The `Mod/` diff since `c342ee91ca41574d075e9b480817714cb7901163` (the previous review): two English texts in `Mod/Defs/` (a label and a description), no code; the regenerated `Preview.png` and `ModIcon.png` are binary and excluded. No finding. A reading, nothing run. The sha of this review is the commit that carries this line.
 - **Code review, 2026-10-05.** Low-effort `/code-review` of the `Mod/` diff since the 0.1.0 prepublication (`98a7c49`, hunks
   only, `Preview.png`, `ModIcon.png`, `Languages/` and tests excluded) at `c342ee91ca41574d075e9b480817714cb7901163`
