@@ -194,8 +194,6 @@ Feature: the images of the Workshop page, second series
     And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
-    And Teshi Renew: a female kit teshi stands at (210, 185)
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
@@ -203,6 +201,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (96, 80, 62)
     And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
+    And Teshi Renew: a female kit teshi stands at (210, 185)
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
     When Teshi Renew: the camera looks at (210, 185) at zoom 4
