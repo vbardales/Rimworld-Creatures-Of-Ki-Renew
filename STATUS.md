@@ -26,10 +26,11 @@ workshop:     3806709627
 version:      1.0.0 (tag v1.0.0, GitHub release, Steam content manifest 6682224070142369171)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
-updated:      2026-10-06, gallery of six images uploaded to Steam by the owner (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
+updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
 remaining:
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
   - feature: 1.0.1, future, not scheduled (owner, 2026-10-02). It ships the Preview redrawn in `e8b3a89` (661685 bytes, the published one is 666772) with `update_preview`, its own dry-run on a new commit; `Art/Gallery/0-preview.png` is identical to it today and must stay so. Whatever else changes under `Mod/` by then goes in the same version.
+  - feature: 1.0.1, English texts (FRENCH_REVIEW, 2026-10-08): the body label `bipedal animal` and the teshi description reworded (no `forestplanet`); they are under `Mod/Defs/` and go in the same version as the redrawn Preview.
   - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
@@ -54,6 +55,7 @@ Convention (c), decided by Virginie: the dry-run SHA is published, and this reco
 Run `37019682829` failed on purpose ("tag v1.0.0 already exists", the anti-double-publication guard) and sent nothing.
 A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
 
+- **Code review, 2026-10-08.** The `Mod/` diff since `c342ee91ca41574d075e9b480817714cb7901163` (the previous review): two English texts in `Mod/Defs/` (a label and a description), no code; the regenerated `Preview.png` and `ModIcon.png` are binary and excluded. No finding. A reading, nothing run. The sha of this review is the commit that carries this line.
 - **Code review, 2026-10-05.** Low-effort `/code-review` of the `Mod/` diff since the 0.1.0 prepublication (`98a7c49`, hunks
   only, `Preview.png`, `ModIcon.png`, `Languages/` and tests excluded) at `c342ee91ca41574d075e9b480817714cb7901163`
   (HEAD at the time; the Art tidy-up commit): no finding. A review, not a test: nothing was run.

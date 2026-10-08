@@ -1,29 +1,39 @@
-# SECOND SERIES for the Workshop page (docs/GALLERY-V2.md): the steps and props are prepared, nothing here has been played.
+# SECOND SERIES for the Workshop page (docs/GALLERY-V2.md). Played and read: the last run is 3c32 (2026-10-08), all seven images.
 # No count limit, only a size one: the whole gallery under 8 MB and each image under 2 MB (JPEG, quality 92, about 350 KB each).
 #
-# THE RULES (PUBLISHING.md): one story, not a row of captures; the sanctuary is the only common set; a Scenario is an image; menus
-# are plain screenshots; and the TIME FLOWS through the series: one start hour (16h), then each image waits a cumulative time
-# (rhythm chosen by the author: 30 game minutes, 1 250 ticks). Every Scenario reloads the save, so each one sets 16h again and
-# waits its own total before the picture; what lives in the scene is placed after the wait so it has not left the frame.
+# THE RULES (PUBLISHING.md): one story, not a row of captures; the Sanctuary is the only common set; a Scenario is an image; the
+# Health tab is a menu, so it keeps the interface; and the TIME FLOWS through the series: one start hour (16h), then each image waits
+# a cumulative time (rhythm chosen by the author: 30 game minutes, 1 250 ticks). Every Scenario reloads the save, so each one sets 16h
+# again and waits its own total before the picture; what lives in the scene is placed after the wait so it has not left the frame.
 #
-# THE STORY: a late afternoon and an evening of the teshi in Nelim's sanctuary. The teshi is crepuscular (awake at dawn and at
-# dusk): it rests by day and wakes as the light goes. The hours are those of the game's clock.
-#   1. 16h00. The teshi asleep on a large animal bed on the west bank of the pond, in daylight.
-#   2. 16h30. She is awake: a close portrait, the head, the four banded ears, the tail.
-#   3. 17h00. The two parents nose to nose, the hearts, a lantern lit and a pot of flowers beside them.
-#   4. 17h30. The mother and her nesting box in a bed of yellow grass, a lantern lit, the egg in the box.
-#   5. 18h00. The egg hatches (the game's own hatching): the kit stands where it came out, the mother beside it.
-#   6. 18h30. Nelim holds out a piece of meat to the kit, the mother watching.
-#   7. 19h00, dusk, the Health tab: a cut claw and the ADS2 bionic arm together (needs ADS2, so the feature carries @requires).
+# THE STORY: a late afternoon and an evening of the teshi in Nelim's Sanctuary. The teshi is crepuscular (awake at dawn and at dusk):
+# it rests by day and wakes as the light goes. The hours are the game's clock.
 #
-# MODS, chosen for the props (both declare 1.6, both installed in the Windows Workshop folder, so the staging finds them by id):
-#   More animal beds (Animal.BedsNew, 3107972819): GSAnimalBedBigPrestige, a bed made for a large animal.
+# SHOOTING PLAN (place, moment, subject, composition, the living, what the image says). Places chosen on PickleTools' empty-place
+# photographs (SanctuaryBacklot/docs/SANCTUAIRE-LIEUX.md), among all of them: water-garden, calm-zone and hut; the enclosure and the
+# sleeping-nook were seen and left (fenced and indoors, they say "kept animal", not a forest creature that nests and wakes at dusk).
+#   1. water-garden, west bank. 16h00. The teshi asleep on a prestige animal bed. Wide-ish frame, the pond behind, the bed to the right of the
+#      subject. Nelim is not in it; the pond's lily pads are the life. Says: by day it sleeps, curled, in daylight.
+#   2. water-garden, same bank. 16h30. The teshi awake, a close portrait (root size 1.8), centred. Says: the head, the four banded ears, the tail.
+#   3. water-garden, same bank. 17h00. The two parents nose to nose, hearts, a lit lantern at the bank's edge, daylily pots in the upper left.
+#      Composition off-centre to the left, the lantern bottom-right. Says: the courting, at the start of the dusk.
+#   4. calm-zone, east of the cream square. 17h30. The mother on her bed in a nest of yellow tall grass, the egg in its box, a lantern at left.
+#      Close and low. Says: she builds the nest as the light goes.
+#   5. calm-zone, same corner. 18h00. The egg has hatched by the game's own hatcher: the kit by the box, the mother back on her bed. Says: it is born at dusk.
+#   6. calm-zone, west of the nest. 18h30. Nelim (dressed, brown eyes, smiling) holds out a piece of meat; the kit leaps toward her, the mother
+#      watches at the right, the lantern top-right. Says: the first meal, and that the teshi lives with people.
+#   7. hut (the tea-house turned into an animal infirmary). 19h30. The injured teshi asleep on a big animal bed, Nelim at its feet, two blue braziers
+#      and a lantern, the Health tab open on the patient (a cut claw and the ADS2 bionic arm; needs ADS2, so the feature carries @requires).
+#      A menu on a staged scene: the interface stays, the colonist bar, learning helper and tooltips are hidden. Says: the body names each claw and ear,
+#      and the mod's integration gives it a bionic arm.
+# After a run each image is read against this plan, and the one that does not say what it should is redone, not only the one that crashes.
+#
+# MODS, chosen for the props and for Nelim; each in the pass map wsl-deps.sanctuary.map (see also GALLERY-PROPS.md at the root of the monorepo):
+#   More animal beds (Animal.BedsNew, 3107972819): GSAnimalBedBigPrestige (images 1, 4, 5) and GSAnimalBedBig (image 7), both 2x2.
 #   Stick Lantern (Continued) (Mlie.StickLantern, 2024351846): DR_StickLantern, a fuelled lantern that glows without power.
-#
-# OPEN POINTS, to read on the first run: whether GSAnimalBedBigPrestige accepts the placement and its stuff, whether the sleeper lies on it,
-# whether EggBox takes a teshi egg placed on its cell, where the kit appears when it hatches, how Nelim reads holding meat, and
-# whether ultrafast waits of up to 7 560 ticks fit the run (the suite may need @slow and a timeout). Filter: any ticket on a pass
-# other than wsl-deps.sanctuary.map excludes this suite (`!12-workshop-captures-v2`), as it does 11-workshop-captures.
+#   Nelim: Female Body/Apparel Variants, Realistic Bodies (WDI), AB's Visible Pants, Venus Touch Waistlines, Nals Facial Animation with EyeGenes3 for the
+#   brown eyes; all through the SanctuaryBacklot map (steps "Nelim's Sanctuary: ..." for the places, "Nelim's Pickle Tools: ..." for the rest).
+# Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!12-workshop-captures-v2`), as it does 11-workshop-captures.
 @review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: the images of the Workshop page, second series
 

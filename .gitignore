@@ -18,7 +18,7 @@
 #     Art/, the docs, this file - stays out of reach by construction.
 
 # Build intermediates.
-.build/
+Tests/Pickle/build/
 Source/obj/
 Source/bin/
 

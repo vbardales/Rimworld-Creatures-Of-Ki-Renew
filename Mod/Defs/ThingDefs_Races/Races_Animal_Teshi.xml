@@ -3,7 +3,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>Teshi</defName>
     <label>teshi</label>
-    <description>A large, bipedal feathered predator, originating from the sprawling forestplanet Ki.</description>
+    <description>A large, bipedal, feathered predator from Ki, a planet covered by sprawling forests.</description>
     <statBases>
       <Wildness>0.50</Wildness>
       <MoveSpeed>7</MoveSpeed>

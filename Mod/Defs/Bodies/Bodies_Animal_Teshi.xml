@@ -2,7 +2,7 @@
 <Defs>
   <BodyDef>
     <defName>BipedAnimalWithClawsAndTail</defName>
-    <label>biped animal</label>
+    <label>bipedal animal</label>
     <corePart>
       <def>Body</def>
       <height>Middle</height>
