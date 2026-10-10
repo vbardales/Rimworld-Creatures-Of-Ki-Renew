@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: declareDependencies[1.0.1]
+workflow_stage: localize[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -54,6 +54,11 @@ Why `code` at first: 3.c unmet (no `[Unreleased]` in CHANGELOG.md); written the 
 `PatchOperationFindMod` on the mod `<name>` (two entries), nothing patched or logged without it. No `LoadFolders.xml` (one version, 1.6 only,
 `supportedVersions` 1.6). No cycle. Animal mod integrations (ANIMALS.md 4.f): ADS2 and Nocturnal done, Dogs mate and Better Crossbreeding not
 done: crossbreeding parked by the owner (2026-09-25), Dogs mate (`Mlie.DogsMate`): not applicable, the teshi is an egg-layer with no canid group (`ANIMALS.md` asks for a written decision, this is it, a reading of the sources not a test).
+
+**Settings audit, 2026-10-10 (HEAD `a227b39`, sources read, no game).** `settings_audit: not_applicable` stands. `Mod/` holds no assembly and no C#
+(`Mod/Assemblies` and `Source/` absent), no `ModSettings`, no `MainButtonDef`, no `SettingsCategory` (search over `Mod/`: no hit). The hits under
+`Tests/Pickle/` are the test steps (`TeshiSteps.cs`) and the configs of other mods staged by the passes, not shipped. Nothing to configure: the mod
+adds one animal, its eggs and two optional patches. No empty page, no shortcut. The two English texts changed in 1.0.1 add no setting.
 
 ## Current state — 2026-10-02
 
