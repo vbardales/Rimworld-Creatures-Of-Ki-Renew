@@ -55,7 +55,7 @@ No DLC and no dependencies.
 
 ## Compatibility
 
-[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) is supported and optional. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive that mod's prosthetic limbs and bionics wherever its body has the matching part, arms included. This mod loads before it, as that mod's page asks, and does nothing when it is absent.
+[A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) is supported and optional. The teshi is in its category 3, the one that holds the bears and the wolves, so it can receive that mod's prosthetic limbs and bionics wherever its body has the matching part, arms included. This mod loads before A Dog Said, as requested on its Workshop page. The compatibility patches have no effect when A Dog Said is absent.
 
 XND Nocturnal Animals (Continued) is supported and optional. With it, the teshi is crepuscular: awake at dawn and at dusk. That rhythm is my choice, since the original gives the teshi none, and without that mod nothing changes.
 

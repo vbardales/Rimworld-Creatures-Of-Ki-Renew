@@ -81,7 +81,7 @@ and documented in `ATTRIBUTION.md`: the desiccated teshi corpse uses the dromeda
 
 ## [0.1.0] — 2026-09-23
 
-Creation of a publishIdFile. Prepublication: a first upload whose only purpose was to create the
+Created the Workshop item and obtained `Mod/About/PublishedFileId.txt`. Prepublication: a first upload whose only purpose was to create the
 Workshop item, private as Steam creates every new item, and to obtain `Mod/About/PublishedFileId.txt`,
 which holds item `3806709627`. This entry does not say the mod is public or tested.
 
