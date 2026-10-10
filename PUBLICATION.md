@@ -74,7 +74,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 ## AI-GENERATED
 
-The 1.6 update, its tests and its documentation were written with Claude Code (Anthropic), and Codex (OpenAI) also contributed to the repository. The showcase images, the preview background and the icon, are AI-generated artwork; the icon was later edited with OpenAI's built-in image tool, and the preview was lettered afterwards in HTML. Working with these tools is part of how I make mods.
+The 1.6 update, its tests and its documentation were written with Claude Code (Anthropic), and Codex (OpenAI) also contributed to the repository. The showcase images, the preview background and the icon are AI-generated artwork; the icon was later edited with OpenAI's built-in image tool, and the preview was lettered afterwards in HTML. Working with these tools is part of how I make mods.
 
 ## THANKS
 
@@ -101,8 +101,8 @@ release instead.
 ```
 [b]1.0.1[/b]
 Two English texts corrected: the body label now reads "bipedal animal", and the teshi description is reworded
-(Ki is "a planet covered by sprawling forests"). The Workshop preview and the mod icon are redrawn, and the
-gallery has a second series of images. No gameplay change.
+(Ki is "a planet covered by sprawling forests"). The Workshop preview and the mod icon are redrawn.
+No gameplay change.
 ```
 
 ### 1.0.0
@@ -190,6 +190,6 @@ The posted texts live on the Workshop pages; the drafts are not kept here.
 
 ## Next update
 
-The CI never sends the visibility, the title or the tags. A new publication needs a new version (1.0.1+) on a new commit, its
+The CI never sends the visibility or the title. A new publication needs a new version (1.0.1+) on a new commit, its
 own dry-run, and `update_preview` / `update_description` turned on only when the Preview or this description changed. The
 Preview in the repository (`e8b3a89`) differs from the published one: see `STATUS.md`.
