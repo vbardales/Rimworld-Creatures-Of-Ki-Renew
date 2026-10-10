@@ -30,9 +30,9 @@ Declared here, as `../AUDIT.md` asks: how many, which, and what each covers. Six
 | Optional integration | `wsl-deps.avec-ads2.map` | English | 12 of 13 discovered | A Dog Said... Animal Prosthetics 2 mounted, this mod ahead of it |
 | Optional integration | `wsl-deps.avec-nocturnal.map` | English | 1 to 12 of 14 discovered | [XND] Nocturnal Animals (Continued) mounted: the teshi carries the crepuscular body clock. An exploration plays only `10`, a validation plays the English set |
 | New colony | `wsl-deps.new-colony.map` | English | 1 | A colony that starts with the mod, not one that had it added. **Random: never the same colony twice, so used sparingly** |
-| Gallery captures | `wsl-deps.sanctuary.map` | English | 3 | The three images of the Workshop page (`11-workshop-captures`), on Nelim's tribe (the sanctuary, "smiley-north" frame), staged as a series: a nest of hay and a lit torch placed by StageDecor, hour 18, clear weather. Presentation, not a check of the mod: every capture is opened before use |
+| Gallery captures | `wsl-deps.sanctuary.map` | English | 7 of the second series (`12-workshop-captures-v2`, one scenario per image, `docs/GALLERY-V2.md`), plus 6 of the first series (`11-workshop-captures`) | The three images of the Workshop page (`11-workshop-captures`), on Nelim's tribe (the sanctuary, "smiley-north" frame), staged as a series: a nest of hay and a lit torch placed by StageDecor, hour 18, clear weather. Presentation, not a check of the mod: every capture is opened before use |
 
-Sixteen scenarios are written. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
+Thirty-five scenarios are written (`Scenario:` lines) across twelve features, the two gallery series (`11`, `12`) included. A scenario tagged `@requires` is skipped in the passes that do not mount its mod, and a
 skipped scenario is not a passed one. There is no incompatibility pass, since the mod declares no incompatibility, and no
 pass without a DLC, since it has no DLC guard. `Tests/Pickle/README.md` has the commands and the reasons.
 
