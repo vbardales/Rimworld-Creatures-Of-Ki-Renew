@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: writeTests[1.0.1]
+workflow_stage: playTests[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -27,7 +27,6 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
 remaining:
-  - defect: 06-labels-en.feature lines 18 and 23 still assert the old English (AUDIT 7.b/7.d), to fix at `writeTests[1.0.1]`.
   - update 1.0.1 (owner, 2026-10-08): `Mod/` changed since 49d9a72: two English texts (`bipedal animal`, the Teshi description), the Preview redrawn in `e8b3a89` (666467 bytes, published one 666772, sent with `update_preview`; `Art/Gallery/0-preview.png` must stay identical) and the regenerated ModIcon. In order: `declareDependencies`, `auditSettings`, `localize` (Virginie rereads the two EN texts), `writeTests` (fix 06 lines 18 and 23, replay 06 and 07), `playTests`, gallery second series on the page with credits, release notes, dry-run, publish.
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
   - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
@@ -53,6 +52,11 @@ Teshi description (`Races_Animal_Teshi.xml`); the French (`animal bipède`, the 
 `Make-FrenchReview.ps1` (the 18 anatomical `customLabel` rows take their English from `french-review-english.json`, checked against the Def).
 Reread by Virginie, French and English, in the chat of 2026-10-10: French good, no gender agreement needed, the two English texts good,
 no correction left. `localization`, `translation_en` and `translation_fr` stay `complete`. Nothing in-game was read (raw keys, truncation):
+
+**Tests written and rerun, 2026-10-10 (HEAD `aa6070c`, offline, no game).** `Run-Functional-Tests.ps1`: 23 tests, 0 failed, rerun today. XML and
+Core references are covered by that suite (TESTING.md). The two assertions the audit flagged in `06-labels-en.feature` (lines 18 and 23) were already
+rewritten in `adbcd70` (the `remaining` defect was stale and is removed); `07-labels-fr.feature` reads the unchanged French. Pickle suites written
+(01 to 12, `@requires` passes in `TESTING.md`), none played on this revision yet. Tested sha: the one the tickets of `playTests[1.0.1]` carry in their label.
 `unverified` until `playTests`.
 
 **Dependencies, 2026-10-10 (HEAD `e6e9b50`, read in the sources, no game).** No hard dependency (`modDependencies` absent, correct).
