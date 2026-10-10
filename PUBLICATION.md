@@ -64,7 +64,7 @@ XND Nocturnal Animals (Continued) is supported and optional. With it, the teshi 
 - **Wildness stopped being a race property.** In 1.6 it is a Wildness stat declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
 - **The unfertilized egg was missing.** Every egg-laying animal in the base game declares one, and the teshi did not. The def was written, taking the market value of its fertilized counterpart. It is declared for parity: a teshi lays a stack of two fertilized eggs, and without a fertilization it does not lay at all.
 
-No balance value was changed. The dessicated teshi corpse draws with a dromedary's texture, as it did in the original, and that is left alone on purpose.
+No balance value was changed. The desiccated teshi corpse draws with a dromedary's texture, as it did in the original, and that is left alone on purpose.
 
 Content mod: removing it mid-game will lose any teshi and any teshi eggs already in play.
 
@@ -95,6 +95,15 @@ What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE say
 The block under `### <version>` sent as the Steam change note, first line the version alone
 (`[b]1.0.0[/b]`, `../PUBLISHING.md`); the `## [<version>]` section of `CHANGELOG.md` goes into the GitHub
 release instead.
+
+### 1.0.1
+
+```
+[b]1.0.1[/b]
+Two English texts corrected: the body label now reads "bipedal animal", and the teshi description is reworded
+(Ki is "a planet covered by sprawling forests"). The Workshop preview and the mod icon are redrawn, and the
+gallery has a second series of images. No gameplay change.
+```
 
 ### 1.0.0
 

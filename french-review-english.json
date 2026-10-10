@@ -1,0 +1,20 @@
+{
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_lung.customLabel": "left lung",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_lung.customLabel": "right lung",
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_kidney.customLabel": "left kidney",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_kidney.customLabel": "right kidney",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_eye.customLabel": "left eye",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_eye.customLabel": "right eye",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_upper_ear.customLabel": "left upper ear",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.left_lower_ear.customLabel": "left lower ear",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_upper_ear.customLabel": "right upper ear",
+  "BipedAnimalWithClawsAndTail.corePart.parts.Neck.parts.Head.parts.right_lower_ear.customLabel": "right lower ear",
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_arm.customLabel": "left arm",
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_arm.parts.front_left_claw.customLabel": "front left claw",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_arm.customLabel": "right arm",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_arm.parts.right_claw.customLabel": "right claw",
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_leg.customLabel": "left leg",
+  "BipedAnimalWithClawsAndTail.corePart.parts.left_leg.parts.left_footclaw.customLabel": "left footclaw",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_leg.customLabel": "right leg",
+  "BipedAnimalWithClawsAndTail.corePart.parts.right_leg.parts.right_footclaw.customLabel": "right footclaw"
+}

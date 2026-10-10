@@ -77,7 +77,7 @@ through 1.4.
 ### Notes
 
 No balance value was changed. One defect inherited from the original is left in place on purpose
-and documented in `ATTRIBUTION.md`: the dessicated teshi corpse uses the dromedary's texture.
+and documented in `ATTRIBUTION.md`: the desiccated teshi corpse uses the dromedary's texture.
 
 ## [0.1.0] — 2026-09-23
 
