@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: code[1.0.1]
+workflow_stage: declareDependencies[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -27,12 +27,9 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
 remaining:
-  - defect: CHANGELOG.md has no `## [Unreleased]` section for 1.0.1 (AUDIT 3.c). It lists the two English texts, the regenerated Preview and ModIcon, and `ADS2_Arms.xml` (in `Mod/` since 1.0.0 per the diff to `1fcc51f`, check against `49d9a72` before writing).
   - defect: 06-labels-en.feature lines 18 and 23 still assert the old English (AUDIT 7.b/7.d), to fix at `writeTests[1.0.1]`.
-  - update 1.0.1 (owner, 2026-10-08: "on va pouvoir faire une mise à jour"): the stage goes back to preTest. Mod/ changed since the 1.0.0 publication: two English texts (`bipedal animal`, the Teshi description), the regenerated Preview and ModIcon. To do in order: update the two assertions of 06-labels-en.feature (lines 18 and 23, they still read the old English) and replay 06 and 07 with the regressions; then tested; then prepublished (1.0.1 release notes, the second gallery series on the page with its credits, the Preview 666467 bytes sent with update_preview, description re-read); then the CI dry-run and publish.
+  - update 1.0.1 (owner, 2026-10-08): `Mod/` changed since 49d9a72: two English texts (`bipedal animal`, the Teshi description), the Preview redrawn in `e8b3a89` (666467 bytes, published one 666772, sent with `update_preview`; `Art/Gallery/0-preview.png` must stay identical) and the regenerated ModIcon. In order: `declareDependencies`, `auditSettings`, `localize` (Virginie rereads the two EN texts), `writeTests` (fix 06 lines 18 and 23, replay 06 and 07), `playTests`, gallery second series on the page with credits, release notes, dry-run, publish.
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
-  - feature: 1.0.1, future, not scheduled (owner, 2026-10-02). It ships the Preview redrawn in `e8b3a89` (666467 bytes after the render of 2026-10-08, the published one is 666772) with `update_preview`, its own dry-run on a new commit; `Art/Gallery/0-preview.png` is identical to it today and must stay so. Whatever else changes under `Mod/` by then goes in the same version.
-  - feature: 1.0.1, English texts (FRENCH_REVIEW, 2026-10-08): the body label `bipedal animal` and the teshi description reworded (no `forestplanet`); they are under `Mod/Defs/` and go in the same version as the redrawn Preview.
   - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
@@ -46,10 +43,17 @@ protocols_read_sha: b4a73cf0998fa5914b1d5e52b0817a8fe77abab3
 `preTest` (old vocabulary, replaced on 2026-10-10) to `code[1.0.1]`. Read: AUDIT.md (284 lines), WELCOME.md, STATUS.md,
 BACKLOG.md, CHANGELOG.md. Nothing run, no game started. `Check-Status.ps1` before: 0 ERROR, 3 WARN (retired `stage`, old
 vocabulary, `protocols_read_sha` missing); `stage` removed and `protocols_read_sha` written here.
-Why `code`: 3.c is unmet. `CHANGELOG.md` has no `## [Unreleased]` for 1.0.1 although `Mod/` changed since the publication
+Why `code` at first: 3.c unmet (no `[Unreleased]` in CHANGELOG.md); written the same day, 3.a to 3.c now met (no build, no DLL).
 (two English texts, Preview, ModIcon). Next, in order: that section, then `declareDependencies[1.0.1]` (re-verified, dated),
 `auditSettings` (`not_applicable` stands), `localize` (EN texts changed: Virginie rereads them before deployment),
 `writeTests[1.0.1]` (06 assertions, replay 06 and 07).
+
+**Dependencies, 2026-10-10 (HEAD `e6e9b50`, read in the sources, no game).** No hard dependency (`modDependencies` absent, correct).
+`loadAfter`: Core and the five DLC (`Ludeon.RimWorld*`); `loadBefore`: `SamBucher.ADogSaidAnimalProsthetics2` (patches `ADS2_Categories.xml`,
+`ADS2_Arms.xml`, same classes as vanilla recipes, no mod-specific operation). Nocturnal Animals: `NocturnalAnimals.xml` under
+`PatchOperationFindMod` on the mod `<name>` (two entries), nothing patched or logged without it. No `LoadFolders.xml` (one version, 1.6 only,
+`supportedVersions` 1.6). No cycle. Animal mod integrations (ANIMALS.md 4.f): ADS2 and Nocturnal done, Dogs mate and Better Crossbreeding not
+done: crossbreeding parked by the owner (2026-09-25), Dogs mate (`Mlie.DogsMate`): not applicable, the teshi is an egg-layer with no canid group (`ANIMALS.md` asks for a written decision, this is it, a reading of the sources not a test).
 
 ## Current state — 2026-10-02
 

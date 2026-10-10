@@ -4,6 +4,17 @@ Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it
 in game.
 
+## [Unreleased]
+
+Target version 1.0.1.
+
+### Changed
+
+- Body label `biped animal` reads `bipedal animal`.
+- The teshi description is reworded and no longer says `forestplanet`: "A large, bipedal, feathered predator from Ki, a
+  planet covered by sprawling forests."
+- Preview redrawn and `ModIcon.png` regenerated from the owner's new source (Preview 666467 bytes, was 666772).
+
 ## [1.0.0] — 2026-10-02
 
 Sent to Steam by the CI on 2026-10-02 (publish run 36982893195, commit `49d9a72`, item `3806709627`), tag `v1.0.0` and
