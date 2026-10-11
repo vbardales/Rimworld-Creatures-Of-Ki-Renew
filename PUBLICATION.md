@@ -92,7 +92,7 @@ What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE say
 
 ## Release notes (the change note of each upload)
 
-The block under `### <version>` sent as the Steam change note, first line the version alone
+The block under `### <version>` is sent as the Steam change note, with the version alone on its first line
 (`[b]1.0.0[/b]`, `../PUBLISHING.md`); the `## [<version>]` section of `CHANGELOG.md` goes into the GitHub
 release instead.
 
