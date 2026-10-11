@@ -1,6 +1,6 @@
 # Publication sheet
 
-**Updated 2026-10-02. 1.0.0 is published (CI run 36982893195 on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`, tag `v1.0.0`), the item `3806709627` is public and the thanks are posted (`STATUS.md`).** This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that
+**Updated 2026-10-11 for 1.0.1 (in preparation; `STATUS.md`). 1.0.0 was published 2026-10-02 (CI run 36982893195 on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`, tag `v1.0.0`), the item `3806709627` is public and the thanks are posted (`STATUS.md`).** This sheet holds what the Workshop page asks for and the repository holds nowhere else, so that
 it can be used again at the next update and by whoever picks the mod up.
 
 This is an **update of an existing item** (`../PUBLISHING.md`, "Publier par la CI"): Steam holds 1.0.0, and the next upload
@@ -85,6 +85,8 @@ XeoNovaDan, for XND Nocturnal Animals, and Mlie again, who continues it as XND N
 
 Tested with [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [Nelim's Pickle Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401), thanks to their authors: development only, never a dependency of this mod.
 
+The gallery images were staged with other mods, none of them a dependency: the beds and the lantern, [More animal beds](https://steamcommunity.com/sharedfiles/filedetails/?id=3107972819) (Sovereign, DetVisor and Sandwish) and [Stick Lantern (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2024351846) (Dalrae, whose mod it is, and Mlie, who keeps it up); and the colonist who walks through them, with [Female Body Variants Continued](https://steamcommunity.com/sharedfiles/filedetails/?id=3798082132) and [Female Apparel Variants Continued](https://steamcommunity.com/sharedfiles/filedetails/?id=3799726535) (DanZinagri and tiagocc0), [WDI's Realistic Bodies](https://steamcommunity.com/sharedfiles/filedetails/?id=3527486510) (Windonsi and Starkz), [AB's Visible Pants](https://steamcommunity.com/sharedfiles/filedetails/?id=2986402536) (aedbia), [Facial Animation - WIP](https://steamcommunity.com/sharedfiles/filedetails/?id=1635901197) and [Facial Animation - Experimentals](https://steamcommunity.com/sharedfiles/filedetails/?id=2581693737) (Nals), [Vanilla Textures Expanded - Facial Animation](https://steamcommunity.com/sharedfiles/filedetails/?id=2816938779) (Oracle of Thessia), [Akeron Extras - Facial Animations](https://steamcommunity.com/sharedfiles/filedetails/?id=2889716301) (Newton Zephyr), [Vanilla Experimentals for Facial Animation](https://steamcommunity.com/sharedfiles/filedetails/?id=3753978140) (SunshineyDays), [Facial Animation Performance Patch](https://steamcommunity.com/sharedfiles/filedetails/?id=3790129900) (astryl), [EyeGenes3](https://steamcommunity.com/sharedfiles/filedetails/?id=3745223213) (Lucius) and my own [Venus Touch Waistlines](https://github.com/vbardales/Rimworld-Venus-Touch-Waistlines).
+
 What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE says what the MIT grant covers, the upstream notice included.
 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew)
@@ -151,7 +153,7 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 The scene of 18h30 (Nelim holds out meat to the kit) was played but is not kept; image 6 needs ADS2 loaded; the feature carries `@requires:SamBucher.ADogSaidAnimalProsthetics2` and the pass map holds the Sanctuary, ADS2 and the props, so the whole series passes in one run. Places are chosen on the empty-place photographs of PickleTools and the Backlot (`SanctuaryBacklot/docs/GALERIE.md`, `SANCTUAIRE-LIEUX.md`), never on their names. After a run each image is opened and read against the plan: green does not validate a capture.
 
-**Mods seen on the images, to name and to thank if this series goes on the page** (and in `WORKSHOP_COMMENTS.md` and the thanks register; the description says nothing staged ships with the mod): More animal beds (`Animal.BedsNew`, 3107972819, Sovereign, DetVisor and Sandwish), Stick Lantern (Continued) (`Mlie.StickLantern`, 2024351846, Mlie), A Dog Said... Animal Prosthetics 2 (3238353862). Nelim, the pawn, is drawn with Female Body Variants and Female Apparel Variants (tiagocc0), Realistic Bodies (WDI), AB's Visible Pants, Venus Touch Waistlines, Facial Animation and EyeGenes3; these are tools of the shared Sanctuary pass and are credited only if the description wants to name them. The list of prop mods tried and what worked is in `GALLERY-PROPS.md` at the root of the monorepo.
+**Mods seen on the images (decided 2026-10-11): named and thanked in the description (`THANKS`), none a dependency.** The two props, More animal beds (`Animal.BedsNew`, 3107972819, Sovereign, DetVisor and Sandwish) and Stick Lantern (Continued) (`Mlie.StickLantern`, 2024351846, Mlie after Dalrae), and every mod of the shared Sanctuary pass that dresses Nelim (`wsl-deps.sanctuary.map`: the body, apparel and facial-animation mods, AB's Visible Pants, EyeGenes3 and her own Venus Touch Waistlines), which AUDIT 11.b asks for because a pass stages them. Authors of the three new ones come from their `About.xml` (the Workshop pages answered 429 on 2026-10-11): to confirm on the page before posting.
 
 ## The preview image
 
@@ -169,23 +171,40 @@ PNG, under 1 MiB; `Art/Gallery/0-preview.png` must remain byte-identical to it.
 ## Content boxes (adult content, violence)
 
 Answer **no adult content**, none to declare. Opened on 2026-09-28: the former `Art/Gallery/1-the-teshi.jpg` (one animal
-on flowers); the six images of 2026-10-06 were opened too (animals, a nest, a torch, two Health tabs with a cut claw and a bionic arm, no person shown). `Preview.png` and `ModIcon.png` were opened earlier and the owner confirmed the icon on 2026-09-26, but
-`Preview.png` was not opened again this session: **open it and any image added later immediately before the dry-run that
-carries it**, since the boxes commit the page.
+on flowers); the six images of 2026-10-06 were opened too (animals, a nest, a torch, two Health tabs with a cut claw and a bionic arm, no person shown). On 2026-10-11 `Preview.png` and the six images of the second series were opened one by one (animals, a nest and its egg, a lantern, a Health tab with a cut claw and a bionic arm; Nelim, clothed, at the animal's feet in the infirmary): no adult content. **Open any image added later immediately before the dry-run that carries it**, since the boxes commit the page.
 
 ## Thanks
 
 One main comment per recipient page for the whole collection: `../WORKSHOP_COMMENTS.md` is read first, keyed by Workshop id; voice and shape rules are in its "Writing a comment". The item link is `https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627`.
 
-| Recipient | Workshop id | State, 2026-10-02 |
+| Recipient | Workshop id | State, 2026-10-11 |
 | --- | --- | --- |
 | Creatures of Ki (Continued), Shooki and Mlie | `2726461020` | posted by Virginie (her word); register row to write |
 | A Dog Said... Animal Prosthetics 2, SamBucher | `3238353862` | already `posted` from A Certain Series; this mod added to `Covers` |
 | [XND] Nocturnal Animals (Continued), Mlie, and XeoNovaDan (the original) | `2269731409` | already `posted` from A Certain Series (one message credits both); this mod added to `Covers` |
 | Pickle, RimLogging | `3791648678`, `3733484696` | `posted`; `Covers` |
 | Nelim's Pickle Tools | `3806142401` | `not_applicable`, the author's own project |
+| More animal beds, Sovereign, DetVisor and Sandwish | `3107972819` | `drafted` (draft below); gallery props |
+| Stick Lantern (Continued), Mlie after Dalrae | `2024351846` | `drafted` (draft below); the original `1355773454` is `not_applicable`, one message credits both |
+| AB's Visible Pants, aedbia | `2986402536` | `drafted` (draft below); Nelim's clothes in the Sanctuary pass |
+| Female Body and Apparel Variants Continued, WDI's Realistic Bodies, the Facial Animation mods, EyeGenes3 | `3798082132`, `3799726535`, `3527486510`, `1635901197`, `2581693737`, `2816938779`, `2889716301`, `3753978140`, `3790129900`, `3745223213` | already `posted` from Adaptive Storage Neolithic Renew; this mod added to `Covers` (2026-10-11), nothing to repost |
 
-The posted texts live on the Workshop pages; the drafts are not kept here.
+The posted texts live on the Workshop pages. Drafts to post after 1.0.1 is public with these images (one per page, at most three a day, in her voice, `../WORKSHOP_COMMENTS.md`):
+
+**More animal beds** (3107972819)
+```text
+The big prestige bed is where my teshi sleeps in the pictures of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url], and she looks very pleased with it :) Thank you Sovereign, DetVisor and Sandwish!
+```
+
+**Stick Lantern (Continued)** (2024351846)
+```text
+The lantern that glows without any power is exactly what a nest at dusk needed in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url]. Thank you Dalrae for the original and Mlie for keeping it going xD
+```
+
+**AB's Visible Pants** (2986402536)
+```text
+Nelim, who walks through the pictures of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url], is dressed with this one in my staging. Thank you aedbia :)
+```
 
 ## Next update
 

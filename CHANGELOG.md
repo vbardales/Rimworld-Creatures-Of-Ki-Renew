@@ -14,6 +14,8 @@ Target version 1.0.1.
 - The teshi description is reworded and no longer says `forestplanet`: "A large, bipedal, feathered predator from Ki, a
   planet covered by sprawling forests."
 - Preview redrawn and `ModIcon.png` regenerated from the owner's new source (Preview 666467 bytes, was 666772).
+- The Workshop description now names and thanks the mods the gallery was staged with (the props and the colonist's look), none a dependency, and the second series of images goes on the page.
+- The Workshop description now names and thanks the mods the gallery was staged with (props and the colonist's look), none a dependency, and the second series of images goes on the page.
 
 ## [1.0.0] — 2026-10-02
 
