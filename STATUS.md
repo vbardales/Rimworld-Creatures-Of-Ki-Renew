@@ -57,7 +57,7 @@ Reserves, not blockers: `Art/ModIcon.ico` and `Art/Preview.ico` are tracked by g
 
 **Gallery, second series, 2026-10-11 (HEAD `e358d09`).** The six images after `0-preview` opened one by one by the session, director's verdict before the owner's: `1-asleep` kept (the teshi
 curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close and clear), `3-the-parents` kept (hearts, lantern, daylilies), `4-the-nesting-box` kept (warm, the egg in its box),
-`5-the-hatching` kept with a reserve (the kit is small beside its box, it reads as a miniature teshi), `6-the-infirmary-health-tab` kept (the Health tab names the cut claw and the ADS2 bionic
+`5-the-hatching` redone 2026-10-11 (ticket e848, root size 1.9: the kit now fills its box tile and reads as a kit beside the mother; the first version was too far), `6-the-infirmary-health-tab` kept (the Health tab names the cut claw and the ADS2 bionic
 arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). `7-` was renumbered `6-` (indexes 0 to 6 contiguous, AUDIT 9.b); the meat scene of 18h30 was played and not kept.
 Sizes 254 to 450 KB each, 2.3 MB together; `0-preview.png` identical to `Mod/About/Preview.png` (cmp). Order to argue: the most demonstrative first after the preview.
 
