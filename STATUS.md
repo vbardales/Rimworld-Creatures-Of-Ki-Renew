@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: shootGallery[1.0.1]
+workflow_stage: mountPreview[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -33,7 +33,7 @@ remaining:
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 code_review_sha: bfd5a4567e4f032eed65215c74265f35feaddb69
-protocols_read_sha: e37e68c374794e806e4037bc43bafa06f8ba9f5b
+protocols_read_sha: c1bf02194bd564db133a7f2ddf548687d1910b33
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -58,8 +58,20 @@ The former gap in the gallery indexes (no `6-`) is closed: indexes 0 to 6 are co
 **Gallery, second series, 2026-10-11 (HEAD `e358d09`).** The six images after `0-preview` opened one by one by the session, director's verdict before the owner's: `1-asleep` kept (the teshi
 curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close and clear), `3-the-parents` kept (hearts, lantern, daylilies), `4-the-nesting-box` kept (warm, the egg in its box),
 `5-the-hatching` redone 2026-10-11 (ticket e848, root size 1.9: the kit now fills its box tile and reads as a kit beside the mother; the first version was too far), `6-the-infirmary-health-tab` kept (the Health tab names the cut claw and the ADS2 bionic
-arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). files renamed on 2026-10-11 as candidates in page order, the most demonstrative first (AUDIT 9.c): `1-candidate-portrait`, `2-candidate-the-parents`, `3-candidate-the-nesting-box`, `4-candidate-the-hatching`, `5-candidate-asleep`, `6-candidate-the-infirmary-health-tab` (indexes 0 to 6 contiguous, AUDIT 9.b), awaiting the owner's acceptance (the `candidate` part is dropped when she accepts); the meat scene of 18h30 was played and not kept.
+arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). files renamed on 2026-10-11 as candidates in page order, the most demonstrative first (AUDIT 9.c): `1-candidate-portrait`, `2-candidate-the-parents`, `3-candidate-the-nesting-box`, `4-candidate-the-hatching`, `5-candidate-asleep`, `6-candidate-the-infirmary-health-tab` (indexes 0 to 6 contiguous, AUDIT 9.b), accepted by the owner on 2026-10-11 (`candidate` dropped); the meat scene of 18h30 was played and not kept.
 Sizes 254 to 450 KB each, 2.3 MB together; `0-preview.png` identical to `Mod/About/Preview.png` (cmp). Order to argue: the most demonstrative first after the preview.
+
+**Gallery table, 2026-10-11, accepted by the owner (her word, the six files, `candidate` dropped).** Page order, the most demonstrative first (AUDIT 9.c).
+
+| # | File | Game time | Shows |
+|---|---|---|---|
+| 0 | `0-preview.png` | | the Preview (identical to `Mod/About/Preview.png`) |
+| 1 | `1-portrait.jpg` | 16h30 | the awake teshi, close portrait |
+| 2 | `2-the-parents.jpg` | 17h00 | the parents nose to nose, hearts |
+| 3 | `3-the-nesting-box.jpg` | 17h30 | the mother at her nest, the egg in its box |
+| 4 | `4-the-hatching.jpg` | 18h00 | the kit hatched beside its mother (redone, ticket e848) |
+| 5 | `5-asleep.jpg` | 16h00 | the teshi asleep on a bed |
+| 6 | `6-the-infirmary-health-tab.jpg` | 19h30 | the Health tab: cut claw and ADS2 bionic arm |
 
 **Pickle runs of `playTests[1.0.1]`, 2026-10-11 (label `04c2119`).** English and French labels, descriptions and information cards green; the health tab of each language green on the second
 try (the first two tickets forgot the `-DepMap`, ticket error, no defect of the mod). Lines in `docs/runs/2026-10-11.md`. Played: 06 and 07 only. Not replayed on this revision:

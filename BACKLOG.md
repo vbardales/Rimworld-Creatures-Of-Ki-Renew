@@ -11,7 +11,7 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 
 ## Parked
 
-- **Gallery, second series**: six candidates kept (the seventh scene, the meat, was not kept), reviewed by the session (`12-workshop-captures-v2.feature`, `docs/GALLERY-V2.md`), awaiting the owner's validation and manual upload to Steam.
+- **Gallery, second series**: six images accepted by the owner on 2026-10-11 (`Art/Gallery/1-portrait.jpg` to `6-the-infirmary-health-tab.jpg`), to upload by hand to Steam with 1.0.1; the meat scene (18h30) is parked until SanctuaryBacklot fixes the sweat on Nelim.
 
 - **Crossbreeding**: parked by the owner on 2026-09-25, "not for now". It needs a partner species the source does not have; the
   owner names it, or nothing is done. Read `CompEggLayer` and `CompHatcher` before promising anything.
