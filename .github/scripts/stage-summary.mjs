@@ -1,8 +1,6 @@
 import { readdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// Recursive file count and total byte size of a folder. Exported so callers who need only the total
-// (steam-publish.mjs) don't keep their own copy of this walk.
 export async function measure(dir) {
   let files = 0;
   let bytes = 0;

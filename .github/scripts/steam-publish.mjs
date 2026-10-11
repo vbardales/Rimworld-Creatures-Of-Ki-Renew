@@ -2,7 +2,7 @@ import { mkdtemp, readFile, readdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { aboutName, tagsFor } from './about.mjs';
-import { aboutProblem } from './about-description.mjs';
+import { aboutProblem, descriptionMarkdown } from './about-description.mjs';
 import { changenoteFor, fencedBlockUnder } from './changenote.mjs';
 import { checkMod, loadConfig } from './config.mjs';
 import { formatGallery, listGallery } from './gallery.mjs';
@@ -90,19 +90,16 @@ if (page?.previewUrl && updatePreview) {
 let description;
 if (updateDescription) {
   if (!config.description) throw new Error('update_description: publish.config.json has no "description" source');
-  const source = await readFile(join(commitDir, config.description.file), 'utf8');
   const markdown = config.description.format === 'markdown';
   if (markdown) {
-    // A heading means the Markdown is the fenced block under it (PUBLICATION.md, next to the change notes); without
-    // one the whole file is the description (Mod/README.template.md).
-    const text = config.description.heading
-      ? fencedBlockUnder(source, new RegExp(config.description.heading), { label: `"${config.description.heading}"`, what: 'description' })
-      : source;
+    // The same extraction aboutProblem/About.xml already used above, so the two never diverge on the same source file.
+    const text = await descriptionMarkdown(commitDir, config.description);
     if (!text.trim()) throw new Error(`update_description: ${config.description.file} is empty`);
     // The same converter semantic-release-steam uses for a README: Markdown in, Steam BBCode out.
     const { renderSteamBBCode } = await import('semantic-release-steam/lib/description.mjs');
     description = renderSteamBBCode(text).trim();
   } else {
+    const source = await readFile(join(commitDir, config.description.file), 'utf8');
     description = config.description.heading
       ? fencedBlockUnder(source, new RegExp(config.description.heading), { label: `"${config.description.heading}"`, what: 'description' })
       : source.trim();
