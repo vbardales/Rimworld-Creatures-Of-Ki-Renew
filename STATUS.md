@@ -53,7 +53,7 @@ Checked: repository, remote, licence fields, `upstream_mod_remotes`, `Art/` (sou
 no `PROMPT_*.md` left), `Check-DefInjected.ps1` (31 keys, 0 error), `Run-Functional-Tests.ps1` (23, 0 failed), Pickle suites and the passes declared in `TESTING.md`.
 Defect found and fixed: `TESTING.md` did not declare the second gallery series nor the scenario count (35 `Scenario:` lines, twelve features). Stage unchanged.
 Reserves, not blockers: `Art/ModIcon.ico` and `Art/Preview.ico` are tracked by git (local folder-icon convention, `AUDIT.md`: kept out of published content, `Mod/` has none);
-`Art/Gallery/` has no `6-` file (indexes 0 to 5 then 7: AUDIT 9.b asks for contiguous indexes at `shootGallery`, not now).
+The former gap in the gallery indexes (no `6-`) is closed: indexes 0 to 6 are contiguous since 2026-10-11.
 
 **Gallery, second series, 2026-10-11 (HEAD `e358d09`).** The six images after `0-preview` opened one by one by the session, director's verdict before the owner's: `1-asleep` kept (the teshi
 curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close and clear), `3-the-parents` kept (hearts, lantern, daylilies), `4-the-nesting-box` kept (warm, the egg in its box),
