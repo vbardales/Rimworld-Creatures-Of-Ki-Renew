@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: publish[1.0.1]
+workflow_stage: followUp[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -22,7 +22,7 @@ dependencies: none
 showcase:     complete
 tested_on:     2026-10-11, labels, descriptions, cards and health tab, English and French, on 04c2119 (docs/runs/2026-10-11.md); the full suite of 2026-09-26 and 2026-10-02 on 1fcc51f/49d9a72 stands (docs/runs/2026-09-25.md, 2026-09-26.md, 2026-10-02.md); published 2026-10-02 at 49d9a726f64e5d491fb7e1b77fd438c81eb97522
 workshop:     3806709627
-version:      1.0.0 (tag v1.0.0, GitHub release, Steam content manifest 6682224070142369171)
+version:      1.0.1 (tag v1.0.1 and GitHub release by CI run 38169426918; 1.0.0 was tag v1.0.0, manifest 6682224070142369171)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
@@ -36,7 +36,7 @@ social_preview_sha256: 923e1a38ebeb2acf492fb468d25664aa6cdae1ebcb71b18388cf080ff
 publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
 echo_review_sha: d4cd79aad9111522d4edfd686937a51af09dd591
 code_review_sha: 7b5096bea3b8cc2dfc91ad6124fd180a7a509832
-protocols_read_sha: e3c22dbf841ad9445e76f251524ba80c0bb91a0b
+protocols_read_sha: 1073aee086cec109ca6a4106e268dd39437d8225
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -71,6 +71,13 @@ dependency, links on every name; `About.xml` regenerated (`--check` clean). Auth
 3 rows `drafted` plus the original Stick Lantern `not_applicable`; drafts in `PUBLICATION.md`, "Thanks". Content boxes: Preview and the six images opened 2026-10-11, no adult content. Release note
 `### 1.0.1` and `CHANGELOG.md` `[Unreleased]` written. **Open: 11.j, the owner's reread of `PUBLICATION.md` and `CHANGELOG.md`** (description changed several times today; field `publication_changelog_review_sha`
 written only on her word in the chat).
+
+**Published 1.0.1, 2026-10-11.** [Publish run 38169426918](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38169426918), approved by Virginie, on
+`5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (the dry-run SHA), options `update_preview` and `update_description`: publish and tag-and-release green. Verified on the page through the Steam API
+(`GetPublishedFileDetails`, no 429): updated 2026-10-11 19:49 UTC, public (visibility 0), tags `Mod` and `1.6` (unchanged, not sent), description 7180 characters (was 5252), preview 666467 bytes,
+sha256 `923e1a38…` identical to `Mod/About/Preview.png` (was 666772, `0abbe24f…`). Tag `v1.0.1` and the GitHub release exist, `v1.0.1` points at the same SHA. Previous good target: `v1.0.0`.
+Open: the six images of `Art/Gallery/` are the owner's manual upload to Steam (the Steam API cannot send a gallery); the three drafted thanks follow once they are on the page; non-regression
+(`followUp`, 14.a): the suite is to replay on the published build, in small tickets, none filed yet.
 
 **Dry-run 1.0.1, 2026-10-11.** [38168866088](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38168866088), green, on `5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (CHANGELOG `## [1.0.1] — 2026-10-11`), version 1.0.1, options `update_preview=true update_description=true`
 (title and tags off). Staged 24 files, 1.03 MB, no assembly. Preview to send 666467 bytes (sha256 `923e1a38…`) against 666772 on the page; description 7180 characters (limit 8000 bytes), converted
