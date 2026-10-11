@@ -65,19 +65,12 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$script:ran = 0
-$script:failed = 0
-
-function It([string]$name, [scriptblock]$body) {
-    $script:ran++
-    $problems = @()
-    try   { $problems = @(& $body | Where-Object { $_ }) }
-    catch { $problems = @("threw: $($_.Exception.GetBaseException().Message)") }
-    if ($problems.Count -eq 0) { Write-Output "  ok    $name" }
-    else {
-        $script:failed++
-        Write-Output "  FAIL  $name"
-        foreach ($p in $problems) { Write-Output "          $p" }
+# A test here returns its problems (nothing = pass); the shared Test-That wants a boolean, so the problems go to Note.
+function It([string]$name, [scriptblock]$itBody) {
+    Test-That $name {
+        $problems = @(& $itBody | Where-Object { $_ })
+        foreach ($p in $problems) { Note $p }
+        $problems.Count -eq 0
     }
 }
 
@@ -92,30 +85,11 @@ function Section([string]$name) { Write-Output ''; Write-Output $name }
 # and a test written as "there is no field called wildness" reports a pass it never earned. That
 # happened while writing this file, which is why the type count is asserted before anything else.
 
-# The handler outlives the script unless it is taken back off, and once the script scope is gone
-# every variable it reads comes back null: the host session then answers each later resolution
-# with a page of errors from these four lines. It is removed at the end of the run, and the guard
-# below covers the run that ends by throwing before it gets there.
-
-$script:probed = @{}
-$script:asmResolver = [System.ResolveEventHandler]{
-    param($sender, $e)
-    if (-not $script:probed -or -not $Managed) { return $null }
-    $short = $e.Name.Split(',')[0]
-    if ($script:probed.ContainsKey($short)) { return $null }
-    $script:probed[$short] = $true
-    $p = Join-Path $Managed "$short.dll"
-    if (Test-Path $p) { return [System.Reflection.Assembly]::LoadFrom($p) }
-    return $null
-}
-[System.AppDomain]::CurrentDomain.add_AssemblyResolve($script:asmResolver)
-
-function Get-AssemblyTypes([string]$path) {
-    $a = [System.Reflection.Assembly]::LoadFrom($path)
-    try     { return $a.GetTypes() }
-    catch [System.Reflection.ReflectionTypeLoadException] { return $_.Exception.Types | Where-Object { $_ } }
-    catch   { return $_.Exception.InnerException.Types | Where-Object { $_ } }
-}
+# The shared harness (protocols repository, scripts/lib): assembly resolver, Get-AssemblyTypes, Get-FieldsRecursive, the test runner.
+# The tests below are this mod's own: what its defs hand to the game.
+. (Join-Path (Split-Path -Parent $ModRoot) 'scripts/lib/GameReflection.ps1')
+. (Join-Path (Split-Path -Parent $ModRoot) 'scripts/lib/TestRunner.ps1')
+Initialize-GameReflection -Managed $Managed
 
 $allTypes = @()
 $byName   = @{}
@@ -128,16 +102,6 @@ if (Test-Path $asmPath) {
 $BFd = [System.Reflection.BindingFlags]'Public,NonPublic,Instance,DeclaredOnly'
 $BFm = [System.Reflection.BindingFlags]'Public,NonPublic,Instance,Static,DeclaredOnly'
 $BFa = [System.Reflection.BindingFlags]'Public,NonPublic,Instance,Static'
-
-function Get-FieldsRecursive([Type]$t) {
-    $d = @{}
-    $cur = $t
-    while ($cur -and $cur.FullName -ne 'System.Object') {
-        foreach ($f in $cur.GetFields($BFd)) { if (-not $d.ContainsKey($f.Name)) { $d[$f.Name] = $f } }
-        $cur = $cur.BaseType
-    }
-    return $d
-}
 
 Write-Output 'Creatures of Ki - Teshi Renew: what the game does with these defs'
 Write-Output "  Assembly-CSharp: $($allTypes.Count) types"
@@ -744,62 +708,5 @@ It 'the food types it eats are flags the game defines' {
 
 # =============================================================================================
 Write-Output ''
-Write-Output "$($script:ran) tests, $($script:failed) failed"
-[System.AppDomain]::CurrentDomain.remove_AssemblyResolve($script:asmResolver)
-if ($script:failed -gt 0) { exit 1 }
-exit 0
-
-<#
-  SEEN TO FAIL
-  ============
-
-  Sixteen faults, each applied ALONE to a copy of Mod/ in a scratch directory, the suite run
-  against the copy with -ModRoot, and each required to wake its own test. Fifteen woke exactly one
-  test; the two exceptions are worth reading rather than hiding.
-
-    wildness put back under <race>        -> the vanished-field test
-    Wildness taken out of statBases       -> the stat test
-    eggCountRange lowered to 1            -> the mated-laying test, naming 1 and 1
-    eggProgressUnfertilizedMax set to 1.0 -> the lone-female test, and it says scenario 4b is
-                                             then written the wrong way round
-    hatcherPawn pointed at Muffalo        -> the hatching test
-    pathfinderDangerous written           -> the inert-setting test, alone, naming that field.
-                                             It is one of the fourteen public fields with no
-                                             reader left in 1.6, so it is the cheapest way to
-                                             prove the sweep bites.
-    a tool pointed at LeftHand            -> the tool-group test: the group exists in the game,
-                                             but this body puts it on no part, and nothing in the
-                                             game says so at load
-    a coverage raised to 0.95             -> the coverage test
-    Teshi_east.png renamed Teshi_East.png -> the case test. Test-Path would have passed: this is
-                                             the fault that is invisible on Windows and fatal on
-                                             a case-sensitive filesystem. Renaming by case alone
-                                             needs an intermediate name, Windows refuses it in one
-                                             step.
-    an extra Teshi_up.png shipped         -> the orphan test
-    ParentName misspelt EggUnfertBasee    -> the bases test AND the harness guard, see below
-    the body renamed QuadrupedAnimalWithHooves -> the collision test
-    leatherDef misspelt                   -> the named-defs test
-    a biome renamed AridShrublandd        -> the biome test
-    a food flag changed to Plankton       -> the food-flag test
-    the whole race def file deleted       -> thirteen tests, the harness guard first
-
-  The two exceptions.
-
-  Deleting the race def wakes thirteen tests, which is right: the animal, its comp and its
-  textures are all gone, and the harness guard is there precisely so the run opens with "the
-  animal was not found" instead of a wall of secondary failures.
-
-  Misspelling a ParentName wakes the harness guard too, and that is a real coupling rather than a
-  flaw to paper over. Two ThingDefs live in this mod, the animal and its two eggs, so they are
-  told apart by the base they inherit from - there is no other stable discriminator, and taking
-  them by defName would break the rule that a test about a name must not hold its def by that
-  name. Misspell the base and the egg is no longer recognised. The run still names the real fault.
-
-  NOT SEEN TO FAIL: "the egg-layer settings are read by the egg-layer comp, not by something
-  else". It reads the game, not the mod, so no edit to this mod can turn it red - deleting the
-  race def does make it fire, but only because the fields were never collected, which is a
-  different failure wearing the same label. It would take a patched Assembly-CSharp to see it go
-  red for its own reason, and that is not done here. It is kept because it is the test that would
-  speak if a future RimWorld moved egg-laying to another class.
-#>
+Remove-GameReflection
+Complete-Tests
