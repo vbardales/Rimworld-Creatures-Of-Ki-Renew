@@ -55,6 +55,12 @@ Defect found and fixed: `TESTING.md` did not declare the second gallery series n
 Reserves, not blockers: `Art/ModIcon.ico` and `Art/Preview.ico` are tracked by git (local folder-icon convention, `AUDIT.md`: kept out of published content, `Mod/` has none);
 `Art/Gallery/` has no `6-` file (indexes 0 to 5 then 7: AUDIT 9.b asks for contiguous indexes at `shootGallery`, not now).
 
+**Gallery, second series, 2026-10-11 (HEAD `e358d09`).** The six images after `0-preview` opened one by one by the session, director's verdict before the owner's: `1-asleep` kept (the teshi
+curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close and clear), `3-the-parents` kept (hearts, lantern, daylilies), `4-the-nesting-box` kept (warm, the egg in its box),
+`5-the-hatching` kept with a reserve (the kit is small beside its box, it reads as a miniature teshi), `6-the-infirmary-health-tab` kept (the Health tab names the cut claw and the ADS2 bionic
+arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). `7-` was renumbered `6-` (indexes 0 to 6 contiguous, AUDIT 9.b); the meat scene of 18h30 was played and not kept.
+Sizes 254 to 450 KB each, 2.3 MB together; `0-preview.png` identical to `Mod/About/Preview.png` (cmp). Order to argue: the most demonstrative first after the preview.
+
 **Pickle runs of `playTests[1.0.1]`, 2026-10-11 (label `04c2119`).** English and French labels, descriptions and information cards green; the health tab of each language green on the second
 try (the first two tickets forgot the `-DepMap`, ticket error, no defect of the mod). Lines in `docs/runs/2026-10-11.md`. Played: 06 and 07 only. Not replayed on this revision:
 01 to 05, 08 to 10 (the 2026-09-26 and 2026-10-02 runs stand, nothing under `Mod/` but two texts and the images changed since `49d9a72`; non-regression comes after the commit, AUDIT 14.a).

@@ -11,7 +11,7 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 
 ## Parked
 
-- **Gallery, second series**: seven images captured and reviewed (`12-workshop-captures-v2.feature`, `docs/GALLERY-V2.md`), awaiting the owner's validation and manual upload to Steam.
+- **Gallery, second series**: six images kept (the seventh scene, the meat, was not kept), reviewed by the session (`12-workshop-captures-v2.feature`, `docs/GALLERY-V2.md`), awaiting the owner's validation and manual upload to Steam.
 
 - **Crossbreeding**: parked by the owner on 2026-09-25, "not for now". It needs a partner species the source does not have; the
   owner names it, or nothing is done. Read `CompEggLayer` and `CompHatcher` before promising anything.
