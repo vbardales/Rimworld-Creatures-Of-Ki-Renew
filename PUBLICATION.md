@@ -188,27 +188,12 @@ One main comment per recipient page for the whole collection: `../WORKSHOP_COMME
 | [XND] Nocturnal Animals (Continued), Mlie, and XeoNovaDan (the original) | `2269731409` | already `posted` from A Certain Series (one message credits both); this mod added to `Covers` |
 | Pickle, RimLogging | `3791648678`, `3733484696` | `posted`; `Covers` |
 | Nelim's Pickle Tools | `3806142401` | `not_applicable`, the author's own project |
-| More animal beds, Sovereign, DetVisor and Sandwish | `3107972819` | `drafted` (draft below); gallery props |
-| Stick Lantern (Continued), Mlie after Dalrae | `2024351846` | `drafted` (draft below); the original `1355773454` is `not_applicable`, one message credits both |
-| AB's Visible Pants, aedbia | `2986402536` | `drafted` (draft below); Nelim's clothes in the Sanctuary pass |
+| More animal beds, Sovereign, DetVisor and Sandwish | `3107972819` | `posted` 2026-10-11 (her word); gallery props, text in `../WORKSHOP_COMMENTS.md` |
+| Stick Lantern (Continued), Mlie after Dalrae | `2024351846` | `posted` 2026-10-11 (her word); the original `1355773454` is `not_applicable`, one message credits both |
+| AB's Visible Pants, aedbia | `2986402536` | `posted` 2026-10-11 (her word); Nelim's clothes in the Sanctuary pass |
 | Female Body and Apparel Variants Continued, WDI's Realistic Bodies, the Facial Animation mods, EyeGenes3 | `3798082132`, `3799726535`, `3527486510`, `1635901197`, `2581693737`, `2816938779`, `2889716301`, `3753978140`, `3790129900`, `3745223213` | already `posted` from Adaptive Storage Neolithic Renew; this mod added to `Covers` (2026-10-11), nothing to repost |
 
-The posted texts live on the Workshop pages. Drafts to post after 1.0.1 is public with these images (one per page, at most three a day, in her voice, `../WORKSHOP_COMMENTS.md`):
-
-**More animal beds** (3107972819)
-```text
-The big prestige bed is where my teshi sleeps in the pictures of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url], and she looks very pleased with it :) Thank you Sovereign, DetVisor and Sandwish!
-```
-
-**Stick Lantern (Continued)** (2024351846)
-```text
-The lantern that glows without any power is exactly what a nest at dusk needed in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url]. Thank you Dalrae for the original and Mlie for keeping it going xD
-```
-
-**AB's Visible Pants** (2986402536)
-```text
-Nelim wears pants from your mod in the staged pictures of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url]. Thank you, aedbia :)
-```
+The posted texts live on the Workshop pages and, retained, in `../WORKSHOP_COMMENTS.md` ("Sent texts: Creatures of Ki Teshi Renew", posted 2026-10-11 by the owner, her word); the drafts are not kept here.
 
 ## Next update
 

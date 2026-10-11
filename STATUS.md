@@ -76,7 +76,7 @@ written only on her word in the chat).
 `5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (the dry-run SHA), options `update_preview` and `update_description`: publish and tag-and-release green. Verified on the page through the Steam API
 (`GetPublishedFileDetails`, no 429): updated 2026-10-11 19:49 UTC, public (visibility 0), tags `Mod` and `1.6` (unchanged, not sent), description 7180 characters (was 5252), preview 666467 bytes,
 sha256 `923e1a38…` identical to `Mod/About/Preview.png` (was 666772, `0abbe24f…`). Tag `v1.0.1` and the GitHub release exist, `v1.0.1` points at the same SHA. Previous good target: `v1.0.0`.
-Open: the six images of `Art/Gallery/` are the owner's manual upload to Steam (the Steam API cannot send a gallery); the three drafted thanks follow once they are on the page; non-regression
+Open: the six images of `Art/Gallery/` are the owner's manual upload to Steam (the Steam API cannot send a gallery); the owner uploaded the six images and posted the three thanks on 2026-10-11 (her word, not read on the page); non-regression
 (`followUp`, 14.a): the suite is to replay on the published build, in small tickets, none filed yet.
 
 **Dry-run 1.0.1, 2026-10-11.** [38168866088](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38168866088), green, on `5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (CHANGELOG `## [1.0.1] — 2026-10-11`), version 1.0.1, options `update_preview=true update_description=true`
