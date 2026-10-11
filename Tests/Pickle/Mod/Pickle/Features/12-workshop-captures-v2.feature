@@ -19,7 +19,7 @@
 #      Composition off-centre to the left, the lantern bottom-right. Says: the courting, at the start of the dusk.
 #   4. calm-zone, east of the cream square. 17h30. The mother on her bed in a nest of yellow tall grass, the egg in its box, a lantern at left.
 #      Close and low. Says: she builds the nest as the light goes.
-#   5. calm-zone, same corner. 18h00. The egg has hatched by the game's own hatcher: the kit by the box, the mother back on her bed. Says: it is born at dusk.
+#   5. calm-zone, same corner. 18h00. The egg has hatched by the game's own hatcher: the kit by the box, the mother back on her bed. Redone 2026-10-11 (root size 1.9 instead of 3: the kit was small beside its box and read as a miniature adult, the frame now holds the kit and the mother close). Says: it is born at dusk.
 #   6. calm-zone, west of the nest. 18h30. Nelim (dressed, brown eyes, smiling) holds out a piece of meat; the kit leaps toward her, the mother
 #      watches at the right, the lantern top-right. Says: the first meal, and that the teshi lives with people.
 #   7. hut (the tea-house turned into an animal infirmary). 19h30. The injured teshi asleep on a big animal bed, Nelim at its feet, two blue braziers
@@ -176,7 +176,7 @@ Feature: the images of the Workshop page, second series
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Teshi Renew: I let 10 frames pass
     And Teshi Renew: the camera looks at (216, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 3
+    And Nelim's Pickle Tools: the camera root size is set to 1.9
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-5-the-hatching"
