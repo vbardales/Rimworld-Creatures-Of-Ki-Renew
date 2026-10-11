@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: prepareRelease[1.0.1]
+workflow_stage: publish[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -36,7 +36,7 @@ social_preview_sha256: 923e1a38ebeb2acf492fb468d25664aa6cdae1ebcb71b18388cf080ff
 publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
 echo_review_sha: d4cd79aad9111522d4edfd686937a51af09dd591
 code_review_sha: 7b5096bea3b8cc2dfc91ad6124fd180a7a509832
-protocols_read_sha: 0f8d8d6f62536df04f415039724307411c2eede7
+protocols_read_sha: e3c22dbf841ad9445e76f251524ba80c0bb91a0b
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -71,6 +71,12 @@ dependency, links on every name; `About.xml` regenerated (`--check` clean). Auth
 3 rows `drafted` plus the original Stick Lantern `not_applicable`; drafts in `PUBLICATION.md`, "Thanks". Content boxes: Preview and the six images opened 2026-10-11, no adult content. Release note
 `### 1.0.1` and `CHANGELOG.md` `[Unreleased]` written. **Open: 11.j, the owner's reread of `PUBLICATION.md` and `CHANGELOG.md`** (description changed several times today; field `publication_changelog_review_sha`
 written only on her word in the chat).
+
+**Dry-run 1.0.1, 2026-10-11.** [38168866088](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38168866088), green, on `5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (CHANGELOG `## [1.0.1] — 2026-10-11`), version 1.0.1, options `update_preview=true update_description=true`
+(title and tags off). Staged 24 files, 1.03 MB, no assembly. Preview to send 666467 bytes (sha256 `923e1a38…`) against 666772 on the page; description 7180 characters (limit 8000 bytes), converted
+from `PUBLICATION.md`; change note: the two English texts and the redrawn Preview and icon. `.github` regenerated at template `ba64b0c1b25d` (commit `9b2f71a`, 75 script tests green locally).
+Rollback target: `v1.0.0` on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit (convention (c)). Not sent: the second gallery
+series stays the owner's manual upload to Steam; the three drafted thanks (More animal beds, Stick Lantern, AB's Visible Pants) go after the images are on the page.
 
 **Owner's reread, 2026-10-11 (11.j).** Virginie reread `PUBLICATION.md` and `CHANGELOG.md` in the chat ("validé", several rounds of corrections applied, last on `a2c52b5`). `publication_changelog_review_sha` = `a2c52b5`. The `x.y` line is 1.0; a change of the Steam description reopens it.
 
