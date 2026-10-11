@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: mountPreview[1.0.1]
+workflow_stage: writeDocs[1.0.1]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -32,9 +32,10 @@ remaining:
   - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
+social_preview_sha256: 923e1a38ebeb2acf492fb468d25664aa6cdae1ebcb71b18388cf080ff2910293
 echo_review_sha: d4cd79aad9111522d4edfd686937a51af09dd591
 code_review_sha: bfd5a4567e4f032eed65215c74265f35feaddb69
-protocols_read_sha: c1bf02194bd564db133a7f2ddf548687d1910b33
+protocols_read_sha: d701d6a851fe68fbde21d37907063e2a4c373c2c
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -62,7 +63,7 @@ curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close 
 arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). files renamed on 2026-10-11 as candidates in page order, the most demonstrative first (AUDIT 9.c): `1-candidate-portrait`, `2-candidate-the-parents`, `3-candidate-the-nesting-box`, `4-candidate-the-hatching`, `5-candidate-asleep`, `6-candidate-the-infirmary-health-tab` (indexes 0 to 6 contiguous, AUDIT 9.b), accepted by the owner on 2026-10-11 (`candidate` dropped); the meat scene of 18h30 was played and not kept.
 Sizes 254 to 450 KB each, 2.3 MB together; `0-preview.png` identical to `Mod/About/Preview.png` (cmp). Order to argue: the most demonstrative first after the preview.
 
-**Echo and Preview, 2026-10-11 (10.a, 10.d).** Decision: keep `Art/echo.png`, reason: the echo is a conceptual teshi outline (front view, four banded ears), and the accepted gallery shows that same animal close up (`1-portrait`), so it already says what the gallery says. `echo_review_sha` = `d4cd79a` (gallery accepted). Preview 896 x 504, 666467 bytes (under 1 MB), identical to `Art/Gallery/0-preview.png` (cmp), badge 1.6 = the highest `supportedVersions` of `About.xml`, title and rule readable. Reserve, not a blocker: at 4x zoom the claw lines of the echo touch the last letter of "and" in the copy line (the Preview was accepted by the owner, a taste question, not reopened). 10.f is open: the GitHub social preview must be sent from the repository settings (no API); until it is, `social_preview_sha256` is not written.
+**Echo and Preview, 2026-10-11 (10.a, 10.d).** Decision: keep `Art/echo.png`, reason: the echo is a conceptual teshi outline (front view, four banded ears), and the accepted gallery shows that same animal close up (`1-portrait`), so it already says what the gallery says. `echo_review_sha` = `d4cd79a` (gallery accepted). Preview 896 x 504, 666467 bytes (under 1 MB), identical to `Art/Gallery/0-preview.png` (cmp), badge 1.6 = the highest `supportedVersions` of `About.xml`, title and rule readable. Reserve, not a blocker: at 4x zoom the claw lines of the echo touch the last letter of "and" in the copy line (the Preview was accepted by the owner, a taste question, not reopened). 10.f done 2026-10-11 with the owner's go: `Mod/About/Preview.png` uploaded through Claude in Chrome (Settings, General, Social preview); `og:image` of the repository page now points to repository-images.githubusercontent.com; `social_preview_sha256` written.
 
 **Gallery table, 2026-10-11, accepted by the owner (her word, the six files, `candidate` dropped).** Page order, the most demonstrative first (AUDIT 9.c).
 
