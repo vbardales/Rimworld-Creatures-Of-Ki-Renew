@@ -137,20 +137,20 @@ this mod and used by nothing else in it.
 
 ## Known limitation, inherited and left alone
 
-The teshi's **dessicated corpse borrows the dromedary's texture** at three different draw sizes.
-That was Shooki's choice and it is still the only dessicated art the mod has; inventing a
+The teshi's **desiccated corpse borrows the dromedary's texture** at three different draw sizes.
+That was Shooki's choice and it is still the only desiccated art the mod has; inventing a
 replacement would make this a rewrite rather than an update.
 
 ## Verification
 
-The standalone `scripts/Run-Functional-Tests.ps1` suite provides 22 automated checks,
+The standalone `scripts/Run-Functional-Tests.ps1` suite provides 23 automated checks,
 including XML parsing, Core references and inheritance, field existence and readers,
 egg behavior constraints, body coverage and texture paths. It uses installed Core data
 and reflection/IL inspection of RimWorld 1.6 assemblies. It does not launch or simulate
 the game. The successful run and its exact scope are recorded in `STATUS.md`.
 
 `TESTING.md` describes the in-game validation, including rendering, laying, hatching and the
-dessicated corpse. The Pickle suite in `Tests/Pickle/` played most of those scenarios on 2026-09-24
+desiccated corpse. The Pickle suite in `Tests/Pickle/` played most of those scenarios on 2026-09-24
 and 2026-09-25, and `STATUS.md` records what it found and what is still to be validated.
 
 ## Showcase artwork
