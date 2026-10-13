@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: prepareRelease[1.1.0]
+workflow_stage: publish[1.1.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -175,3 +175,4 @@ port's explicit MIT statement, not on public access alone.
 **Owner's reread, 2026-10-13 (11.j, 1.1.0).** Virginie validated `PUBLICATION.md` and `CHANGELOG.md` in the chat ("Validé", after the corrections to the header, `ATTRIBUTION.md`, `TESTING.md`, `target_version`). `publication_changelog_review_sha` = `6f3e3e9`. The `1.1` line is reviewed; a change of the Steam description reopens it. Stage moved to `prepareRelease[1.1.0]`. Local, not mine: `12-workshop-captures-v2.feature` (two `face is held neutral` lines) uncommitted, outside the CI SHA.
 **Echo, 2026-10-14 (second reading).** `Art/Gallery/0-preview.png` changed since `7f70ed5` only by the badge 1.7; `echo-source.png` and the gallery are unchanged: echo kept. `echo_review_sha` = `df1a839`. CHANGELOG `[1.1.0]` dated 2026-10-14 (the day of the dry-run).
 **Dry-run 1.1.0, 2026-10-14.** [38474751190](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38474751190), green, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (CHANGELOG `## [1.1.0] — 2026-10-14`), version 1.1.0, options `update_preview=true update_description=true update_tags=true` (title off). Staged 24 files, 1.03 MB, template `6234182a807a`. Preview to send 661812 bytes, sha256 `4215d8ae…` (= `Mod/About/Preview.png`), the page serves another image. Description 7235 characters (limit 8000 bytes). Tags to send: Mod, 1.6, 1.7 (page now: Mod, 1.6; added 1.7, none removed). Rollback target: `v1.0.1`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit. Not sent: the gallery (the owner's manual upload; no new image in 1.1.0).
+**Publish 1.1.0 launched, 2026-10-14**, owner said "publie" in the chat; stage `publish[1.1.0]` set before the dispatch (AUDIT.md 12.h). Awaiting her approval of `steam-production`.
