@@ -35,9 +35,9 @@ included, and the paragraph no longer singles out the paw recipes.
 ## Steam description
 
 ```markdown
-The teshi from Shooki's [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020), brought forward to RimWorld 1.6. An animal from the forest planet Ki, and its eggs.
+The teshi from Shooki's [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020), brought forward to the latest RimWorld version. An animal from the forest planet Ki, and its eggs.
 
-I am not the author of this mod. The design, the textures and the original idea are Shooki's, and the 1.0 to 1.4 continuation is Mlie's. All I did was the work needed to make the animal run on 1.6. Credit goes to them; mistakes in the update are mine. If either comes back to it, or asks me to take this down, I will.
+I am not the author of this mod. The design, the textures and the original idea are Shooki's, and the 1.0 to 1.4 continuation is Mlie's. All I did was the work needed to make the animal run on the latest RimWorld version. Credit goes to them; mistakes in the update are mine. If either comes back to it, or asks me to take this down, I will.
 
 Original mod: [Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020), in Mlie's continuation. It declares 1.4 and nothing further.
 
@@ -59,9 +59,9 @@ No DLC and no dependencies.
 
 XND Nocturnal Animals (Continued) is supported and optional. With it, the teshi is crepuscular: awake at dawn and at dusk. That rhythm is my choice, since the original gives the teshi none, and without that mod nothing changes.
 
-## What changed in the 1.6 update
+## What changed in the update
 
-- **Wildness stopped being a race property.** In 1.6 it is a Wildness stat declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
+- **Wildness stopped being a race property.** In the latest RimWorld version it is a Wildness stat declared under statBases, and the old form was simply ignored: the teshi tamed as easily as a rat.
 - **The unfertilized egg was missing.** Every egg-laying animal in the base game declares one, and the teshi did not. The def was written, taking the market value of its fertilized counterpart. It is declared for parity: a teshi lays a stack of two fertilized eggs, and without a fertilization it does not lay at all.
 
 No balance value was changed. The desiccated teshi corpse draws with a dromedary's texture, as it did in the original, and that is left alone on purpose.
@@ -74,7 +74,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 ## AI-GENERATED
 
-The 1.6 update, its tests and its documentation were written with Claude Code (Anthropic), and Codex (OpenAI) also contributed to the repository. The showcase images, the preview background and the icon are AI-generated artwork; the icon was later edited with OpenAI's built-in image tool, and the preview was lettered afterwards in HTML. Working with these tools is part of how I make mods.
+The update, its tests and its documentation were written with Claude Code (Anthropic), and Codex (OpenAI) also contributed to the repository. The showcase images, the preview background and the icon are AI-generated artwork; the icon was later edited with OpenAI's built-in image tool, and the preview was lettered afterwards in HTML. Working with these tools is part of how I make mods.
 
 ## THANKS
 
@@ -200,3 +200,11 @@ The posted texts live on the Workshop pages and, retained, in `../WORKSHOP_COMME
 The CI never sends the visibility or the title. A new publication needs a new version (1.0.1+) on a new commit, its
 own dry-run, and `update_preview` / `update_description` turned on only when the Preview or this description changed. The
 Preview in the repository (`e8b3a89`) differs from the published one: see `STATUS.md`.
+
+## Use This Instead comment (not posted)
+
+Register: `USE_THIS_INSTEAD.md`, row 2726461020. The item is public (3806709627). Post by the owner on the [Use This Instead](https://steamcommunity.com/sharedfiles/filedetails/?id=3396308787) page.
+
+```
+A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020]Creatures of Ki (Continued)[/url] (Shooki, Mlie; packageId Mlie.CreaturesOfKi; RimWorld 1.0 to 1.4): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url] (Nelim; packageId nelim.creaturesofki), for the latest RimWorld version. It keeps only the teshi. Thank you for keeping this list :)
+```
