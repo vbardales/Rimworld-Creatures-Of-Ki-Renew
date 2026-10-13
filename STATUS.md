@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: writeTests[1.1.0]
+workflow_stage: playTests[1.1.0]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
