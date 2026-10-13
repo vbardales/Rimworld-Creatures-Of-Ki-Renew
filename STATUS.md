@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: publish[1.1.0]
+workflow_stage: followUp[1.1.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -23,7 +23,7 @@ dependencies: none
 showcase:     complete
 tested_on:     2026-10-11, labels, descriptions, cards and health tab, English and French, on 04c2119 (docs/runs/2026-10-11.md); the full suite of 2026-09-26 and 2026-10-02 on 1fcc51f/49d9a72 stands (docs/runs/2026-09-25.md, 2026-09-26.md, 2026-10-02.md); published 2026-10-02 at 49d9a726f64e5d491fb7e1b77fd438c81eb97522
 workshop:     3806709627
-version:      1.0.1 (tag v1.0.1 and GitHub release by CI run 38169426918; 1.0.0 was tag v1.0.0, manifest 6682224070142369171)
+version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 was tag v1.0.1)
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
@@ -39,7 +39,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: df1a839d53973f987049b283a231f51115345463
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
+protocols_read_sha: 1eba2baf4d52f146b4fe4f01d90bdd9f0988979e
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -177,3 +177,5 @@ port's explicit MIT statement, not on public access alone.
 **Dry-run 1.1.0, 2026-10-14.** [38474751190](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38474751190), green, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (CHANGELOG `## [1.1.0] — 2026-10-14`), version 1.1.0, options `update_preview=true update_description=true update_tags=true` (title off). Staged 24 files, 1.03 MB, template `6234182a807a`. Preview to send 661812 bytes, sha256 `4215d8ae…` (= `Mod/About/Preview.png`), the page serves another image. Description 7235 characters (limit 8000 bytes). Tags to send: Mod, 1.6, 1.7 (page now: Mod, 1.6; added 1.7, none removed). Rollback target: `v1.0.1`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit. Not sent: the gallery (the owner's manual upload; no new image in 1.1.0).
 **Publish 1.1.0 launched, 2026-10-14**, owner said "publie" in the chat; stage `publish[1.1.0]` set before the dispatch (AUDIT.md 12.h). Awaiting her approval of `steam-production`.
 **Review shas, 2026-10-14.** The linter raised two ERRORs at `publish[1.1.0]`: `code_review_sha` stale (`<li>1.7</li>` in `About.xml`, metadata, read: no finding) and `publication_changelog_review_sha` recorded at a 1.0.x-stage commit (one review per x.y line). Both moved to `188150b`; `PUBLICATION.md` and `CHANGELOG.md` are unchanged since the owner's reread. Publish run [38475087868](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38475087868) on `57ad0442c809b201d9830e38f53398d1d54b5a5b`, awaiting her approval.
+**Published 1.1.0, 2026-10-14.** [Publish run 38475087868](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38475087868), approved by Virginie, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (the dry-run SHA), options `update_preview`, `update_description`, `update_tags`: `publish` and `tag-and-release` green. Steam log: "Upload finished for workshop item 3806709627 : OK" (manifest 2474724528195597988). Verified on the page through the Steam API (`GetPublishedFileDetails`): updated 2026-10-13 22:07:56 UTC, public (visibility 0), description 7235 characters, preview 661812 bytes with sha256 `4215d8ae…` identical to `Mod/About/Preview.png`. Tag `v1.1.0` on `57ad044`, the release exists (not a draft). **Tags NOT applied: the page still carries `Mod, 1.6`** (read twice, one minute apart), the CI log prints "tags added: 1.7" but no tag step ran (steamcmd does not apply tags; the template's own step needs the refresh token on `steam-production`, `OPERATIONS.md`, "Workshop tags", which this item does not have). Previous good target: `v1.0.1`.
+Open: the `1.7` tag on the Workshop page (Virginie by hand, or the refresh token set by her in `steam-production`, then a tags-only publish is impossible without a new version); non-regression (`followUp`, 14.a): replay the suite on the published build, in small tickets, none filed; the 1.7 scenarios beyond `01-loads` and the French ones stay unplayed.
