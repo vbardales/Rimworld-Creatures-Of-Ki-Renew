@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: playTests[1.1.0]
+workflow_stage: shootGallery[1.1.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -39,7 +39,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
 echo_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
 code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
-protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
+protocols_read_sha: 92cd25e11ff11424d3d28b4170ea845fa4f2e227
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -170,3 +170,5 @@ port's explicit MIT statement, not on public access alone.
 **1.7 diagnostic filed, 2026-10-13.** Ticket `20261013-110745-015-e8c8`: `01-loads`, English, `wsl-deps.sans-facultatifs.map`, `-Game /home/nelim/rimworld17`, `-PickleSrc /home/nelim/Rimworld-Pickle` (Pickle#63), same form as the ACertainSeries pilot (`72c6`), tree on `1ca2ee0`; evidence `Tests/Pickle/Evidence/p17-01-loads`. Session 🟢, waiting for `RUN_DONE` from the Ticket Manager (the dispatcher name was not reachable by `SendMessage`; the ticket carries the owner id). Keep `Mod/` frozen until then. Release tag: 1.1.0 is a minor, `update_tags=true` at publish (AUDIT.md, "Le tag 1.7").
 **1.7 diagnostic result, 2026-10-13.** Ticket `e8c8` green: `01-loads`, 1 passed, 0 failed, `exitReason` `passed`, RimWorld 1.7.4976 rev1043 (read in the run log), English, on `971ac7c`. `tested_1_7: yes`, load only: the other scenarios (laying, hatching, ADS2, Nocturnal, French) were not played on 1.7, and French cannot be (no pack on 1.7). `<li>1.7</li>` and badge 1.7 stand. Open: remaining 1.7 scenarios if the owner wants more than a load proof; then `shootGallery` onward; publish needs her yes.
 **Social preview, 2026-10-13 (10.f, owner's go).** `Mod/About/Preview.png` (badge 1.7) uploaded through Claude in Chrome (Settings, General, Social preview); the settings page shows the new image with the 1.7 badge. `social_preview_sha256` updated. The sha was not read back from GitHub (cross-origin fetch blocked), so the check is visual.
+
+**Chain 1.1.0 continued, 2026-10-13.** `playTests` (8.a to 8.n): tested sha = the tree of `1ca2ee0` (`Mod/` unchanged since `d2604fe`); the 1.7 diagnostic is the only run of this version (`e8c8`, green); the 1.6 suites of 2026-10-11 and 2026-10-02 stand for the unchanged Defs and Patches (non-regression comes after the commit, `followUp`). No `@wip`, no manual test. Code review (8.m): `About.xml` gained `<li>1.7</li>` after `7f70ed5`, metadata only, no finding. `shootGallery`: the version changes no capture; `Art/Gallery/` unchanged but `0-preview.png` (badge 1.7), table above stands. `mountPreview`: Preview regenerated with badge 1.7 (`Preview.png` = `0-preview.png`, `cmp`), echo kept, social preview uploaded (`social_preview_sha256` current). `writeDocs`: `CHANGELOG.md` `[Unreleased]` and the `### 1.1.0` Steam change note written; the description changed only by removing version numbers. **Open: 11.j** (owner's reread of `PUBLICATION.md` and `CHANGELOG.md`, `publication_changelog_review_sha` stale), then `prepareRelease` (dry-run with `update_tags=true`, `update_preview`, `update_description`).
