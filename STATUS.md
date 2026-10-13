@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: writeDocs[1.1.0]
+workflow_stage: prepareRelease[1.1.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -36,10 +36,10 @@ remaining:
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
-publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
+publication_changelog_review_sha: 6f3e3e9921dd97ccda761432f05cbc9ab29aed69
 echo_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
 code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
-protocols_read_sha: 92cd25e11ff11424d3d28b4170ea845fa4f2e227
+protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -172,3 +172,4 @@ port's explicit MIT statement, not on public access alone.
 **Social preview, 2026-10-13 (10.f, owner's go).** `Mod/About/Preview.png` (badge 1.7) uploaded through Claude in Chrome (Settings, General, Social preview); the settings page shows the new image with the 1.7 badge. `social_preview_sha256` updated. The sha was not read back from GitHub (cross-origin fetch blocked), so the check is visual.
 
 **Chain 1.1.0 continued, 2026-10-13.** `playTests` (8.a to 8.n): tested sha = the tree of `1ca2ee0` (`Mod/` unchanged since `d2604fe`); the 1.7 diagnostic is the only run of this version (`e8c8`, green); the 1.6 suites of 2026-10-11 and 2026-10-02 stand for the unchanged Defs and Patches (non-regression comes after the commit, `followUp`). No `@wip`, no manual test. Code review (8.m): `About.xml` gained `<li>1.7</li>` after `7f70ed5`, metadata only, no finding. `shootGallery`: the version changes no capture; `Art/Gallery/` unchanged but `0-preview.png` (badge 1.7), table above stands. `mountPreview`: Preview regenerated with badge 1.7 (`Preview.png` = `0-preview.png`, `cmp`), echo kept, social preview uploaded (`social_preview_sha256` current). `writeDocs`: `CHANGELOG.md` `[Unreleased]` and the `### 1.1.0` Steam change note written; the description changed only by removing version numbers. **Open: 11.j** (owner's reread of `PUBLICATION.md` and `CHANGELOG.md`, `publication_changelog_review_sha` stale), then `prepareRelease` (dry-run with `update_tags=true`, `update_preview`, `update_description`).
+**Owner's reread, 2026-10-13 (11.j, 1.1.0).** Virginie validated `PUBLICATION.md` and `CHANGELOG.md` in the chat ("Validé", after the corrections to the header, `ATTRIBUTION.md`, `TESTING.md`, `target_version`). `publication_changelog_review_sha` = `6f3e3e9`. The `1.1` line is reviewed; a change of the Steam description reopens it. Stage moved to `prepareRelease[1.1.0]`. Local, not mine: `12-workshop-captures-v2.feature` (two `face is held neutral` lines) uncommitted, outside the CI SHA.
