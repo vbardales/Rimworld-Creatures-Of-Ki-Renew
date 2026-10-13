@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: code[1.1.0]
+workflow_stage: declareDependencies[1.1.0]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -38,7 +38,7 @@ social_preview_sha256: 923e1a38ebeb2acf492fb468d25664aa6cdae1ebcb71b18388cf080ff
 publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
 echo_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
 code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
-protocols_read_sha: c4aea5fbde7151683d9e3ece368142ed2d63f050
+protocols_read_sha: 5e7c922c02ef44b3ee1357f59dde11a7da5e66f6
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -163,3 +163,6 @@ port's explicit MIT statement, not on public access alone.
 
 **Warnings closed, 2026-10-13.** Code review (third reading): `Mod/` diff since `7b5096b` = `Preview.png` (binary, badge crop) and the `About.xml` description (generated, version numbers removed per the 2026-10-13 rule); no code, no Def, no patch; no finding; `code_review_sha` = `7f70ed5`. Echo: `echo-source.png` kept (unchanged, only the Preview badge crop moved, the 0- copy follows); `echo_review_sha` = `7f70ed5`. Description: "1.6" removed from `PUBLICATION.md` (five places) and `About.xml` regenerated; this reopens 11.j. Use This Instead: row added (`drafted`, protocols repository), draft in `PUBLICATION.md`, not posted. `STATUS.md` trimmed (2026-10-02 state moved to `docs/runs/status-history.md`).
 **Open (owner): 11.j.** Virginie rereads `PUBLICATION.md` and `CHANGELOG.md` (the description changed: version numbers only); `publication_changelog_review_sha` is stale until her word. Then she posts the Use This Instead comment.
+
+**Chain 1.1.0, 2026-10-13 (`code` to `playTests`, offline, no game; HEAD before this edit `d2604fe`).** Transitions the version does not touch, confirmed by a line each (AUDIT.md 14.b):
+`code`: no `feature` left, no build (no C#, no DLL), `[Unreleased]` written (3.a to 3.c). `declareDependencies`: unchanged since 2026-10-10 (no hard dependency, `loadAfter` Core and five DLC, `loadBefore` ADS2, Nocturnal under `FindMod`, no `LoadFolders.xml`); `Mod/Defs` and `Mod/Patches` have not changed since the audit, only `About.xml` (`<li>1.7</li>`, description) and `Preview.png`; unverified: whether 1.7 adds a DLC or renames a `Ludeon.RimWorld.*` package id (the `loadAfter` list is the 1.6 one). `settings`: `not_applicable` stands (no C#, no `ModSettings`, no page). `localize`: no text changed (the description lost its version numbers, English only, generated); `FRENCH_REVIEW.md` regenerated at `d2604fe`, `Check-DefInjected.ps1`: 31 keys, 0 error; `localization`, `translation_en`, `translation_fr` stay `complete` (French untouched since the owner's review of 2026-10-10). `writeTests`: `Run-Functional-Tests.ps1` rerun, 23 passed, 0 failed; Pickle suites unchanged (35 scenarios, twelve features), nothing to rewrite. `playTests[1.1.0]` is the 1.7 diagnostic: English only (no French pack on 1.7), one ticket, then `tested_1_7`.
