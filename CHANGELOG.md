@@ -6,9 +6,15 @@ in game.
 
 ## [Unreleased]
 
+### Added
+
+- RimWorld 1.7 support: `supportedVersions` declares `1.7` besides `1.6`. The mod loads on RimWorld 1.7.4976 without a warning or an error (Pickle, English, `01-loads`); the other scenarios were not played on 1.7, and the French texts could not be (no French pack on 1.7 yet).
+
 ### Changed
 
-- Version 1.1.0 prepares the RimWorld 1.7 pass: the Steam and mod-list descriptions no longer name a RimWorld version (they say "the latest RimWorld version"). `supportedVersions` now declares `1.7` besides `1.6` (owner decision, 2026-10-13, before the 1.7 run), and the Preview badge reads 1.7.
+- The Preview badge reads 1.7, the highest declared version (Preview regenerated, `0-preview.png` identical).
+- The Steam and mod-list descriptions no longer name a RimWorld version: they say "the latest RimWorld version".
+- No gameplay change.
 
 ## [1.0.1] — 2026-10-11
 

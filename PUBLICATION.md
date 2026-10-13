@@ -102,6 +102,14 @@ The block under `### <version>` is sent as the Steam change note, with the versi
 (`[b]1.0.0[/b]`, `../PUBLISHING.md`); the `## [<version>]` section of `CHANGELOG.md` goes into the GitHub
 release instead.
 
+### 1.1.0
+
+```
+[b]1.1.0[/b]
+Declares RimWorld 1.7 support: the mod loads on RimWorld 1.7 without a warning or an error (checked in English; the
+other tests were played on RimWorld 1.6). The Workshop preview badge now reads 1.7. No gameplay change.
+```
+
 ### 1.0.1
 
 ```
