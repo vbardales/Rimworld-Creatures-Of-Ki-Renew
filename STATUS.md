@@ -36,9 +36,9 @@ remaining:
   - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
-publication_changelog_review_sha: 6f3e3e9921dd97ccda761432f05cbc9ab29aed69
+publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: df1a839d53973f987049b283a231f51115345463
-code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
+code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
 ---
 
@@ -176,3 +176,4 @@ port's explicit MIT statement, not on public access alone.
 **Echo, 2026-10-14 (second reading).** `Art/Gallery/0-preview.png` changed since `7f70ed5` only by the badge 1.7; `echo-source.png` and the gallery are unchanged: echo kept. `echo_review_sha` = `df1a839`. CHANGELOG `[1.1.0]` dated 2026-10-14 (the day of the dry-run).
 **Dry-run 1.1.0, 2026-10-14.** [38474751190](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38474751190), green, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (CHANGELOG `## [1.1.0] — 2026-10-14`), version 1.1.0, options `update_preview=true update_description=true update_tags=true` (title off). Staged 24 files, 1.03 MB, template `6234182a807a`. Preview to send 661812 bytes, sha256 `4215d8ae…` (= `Mod/About/Preview.png`), the page serves another image. Description 7235 characters (limit 8000 bytes). Tags to send: Mod, 1.6, 1.7 (page now: Mod, 1.6; added 1.7, none removed). Rollback target: `v1.0.1`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit. Not sent: the gallery (the owner's manual upload; no new image in 1.1.0).
 **Publish 1.1.0 launched, 2026-10-14**, owner said "publie" in the chat; stage `publish[1.1.0]` set before the dispatch (AUDIT.md 12.h). Awaiting her approval of `steam-production`.
+**Review shas, 2026-10-14.** The linter raised two ERRORs at `publish[1.1.0]`: `code_review_sha` stale (`<li>1.7</li>` in `About.xml`, metadata, read: no finding) and `publication_changelog_review_sha` recorded at a 1.0.x-stage commit (one review per x.y line). Both moved to `188150b`; `PUBLICATION.md` and `CHANGELOG.md` are unchanged since the owner's reread. Publish run [38475087868](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38475087868) on `57ad0442c809b201d9830e38f53398d1d54b5a5b`, awaiting her approval.
