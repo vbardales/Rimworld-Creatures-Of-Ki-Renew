@@ -24,7 +24,7 @@ showcase:     complete
 tested_on:     2026-10-11, labels, descriptions, cards and health tab, English and French, on 04c2119 (docs/runs/2026-10-11.md); the full suite of 2026-09-26 and 2026-10-02 on 1fcc51f/49d9a72 stands (docs/runs/2026-09-25.md, 2026-09-26.md, 2026-10-02.md); published 2026-10-02 at 49d9a726f64e5d491fb7e1b77fd438c81eb97522
 workshop:     3806709627
 version:      1.0.1 (tag v1.0.1 and GitHub release by CI run 38169426918; 1.0.0 was tag v1.0.0, manifest 6682224070142369171)
-target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, untested)
+target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
