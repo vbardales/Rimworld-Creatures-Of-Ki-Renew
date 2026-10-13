@@ -16,3 +16,49 @@ STATUS.md dated sections, one line each. Full text: `git show 98afac9:STATUS.md`
 2026-10-02 French review by Virginie of `47c401e`: natural French, correct anatomical terms, no corrections; `translation_fr` complete (relayed in chat)
 2026-10-02 1.0.0 sent by the CI: dry-run 36979726964 and publish 36982893195 on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`, item 3806709627, tag `v1.0.0`; run 37019682829 failed on purpose (tag exists), not a publication
 2026-10-02 public page checked by Virginie ("C'est bon", relayed by Ticket Manager) and item switched to public by her; thanks to Shooki and Mlie posted by her (her word); ADS2 and Nocturnal thanks already posted from A Certain Series
+
+## Current state — 2026-10-02
+
+**Non-regression, done 2026-10-02 (fail fast).** Four tickets filed with `49d9a72` in the label (`a432` minimal English fast,
+`4a86` slow laying and hatching, `e92c` minimal French, `9c7d` ADS2), staged from the working tree when played, so with the
+Preview of `e8b3a89` (no behaviour change). Every real scenario passed: 11 + 2 + 6 + 15 = all of 01 to 08 in both languages.
+`exitReason` is `failed` on three of them only because of the three `11-workshop-captures` gallery scenarios ("Fixture
+'nelim-zen-meadow-studio' not found"), which my ticket filters did not exclude and which need the `Nelims-tribe` fixture (`wsl-deps.sanctuary.map`, which replaced the studio map on 2026-10-05): a ticket
+mistake, not a defect of 1.0.0, and no rollback. Lines in `docs/runs/2026-10-02.md`.
+
+Published. Dry-run [36979726964](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36979726964) then
+publish [36982893195](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/36982893195), both on
+`49d9a726f64e5d491fb7e1b77fd438c81eb97522`, version 1.0.0, approved by Virginie. Steam log: content and preview uploaded to
+item 3806709627, "Upload finished: OK". Tag `v1.0.0` and the release point at that SHA. The item is public.
+Convention (c), decided by Virginie: the dry-run SHA is published, and this record is a later docs-only commit.
+Run `37019682829` failed on purpose ("tag v1.0.0 already exists", the anti-double-publication guard) and sent nothing.
+A new publication needs a new version (1.0.1+) on a new commit, with its own dry-run.
+
+- **French review, 2026-10-08.** FRENCH_REVIEW.md (generated at `8168d98`, regenerated with the mod name in its title) validated by the owner ("traduction validée", her word, relayed in chat). The two English texts it asked for (`bipedal animal`, the Teshi description) are in `Mod/Defs/` and ship with 1.0.1; the French already read as recommended.
+- **Code review, 2026-10-08.** The `Mod/` diff since `c342ee91ca41574d075e9b480817714cb7901163` (the previous review): two English texts in `Mod/Defs/` (a label and a description), no code; the regenerated `Preview.png` and `ModIcon.png` are binary and excluded. No finding. A reading, nothing run. The sha of this review is the commit that carries this line.
+- **Code review, 2026-10-05.** Low-effort `/code-review` of the `Mod/` diff since the 0.1.0 prepublication (`98a7c49`, hunks
+  only, `Preview.png`, `ModIcon.png`, `Languages/` and tests excluded) at `c342ee91ca41574d075e9b480817714cb7901163`
+  (HEAD at the time; the Art tidy-up commit): no finding. A review, not a test: nothing was run.
+- **Gates.** Settings: `not_applicable` (the mod has no settings, no page, no MainButtons shortcut; checked in the sources).
+  Localization, English and French: complete. Virginie reviewed the French of `47c401e` (`FRENCH_REVIEW.md`, 24 rows): natural
+  French, correct anatomical terms, no pawn agreement, no correction. Any later change to a French file sets
+  `translation_fr` back to `unchecked`.
+- **Tests.** Offline suite `scripts/Run-Functional-Tests.ps1`, Pickle suite in `Tests/Pickle/`, passes declared in `TESTING.md`.
+  Every scenario played green in the final validation, no `@wip`, the three `@requires` passes (08 ADS2, 09 new colony,
+  10 Nocturnal) played, no manual test left. Lines in `docs/runs/`, evidence kept in `Tests/Pickle/Evidence/` (16 MB).
+- **Integrations.** A Dog Said... Animal Prosthetics 2: category patch plus `ADS2_Arms.xml` (adds `Arm` to its two arm
+  recipes), optional, `loadBefore`. [XND] Nocturnal Animals (Continued): crepuscular, one `FindMod` patch, the owner's choice.
+  Crossbreeding parked by the owner ("not for now"). No dependency, no DLC required.
+- **Description.** Single source: `PUBLICATION.md`, `## Steam description`, regenerated into `About.xml` by
+  `node .github/scripts/sync-about-description.mjs --write` (`--check` clean as of 2026-09-27). The Steam description of
+  the 1.0.0 upload replaced the 0.1.0 paragraph on the egg.
+- **0.1.0 prepublication.** It was uploaded from the working tree and probably carried nine `.dds` caches. The 1.0.0 content is
+  staged by the CI from a git checkout, which holds no `.dds` (none is tracked, `*.dds` is ignored), so the item no longer
+  does. Not read on Steam.
+- **Icon and Preview, regenerated 2026-10-05** at the owner's request after her `Art/ModIcon-source.png` changed: the Preview by
+  `node ../scripts/Render-Preview.cjs` (666485 bytes, `Art/Gallery/0-preview.png` identical, both `.ico` rewritten), the
+  `Mod/About/ModIcon.png` by a mechanical reduction of her source (1286 x 1223 to 128 x 122, centred in 128 x 128, 33090
+  bytes), no retouching. Both were looked at. Not in the published 1.0.0; they ship with the future 1.0.1.
+- **Icon and Preview.** `Mod/About/ModIcon.png`, 128 x 128, edited by a session on 2026-09-13; the owner confirmed it on
+  2026-09-26 and again on 2026-10-02. The 32 px check was run on 2026-09-25. The Preview carries the ModIcon bottom-left,
+  tilted, and the owner confirmed it on 2026-10-02. The previous icon and the old composition files were removed from `Art/` on 2026-10-02 (still in git history before that commit).
