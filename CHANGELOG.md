@@ -4,6 +4,12 @@ Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it
 in game.
 
+## [Unreleased]
+
+### Changed
+
+- Version 1.1.0 prepares the RimWorld 1.7 pass: the Steam and mod-list descriptions no longer name a RimWorld version (they say "the latest RimWorld version"). `supportedVersions` stays `1.6` until a green 1.7 run.
+
 ## [1.0.1] — 2026-10-11
 
 ### Changed

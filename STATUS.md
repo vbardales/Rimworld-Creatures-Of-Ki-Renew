@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: followUp[1.0.1]
+workflow_stage: code[1.1.0]
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
 repo:         Rimworld-Creatures-Of-Ki-Renew
@@ -23,10 +23,12 @@ showcase:     complete
 tested_on:     2026-10-11, labels, descriptions, cards and health tab, English and French, on 04c2119 (docs/runs/2026-10-11.md); the full suite of 2026-09-26 and 2026-10-02 on 1fcc51f/49d9a72 stands (docs/runs/2026-09-25.md, 2026-09-26.md, 2026-10-02.md); published 2026-10-02 at 49d9a726f64e5d491fb7e1b77fd438c81eb97522
 workshop:     3806709627
 version:      1.0.1 (tag v1.0.1 and GitHub release by CI run 38169426918; 1.0.0 was tag v1.0.0, manifest 6682224070142369171)
+target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; nothing in Mod/ changed for 1.7 yet)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
 updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
 remaining:
+  - 1.1.0 (owner, 2026-10-13): RimWorld 1.7 pass, a variant of `playTests` (AUDIT.md, "Passe 1.7"), recorded as `tested_1_7`. Chain reopened at `code[1.1.0]`: `Mod/` is XML only (no DLL, no Harmony), so the 1.6 build stands; next `declareDependencies`, `settings`, `localize`, `writeTests`, then the 1.7 diagnostic run (English only, `tested_1_7: yes` or `no`). `<li>1.7</li>` and the Preview badge only after a green 1.7 run. Prerequisites owed by others: Pickle#63, NPT steps and SB valid on 1.7.
   - update 1.0.1 (owner, 2026-10-08): `Mod/` changed since 49d9a72: two English texts (`bipedal animal`, the Teshi description), the Preview redrawn in `e8b3a89` (666467 bytes, published one 666772, sent with `update_preview`; `Art/Gallery/0-preview.png` must stay identical) and the regenerated ModIcon. In order: `declareDependencies`, `auditSettings`, `localize` (Virginie rereads the two EN texts), `writeTests` (fix 06 lines 18 and 23, replay 06 and 07), `playTests`, gallery second series on the page with credits, release notes, dry-run, publish.
   - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
   - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
@@ -36,7 +38,7 @@ social_preview_sha256: 923e1a38ebeb2acf492fb468d25664aa6cdae1ebcb71b18388cf080ff
 publication_changelog_review_sha: a2c52b52be360a4e8661edc89ca0d59c0343e89c
 echo_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
 code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
-protocols_read_sha: 7280b730fd35c2d457469a630fb4011941188dfa
+protocols_read_sha: c4aea5fbde7151683d9e3ece368142ed2d63f050
 ---
 
 # Creatures of Ki - Teshi Renew — status
