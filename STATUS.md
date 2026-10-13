@@ -37,7 +37,7 @@ remaining:
   - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
 social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
 publication_changelog_review_sha: 6f3e3e9921dd97ccda761432f05cbc9ab29aed69
-echo_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
+echo_review_sha: df1a839d53973f987049b283a231f51115345463
 code_review_sha: 7f70ed5fdce84a93b64f9c789deab0ea226da250
 protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
 ---
@@ -173,3 +173,4 @@ port's explicit MIT statement, not on public access alone.
 
 **Chain 1.1.0 continued, 2026-10-13.** `playTests` (8.a to 8.n): tested sha = the tree of `1ca2ee0` (`Mod/` unchanged since `d2604fe`); the 1.7 diagnostic is the only run of this version (`e8c8`, green); the 1.6 suites of 2026-10-11 and 2026-10-02 stand for the unchanged Defs and Patches (non-regression comes after the commit, `followUp`). No `@wip`, no manual test. Code review (8.m): `About.xml` gained `<li>1.7</li>` after `7f70ed5`, metadata only, no finding. `shootGallery`: the version changes no capture; `Art/Gallery/` unchanged but `0-preview.png` (badge 1.7), table above stands. `mountPreview`: Preview regenerated with badge 1.7 (`Preview.png` = `0-preview.png`, `cmp`), echo kept, social preview uploaded (`social_preview_sha256` current). `writeDocs`: `CHANGELOG.md` `[Unreleased]` and the `### 1.1.0` Steam change note written; the description changed only by removing version numbers. **Open: 11.j** (owner's reread of `PUBLICATION.md` and `CHANGELOG.md`, `publication_changelog_review_sha` stale), then `prepareRelease` (dry-run with `update_tags=true`, `update_preview`, `update_description`).
 **Owner's reread, 2026-10-13 (11.j, 1.1.0).** Virginie validated `PUBLICATION.md` and `CHANGELOG.md` in the chat ("Validé", after the corrections to the header, `ATTRIBUTION.md`, `TESTING.md`, `target_version`). `publication_changelog_review_sha` = `6f3e3e9`. The `1.1` line is reviewed; a change of the Steam description reopens it. Stage moved to `prepareRelease[1.1.0]`. Local, not mine: `12-workshop-captures-v2.feature` (two `face is held neutral` lines) uncommitted, outside the CI SHA.
+**Echo, 2026-10-14 (second reading).** `Art/Gallery/0-preview.png` changed since `7f70ed5` only by the badge 1.7; `echo-source.png` and the gallery are unchanged: echo kept. `echo_review_sha` = `df1a839`. CHANGELOG `[1.1.0]` dated 2026-10-14 (the day of the dry-run).
