@@ -8,7 +8,7 @@ in game.
 
 ### Changed
 
-- Version 1.1.0 prepares the RimWorld 1.7 pass: the Steam and mod-list descriptions no longer name a RimWorld version (they say "the latest RimWorld version"). `supportedVersions` stays `1.6` until a green 1.7 run.
+- Version 1.1.0 prepares the RimWorld 1.7 pass: the Steam and mod-list descriptions no longer name a RimWorld version (they say "the latest RimWorld version"). `supportedVersions` now declares `1.7` besides `1.6` (owner decision, 2026-10-13, before the 1.7 run), and the Preview badge reads 1.7.
 
 ## [1.0.1] — 2026-10-11
 
