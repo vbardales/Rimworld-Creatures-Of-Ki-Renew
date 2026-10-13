@@ -43,7 +43,7 @@
       and she never lays at all.
 
   What this file CANNOT check, and does not pretend to: the game ships no loose textures - Core has
-  only About, Defs and Languages on disk - so the dessicated sprite this mod borrows from the
+  only About, Defs and Languages on disk - so the desiccated sprite this mod borrows from the
   dromedary cannot be resolved here. TESTING.md scenario 6 is the only check for it.
 
   Exit code 0 when everything passes, 1 otherwise. A few seconds.
