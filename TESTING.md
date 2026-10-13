@@ -140,11 +140,11 @@ Leave a fertilized egg somewhere warm and advance fifteen days, or use the dev g
 
 **Fails if:** it hatches into nothing, or into the wrong pawn kind.
 
-## 6. The dessicated corpse — known defect, confirm it is only cosmetic
+## 6. The desiccated corpse — known defect, confirm it is only cosmetic
 
-Kill a teshi and let the corpse dry out, or spawn a dessicated corpse directly.
+Kill a teshi and let the corpse dry out, or spawn a desiccated corpse directly.
 
-**Expect:** a dromedary's dessicated sprite, at three draw sizes. **This is correct behaviour for
+**Expect:** a dromedary's desiccated sprite, at three draw sizes. **This is correct behaviour for
 this mod.** It is Shooki's own choice, inherited deliberately and recorded in `ATTRIBUTION.md`;
 inventing replacement art would make this a rewrite rather than a port.
 
@@ -265,7 +265,7 @@ The features are in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md
 | 4a. Mated female lays | Pickle, `@slow` | `03-laying-and-hatching` | One stack of two fertilized eggs and no unfertilized egg, for the colony: behaviour through the game's own job. |
 | 4b. Lone female | Not applicable | none | Read off the compiled game (`CompEggLayer`) by the offline suite. A run would test the engine. |
 | 5. The egg hatches | Pickle, `@slow` | `03-laying-and-hatching` | Two kits that belong to the colony, from the eggs she laid. Needs the hatcher's own tick. |
-| 6. Dessicated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
+| 6. Desiccated corpse | Pickle, `@review` capture | `04-dessicated-corpse` | The borrowed dromedary sprite is not shipped in the clear and no file reveals it. |
 | 7. Predator and manhunter | Not applicable | none | These are declarations, and the mod answers for what it declares: read them in the XML. The offline suite proves each written field has a reader in the game, not its value, so the values are settled by reading the XML, and change only with it. The 0.75 roll is random and the engine's to honour; a test of it would test the game. |
 | 8. Optional integration with A Dog Said... Animal Prosthetics 2 | Pickle, `@requires`, third pass | `08-ads2-integration` | The offline suite has no copy of the other mod, so it checks only the patch's shape. Only the game shows the teshi is offered the same recipes as a grizzly bear, and, since `ADS2_Arms.xml`, that both arm recipes apply to each arm and leave their hediff (played 2026-09-27). |
 | 9. A new game with the mod | Pickle, `@requires`, own pass | `09-new-colony` | No saved game reaches a colony that starts with the mod: the world and the first map are generated with the animal in them. Random, so played once in a validation and not in fix loops. Its first run, on 2026-09-25, failed in the tool, which started a game with Ideology on and no ideoligion and no starting pawns; it passed on 2026-09-26 once the tool was fixed. |
@@ -292,7 +292,7 @@ The proofs worth keeping for this mod, and only these:
   with no pink box;
 - the stack of two `teshi egg (fert.)` on the ground after a mated laying, with none of the unfertilized egg;
 - the hatched kit, tame and belonging to the colony;
-- the dessicated corpse;
+- the desiccated corpse;
 - the health tab of an adult teshi in English and in French, showing the custom body-part labels;
 - the `Player.log` of each pass, already searched for `XML error`, `Could not resolve cross-reference`
   and the names `Teshi`, `EggTeshiFertilized`, `EggTeshiUnfertilized`: only the newest one per pass.
