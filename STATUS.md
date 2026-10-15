@@ -27,14 +27,12 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
-updated:      2026-10-08, gallery: the second series (seven images) played, read and in Art/Gallery/; the six images of the first series were uploaded to Steam by the owner on 2026-10-06 (her word); the rest as of 2026-10-02 (history in docs/runs/status-history.md)
+updated:      2026-10-15, followUp[1.1.0]: non-regression green, Use This Instead posted, STATUS and evidence folded (history in docs/runs/status-history.md)
 remaining:
-  - 1.1.0 (owner, 2026-10-13), state of 2026-10-13: `tested_1_7: yes` rests on ONE green scenario, `01-loads` (English, RimWorld 1.7.4976 rev1043, ticket e8c8): the mod loads without a warning or an error. Not played on 1.7: laying, hatching, ADS2, Nocturnal, the gallery scenarios, and all French (no French pack on 1.7). `<li>1.7</li>` is declared and the Preview badge reads 1.7 (owner's word, before the run, against AUDIT.md). Open before publish: the owner's reread (11.j), `prepareRelease` (dry-run with `update_tags=true`, `update_preview`, `update_description`), her yes to publish.
-  - update 1.0.1 (owner, 2026-10-08): `Mod/` changed since 49d9a72: two English texts (`bipedal animal`, the Teshi description), the Preview redrawn in `e8b3a89` (666467 bytes, published one 666772, sent with `update_preview`; `Art/Gallery/0-preview.png` must stay identical) and the regenerated ModIcon. In order: `declareDependencies`, `auditSettings`, `localize` (Virginie rereads the two EN texts), `writeTests` (fix 06 lines 18 and 23, replay 06 and 07), `playTests`, gallery second series on the page with credits, release notes, dry-run, publish.
-  - unverified: the Nocturnal pass and the new-colony scenario were not replayed after the publish: the 2026-09-26 runs on `1fcc51f` stand, and nothing under `Mod/` besides the Preview changed since the publish.
-  - unverified: the six gallery images were uploaded to Steam by Virginie on 2026-10-06 (her word, run 95fc, `Art/Gallery/`); no session has read the page.
-  - unverified: the Steam page was checked by Virginie ("C'est bon", 2026-10-02, relayed) and the CI log shows preview 666772 bytes and description 5252 characters sent; no session has read the page (Steam answers 429 to the CI).
-  - unverified: the thanks to Shooki and Mlie on Creatures of Ki (Continued), 2726461020, were posted by Virginie (her word, 2026-10-02); no session read the comment. The register row and the `Covers` of ADS2 and Nocturnal Animals are committed in the protocols repository (`91f4a85`).
+  - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
+  - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
+  - disclosed gaps against AUDIT.md (loop-declared stages, dispatch before lint, 1.7 declared before a green run, no `TEST_SCENARIOS.md`): in docs/runs/status-history.md, "AUDIT.md read in full, 2026-10-15".
+  - unverified: gallery images on the Steam page and the thanks comment were posted by the owner (her word); no session read the page.
 social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: df1a839d53973f987049b283a231f51115345463
@@ -44,97 +42,45 @@ protocols_read_sha: 228c98ab061efe4883c879bd8e5be6d97c22c128
 
 # Creatures of Ki - Teshi Renew — status
 
-## Audit, 2026-10-10 (HEAD `e6e9b50`, working tree clean before this edit)
+## Dated sections (folded)
 
-`preTest` (old vocabulary, replaced on 2026-10-10) to `code[1.0.1]`. Read: AUDIT.md (284 lines), WELCOME.md, STATUS.md,
-BACKLOG.md, CHANGELOG.md. Nothing run, no game started. `Check-Status.ps1` before: 0 ERROR, 3 WARN (retired `stage`, old
-vocabulary, `protocols_read_sha` missing); `stage` removed and `protocols_read_sha` written here.
-Why `code` at first: 3.c unmet (no `[Unreleased]` in CHANGELOG.md); written the same day, 3.a to 3.c now met (no build, no DLL).
-(two English texts, Preview, ModIcon). Next, in order: that section, then `declareDependencies[1.0.1]` (re-verified, dated),
-`auditSettings` (`not_applicable` stands), `localize` (EN texts changed: Virginie rereads them before deployment),
-`writeTests[1.0.1]` (06 assertions, replay 06 and 07).
+Full text in `docs/runs/status-history.md`, section "Folded from STATUS.md, 2026-10-15". One line each:
 
-**Audit completed, 2026-10-11 (HEAD `4df312a`, read and offline checks only, no game).** Rerun after the owner asked whether the audit covered every step up to `playTests`.
-Checked: repository, remote, licence fields, `upstream_mod_remotes`, `Art/` (sources present, `ModIcon.png` 128 x 128 newer than its source, `Preview.png` 896 x 504,
-no `PROMPT_*.md` left), `Check-DefInjected.ps1` (31 keys, 0 error), `Run-Functional-Tests.ps1` (23, 0 failed), Pickle suites and the passes declared in `TESTING.md`.
-Defect found and fixed: `TESTING.md` did not declare the second gallery series nor the scenario count (35 `Scenario:` lines, twelve features). Stage unchanged.
-Reserves, not blockers: `Art/ModIcon.ico` and `Art/Preview.ico` are tracked by git (local folder-icon convention, `AUDIT.md`: kept out of published content, `Mod/` has none);
-The former gap in the gallery indexes (no `6-`) is closed: indexes 0 to 6 are contiguous since 2026-10-11.
-
-**Gallery, second series, 2026-10-11 (HEAD `e358d09`).** The six images after `0-preview` opened one by one by the session, director's verdict before the owner's: `1-asleep` kept (the teshi
-curled on a bed, readable, murky pond), `2-portrait` kept (the strongest, close and clear), `3-the-parents` kept (hearts, lantern, daylilies), `4-the-nesting-box` kept (warm, the egg in its box),
-`5-the-hatching` redone 2026-10-11 (ticket e848, root size 1.9: the kit now fills its box tile and reads as a kit beside the mother; the first version was too far), `6-the-infirmary-health-tab` kept (the Health tab names the cut claw and the ADS2 bionic
-arm, which shows the 1.0.1 texts; the interface is busy, left as the game draws it). files renamed on 2026-10-11 as candidates in page order, the most demonstrative first (AUDIT 9.c): `1-candidate-portrait`, `2-candidate-the-parents`, `3-candidate-the-nesting-box`, `4-candidate-the-hatching`, `5-candidate-asleep`, `6-candidate-the-infirmary-health-tab` (indexes 0 to 6 contiguous, AUDIT 9.b), accepted by the owner on 2026-10-11 (`candidate` dropped); the meat scene of 18h30 was played and not kept.
-Sizes 254 to 450 KB each, 2.3 MB together; `0-preview.png` identical to `Mod/About/Preview.png` (cmp). Order to argue: the most demonstrative first after the preview.
-
-**Docs, 2026-10-11 (`writeDocs[1.0.1]`, 11.a to 11.i).** The description (`PUBLICATION.md`, `## Steam description`, 6796 characters, limit 8000 bytes) now thanks the mods the gallery was staged with
-(props More animal beds and Stick Lantern (Continued) with Dalrae and Mlie; the colonist's body, apparel and facial-animation mods, AB's Visible Pants, EyeGenes3, my Venus Touch Waistlines), none a
-dependency, links on every name; `About.xml` regenerated (`--check` clean). Authors of the three new recipients (More animal beds, Stick Lantern, AB's Visible Pants) were read in their local
-`About.xml`, the Workshop pages answered 429: to confirm on the page before posting. Register `WORKSHOP_COMMENTS.md` (protocols repository, uncommitted by me): 10 rows get this mod in `Covers`,
-3 rows `drafted` plus the original Stick Lantern `not_applicable`; drafts in `PUBLICATION.md`, "Thanks". Content boxes: Preview and the six images opened 2026-10-11, no adult content. Release note
-`### 1.0.1` and `CHANGELOG.md` `[Unreleased]` written. **Open: 11.j, the owner's reread of `PUBLICATION.md` and `CHANGELOG.md`** (description changed several times today; field `publication_changelog_review_sha`
-written only on her word in the chat).
-
-**Published 1.0.1, 2026-10-11.** [Publish run 38169426918](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38169426918), approved by Virginie, on
-`5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (the dry-run SHA), options `update_preview` and `update_description`: publish and tag-and-release green. Verified on the page through the Steam API
-(`GetPublishedFileDetails`, no 429): updated 2026-10-11 19:49 UTC, public (visibility 0), tags `Mod` and `1.6` (unchanged, not sent), description 7180 characters (was 5252), preview 666467 bytes,
-sha256 `923e1a38…` identical to `Mod/About/Preview.png` (was 666772, `0abbe24f…`). Tag `v1.0.1` and the GitHub release exist, `v1.0.1` points at the same SHA. Previous good target: `v1.0.0`.
-Open: the six images of `Art/Gallery/` are the owner's manual upload to Steam (the Steam API cannot send a gallery); the owner uploaded the six images and posted the three thanks on 2026-10-11 (her word, not read on the page); non-regression
-(`followUp`, 14.a): the suite is to replay on the published build, in small tickets, none filed yet.
-
-**Dry-run 1.0.1, 2026-10-11.** [38168866088](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38168866088), green, on `5d389b1c19c7220f9ee690d0f4f0e14acd9874aa` (CHANGELOG `## [1.0.1] — 2026-10-11`), version 1.0.1, options `update_preview=true update_description=true`
-(title and tags off). Staged 24 files, 1.03 MB, no assembly. Preview to send 666467 bytes (sha256 `923e1a38…`) against 666772 on the page; description 7180 characters (limit 8000 bytes), converted
-from `PUBLICATION.md`; change note: the two English texts and the redrawn Preview and icon. `.github` regenerated at template `ba64b0c1b25d` (commit `9b2f71a`, 75 script tests green locally).
-Rollback target: `v1.0.0` on `49d9a726f64e5d491fb7e1b77fd438c81eb97522`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit (convention (c)). Not sent: the second gallery
-series stays the owner's manual upload to Steam; the three drafted thanks (More animal beds, Stick Lantern, AB's Visible Pants) go after the images are on the page.
-
-**Owner's reread, 2026-10-11 (11.j).** Virginie reread `PUBLICATION.md` and `CHANGELOG.md` in the chat ("validé", several rounds of corrections applied, last on `a2c52b5`). `publication_changelog_review_sha` = `a2c52b5`. The `x.y` line is 1.0; a change of the Steam description reopens it.
-
-**Echo and Preview, 2026-10-11 (10.a, 10.d).** Decision: keep `Art/echo.png`, reason: the echo is a conceptual teshi outline (front view, four banded ears), and the accepted gallery shows that same animal close up (`1-portrait`), so it already says what the gallery says. `echo_review_sha` = `d4cd79a` (gallery accepted). Preview 896 x 504, 666467 bytes (under 1 MB), identical to `Art/Gallery/0-preview.png` (cmp), badge 1.6 = the highest `supportedVersions` of `About.xml`, title and rule readable. Reserve, not a blocker: at 4x zoom the claw lines of the echo touch the last letter of "and" in the copy line (the Preview was accepted by the owner, a taste question, not reopened). 10.f done 2026-10-11 with the owner's go: `Mod/About/Preview.png` uploaded through Claude in Chrome (Settings, General, Social preview); `og:image` of the repository page now points to repository-images.githubusercontent.com; `social_preview_sha256` written.
-
-**Gallery table, 2026-10-11, accepted by the owner (her word, the six files, `candidate` dropped).** Page order, the most demonstrative first (AUDIT 9.c).
-
-| # | File | Game time | Shows |
-|---|---|---|---|
-| 0 | `0-preview.png` | | the Preview (identical to `Mod/About/Preview.png`) |
-| 1 | `1-portrait.jpg` | 16h30 | the awake teshi, close portrait |
-| 2 | `2-the-parents.jpg` | 17h00 | the parents nose to nose, hearts |
-| 3 | `3-the-nesting-box.jpg` | 17h30 | the mother at her nest, the egg in its box |
-| 4 | `4-the-hatching.jpg` | 18h00 | the kit hatched beside its mother (redone, ticket e848) |
-| 5 | `5-asleep.jpg` | 16h00 | the teshi asleep on a bed |
-| 6 | `6-the-infirmary-health-tab.jpg` | 19h30 | the Health tab: cut claw and ADS2 bionic arm |
-
-**Pickle runs of `playTests[1.0.1]`, 2026-10-11 (label `04c2119`).** English and French labels, descriptions and information cards green; the health tab of each language green on the second
-try (the first two tickets forgot the `-DepMap`, ticket error, no defect of the mod). Lines in `docs/runs/2026-10-11.md`. Played: 06 and 07 only. Not replayed on this revision:
-01 to 05, 08 to 10 (the 2026-09-26 and 2026-10-02 runs stand, nothing under `Mod/` but two texts and the images changed since `49d9a72`; non-regression comes after the commit, AUDIT 14.a).
-
-**Code review, 2026-10-11 (8.m), `code_review_sha` bfd5a4567e4f032eed65215c74265f35feaddb69.** Reading of the `Mod/` diff since `c342ee91ca41574d075e9b480817714cb7901163` (previous review), binaries excluded: the label `bipedal animal`, the Teshi description, the `desiccated` spelling and the AI-generated sentence in `About.xml` (generated from `PUBLICATION.md`). No code, no Def logic, no patch. No finding. Nothing run for the review itself.
-
-**Code review, 2026-10-11 (second reading, 12.a).** `Mod/` diff since `bfd5a45`: `About.xml` only, three paragraphs of generated description text (the staged-mods thanks), no code, no Def, no patch. No finding. `code_review_sha` moved to the commit that carries this line's parent (`7b5096b`).
-
-**Translation audit, 2026-10-10 (revision `34d2dd0`).** Texts changed in 1.0.1: the `bipedal animal` label (`Bodies_Animal_Teshi.xml`) and the
-Teshi description (`Races_Animal_Teshi.xml`); the French (`animal bipède`, the description) did not change. `FRENCH_REVIEW.md` regenerated by
-`Make-FrenchReview.ps1` (the 18 anatomical `customLabel` rows take their English from `french-review-english.json`, checked against the Def).
-Reread by Virginie, French and English, in the chat of 2026-10-10: French good, no gender agreement needed, the two English texts good,
-no correction left. `localization`, `translation_en` and `translation_fr` stay `complete`. Nothing in-game was read (raw keys, truncation):
-
-**Tests written and rerun, 2026-10-10 (HEAD `aa6070c`, offline, no game).** `Run-Functional-Tests.ps1`: 23 tests, 0 failed, rerun today. XML and
-Core references are covered by that suite (TESTING.md). The two assertions the audit flagged in `06-labels-en.feature` (lines 18 and 23) were already
-rewritten in `adbcd70` (the `remaining` defect was stale and is removed); `07-labels-fr.feature` reads the unchanged French. Pickle suites written
-(01 to 12, `@requires` passes in `TESTING.md`), none played on this revision yet. Tested sha: the one the tickets of `playTests[1.0.1]` carry in their label.
-`unverified` until `playTests`.
-
-**Dependencies, 2026-10-10 (HEAD `e6e9b50`, read in the sources, no game).** No hard dependency (`modDependencies` absent, correct).
-`loadAfter`: Core and the five DLC (`Ludeon.RimWorld*`); `loadBefore`: `SamBucher.ADogSaidAnimalProsthetics2` (patches `ADS2_Categories.xml`,
-`ADS2_Arms.xml`, same classes as vanilla recipes, no mod-specific operation). Nocturnal Animals: `NocturnalAnimals.xml` under
-`PatchOperationFindMod` on the mod `<name>` (two entries), nothing patched or logged without it. No `LoadFolders.xml` (one version, 1.6 only,
-`supportedVersions` 1.6). No cycle. Animal mod integrations (ANIMALS.md 4.f): ADS2 and Nocturnal done, Dogs mate and Better Crossbreeding not
-done: crossbreeding parked by the owner (2026-09-25), Dogs mate (`Mlie.DogsMate`): not applicable, the teshi is an egg-layer with no canid group (`ANIMALS.md` asks for a written decision, this is it, a reading of the sources not a test).
-
-**Settings audit, 2026-10-10 (HEAD `a227b39`, sources read, no game).** `settings_audit: not_applicable` stands. `Mod/` holds no assembly and no C#
-(`Mod/Assemblies` and `Source/` absent), no `ModSettings`, no `MainButtonDef`, no `SettingsCategory` (search over `Mod/`: no hit). The hits under
-`Tests/Pickle/` are the test steps (`TeshiSteps.cs`) and the configs of other mods staged by the passes, not shipped. Nothing to configure: the mod
-adds one animal, its eggs and two optional patches. No empty page, no shortcut. The two English texts changed in 1.0.1 add no setting.
+- Audit, 2026-10-10 (HEAD `e6e9b50`, working tree clean before this edit)
+- Audit completed, 2026-10-11 (HEAD `4df312a`, read and offline checks only, no game)
+- Gallery, second series, 2026-10-11 (HEAD `e358d09`)
+- Docs, 2026-10-11 (`writeDocs[1.0.1]`, 11.a to 11.i)
+- Published 1.0.1, 2026-10-11
+- Dry-run 1.0.1, 2026-10-11
+- Owner's reread, 2026-10-11 (11.j)
+- Echo and Preview, 2026-10-11 (10.a, 10.d)
+- Gallery table, 2026-10-11, accepted by the owner (her word, the six files, `candidate` dropped)
+- Pickle runs of `playTests[1.0.1]`, 2026-10-11 (label `04c2119`)
+- Code review, 2026-10-11 (8.m), `code_review_sha` bfd5a4567e4f032eed65215c74265f35feaddb69
+- Code review, 2026-10-11 (second reading, 12.a)
+- Translation audit, 2026-10-10 (revision `34d2dd0`)
+- Tests written and rerun, 2026-10-10 (HEAD `aa6070c`, offline, no game)
+- Dependencies, 2026-10-10 (HEAD `e6e9b50`, read in the sources, no game)
+- Settings audit, 2026-10-10 (HEAD `a227b39`, sources read, no game)
+- Warnings closed, 2026-10-13
+- Chain 1.1.0, 2026-10-13 (`code` to `playTests`, offline, no game; HEAD before this edit `d2604fe`)
+- 1.7 diagnostic filed, 2026-10-13
+- 1.7 diagnostic result, 2026-10-13
+- Social preview, 2026-10-13 (10.f, owner's go)
+- Chain 1.1.0 continued, 2026-10-13
+- Owner's reread, 2026-10-13 (11.j, 1.1.0)
+- Echo, 2026-10-14 (second reading)
+- Dry-run 1.1.0, 2026-10-14
+- Publish 1.1.0 launched, 2026-10-14
+- Review shas, 2026-10-14
+- Published 1.1.0, 2026-10-14
+- Tag 1.7, 2026-10-14
+- Tag 1.7 applied, 2026-10-14
+- Non-regression filed, 2026-10-14 (`followUp`, 14.a)
+- Non-regression result, 2026-10-15
+- AUDIT.md read in full, 2026-10-15
+- Non-regression 1.1.0 complete, 2026-10-15
+- Use This Instead posted, 2026-10-15
 
 ## Earlier state
 
@@ -162,27 +108,3 @@ unspecified and original asset permissions are only partly traced (the linked or
 `visibility: public` describes repository access; `licence: open` rests on the published upstream MIT grant and the local
 port's explicit MIT statement, not on public access alone.
 
-**Warnings closed, 2026-10-13.** Code review (third reading): `Mod/` diff since `7b5096b` = `Preview.png` (binary, badge crop) and the `About.xml` description (generated, version numbers removed per the 2026-10-13 rule); no code, no Def, no patch; no finding; `code_review_sha` = `7f70ed5`. Echo: `echo-source.png` kept (unchanged, only the Preview badge crop moved, the 0- copy follows); `echo_review_sha` = `7f70ed5`. Description: "1.6" removed from `PUBLICATION.md` (five places) and `About.xml` regenerated; this reopens 11.j. Use This Instead: row added (`drafted`, protocols repository), draft in `PUBLICATION.md`, not posted. `STATUS.md` trimmed (2026-10-02 state moved to `docs/runs/status-history.md`).
-**Open (owner): 11.j.** Virginie rereads `PUBLICATION.md` and `CHANGELOG.md` (the description changed: version numbers only); `publication_changelog_review_sha` is stale until her word. Then she posts the Use This Instead comment.
-
-**Chain 1.1.0, 2026-10-13 (`code` to `playTests`, offline, no game; HEAD before this edit `d2604fe`).** Transitions the version does not touch, confirmed by a line each (AUDIT.md 14.b):
-`code`: no `feature` left, no build (no C#, no DLL), `[Unreleased]` written (3.a to 3.c). `declareDependencies`: unchanged since 2026-10-10 (no hard dependency, `loadAfter` Core and five DLC, `loadBefore` ADS2, Nocturnal under `FindMod`, no `LoadFolders.xml`); `Mod/Defs` and `Mod/Patches` have not changed since the audit, only `About.xml` (`<li>1.7</li>`, description) and `Preview.png`; unverified: whether 1.7 adds a DLC or renames a `Ludeon.RimWorld.*` package id (the `loadAfter` list is the 1.6 one). `settings`: `not_applicable` stands (no C#, no `ModSettings`, no page). `localize`: no text changed (the description lost its version numbers, English only, generated); `FRENCH_REVIEW.md` regenerated at `d2604fe`, `Check-DefInjected.ps1`: 31 keys, 0 error; `localization`, `translation_en`, `translation_fr` stay `complete` (French untouched since the owner's review of 2026-10-10). `writeTests`: `Run-Functional-Tests.ps1` rerun, 23 passed, 0 failed; Pickle suites unchanged (35 scenarios, twelve features), nothing to rewrite. `playTests[1.1.0]` is the 1.7 diagnostic: English only (no French pack on 1.7), one ticket, then `tested_1_7`.
-**1.7 diagnostic filed, 2026-10-13.** Ticket `20261013-110745-015-e8c8`: `01-loads`, English, `wsl-deps.sans-facultatifs.map`, `-Game /home/nelim/rimworld17`, `-PickleSrc /home/nelim/Rimworld-Pickle` (Pickle#63), same form as the ACertainSeries pilot (`72c6`), tree on `1ca2ee0`; evidence `Tests/Pickle/Evidence/p17-01-loads`. Session 🟢, waiting for `RUN_DONE` from the Ticket Manager (the dispatcher name was not reachable by `SendMessage`; the ticket carries the owner id). Keep `Mod/` frozen until then. Release tag: 1.1.0 is a minor, `update_tags=true` at publish (AUDIT.md, "Le tag 1.7").
-**1.7 diagnostic result, 2026-10-13.** Ticket `e8c8` green: `01-loads`, 1 passed, 0 failed, `exitReason` `passed`, RimWorld 1.7.4976 rev1043 (read in the run log), English, on `971ac7c`. `tested_1_7: yes`, load only: the other scenarios (laying, hatching, ADS2, Nocturnal, French) were not played on 1.7, and French cannot be (no pack on 1.7). `<li>1.7</li>` and badge 1.7 stand. Open: remaining 1.7 scenarios if the owner wants more than a load proof; then `shootGallery` onward; publish needs her yes.
-**Social preview, 2026-10-13 (10.f, owner's go).** `Mod/About/Preview.png` (badge 1.7) uploaded through Claude in Chrome (Settings, General, Social preview); the settings page shows the new image with the 1.7 badge. `social_preview_sha256` updated. The sha was not read back from GitHub (cross-origin fetch blocked), so the check is visual.
-
-**Chain 1.1.0 continued, 2026-10-13.** `playTests` (8.a to 8.n): tested sha = the tree of `1ca2ee0` (`Mod/` unchanged since `d2604fe`); the 1.7 diagnostic is the only run of this version (`e8c8`, green); the 1.6 suites of 2026-10-11 and 2026-10-02 stand for the unchanged Defs and Patches (non-regression comes after the commit, `followUp`). No `@wip`, no manual test. Code review (8.m): `About.xml` gained `<li>1.7</li>` after `7f70ed5`, metadata only, no finding. `shootGallery`: the version changes no capture; `Art/Gallery/` unchanged but `0-preview.png` (badge 1.7), table above stands. `mountPreview`: Preview regenerated with badge 1.7 (`Preview.png` = `0-preview.png`, `cmp`), echo kept, social preview uploaded (`social_preview_sha256` current). `writeDocs`: `CHANGELOG.md` `[Unreleased]` and the `### 1.1.0` Steam change note written; the description changed only by removing version numbers. **Open: 11.j** (owner's reread of `PUBLICATION.md` and `CHANGELOG.md`, `publication_changelog_review_sha` stale), then `prepareRelease` (dry-run with `update_tags=true`, `update_preview`, `update_description`).
-**Owner's reread, 2026-10-13 (11.j, 1.1.0).** Virginie validated `PUBLICATION.md` and `CHANGELOG.md` in the chat ("Validé", after the corrections to the header, `ATTRIBUTION.md`, `TESTING.md`, `target_version`). `publication_changelog_review_sha` = `6f3e3e9`. The `1.1` line is reviewed; a change of the Steam description reopens it. Stage moved to `prepareRelease[1.1.0]`. Local, not mine: `12-workshop-captures-v2.feature` (two `face is held neutral` lines) uncommitted, outside the CI SHA.
-**Echo, 2026-10-14 (second reading).** `Art/Gallery/0-preview.png` changed since `7f70ed5` only by the badge 1.7; `echo-source.png` and the gallery are unchanged: echo kept. `echo_review_sha` = `df1a839`. CHANGELOG `[1.1.0]` dated 2026-10-14 (the day of the dry-run).
-**Dry-run 1.1.0, 2026-10-14.** [38474751190](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38474751190), green, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (CHANGELOG `## [1.1.0] — 2026-10-14`), version 1.1.0, options `update_preview=true update_description=true update_tags=true` (title off). Staged 24 files, 1.03 MB, template `6234182a807a`. Preview to send 661812 bytes, sha256 `4215d8ae…` (= `Mod/About/Preview.png`), the page serves another image. Description 7235 characters (limit 8000 bytes). Tags to send: Mod, 1.6, 1.7 (page now: Mod, 1.6; added 1.7, none removed). Rollback target: `v1.0.1`. The SHA to publish is the dry-run SHA; this record is a later docs-only commit. Not sent: the gallery (the owner's manual upload; no new image in 1.1.0).
-**Publish 1.1.0 launched, 2026-10-14**, owner said "publie" in the chat; stage `publish[1.1.0]` set before the dispatch (AUDIT.md 12.h). Awaiting her approval of `steam-production`.
-**Review shas, 2026-10-14.** The linter raised two ERRORs at `publish[1.1.0]`: `code_review_sha` stale (`<li>1.7</li>` in `About.xml`, metadata, read: no finding) and `publication_changelog_review_sha` recorded at a 1.0.x-stage commit (one review per x.y line). Both moved to `188150b`; `PUBLICATION.md` and `CHANGELOG.md` are unchanged since the owner's reread. Publish run [38475087868](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38475087868) on `57ad0442c809b201d9830e38f53398d1d54b5a5b`, awaiting her approval.
-**Published 1.1.0, 2026-10-14.** [Publish run 38475087868](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew/actions/runs/38475087868), approved by Virginie, on `57ad0442c809b201d9830e38f53398d1d54b5a5b` (the dry-run SHA), options `update_preview`, `update_description`, `update_tags`: `publish` and `tag-and-release` green. Steam log: "Upload finished for workshop item 3806709627 : OK" (manifest 2474724528195597988). Verified on the page through the Steam API (`GetPublishedFileDetails`): updated 2026-10-13 22:07:56 UTC, public (visibility 0), description 7235 characters, preview 661812 bytes with sha256 `4215d8ae…` identical to `Mod/About/Preview.png`. Tag `v1.1.0` on `57ad044`, the release exists (not a draft). **Tags NOT applied: the page still carries `Mod, 1.6`** (read twice, one minute apart), the CI log prints "tags added: 1.7" but no tag step ran (steamcmd does not apply tags; the template's own step needs the refresh token on `steam-production`, `OPERATIONS.md`, "Workshop tags", which this item does not have). Previous good target: `v1.0.1`.
-Open: the `1.7` tag on the Workshop page (Virginie by hand, or the refresh token set by her in `steam-production`, then a tags-only publish is impossible without a new version); non-regression (`followUp`, 14.a): replay the suite on the published build, in small tickets, none filed; the 1.7 scenarios beyond `01-loads` and the French ones stay unplayed.
-**Tag 1.7, 2026-10-14.** The owner reports the Workshop page offers no `1.7` tag by hand. The tag exists (A Sloth Mod Renew, 3811289805, carries `Mod, 1.6, 1.7` via the Steam client protocol), so only `steam-apply-tags.mjs` with her refresh token can set it (`Rimworld-Release-Admin/docs/OPERATIONS.md`, "Workshop tags"); a session never holds the token. Command for her, in the Codespace: `steam-apply-tags.mjs 3806709627 Mod 1.6 1.7`. Not done; the page keeps `Mod, 1.6` until then.
-**Tag 1.7 applied, 2026-10-14.** Virginie ran `steam-apply-tags.mjs 3806709627 Mod 1.6 1.7` in the Codespace (her word); read back through the Steam API (`GetPublishedFileDetails`): tags `Mod, 1.6, 1.7`. 1.1.0 is now fully on the page (content, Preview, description, tags). Open: non-regression (`followUp`, 14.a), none filed; 1.7 scenarios beyond `01-loads` and French unplayed.
-**Non-regression filed, 2026-10-14 (`followUp`, 14.a).** Six tickets on the published 1.6 build (tree `Mod/` = `57ad044`, docs-only commits since), default game: `4f02` English fast (01, 02, 04, 05, 06), `9a81` English slow (03), `d57a` French (01, 07), `1227` ADS2 (08), `69e1` Nocturnal (10), `9a7d` new colony (09). Evidence `Tests/Pickle/Evidence/2026-10-14-nonreg-*`. Gallery features 11 and 12 not played (not a regression check). Session 🟢; keep `Mod/` frozen until the last `RUN_DONE`.
-**Non-regression result, 2026-10-15.** Green on the published 1.6 build: English fast and slow 13 of 13 (`4f02`, `9a81`), ADS2 2 of 2 (`1227`), Nocturnal 1 of 1 (`69e1`), new colony 1 of 1 (`9a7d`); lines in `docs/runs/2026-10-14.md`. French (`d57a`) gave no result: staging failed (`tar: Cannot mkdir ./Textures`), no report, not a defect of the mod; replay filed as `8a73` (`01-loads`, `07-labels-fr`), session 🟢 until its `RUN_DONE`. Then `followUp` cleanup (14.c) and `dormant`.
-**AUDIT.md read in full, 2026-10-15.** Gaps against it, disclosed: (1) the stages `declareDependencies` to `playTests[1.1.0]` were declared in one loop, with `Mark-ProtocolsRead` each time but the session renamed only at the end; (2) at `publish[1.1.0]` the dispatch went out before the lint was read, and it showed two ERRORs (`code_review_sha`, `publication_changelog_review_sha`), fixed after in later `STATUS.md` commits, not in the published SHA (12.c); `publication_changelog_review_sha` was moved by the session without a new "validé" (documents unchanged since her reread); (3) `<li>1.7</li>` and badge 1.7 were set before a green 1.7 run (owner's word, AUDIT.md says after) and the 1.7 run came before a 1.6 green of this version (the 1.0.1 runs stood); (4) `TEST_SCENARIOS.md` (7.a) does not exist, `TESTING.md` plays that role since the 2026-10-11 audit: unverified against 7.a. Protocols changed since: markers no longer go in the session name (2026-10-15, name = `creaturesofki / followUp[1.1.0]`), GALLERY.md (Nelim as protagonist in Sanctuary series, animals face-on on at least one capture, a different hour per image allowed): applies to the next gallery, not this version. Still open for `dormant`: Use This Instead comment (drafted, owner posts), 14.c cleanup incl. the WSL mods this mod's sessions downloaded, 14.d branches, French replay `8a73`.
-**Non-regression 1.1.0 complete, 2026-10-15.** French replay `8a73` green, 6 of 6 (`docs/runs/2026-10-14.md`). With the five earlier results, everything that was green on 1.6 stays green on the published 1.1.0 (14.a done). Next: 14.c cleanup, 14.d branches, then `dormant`.
-**Use This Instead posted, 2026-10-15** (owner's word): row `posted` in the protocols register (committed and pushed by path). Text kept in `PUBLICATION.md`.
