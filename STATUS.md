@@ -35,7 +35,7 @@ remaining:
   - unverified: gallery images on the Steam page and the thanks comment were posted by the owner (her word); no session read the page.
 social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-echo_review_sha: df1a839d53973f987049b283a231f51115345463
+echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
 ---
@@ -112,3 +112,5 @@ port's explicit MIT statement, not on public access alone.
 **WSL cleanup, 2026-10-15 (14.c).** Nothing removed: the two optional Workshop mods this mod's passes fetched, 3238353862 (ADS2) and 2269731409 (Nocturnal Animals), are still named by the `wsl-deps` of other mods (at least 10 and 9; ACertainSeries, AlphaMythology, ASlothMod, DustBunnies, Ebbbs, Dalmatians and others), so they stay. The Ticket Manager was asked for a slot and did not answer; the machine lock was free and the queue empty at the check, and nothing was deleted. Protocols re-read: AUDIT.md 14.c (cleanup message gives the owner the Workshop links to unsubscribe from), USE_THIS_INSTEAD.md (this mod's row `posted`). Check-Status.ps1 run under pwsh: 0 error, 0 warning.
 
 **Gallery subtitles, 2026-10-15 (owner's request).** English movie-style subtitles (white text, black outline, centred at the bottom) drawn into `Art/Gallery/1-portrait.jpg` to `5-asleep.jpg`; `0-preview.png` and `6-the-infirmary-health-tab.jpg` (interface) left as they were. The originals are in git history before this commit. The owner uploads the six images to Steam by hand; not read on the page.
+
+**Echo reading, 2026-10-15.** `Art/Gallery/` changed since `df1a839` only by the subtitles; the six captioned images were each opened and read (text legible, no animal or interface element hidden except the small `Nelim` label on image 6). `echo_review_sha` moved to `5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df`.
