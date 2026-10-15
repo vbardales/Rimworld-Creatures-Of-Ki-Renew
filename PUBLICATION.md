@@ -116,8 +116,8 @@ Notes of earlier versions (1.0.1, 1.0.0, as sent): `docs/runs/publication-sent.m
 
 Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
-- **No hard dependency.** `modDependencies` is empty; the mod needs nothing but RimWorld 1.6.
-- **DLC: none required.** `supportedVersions` is `1.6`; no `LoadFolders.xml`, so no `IfModActive` branch to
+- **No hard dependency.** `modDependencies` is empty; the mod needs nothing but RimWorld itself (1.6 and 1.7 declared).
+- **DLC: none required.** `supportedVersions` is `1.6` and `1.7`; no `LoadFolders.xml`, so no `IfModActive` branch to
   check. The final validation ran with every DLC present and passed, which shows the mod does not object to
   them, not that it needs them.
 - **A Dog Said... Animal Prosthetics 2 (`SamBucher.ADogSaidAnimalProsthetics2`, Workshop `3238353862`):
