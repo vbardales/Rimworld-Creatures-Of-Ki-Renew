@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: followUp[1.1.0]
+workflow_stage: dormant
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -27,7 +27,7 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
-updated:      2026-10-15, followUp[1.1.0]: non-regression green, Use This Instead posted, STATUS and evidence folded (history in docs/runs/status-history.md)
+updated:      2026-10-15, dormant: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
@@ -37,7 +37,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: df1a839d53973f987049b283a231f51115345463
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 228c98ab061efe4883c879bd8e5be6d97c22c128
+protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
 ---
 
 # Creatures of Ki - Teshi Renew — status
@@ -108,3 +108,5 @@ unspecified and original asset permissions are only partly traced (the linked or
 `visibility: public` describes repository access; `licence: open` rests on the published upstream MIT grant and the local
 port's explicit MIT statement, not on public access alone.
 
+
+**WSL cleanup, 2026-10-15 (14.c).** Nothing removed: the two optional Workshop mods this mod's passes fetched, 3238353862 (ADS2) and 2269731409 (Nocturnal Animals), are still named by the `wsl-deps` of other mods (at least 10 and 9; ACertainSeries, AlphaMythology, ASlothMod, DustBunnies, Ebbbs, Dalmatians and others), so they stay. The Ticket Manager was asked for a slot and did not answer; the machine lock was free and the queue empty at the check, and nothing was deleted. Protocols re-read: AUDIT.md 14.c (cleanup message gives the owner the Workshop links to unsubscribe from), USE_THIS_INSTEAD.md (this mod's row `posted`). Check-Status.ps1 run under pwsh: 0 error, 0 warning.
