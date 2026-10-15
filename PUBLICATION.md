@@ -209,7 +209,7 @@ The CI never sends the visibility or the title. A new publication needs a new ve
 own dry-run, and `update_preview` / `update_description` turned on only when the Preview or this description changed. The
 Preview in the repository (`e8b3a89`) differs from the published one: see `STATUS.md`.
 
-## Use This Instead comment (not posted)
+## Use This Instead comment (posted 2026-10-15)
 
 Register: `USE_THIS_INSTEAD.md`, row 2726461020. The item is public (3806709627). Post by the owner on the [Use This Instead](https://steamcommunity.com/sharedfiles/filedetails/?id=3396308787) page.
 
