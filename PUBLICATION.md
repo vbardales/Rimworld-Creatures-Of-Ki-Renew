@@ -146,6 +146,19 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 | 5 | 16h00 | water-garden, west bank | the teshi asleep, curled on a prestige animal bed | yes |
 | 6 | 19h30 | hut (the tea-house as an animal infirmary) | the Health tab open on the injured teshi on its bed: a cut claw and the ADS2 bionic arm, interface kept (colonist bar, tooltips, learning helper hidden) | a menu on a staged scene |
 
+**Subtitles (owner, 2026-10-15).** Each story image carries an English movie-style subtitle drawn at the bottom (white text, black outline); `0-preview.png` has none. The texts, with no hour:
+
+| Page # | File | Subtitle |
+| --- | --- | --- |
+| 1 | `1-portrait.jpg` | Awake, she watches the pond. |
+| 2 | `2-the-parents.jpg` | The parents meet nose to nose by a lit lantern. |
+| 3 | `3-the-nesting-box.jpg` | The mother settles at her nesting box, the egg inside. |
+| 4 | `4-the-hatching.jpg` | The kit hatches beside its mother. |
+| 5 | `5-asleep.jpg` | The teshi sleeps on a large bed by the pond. |
+| 6 | `6-the-infirmary-health-tab.jpg` | A cut claw, and a bionic arm. |
+
+Redrawing a subtitle: take the original from git before `b227ced` (the images without text), not the captioned file. `kit` is the mod's word for the young (`teshi kit` in the English texts).
+
 The scene of 18h30 (Nelim holds out meat to the kit) was played but is not kept; image 6 needs ADS2 loaded; the feature carries `@requires:SamBucher.ADogSaidAnimalProsthetics2` and the pass map holds the Sanctuary, ADS2 and the props, so the whole series passes in one run. Places are chosen on the empty-place photographs of PickleTools and the Backlot (`SanctuaryBacklot/docs/GALERIE.md`, `SANCTUAIRE-LIEUX.md`), never on their names. After a run each image is opened and read against the plan: green does not validate a capture.
 
 **Mods seen on the images (decided 2026-10-11): named and thanked in the description (`THANKS`), none a dependency.** The two props, More animal beds (`Animal.BedsNew`, 3107972819, Sovereign, DetVisor and Sandwish) and Stick Lantern (Continued) (`Mlie.StickLantern`, 2024351846, Mlie after Dalrae), and every mod of the shared Sanctuary pass that dresses Nelim (`wsl-deps.sanctuary.map`: the body, apparel and facial-animation mods, AB's Visible Pants, EyeGenes3 and her own Venus Touch Waistlines), which AUDIT 11.b asks for because a pass stages them. Authors of the three new ones come from their `About.xml` (the Workshop pages answered 429 on 2026-10-11): to confirm on the page before posting.
