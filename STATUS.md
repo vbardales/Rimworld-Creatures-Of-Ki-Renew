@@ -110,3 +110,5 @@ port's explicit MIT statement, not on public access alone.
 
 
 **WSL cleanup, 2026-10-15 (14.c).** Nothing removed: the two optional Workshop mods this mod's passes fetched, 3238353862 (ADS2) and 2269731409 (Nocturnal Animals), are still named by the `wsl-deps` of other mods (at least 10 and 9; ACertainSeries, AlphaMythology, ASlothMod, DustBunnies, Ebbbs, Dalmatians and others), so they stay. The Ticket Manager was asked for a slot and did not answer; the machine lock was free and the queue empty at the check, and nothing was deleted. Protocols re-read: AUDIT.md 14.c (cleanup message gives the owner the Workshop links to unsubscribe from), USE_THIS_INSTEAD.md (this mod's row `posted`). Check-Status.ps1 run under pwsh: 0 error, 0 warning.
+
+**Gallery subtitles, 2026-10-15 (owner's request).** English movie-style subtitles (white text, black outline, centred at the bottom) drawn into `Art/Gallery/1-portrait.jpg` to `5-asleep.jpg`; `0-preview.png` and `6-the-infirmary-health-tab.jpg` (interface) left as they were. The originals are in git history before this commit. The owner uploads the five images to Steam by hand; not read on the page.
