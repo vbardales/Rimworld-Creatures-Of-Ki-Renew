@@ -5,6 +5,7 @@ Work not yet done. State is in [STATUS.md](STATUS.md), tests in [TESTING.md](TES
 ## Now
 
 - **Nothing in flight.** 1.1.0 is published (RimWorld 1.7 declared, load tested only). Not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
+- **Teshi people, as a Biotech xenotype (owner, 2026-10-15).** Add, with Biotech genes, the humanlike race that went with the teshi in the original Creatures of Ki. Not started: read the original mod to see what that race was (sources: upstream `emipa606/CreaturesOfKi`, `ATTRIBUTION.md`), then scope it (xenotype and genes only, or a new race), the dependency on the Biotech DLC (optional or required), and the new tests. It is a new version (minor), through the whole chain.
 - **Gallery filter.** A ticket on this mod excludes `11-workshop-captures` and `12-workshop-captures-v2` (`!11-workshop-captures !12-workshop-captures-v2`) unless it uses `wsl-deps.sanctuary.map`: the gallery scenarios fail on any other map.
 
 ## Parked
