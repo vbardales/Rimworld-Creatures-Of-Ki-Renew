@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: dormant
+workflow_stage: dormant[1.1.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -37,7 +37,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
+protocols_read_sha: 730ee92b2ee520dd415b7fd71180b3b859538aac
 ---
 
 # Creatures of Ki - Teshi Renew — status
