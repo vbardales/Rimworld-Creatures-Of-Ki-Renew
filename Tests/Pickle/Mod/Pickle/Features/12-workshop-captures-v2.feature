@@ -209,6 +209,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the camera root size is set to 2.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
