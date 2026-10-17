@@ -26,7 +26,7 @@ workshop:     3806709627
 version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 was tag v1.0.1)
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
-session:      local_cdb49a53-4709-450a-a794-ed6ec0aff3ec
+session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-10-15, dormant: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
