@@ -8,7 +8,7 @@ in game.
 
 ### Added
 
-- RimWorld 1.7 support: `supportedVersions` declares `1.7` besides `1.6`. The mod loads on RimWorld 1.7.4976 without a warning or an error (Pickle, English, `01-loads`); the other scenarios were not played on 1.7, and the French texts could not be (no French pack on 1.7 yet).
+- RimWorld 1.7 support: `supportedVersions` declares `1.7` besides `1.6`. The mod loads on RimWorld 1.7.4976 without a warning or an error (Pickle, English, `01-loads`); the other scenarios were not played on 1.7, and the French texts could not be played (no French pack on 1.7 yet).
 
 ### Changed
 
