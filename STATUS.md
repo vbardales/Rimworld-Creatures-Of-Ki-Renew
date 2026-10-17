@@ -39,7 +39,6 @@ echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 protocols_read_sha: 730ee92b2ee520dd415b7fd71180b3b859538aac
 ---
-
 # Creatures of Ki - Teshi Renew — status
 
 ## Dated sections (folded)
@@ -84,35 +83,35 @@ Full text in `docs/runs/status-history.md`, section "Folded from STATUS.md, 2026
 
 ## Earlier state
 
-The state of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon and Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
+State of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon, Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
 
 ## Identity and title
 
-The mod name is `Creatures of Ki - Teshi Renew`; its packageId is `nelim.creaturesofki` (renamed from
-`nelim.creaturesofkirenew` on 2026-09-28, before anything public carried it). The suffix `Teshi Renew` already distinguishes
-this animal-only continuation from the original Creatures of Ki. RimWorld 1.6 is declared in About.xml. Both the About URL
-and the description contain the GitHub repository link.
+Mod name `Creatures of Ki - Teshi Renew`; packageId `nelim.creaturesofki` (renamed from
+`nelim.creaturesofkirenew` 2026-09-28, before anything public carried it). Suffix `Teshi Renew` already distinguishes
+this animal-only continuation from original Creatures of Ki. RimWorld 1.6 declared in About.xml. About URL
+and description both contain GitHub repository link.
 
 ## License and justification
 
-**MIT**, classified `open`. The repository's LICENSE records copyright 2020 Mlie and the upstream source
-https://github.com/emipa606/CreaturesOfKi. This continuation inherits the teshi assets and definitions from Shooki and Mlie;
-it is not wholly original work. The local license offers Nelim's extraction and 1.6 port under the same MIT terms.
-ATTRIBUTION.md records provenance and changes. LICENSE and Mod/LICENSE are byte-identical (SHA-256 checked on 2026-09-12).
+**MIT**, classified `open`. Repo LICENSE records copyright 2020 Mlie and upstream source
+https://github.com/emipa606/CreaturesOfKi. Continuation inherits teshi assets and definitions from Shooki and Mlie;
+not wholly original work. Local license offers Nelim's extraction and 1.6 port under same MIT terms.
+ATTRIBUTION.md records provenance and changes. LICENSE and Mod/LICENSE byte-identical (SHA-256 checked 2026-09-12).
 
-GitHub labels our LICENSE `Other` / `NOASSERTION` rather than MIT, probably because of the provenance appendix (not a verified
-diagnosis); the declared license stays MIT and `licence_spdx` records the declared terms. The upstream
-`emipa606/CreaturesOfKi` LICENSE.md contains the MIT text, copyright 2020 Mlie (checked 2026-09-12). The upstream Steam page
-(2726461020) announces no further support and shows no explicit MIT grant or prohibition; the reason for stopping is
-unspecified and original asset permissions are only partly traced (the linked original item 1726422863 returned an error).
-`visibility: public` describes repository access; `licence: open` rests on the published upstream MIT grant and the local
-port's explicit MIT statement, not on public access alone.
+GitHub labels our LICENSE `Other` / `NOASSERTION`, not MIT, probably due to provenance appendix (not verified
+diagnosis); declared license stays MIT, `licence_spdx` records declared terms. Upstream
+`emipa606/CreaturesOfKi` LICENSE.md contains MIT text, copyright 2020 Mlie (checked 2026-09-12). Upstream Steam page
+(2726461020) announces no further support, shows no explicit MIT grant or prohibition; reason for stopping
+unspecified, original asset permissions only partly traced (linked original item 1726422863 returned error).
+`visibility: public` describes repo access; `licence: open` rests on published upstream MIT grant and local
+port's explicit MIT statement, not public access alone.
 
 
-**WSL cleanup, 2026-10-15 (14.c).** Nothing removed: the two optional Workshop mods this mod's passes fetched, 3238353862 (ADS2) and 2269731409 (Nocturnal Animals), are still named by the `wsl-deps` of other mods (at least 10 and 9; ACertainSeries, AlphaMythology, ASlothMod, DustBunnies, Ebbbs, Dalmatians and others), so they stay. The Ticket Manager was asked for a slot and did not answer; the machine lock was free and the queue empty at the check, and nothing was deleted. Protocols re-read: AUDIT.md 14.c (cleanup message gives the owner the Workshop links to unsubscribe from), USE_THIS_INSTEAD.md (this mod's row `posted`). Check-Status.ps1 run under pwsh: 0 error, 0 warning.
+**WSL cleanup, 2026-10-15 (14.c).** Nothing removed: two optional Workshop mods this mod's passes fetched, 3238353862 (ADS2) and 2269731409 (Nocturnal Animals), still named by `wsl-deps` of other mods (at least 10 and 9; ACertainSeries, AlphaMythology, ASlothMod, DustBunnies, Ebbbs, Dalmatians and others), so stay. Ticket Manager asked for slot, no answer; machine lock free and queue empty at check, nothing deleted. Protocols re-read: AUDIT.md 14.c (cleanup message gives owner Workshop links to unsubscribe), USE_THIS_INSTEAD.md (this mod's row `posted`). Check-Status.ps1 run under pwsh: 0 error, 0 warning.
 
-**Gallery subtitles, 2026-10-15 (owner's request).** English movie-style subtitles (white text, black outline, centred at the bottom) drawn into `Art/Gallery/1-portrait.jpg` to `5-asleep.jpg`; `0-preview.png` and `6-the-infirmary-health-tab.jpg` (interface) left as they were. The originals are in git history before this commit. The owner uploads the six images to Steam by hand; not read on the page.
+**Gallery subtitles, 2026-10-15 (owner's request).** English movie-style subtitles (white text, black outline, centred at bottom) drawn into `Art/Gallery/1-portrait.jpg` to `5-asleep.jpg`; `0-preview.png` and `6-the-infirmary-health-tab.jpg` (interface) untouched. Originals in git history before this commit. Owner uploads six images to Steam by hand; not read on page.
 
-**Echo reading, 2026-10-15.** `Art/Gallery/` changed since `df1a839` only by the subtitles; the six captioned images were each opened and read (text legible, no animal or interface element hidden except the small `Nelim` label on image 6). `echo_review_sha` moved to `5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df`.
+**Echo reading, 2026-10-15.** `Art/Gallery/` changed since `df1a839` only by subtitles; six captioned images each opened and read (text legible, no animal or interface element hidden except small `Nelim` label on image 6). `echo_review_sha` moved to `5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df`.
 
-**Review by ChatGPT (Codex) and owner's validation, 2026-10-15.** Taken: `PUBLICATION.md` "Dependencies and DLC" said `supportedVersions` 1.6 only, now 1.6 and 1.7 (`1212abc` + next commit). Not changed: `FRENCH_REVIEW.md` says no source language is recorded and the Original column repeats the English: true, generated file, a renew whose source is English; its `?` column stays empty, the owner's reading of the French is hers (2026-10-10 in the chat, no French text changed in 1.1.0). Optional style point on `EggTeshiUnfertilized.description` ("bien meilleur" against the English "much, much better"): not applied, it changes `Mod/`. The owner validated the variant "bien, bien meilleur" (put in BACKLOG.md for the next version, not applied now) and the word `kit` in the gallery subtitle ("The kit hatches beside its mother.", her word, 2026-10-15).
+**Review by ChatGPT (Codex) and owner's validation, 2026-10-15.** Taken: `PUBLICATION.md` "Dependencies and DLC" said `supportedVersions` 1.6 only, now 1.6 and 1.7 (`1212abc` + next commit). Not changed: `FRENCH_REVIEW.md` says no source language recorded and Original column repeats English: true, generated file, renew whose source is English; its `?` column stays empty, owner's reading of French is hers (2026-10-10 in chat, no French text changed in 1.1.0). Optional style point on `EggTeshiUnfertilized.description` ("bien meilleur" vs English "much, much better"): not applied, changes `Mod/`. Owner validated variant "bien, bien meilleur" (put in BACKLOG.md for next version, not applied now) and word `kit` in gallery subtitle ("The kit hatches beside its mother.", her word, 2026-10-15).
