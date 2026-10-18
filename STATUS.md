@@ -82,22 +82,21 @@ Full text in `docs/runs/status-history.md`, section "Folded from STATUS.md, 2026
 - Non-regression 1.1.0 complete, 2026-10-15
 - Use This Instead posted, 2026-10-15
 
-## Shotlist, 2026-10-18 (gallery reopened, `shootGallery[1.1.1]`, AUDIT 9.0)
+## Shotlist, 2026-10-18 (gallery reopened, `shootGallery[1.1.1]`, AUDIT 9.0, revised after Audit's reading)
 
-Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captures-v3.feature`. Nothing played. Series score **4 of 5**. Published gallery unchanged; new images stay candidates until the owner agrees.
+Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captures-v3.feature`. Nothing played. Series score **4 of 5**, every scene 4 or 5 (criteria a to k of `GALLERY.md`). Weather Clear set and written in every scene; Nelim has one hairstyle (`Bob`, dark brown) and a different outfit and face in each of her six scenes. Carried item of image 4: `Hay`, vanilla Core, found in `Items_Resource_RawPlant.xml`. Published gallery unchanged; new images stay candidates until the owner agrees.
 
-| # | Place, time | Subject | Estimate | Main risk | Verdict after run |
-|---|---|---|---|---|---|
-| 1 | water-garden 16h00 | mother asleep on a large bed, Nelim watches | 4 | Nelim pose and face beside the bed | |
-| 2 | water-garden 16h30 | awake, close front portrait | 5 | none, hole removed by framing | |
-| 3 | water-garden 17h00 | parents nose to nose, lantern, daylilies, Nelim at the edge | 4 | hearts timing, three living things in frame | |
-| 4 | calm-zone 17h30 | mother on bed in yellow grass, egg in box, Nelim brings straw | 4 | Nelim and lantern overlap, carried item def unverified | |
-| 5 | calm-zone 18h00 | hatching, kit beside mother, root 2.3 | 4 | kit small and pale on yellow grass | |
-| 6 | calm-zone 18h30 | Nelim feeds the kit by hand | 4 | earlier capture dropped, reason lost: play alone first | |
-| 7 | hut 19h30 | Health tab, cut claw and bionic arm | 5 | none, published image stands | |
+| # | Place, time | Subject | Nelim (outfit, face) | Est. | Risk and plan | Verdict after run |
+|---|---|---|---|---|---|---|
+| 1 | water-garden 16h00 | mother asleep on a large bed, Nelim watches | cream shirt, brown trousers, neutral | 4 | face and pose beside the bed: run alone first, redo the pose | |
+| 2 | water-garden 16h30 | awake, close front portrait | not in frame | 5 | none, camera moves east of the hole | |
+| 3 | water-garden 17h00 | parents nose to nose, lantern, daylilies | sage-green collar shirt, dark brown trousers, own smirk | 4 | crowding: Nelim at the edge, root 3.0 if it crowds | |
+| 4 | calm-zone 17h30 | mother on bed in yellow grass, egg in box, Nelim brings hay | rust shirt, tan jacket, soft smile | 4 | lantern overlap, small hay: Nelim at (210, 185), fallback Meat_Chicken | |
+| 5 | calm-zone 18h00 | hatching, kit beside mother, root 2.3 | teal collar shirt, cream tuque, brows up and smile | 4 | kit small on yellow: daylilies behind, root 2.0 without Nelim | |
+| 6 | calm-zone 18h30 | Nelim feeds the kit by hand | mustard shirt, brown trousers, smile | 4 | earlier capture dropped, reason lost: play alone first | |
+| 7 | hut 19h30 | Health tab, cut claw and bionic arm | white shirt, normal face (published) | 5 | none, published image stands | |
 
-Read against the second series: Nelim in none of the five story images, burrow hole at (149, 173) in images 1, 2, 5, kit small in the hatching. Weak points of the series: images 3, 4, 6.
-
+Read against the second series: Nelim in none of the five story images, burrow hole at (149, 173) in images 1, 2, 5, kit small in the hatching.
 ## Earlier state
 
 State of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon, Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
