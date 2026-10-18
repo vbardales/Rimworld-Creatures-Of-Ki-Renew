@@ -65,7 +65,7 @@
 #     the egg hatches, the kit beside its mother; says: it is born at dusk, by the mod's own hatching
 #     close, root 2.3 (series 2 held the kit small at 1.9), kit and mother both in frame, kit in front of the box, Nelim's hands at the left edge
 #     the kit and the mother, both from the front; Nelim stands facing East at (211, 185), watching
-#     Nelim: teal CollarShirt (70, 128, 132), dark Pants (60, 52, 48), cream Tuque (232, 224, 204), Bob under it, raised brows and a smile (BrowRaised, MouthSmile)
+#     Nelim: teal CollarShirt (70, 128, 132), dark Pants (60, 52, 48), no hat (Audit's hat rule, 2026-10-18: a Bob under a hat hides), Bob, raised brows and a smile (BrowRaised, MouthSmile)
 #     same nest as image 4 plus two Plant_Daylily fully grown at (213, 184), (213, 185); the egg gone; the same lantern
 #     hatcher steps played in series 2; story scene; "The kit hatches beside its mother."
 #     ESTIMATE 4. Risk: the kit reads small and pale on the yellow grass. Plan: root 2.3 and the daylilies' orange behind it for contrast; if it still reads small, root 2.0 with Nelim dropped from the frame (her image is 6).
@@ -97,4 +97,48 @@
 # MODS (pass map wsl-deps.sanctuary.map, nothing challenged): Animal.BedsNew 3107972819, Mlie.StickLantern 2024351846, the body and facial mods of the Sanctuary map, ADS2 (image 7 only).
 # STEPS: all exist (series 2); no new step is asked of NPT. Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!13-workshop-captures-v3`).
 @review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2
-Feature: the images of the Workshop page, third series (shotlist only, no scenario yet)
+Feature: the images of the Workshop page, third series (image 6 written first, the others follow)
+
+  Background:
+    Given the save "Nelims-tribe" is loaded
+    And I set the weather to "Clear"
+
+  # Image 6, 18h30, Clear: Nelim feeds the kit by hand, mustard shirt, Bob, smile; bare corner, daylilies in a pot.
+  Scenario: 18h30, Nelim feeds the kit by hand at a bare corner with a pot of daylilies
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 6310 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "PlantPot" at (209, 183)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (209, 183) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (211, 183) fully grown
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (214, 176, 76)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 76, 60)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Teshi Renew: a female kit teshi stands at (210, 185)
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
+    And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
+    And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
+    When Teshi Renew: the camera looks at (210, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.2
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And I take a screenshot "workshop3-6-the-first-meal"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
