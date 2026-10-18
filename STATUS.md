@@ -29,6 +29,7 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-10-18, gallery reopened by owner (shootGallery[1.1.1], starts with shotlist); before: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
+  - shootGallery[1.1.1]: shotlist written and scored 4/5 (13-workshop-captures-v3.feature header, table in "Shotlist" below); next: write scenarios from it, one ticket for image 6 first, then the rest, then read each capture against its line.
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
   - disclosed gaps against AUDIT.md (loop-declared stages, dispatch before lint, 1.7 declared before a green run, no `TEST_SCENARIOS.md`): in docs/runs/status-history.md, "AUDIT.md read in full, 2026-10-15".
@@ -80,6 +81,22 @@ Full text in `docs/runs/status-history.md`, section "Folded from STATUS.md, 2026
 - AUDIT.md read in full, 2026-10-15
 - Non-regression 1.1.0 complete, 2026-10-15
 - Use This Instead posted, 2026-10-15
+
+## Shotlist, 2026-10-18 (gallery reopened, `shootGallery[1.1.1]`, AUDIT 9.0)
+
+Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captures-v3.feature`. Nothing played. Series score **4 of 5**. Published gallery unchanged; new images stay candidates until the owner agrees.
+
+| # | Place, time | Subject | Estimate | Main risk | Verdict after run |
+|---|---|---|---|---|---|
+| 1 | water-garden 16h00 | mother asleep on a large bed, Nelim watches | 4 | Nelim pose and face beside the bed | |
+| 2 | water-garden 16h30 | awake, close front portrait | 5 | none, hole removed by framing | |
+| 3 | water-garden 17h00 | parents nose to nose, lantern, daylilies, Nelim at the edge | 4 | hearts timing, three living things in frame | |
+| 4 | calm-zone 17h30 | mother on bed in yellow grass, egg in box, Nelim brings straw | 4 | Nelim and lantern overlap, carried item def unverified | |
+| 5 | calm-zone 18h00 | hatching, kit beside mother, root 2.3 | 4 | kit small and pale on yellow grass | |
+| 6 | calm-zone 18h30 | Nelim feeds the kit by hand | 4 | earlier capture dropped, reason lost: play alone first | |
+| 7 | hut 19h30 | Health tab, cut claw and bionic arm | 5 | none, published image stands | |
+
+Read against the second series: Nelim in none of the five story images, burrow hole at (149, 173) in images 1, 2, 5, kit small in the hatching. Weak points of the series: images 3, 4, 6.
 
 ## Earlier state
 
