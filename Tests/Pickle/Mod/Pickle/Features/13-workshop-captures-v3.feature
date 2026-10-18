@@ -5,7 +5,7 @@
 # the dark burrow hole at (149, 173) of water-garden shows in three of them (1, 2, 5), a known anomaly of the place (GALLERY-PROPS.md: keep clear);
 # the kit of the hatching sits small in its box. The third series answers those three.
 #
-# STORY (one evening, Nelim is the protagonist, the teshi family are her guests): on a clear late afternoon Nelim comes down to the pond to watch over a teshi that
+# STORY (one evening, Nelim is the protagonist, the teshi family are her guests; the day is the fixture's own, 4th of September 5500, permanent summer): on a clear late afternoon Nelim comes down to the pond to watch over a teshi that
 # sleeps by day, and stays with it through the dusk: the waking, the courting of the pair, the nest she helps to build with hay, the egg, the hatching,
 # the first meal from her hand, and the night at the tea-house infirmary where a cut claw meets a bionic arm.
 # TIME: one start hour (16h), then 30 game minutes per image (1 250 ticks, cumulative), as the second series. Every Scenario reloads the save, so each sets 16h again,
