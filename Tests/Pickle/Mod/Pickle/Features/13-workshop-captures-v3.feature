@@ -1,5 +1,5 @@
 # THIRD SERIES (shotlist of 2026-10-18, revised the same day after Audit's reading, gallery reopened for 1.1.1, AUDIT 9.0, GALLERY.md "Shotlist : critères d'une scène à 4/5"). NOTHING IS PLAYED YET:
-# no Scenario below until every scene is 4 or more (it is). Candidates only: the published gallery (1-portrait to 6-the-infirmary-health-tab) changes only with Virginie's word.
+# Image 6 played green 2026-10-19 (verdict 4); scenarios of images 1 to 5 written 2026-10-20, one ticket each; image 7 is the published image, not replayed. Candidates only: the published gallery (1-portrait to 6-the-infirmary-health-tab) changes only with Virginie's word.
 #
 # WHAT THE SECOND SERIES LACKED (read against its own images, 2026-10-18): Nelim, the protagonist of every Sanctuary series, is in none of its five story images;
 # the dark burrow hole at (149, 173) of water-garden shows in three of them (1, 2, 5), a known anomaly of the place (GALLERY-PROPS.md: keep clear);
@@ -138,6 +138,210 @@ Feature: the images of the Workshop page, third series (image 6 written first, t
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
     And I take a screenshot "workshop3-6-the-first-meal"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 1, 16h00, Clear: Nelim keeps watch over the mother asleep on a large bed, west bank. No pot: a pot and its plant cannot share a cell (run 551e).
+  Scenario: 16h00, Nelim keeps watch over the teshi asleep on the west bank
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 60 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (156, 172)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 174) fully grown
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" stands at (153, 172) facing East
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (236, 226, 200)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (96, 80, 62)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
+    And Teshi Renew: the female adult teshi lies down to sleep
+    And Nelim's Pickle Tools: "Nelim" stands at (153, 172) facing East
+    When Teshi Renew: the camera looks at (157, 172) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.5
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And I take a screenshot "workshop3-1-the-watch"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 2, 16h30, Clear: the mother awake, a close front portrait; Nelim not in frame. Camera east of the burrow hole.
+  Scenario: 16h30, the teshi awake, a close portrait east of the burrow hole
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 1310 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
+    When Teshi Renew: the camera looks at (156, 172) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 1.8
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And I take a screenshot "workshop3-2-awake"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 3, 17h00, Clear: the pair nose to nose, hearts, a lit lantern, daylilies; Nelim at the bottom-left edge, her own smirk.
+  Scenario: 17h00, the parents nose to nose by a lit lantern while Nelim watches
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 2560 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (159, 171)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (159, 171) is lit
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (154, 174) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (154, 175) fully grown
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" stands at (155, 174) facing North
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
+    And Teshi Renew: a male adult teshi belonging to the colony stands at (158, 172)
+    And Nelim's Pickle Tools: "Nelim" stands at (155, 174) facing North
+    When Teshi Renew: the camera looks at (157, 172) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.5
+    And Teshi Renew: the female adult teshi and the male adult teshi mate
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Sanctuary: Nelim has her own face
+    And I take a screenshot "workshop3-3-the-parents"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 4, 17h30, Clear: the mother on her bed in yellow grass, the egg in its box, Nelim bringing hay.
+  Scenario: 17h30, the mother at her nesting box while Nelim brings hay
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 3810 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
+    And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
+    And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" stands at (210, 185) facing East
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (176, 98, 64)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (172, 142, 100)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (92, 74, 58)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
+    And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
+    And Nelim's Pickle Tools: "Nelim" stands at (210, 185) facing East
+    And Teshi Renew: the colonist "Nelim" carries 1 "Hay"
+    When Teshi Renew: the camera looks at (213, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 3.2
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidSimple"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And I take a screenshot "workshop3-4-the-nesting-box"
+    And Teshi Renew: the camera's zoom limits are restored
+    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no errors were logged
+
+  # Image 5, 18h00, Clear: the egg hatches by the game's own hatcher, kit and mother in front, Nelim watching, no hat.
+  Scenario: 18h00, the egg hatches and Nelim watches the kit beside its mother
+    Given I set the hour to 16
+    And game speed is ultrafast
+    And I wait 5060 ticks
+    And game speed is paused
+    And Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 184)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 185)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
+    And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (213, 184) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (213, 185) fully grown
+    And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
+    And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
+    When Teshi Renew: the eggs on the map are one tick from hatching
+    And game speed is ultrafast
+    And Teshi Renew: I wait for the eggs to hatch
+    And game speed is paused
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: "Nelim" stands at (211, 185) facing East
+    And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (70, 128, 132)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (60, 52, 48)
+    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
+    And Nelim's Pickle Tools: I let 120 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (211, 185) facing East
+    And Teshi Renew: I let 10 frames pass
+    And Teshi Renew: the camera looks at (214, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.3
+    And Teshi Renew: I let 10 frames pass
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" brows are "BrowRaised"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And I take a screenshot "workshop3-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
