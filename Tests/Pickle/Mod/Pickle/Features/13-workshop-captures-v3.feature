@@ -76,7 +76,7 @@
 #     root 2.2, Nelim at the left, the kit at the centre, the mother at the right, the lantern top-right
 #     the kit approaches, the mother looks on (lies by the pot); Nelim carries 1 `Meat_Chicken` and faces East
 #     Nelim: mustard BasicShirt (214, 176, 76), brown Pants (92, 76, 60), Bob, a smile (MouthSmile, LidCheerful)
-#     DR_StickLantern lit (213, 186); PlantPot with Plant_Daylily fully grown at (209, 183), a second Plant_Daylily at (211, 183); no nest grass (the corner is bare, another look)
+#     DR_StickLantern lit (213, 186); Plant_Daylily fully grown at (209, 183) and (211, 183) (no pot: a pot and its plant cannot share a cell, run 551e); no nest grass (the corner is bare, another look)
 #     steps all played in series 2 (the scene was played, not kept, reason not recorded); story scene; "Nelim feeds the kit by hand."
 #     ESTIMATE 4. Risk: the earlier capture was dropped with no recorded reason. Plan: play it alone as the first ticket, open it, and choose between the two renderings before anything else is filed.
 #
@@ -104,7 +104,7 @@ Feature: the images of the Workshop page, third series (image 6 written first, t
     And I set the weather to "Clear"
 
   # Image 6, 18h30, Clear: Nelim feeds the kit by hand, mustard shirt, Bob, smile; bare corner, daylilies in a pot.
-  Scenario: 18h30, Nelim feeds the kit by hand at a bare corner with a pot of daylilies
+  Scenario: 18h30, Nelim feeds the kit by hand at a bare corner with daylilies
     Given I set the hour to 16
     And game speed is ultrafast
     And I wait 6310 ticks
@@ -113,7 +113,6 @@ Feature: the images of the Workshop page, third series (image 6 written first, t
     And Nelim's Sanctuary: the animals are removed from the sanctuary "calm-zone"
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
-    And Nelim's Pickle Tools: I place the decor "PlantPot" at (209, 183)
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (209, 183) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (211, 183) fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
