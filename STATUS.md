@@ -29,6 +29,8 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-10-18, gallery reopened by owner (shootGallery[1.1.1], starts with shotlist); before: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
+  - ticket f5d5 in the queue (image 6, `-EvidenceDir Tests/Pickle/Inbox/gallery-v3-6b`, tree on c4756e1+, lis without pot after run 551e failed "cell already holds PlantPot"). At RUN_DONE: read `summary.json` `total` first (queue showed tests=36 for a 1-scenario filter: if 36, filter did not hold, refile narrower), open the screenshot, judge it against 4, put verdict in the Shotlist table; then write the other six scenarios in 13-workshop-captures-v3.feature one ticket each, results into Inbox/, minify green proofs to Evidence/ with RELEASE.md.
+  - evidence: migrated through Inbox 2026-10-19, Evidence/ holds 6 folders 1.2 MB each with RELEASE.md; no dated pickle-reports-archive folder is this mod's; Parked/ none.
   - shootGallery[1.1.1]: shotlist written and scored 4/5 (13-workshop-captures-v3.feature header, table in "Shotlist" below); next: write scenarios from it, one ticket for image 6 first, then the rest, then read each capture against its line.
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
