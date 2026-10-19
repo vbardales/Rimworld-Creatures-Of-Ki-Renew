@@ -30,7 +30,7 @@ session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-10-18, gallery reopened by owner (shootGallery[1.1.1], starts with shotlist); before: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
   - ticket f5d5 DONE green, image 6 judged 4 (Shotlist table); next: other six scenarios, one ticket each. Was: (image 6, `-EvidenceDir Tests/Pickle/Inbox/gallery-v3-6b`, tree on c4756e1+, lis without pot after run 551e failed "cell already holds PlantPot"). At RUN_DONE: read `summary.json` `total` first (queue showed tests=36 for a 1-scenario filter: if 36, filter did not hold, refile narrower), open the screenshot, judge it against 4, put verdict in the Shotlist table; then write the other six scenarios in 13-workshop-captures-v3.feature one ticket each, results into Inbox/, minify green proofs to Evidence/ with RELEASE.md.
-  - evidence: migrated through Inbox 2026-10-19, Evidence/ holds 6 folders 1.2 MB each with RELEASE.md; no dated pickle-reports-archive folder is this mod's; Parked/ none.
+  - evidence: migrated again through Inbox 2026-10-20, Prune-Evidence -Apply; Evidence/ holds 7 minified green folders, 1.4 MB total, each with RELEASE.md; Inbox/ empty; Parked/ none; none of the 9 pickle-reports-archive folders is this mod's (checked junit/Player.log); no report folder in Tests/ or docs/runs/ (lines only).
   - shootGallery[1.1.1]: shotlist written and scored 4/5 (13-workshop-captures-v3.feature header, table in "Shotlist" below); next: write scenarios from it, one ticket for image 6 first, then the rest, then read each capture against its line.
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
@@ -40,7 +40,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 4d49329d01ba3794ace97b7e353ee49809bf695d
+protocols_read_sha: 440425ae0c9b0bdcfee16bfcb1b34fade15f0031
 ---
 # Creatures of Ki - Teshi Renew — status
 
