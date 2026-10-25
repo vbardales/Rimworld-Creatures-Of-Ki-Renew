@@ -1,101 +1,106 @@
-# THIRD SERIES (shotlist of 2026-10-18, revised the same day after Audit's reading, gallery reopened for 1.1.1, AUDIT 9.0, GALLERY.md "Shotlist : critères d'une scène à 4/5"). NOTHING IS PLAYED YET:
-# Image 6 played green 2026-10-19 (verdict 4); scenarios of images 1 to 5 written 2026-10-20, one ticket each; image 7 is the published image, not replayed. Candidates only: the published gallery (1-portrait to 6-the-infirmary-health-tab) changes only with Virginie's word.
+# THIRD SERIES, SHOTLIST REWORKED 2026-10-25 against GALLERY.md of 2026-10-23 and 2026-10-25 (AUDIT 9.0). THE SCENARIOS BELOW ARE STILL THE 2026-10-20 VERSION: rewrite them from this header before any ticket.
+# Candidates only: the published gallery (1-portrait to 6-the-infirmary-health-tab) changes only with Virginie's word. Image 7 is the published image, not replayed.
+# Previous run (verdicts on the 2026-10-18 plan): image 3 3.5 (Nelim seen from behind), 4 3 (hay over her face), 5 2 (empty box, no kit in frame), 6 4 (run f5d5, Evidence/gallery-v3-6b); images 1 and 2 never produced a report.
 #
-# WHAT THE SECOND SERIES LACKED (read against its own images, 2026-10-18): Nelim, the protagonist of every Sanctuary series, is in none of its five story images;
-# the dark burrow hole at (149, 173) of water-garden shows in three of them (1, 2, 5), a known anomaly of the place (GALLERY-PROPS.md: keep clear);
-# the kit of the hatching sits small in its box. The third series answers those three.
-#
-# STORY (one evening, Nelim is the protagonist, the teshi family are her guests; the day is the fixture's own, 4th of September 5500, permanent summer): on a clear late afternoon Nelim comes down to the pond to watch over a teshi that
-# sleeps by day, and stays with it through the dusk: the waking, the courting of the pair, the nest she helps to build with hay, the egg, the hatching,
-# the first meal from her hand, and the night at the tea-house infirmary where a cut claw meets a bionic arm.
-# TIME: one start hour (16h), then 30 game minutes per image (1 250 ticks, cumulative), as the second series. Every Scenario reloads the save, so each sets 16h again,
+# STORY (one evening, Nelim is the protagonist, the teshi family are her guests; the day is the fixture's own, 4th of September 5500, permanent summer): on a clear late afternoon Nelim comes down to the pond to
+# watch over a teshi that sleeps by day, and stays with it through the dusk: the waking, the courting of the pair, the straw she carries to the nest, the egg, the hatching, the first meal from her hand, and the night
+# at the tea-house infirmary where a cut claw meets a bionic arm. She always moves or faces East: the pond is at x about 156, the nest at x about 213, so the series reads as one journey from the bank to the nest.
+# TIME: one start hour (16h), then 30 game minutes per image (1 250 ticks, cumulative): waits 60, 1310, 2560, 3810, 5060, 6310 ticks; image 7 at 19h30 (8810). Every Scenario reloads the save, so each sets 16h again,
 # waits its own total, then places what lives in the scene after the wait. The teshi is crepuscular: asleep at 16h, awake and active from 16h30.
-# WEATHER: `I set the weather to "Clear"` in the Background and held on purpose for the whole series: the dusk comes from the hour and the lanterns, and rain or fog would hide
-# the animals and the pond (decided 2026-10-18; every scene below says it again so none is left to chance).
-# NELIM: one hairstyle for the whole evening, `Bob`, dark brown hair rgb (62, 44, 32), brown eyes (fixture default); she dresses for each hour, so the outfit changes in every scene (colours below),
-# and so does her expression. Steps: `body type is Female`, `wears <def> dyed rgb`, `hairstyle is`, `hair colour is rgb`, face parts (`Nelim has her own face` for the smirk).
-# FRAMING RULE of water-garden: the hole at (149, 173) stays out of frame, so every pond image is centred east of x 154 at root size 3.5 or less.
-# FRONT VIEWS: images 2, 4 and 5 show the teshi from the front; image 5 shows the kit's face.
-# DECOR: never the same set twice; each image builds its own and removes it (`the decor is removed`). Images 4, 5 and 6 share a corner of the calm-zone but not their decor.
+# WEATHER: `I set the weather to "Clear"` in the Background, held on purpose for the whole series (dusk comes from the hour and the lanterns; rain or fog would hide the animals). The lit lantern is the dusk marker: none in images 1 and 2, lit from image 3.
+# NELIM: ONE outfit for the whole evening (GALLERY.md criterion d, continuity): Apparel_CollarShirt dyed rgb (126, 150, 118) sage green, Apparel_Pants dyed rgb (70, 56, 44) dark brown, Bob, hair rgb (62, 44, 32),
+#   eyes rgb (92, 58, 36), smile by default (MouthSmile, LidCheerful, face kit neutral, expression "normal" set last, map at 20 degrees). Image 5 adds BrowRaised. Sage keeps her readable at 268 px against brown soil and yellow grass.
+#   The only change is image 7 (published): a clean white BasicShirt, she changed to tend the injured teshi. No jacket (Opus: it would vanish against the yellow grass, and the story does not call for it). No hat in the series: no hat-hair mod.
+# FRAMING RULE of water-garden: the hole at (149, 173) and the steam geyser at (150, 173) stay out of frame, so every pond frame starts at x 152 or more.
+# FRONT VIEWS: images 2, 4, 5 and 6 show the teshi from the front; image 5 shows the kit's face.
+# DECOR: each image builds its own and it is removed after the scenario (StageDecor). Same bed cell (156, 172) in images 1 to 3 (empty in 3: where she slept); images 4 to 6 share the calm-zone corner and the lantern cell (213, 186).
+# ANIMAL DRESS: not used. No apparel mod loaded fits the teshi body (Animal Apparel is not in the Sanctuary map); a dressed teshi would be invented, so the shotlist leaves them bare.
+# GESTURES: "game paused mid-play". A forced walk is drawn only while ticks run, so every mid-stride is: place the pawn, `forced to walk to`, `I let N ticks pass`, pause. 13 ticks per cell at 4.6 cells per second.
 #
-# SHOTLIST. Fields: index and file | place, hour, weather, time passing | subject, what it says | composition | living things and action | Nelim (outfit, hair, face) |
-#           decor with defNames | mods and steps | type, subtitle | ESTIMATE /5, risk, plan against the risk
+# SHOTLIST. Fields: index and file | place, hour, frame | subject, instant (just before / just after) | how the gesture is obtained | living things | Nelim | decor with defNames | mods and steps | type, subtitle | ESTIMATE /5, risk, plan
 #
 #  1  workshop3-1-the-watch
-#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only (the first image of the series)
-#     the mother asleep on a large bed, Nelim keeping watch; says: by day she sleeps, and someone watches over her
-#     wide-ish, root 3.5, frame centred on (157, 172), bed centre-right, Nelim at the left edge, lily pads behind; no hole in frame
-#     the mother asleep (lies down to sleep), Nelim stands facing East at (153, 172), a quiet watcher
-#     Nelim: cream BasicShirt (236, 226, 200), brown Pants (96, 80, 62), Bob, calm neutral face (MouthNormal, held neutral)
-#     GSAnimalBedBigPrestige at (156, 172); a flower pot with Plant_Daylily fully grown at (153, 174)
-#     Animal.BedsNew; steps all played in series 2; story scene; "Nelim keeps watch over the sleeping teshi."
-#     ESTIMATE 4. Risk: Nelim's face and pose beside the bed (new combination). Plan: face steps proven on the Sanctuary; run the scene on its own first, open it, redo the pose if she hides the bed.
+#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; WIDE, root 4.5, centre (160, 172), frame x 152 to 168 (the opening image: it sets the place)
+#     the mother asleep on a large bed, Nelim arriving at its side; says: by day she sleeps, and someone watches over her
+#     instant: Nelim has just come down the bank and slows at the bedside; next she stops and watches
+#     method: `Nelim stands at (152, 173) facing East`, `Nelim is forced to walk to (155, 173)`, `I let 14 ticks pass`, game paused: mid-stride, profile, face reads
+#     the mother asleep (lies down to sleep) on the left third; lily pads and the pond fill the right, the bank is the foreground
+#     Nelim: the evening outfit (above), smile
+#     GSAnimalBedBigPrestige at (156, 172); Plant_Daylily fully grown at (153, 175)
+#     Animal.BedsNew; steps of series 2 plus `is forced to walk to`; story scene; "Nelim comes down to the water to watch over the sleeping teshi."
+#     ESTIMATE 4. Risk: the mother is small at 268 px in a wide frame (accepted, it is the opener), geyser at the edge. Plan: frame starts at x 152; if the mother is lost, root 4.0.
 #
 #  2  workshop3-2-awake
-#     water-garden, west bank, 16h30, Clear, 1 310 ticks
-#     the mother awake, a close front portrait; says: the head, the four banded ears, the tail
-#     close, root 1.8, subject slightly left of centre, lily pads right, frame centred on (156, 172); the hole out of frame
-#     the mother awake, from the front; Nelim not in frame (an animal portrait; she is the story of the other six)
-#     decor: a single tuft of tall grass already on the bank; nothing placed
-#     steps played in series 2 (this is its image 2 recentred); story scene; "Awake, she watches the pond."
-#     ESTIMATE 5. Risk: none beyond the recentring. Plan: same shot as the accepted one, only the camera moves east.
+#     water-garden, west bank, 16h30, Clear, 1 310 ticks; TIGHT front portrait, root 1.8, centre (156, 171)
+#     the mother has just risen from the bed behind her; says: the head, the four banded ears, the tail
+#     instant: she has just woken and follows Nelim; next she steps off the bank
+#     method: `an adult animal of kind "Teshi" named "Mother" is spawned at (156, 172)` on the bed, `Nelim stands at (156, 169) facing South`, `Nelim is forced to walk to (156, 160)`, `"Mother" follows "Nelim" within 3 cells`, `I let 10 ticks pass`, pause:
+#       the mother is mid-step facing South (front view), Nelim is out of frame (frame z 169.2 to 172.8, she is at z 167 or less)
+#     Nelim: not in frame (an animal portrait; she leads the mother out of frame, so the story keeps her)
+#     decor: GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (153, 175)
+#     kind defName `Teshi` (read in Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml); steps of the Pickle Tools catalogue; story scene; "Awake, she follows Nelim down the bank."
+#     ESTIMATE 4.5. Risk: the named spawn cannot fix the sex, or `follows` does not move her. Plan B: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her (criterion e weak, estimate 4).
 #
 #  3  workshop3-3-the-parents
-#     water-garden, west bank, 17h00, Clear, 2 560 ticks
-#     the pair nose to nose, hearts, a lit lantern; says: the courting, at the start of the dusk
-#     off-centre left, root 3.5, frame centred on (157, 172), lantern bottom-right, daylilies upper left; no hole
-#     the two adults mate (hearts) in the middle; Nelim at the bottom-left edge, hands at her sides, watching the pair
-#     Nelim: sage-green CollarShirt (126, 150, 118), dark brown Pants (70, 56, 44), Bob, her own face (MouthSmirkSmile)
-#     DR_StickLantern lit at (159, 171); Plant_Daylily fully grown at (154, 174), (154, 175)
-#     Mlie.StickLantern; steps played in series 2; story scene; "The parents meet nose to nose by a lit lantern."
-#     ESTIMATE 4. Risk: three living things in one frame (hearts read, Nelim crowds). Plan: Nelim at the edge, partly cropped is fine; if it crowds, the camera goes to root 3.0 and Nelim steps out to the bank's east side.
+#     water-garden, west bank, 17h00, Clear, 2 560 ticks; MEDIUM, root 3.5, centre (158, 173), frame x 151.8 to 164.2
+#     the pair nose to nose with hearts, Nelim passing with straw; says: the courting, at the start of the dusk
+#     instant: Nelim has just walked in with an armful of straw and glances at the pair; next she walks on to the nest
+#     method: female at (158, 172), male at (160, 172), mate step; `Nelim carries 1 "Hay"`, stands at (152, 174) facing East, forced to walk to (155, 174), `I let 14 ticks pass`, pause (Nelim at row 174, two cells above the bottom edge)
+#     the two adults mate (hearts) in the middle; the empty bed at the left is where she slept
+#     Nelim: the evening outfit, smile, profile facing East, so her face reads
+#     DR_StickLantern lit at (161, 171); Plant_Daylily fully grown at (153, 171), (153, 170); GSAnimalBedBigPrestige at (156, 172) empty
+#     Mlie.StickLantern, Animal.BedsNew; story scene; "The parents meet nose to nose while Nelim passes with straw."
+#     ESTIMATE 4. Risk: the carry may drop on a forced walk. Plan: carry again after the walk step; if it still drops, she walks empty-handed and the line loses "with straw".
 #
 #  4  workshop3-4-the-nesting-box
-#     calm-zone, east of the cream square, 17h30, Clear, 3 810 ticks
-#     the mother on her bed in a nest of yellow grass, the egg in its box, Nelim bringing hay; says: she builds the nest as the light goes, and Nelim helps
-#     close and low, root 3.2, subject left of centre, lantern at left, Nelim entering from the left edge
-#     the mother from the front on her bed; Nelim carries 1 `Hay` (vanilla Core, verified in `Items_Resource_RawPlant.xml`, 2026-10-18) toward the nest
-#     Nelim: rust BasicShirt (176, 98, 64) under a tan Jacket (172, 142, 100), brown Pants (92, 74, 58), Bob, soft smile (MouthSmile, LidNormal)
-#     Plant_YellowTallGrass 3 x 5 fully grown, EggBox (217, 185), GSAnimalBedBigPrestige (215, 185), DR_StickLantern lit (213, 186)
-#     steps played in series 2 and the scene "carries 1 <def>"; story scene; "The mother settles at her nesting box, Nelim brings hay."
-#     ESTIMATE 4. Risk: Nelim and the lantern overlap on the left; hay icon small. Plan: Nelim at (210, 185) leaves the lantern's column free, root 3.2 keeps the hay at about 60 px; if it reads as nothing the carried item is Meat_Chicken as in image 6 and the line changes.
+#     calm-zone, east of the cream square, 17h30, Clear, 3 810 ticks; MEDIUM-CLOSE, root 3.2, centre (213, 185)
+#     the mother on her bed in a nest of yellow grass, the egg in its box, Nelim bringing the straw; says: she builds the nest as the light goes, and Nelim helps
+#     instant: Nelim has carried the straw from the bank and reaches the nest; next she lays it by the bed
+#     method: `Nelim carries 1 "Hay"`, stands at (208, 185) facing East, forced to walk to (212, 185), pause after about 35 ticks (mid-stride, never at the pick-up: the hay covered her face last run); she stays west of the grass at row 185
+#     the mother from the front on her bed
+#     Nelim: the evening outfit, smile
+#     Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown; EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept at the centre-left for continuity with images 5 and 6; Opus suggested (209, 187), refused)
+#     steps played in series 2; story scene; "Nelim brings straw to the mother at her nesting box."
+#     ESTIMATE 4. Risk: hay icon hides her face again. Plan: pause mid-stride facing East; plan B carried item Meat_Chicken (read in image 6) and the line becomes "brings a meal".
 #
 #  5  workshop3-5-the-hatching
-#     calm-zone, same corner, 18h00, Clear, 5 060 ticks
-#     the egg hatches, the kit beside its mother; says: it is born at dusk, by the mod's own hatching
-#     close, root 2.3 (series 2 held the kit small at 1.9), kit and mother both in frame, kit in front of the box, Nelim's hands at the left edge
-#     the kit and the mother, both from the front; Nelim stands facing East at (211, 185), watching
-#     Nelim: teal CollarShirt (70, 128, 132), dark Pants (60, 52, 48), no hat (Audit's hat rule, 2026-10-18: a Bob under a hat hides), Bob, raised brows and a smile (BrowRaised, MouthSmile)
-#     same nest as image 4 plus two Plant_Daylily fully grown at (213, 184), (213, 185); the egg gone; the same lantern
+#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.3, centre (215, 185)
+#     the egg has hatched, the kit stands below the empty box beside its mother; says: it is born at dusk, by the mod's own hatching
+#     instant: the egg has just hatched and Nelim hurries over; next she reaches the kit
+#     method: eggs one tick from hatching, wait for the hatch, THEN `a female kit teshi stands at (217, 184)` (the hatched kit wandered out of frame last run), mother at (215, 185), Nelim at (209, 185) facing East forced to walk to (212, 185), `I let 10 ticks pass`, pause
+#     the kit and the mother, both from the front; BrowRaised and a smile on Nelim, her eyes toward the kit
+#     Nelim: the evening outfit, BrowRaised, MouthSmile
+#     the nest of image 4 minus the grass at (216, 184), (217, 184) (the kit stands on bare soil for contrast), Plant_Daylily fully grown at (213, 184), (213, 185), the same lantern; the egg gone
 #     hatcher steps played in series 2; story scene; "The kit hatches beside its mother."
-#     ESTIMATE 4. Risk: the kit reads small and pale on the yellow grass. Plan: root 2.3 and the daylilies' orange behind it for contrast; if it still reads small, root 2.0 with Nelim dropped from the frame (her image is 6).
+#     ESTIMATE 4. Risk: the kit pale on yellow, or still out of frame. Plan: bare soil under it and daylilies' orange behind; root 2.0 if it reads small.
 #
-#  6  workshop3-6-the-first-meal
-#     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks
+#  6  workshop3-6-the-first-meal (closing story image)
+#     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks; MEDIUM, root 2.8, centre (210, 185) (widened from 2.2 so the dusk and the lantern show)
 #     Nelim holds out a piece of meat, the kit comes to her, the mother watches; says: the first meal, and that the teshi lives with people
-#     root 2.2, Nelim at the left, the kit at the centre, the mother at the right, the lantern top-right
-#     the kit approaches, the mother looks on (lies by the pot); Nelim carries 1 `Meat_Chicken` and faces East
-#     Nelim: mustard BasicShirt (214, 176, 76), brown Pants (92, 76, 60), Bob, a smile (MouthSmile, LidCheerful)
-#     DR_StickLantern lit (213, 186); Plant_Daylily fully grown at (209, 183) and (211, 183) (no pot: a pot and its plant cannot share a cell, run 551e); no nest grass (the corner is bare, another look)
-#     steps all played in series 2 (the scene was played, not kept, reason not recorded); story scene; "Nelim feeds the kit by hand."
-#     ESTIMATE 4. Risk: the earlier capture was dropped with no recorded reason. Plan: play it alone as the first ticket, open it, and choose between the two renderings before anything else is filed.
+#     instant: she has just held out the meal and the kit steps up; next it eats
+#     method: as run f5d5 (Nelim stands at (208, 185) facing East, carries 1 Meat_Chicken, kit placed at (210, 185), mother at (212, 184)), only the shirt colour and the root size change
+#     the kit approaches, the mother looks on
+#     Nelim: the evening outfit, smile
+#     DR_StickLantern lit (213, 186); Plant_Daylily fully grown at (209, 183), (211, 183) (no pot: a pot and its plant cannot share a cell, run 551e); bare corner
+#     steps played in series 2; story scene; "Nelim feeds the kit by hand."
+#     ESTIMATE 4.5. Risk: none new, the layout was accepted at 4. Plan: replay it with the shirt colour for continuity.
 #
 #  7  workshop3-7-the-infirmary-health-tab
 #     hut (the tea-house as animal infirmary), 19h30, Clear, 8 810 ticks
 #     the Health tab on the injured teshi; says: the body names each claw and ear, and the mod gives it a bionic arm (ADS2)
-#     interface kept (colonist bar, learning helper, tooltips hidden), root 3.4, as the second series; the published image stands
-#     the injured teshi asleep on its bed (cut claw, bionic arm), Nelim at its feet facing North
-#     Nelim: white BasicShirt (244, 242, 234), Pants (110, 96, 78), Bob, normal face (published)
-#     GSAnimalBedBig (141, 72), DR_StickLantern lit (143, 73), two blue braziers of the hut
-#     needs SamBucher.ADogSaidAnimalProsthetics2; steps played in series 2; interface window on a staged scene, no scoring needed (put aside); "A cut claw, and a bionic arm."
+#     interface kept, root 3.4, as the second series; the published image stands. Nelim wears a clean white BasicShirt (244, 242, 234): she changed to tend the injured teshi (the story's change of outfit)
+#     GSAnimalBedBig (141, 72), DR_StickLantern lit (143, 73), two blue braziers of the hut; needs SamBucher.ADogSaidAnimalProsthetics2; interface window on a staged scene, set aside; "A cut claw, and a bionic arm."
 #     ESTIMATE 5. Risk: none new; the published image stays unless the owner asks otherwise.
 #
-# SERIES SCORE: 4 of 5. Strong points: one story that moves forward and is written once (k), Nelim in six of seven shots in six different outfits and faces, weather and hour set in every
-# scene, every image has living things and a reason for its decor, decor differs per scene, no catalogue plate, the whole offer of the mod shown (variants of life, nesting, hatching,
-# the menu, the ADS2 integration), a risk with its plan on every line. Weak points: images 3 and 6 (crowding, a dropped capture).
+# OPUS DIRECTOR PASS (one call, 2026-10-25). Kept: straight East walk in image 1; cut "next she sits"; one bed cell (156, 172) in images 1 to 3; mother mid-step off the bed in image 2 (through `follows`, because no step walks an animal);
+#   Nelim out of frame in image 2; Hay carried in image 3 to set up image 4; Hay in image 4 with a mid-stride pause; Nelim west of the grass; kit below the box on bare soil in image 5, frame centre (215, 185); shirt-only change and wider root in image 6;
+#   no jacket; always East; lantern lit from image 3. Refused: lantern moved to (209, 187) in image 4 (kept at (213, 186) for continuity with 5 and 6); mother at (216, 185) in image 5 (she stays on the bed at (215, 185)).
+#   Not checked: whether 18h30 reads as dusk in the game's sky (the 17h30 and 18h00 captures of the previous run read as warm dusk).
+#
+# SERIES SCORE: 4 of 5. Story written once, scenes move East from the pond to the nest, wide (1), tight (2, 5), medium (3, 4, 6), opening 1 and closing 6 then 7, teshi from the front in 2, 4, 5, 6, one outfit with its one justified change, smile by default, instant and method on every gesture.
 # AFTER A RUN: put the real verdict of each capture (accept or refuse) next to the estimate in STATUS.md; the gap is what the next shotlist learns from.
 # MODS (pass map wsl-deps.sanctuary.map, nothing challenged): Animal.BedsNew 3107972819, Mlie.StickLantern 2024351846, the body and facial mods of the Sanctuary map, ADS2 (image 7 only).
-# STEPS: all exist (series 2); no new step is asked of NPT. Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!13-workshop-captures-v3`).
+# STEPS: all exist (Pickle Tools catalogue, read 2026-10-25: `is forced to walk to`, `follows ... within N cells`, `carries`, `stands at ... facing`, named animal spawn); none is asked of NPT. Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!13-workshop-captures-v3`).
 @review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2
 Feature: the images of the Workshop page, third series (image 6 written first, the others follow)
 

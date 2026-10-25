@@ -29,10 +29,11 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-10-18, gallery reopened by owner (shootGallery[1.1.1], starts with shotlist); before: 1.1.0 published, non-regression green, Use This Instead posted, cleanup done (history in docs/runs/status-history.md)
 remaining:
+  - 2026-10-25 resume: Inbox read. Image 3 green 3.5, 4 green 3, 5 green 2 (verdicts in the Shotlist table); image 1 ticket produced no report twice (launcher exit -1073741205, `no-report.txt` in Inbox/gallery-v3-1-the-watch and -1); image 2 has no Inbox folder. Shotlist reworked the same day for the GALLERY.md rules of 2026-10-23/25 (one outfit, instant and method per gesture, wide/medium/tight, smile); all six images are to be replayed from the new scenarios.
   - 2026-10-20: scenarios of images 1 to 5 written (commit 801b5c5, 13-workshop-captures-v3.feature, filters `13-workshop-captures-v3::<title start>`), tickets filed on wsl-deps.sanctuary.map: fac0 (image 1), 6f53 (2), c000 (3), 2fcb (4), 128a (5), evidence into `Tests/Pickle/Inbox/gallery-v3-<n>-<name>`; image 7 stays the published image. At each RUN_DONE: read summary.json `total` (expect 1, or more if the launch was merged), open the screenshot against its line, put the verdict in the Shotlist table, minify green to Evidence/ with RELEASE.md. Merged launches: the report holds the other scenarios too, trim it.
   - ticket f5d5 DONE green, image 6 judged 4 (Shotlist table). Was: (image 6, `-EvidenceDir Tests/Pickle/Inbox/gallery-v3-6b`, tree on c4756e1+, lis without pot after run 551e failed "cell already holds PlantPot"). At RUN_DONE: read `summary.json` `total` first (queue showed tests=36 for a 1-scenario filter: if 36, filter did not hold, refile narrower), open the screenshot, judge it against 4, put verdict in the Shotlist table; then write the other six scenarios in 13-workshop-captures-v3.feature one ticket each, results into Inbox/, minify green proofs to Evidence/ with RELEASE.md.
   - evidence: migrated again through Inbox 2026-10-20, Prune-Evidence -Apply; Evidence/ holds 7 minified green folders, 1.4 MB total, each with RELEASE.md; Inbox/ empty; Parked/ none; none of the 9 pickle-reports-archive folders is this mod's (checked junit/Player.log); no report folder in Tests/ or docs/runs/ (lines only).
-  - shootGallery[1.1.1]: shotlist written and scored 4/5 (13-workshop-captures-v3.feature header, table in "Shotlist" below); next: write scenarios from it, one ticket for image 6 first, then the rest, then read each capture against its line.
+  - shootGallery[1.1.1]: shotlist reworked 2026-10-25 and scored 4/5 (13-workshop-captures-v3.feature header, tables in "Shotlist" below; Opus director pass done; rate-gallery of the old plan gave 3.3). Next: rewrite the scenarios of images 1 to 6 from the header (the file still holds the 2026-10-20 scenarios), one ticket each, then read each capture against its line.
   - 1.1.0 published (Steam 2026-10-13 22:07 UTC, tag v1.1.0, tags Mod 1.6 1.7). `tested_1_7: yes` = load only, English (ticket e8c8); not played on 1.7: laying, hatching, ADS2, Nocturnal, galleries, French.
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
   - disclosed gaps against AUDIT.md (loop-declared stages, dispatch before lint, 1.7 declared before a green run, no `TEST_SCENARIOS.md`): in docs/runs/status-history.md, "AUDIT.md read in full, 2026-10-15".
@@ -41,7 +42,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 2442e211bd4516b10b1740009e11b7312c5e1c2b
+protocols_read_sha: c94c7bd9c6954f001038a6202ae288fd8c078915
 ---
 # Creatures of Ki - Teshi Renew — status
 
@@ -85,21 +86,38 @@ Full text in `docs/runs/status-history.md`, section "Folded from STATUS.md, 2026
 - Non-regression 1.1.0 complete, 2026-10-15
 - Use This Instead posted, 2026-10-15
 
-## Shotlist, 2026-10-18 (gallery reopened, `shootGallery[1.1.1]`, AUDIT 9.0, revised after Audit's reading)
+## Shotlist, 2026-10-25 (gallery reopened, `shootGallery[1.1.1]`, AUDIT 9.0, reworked against GALLERY.md of 2026-10-23 and 2026-10-25)
 
-Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captures-v3.feature`. Nothing played. Series score **4 of 5**, every scene 4 or 5 (criteria a to k of `GALLERY.md`). Weather Clear set and written in every scene; Nelim has one hairstyle (`Bob`, dark brown) and a different outfit and face in each of her six scenes. Carried item of image 4: `Hay`, vanilla Core, found in `Items_Resource_RawPlant.xml`. Published gallery unchanged; new images stay candidates until the owner agrees.
+Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captures-v3.feature`. SCENARIOS of that file are still the 2026-10-20 version: rewrite them from the header before any ticket. Nothing of this rework is played. Opus director pass done (kept and refused points in the feature header). Published gallery unchanged; new images stay candidates until the owner agrees.
 
-| # | Place, time | Subject | Nelim (outfit, face) | Est. | Risk and plan | Verdict after run |
-|---|---|---|---|---|---|---|
-| 1 | water-garden 16h00 | mother asleep on a large bed, Nelim watches | cream shirt, brown trousers, neutral | 4 | face and pose beside the bed: run alone first, redo the pose | |
-| 2 | water-garden 16h30 | awake, close front portrait | not in frame | 5 | none, camera moves east of the hole | |
-| 3 | water-garden 17h00 | parents nose to nose, lantern, daylilies | sage-green collar shirt, dark brown trousers, own smirk | 4 | crowding: Nelim at the edge, root 3.0 if it crowds | |
-| 4 | calm-zone 17h30 | mother on bed in yellow grass, egg in box, Nelim brings hay | rust shirt, tan jacket, soft smile | 4 | lantern overlap, small hay: Nelim at (210, 185), fallback Meat_Chicken | |
-| 5 | calm-zone 18h00 | hatching, kit beside mother, root 2.3 | teal collar shirt, cream tuque, brows up and smile | 4 | kit small on yellow: daylilies behind, root 2.0 without Nelim | |
-| 6 | calm-zone 18h30 | Nelim feeds the kit by hand | mustard shirt, brown trousers, smile | 4 | earlier capture dropped, reason lost: play alone first | 4, run f5d5 green 1/1: kit and mother read, daylilies without pot, lantern, Nelim carries the meal; face reads blush more than smile; proof `Evidence/gallery-v3-6b` |
-| 7 | hut 19h30 | Health tab, cut claw and bionic arm | white shirt, normal face (published) | 5 | none, published image stands | |
+**Story.** One evening on the 4th of September 5500 (the fixture day, permanent summer), Clear all evening, start 16h then +30 game minutes per image (cumulative waits 60, 1310, 2560, 3810, 5060, 6310 ticks; image 7 at 19h30, 8810). Nelim, the protagonist, comes down to the pond to watch a sleeping teshi and stays through the dusk: the waking, the courting, the straw she carries to the nest, the egg, the hatching, the first meal. She always moves or faces East (pond x about 156, nest x about 213). One outfit all evening: sage CollarShirt (126, 150, 118), dark brown Pants (70, 56, 44), Bob (62, 44, 32), brown eyes, MouthSmile and LidCheerful. In image 7 (published) she wears a clean white shirt: she changed to tend the injured teshi. Lit lantern from image 3 (dusk marker).
 
-Read against the second series: Nelim in none of the five story images, burrow hole at (149, 173) in images 1, 2, 5, kit small in the hatching.
+| # | Place, hour, frame | Subject, instant, how obtained |
+|---|---|---|
+| 1 | water-garden west bank, 16h00, WIDE root 4.5 centre (160, 172) | mother asleep on the bed (156, 172); Nelim has just come down the bank and slows at the bedside, next she stops and watches; she stands at (152, 173) facing East, forced to walk to (155, 173), 14 ticks pass, pause (mid-stride, profile) |
+| 2 | same bank, 16h30, TIGHT root 1.8 centre (156, 171) | the mother has just risen from the bed behind her and follows Nelim, who walks away south out of frame; named Teshi spawned on the bed, `follows` Nelim within 3 cells, Nelim forced to walk (156, 169) to (156, 160), 10 ticks pass, pause (mother mid-step, front view) |
+| 3 | same bank, 17h00, MEDIUM root 3.5 centre (158, 173) | the pair nose to nose, hearts (mate step); Nelim has just walked in with an armful of straw and glances at them, next she walks on to the nest; she carries 1 Hay, forced to walk (152, 174) to (155, 174), 14 ticks, pause (profile, face reads) |
+| 4 | calm-zone, 17h30, MEDIUM-CLOSE root 3.2 centre (213, 185) | mother on the bed (215, 185), egg in its box; Nelim has carried the straw from the bank and reaches the nest, next she lays it by the bed; she carries 1 Hay, stands at (208, 185) facing East, forced to walk to (212, 185), pause after about 35 ticks (mid-stride) |
+| 5 | calm-zone, 18h00, TIGHT root 2.3 centre (215, 185) | the egg has just hatched, Nelim hurries over; hatch by the game, then kit placed at (217, 184) under the empty box, Nelim forced to walk (209, 185) to (212, 185), 10 ticks, pause |
+| 6 | calm-zone west of the nest, 18h30, MEDIUM root 2.8 centre (210, 185) | Nelim holds out the meal and the kit steps up, the mother watches (closing story image); as run f5d5 (stand, carry Meat_Chicken, kit one cell away), only the shirt and the root change |
+| 7 | hut, 19h30, Health tab | published image, interface, set aside |
+
+**Criteria, cell by cell** (a time, b decor, c living, d pawns, e action, f composition, g subject, j mod in thumbnail; k on the series below).
+
+| # | a | b | c | d | e | f | g | j | Est. | Main risk and plan |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 16h00, Clear, 60 ticks | GSAnimalBedBigPrestige (156, 172), Plant_Daylily (153, 175) | asleep mother, daylily, lily pads | sage shirt, Bob, smile | mid-stride walk (above) | wide, mother on the left third, pond right, bank foreground | the sleeper is watched | mother about 45 px at 268 px: weak, accepted for the wide opener | 4 | geyser (150) and hole (149) at the edge: frame x 152 to 168. Nelim's walk drawn only while ticks run: 14 ticks, pause |
+| 2 | 16h30, 1310 ticks | bed (156, 172) behind, Plant_Daylily (153, 175) | mother front view, daylily | not in frame | mid-step follow (above) | tight, mother centred on the bed she left | she has just woken | fills the frame | 4.5 | named spawn cannot fix the sex: plan B `a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind (e weak) |
+| 3 | 17h00, 2560 ticks | empty bed (156, 172), DR_StickLantern lit (161, 171), Plant_Daylily (153, 171), (153, 170) | pair, daylilies | sage shirt, Bob, smile | carries Hay, mid-stride (above) | medium, pair centre, Nelim row 174, bed left | the courting | hearts and pair read | 4 | the carry may drop on a forced walk: then carry again after the walk |
+| 4 | 17h30, 3810 ticks | EggBox (217, 185), GSAnimalBedBigPrestige (215, 185), Plant_YellowTallGrass 3 x 5 minus (216, 185), lantern lit (213, 186) | mother front view, egg | sage shirt, Bob, smile | mid-stride with Hay (above) | medium-close, Nelim west of the grass at row 185 | she builds the nest, Nelim helps | mother and egg fill the right half | 4 | hay covered her face last run: pause mid-stride (35 ticks), not at pick-up; plan B Meat_Chicken |
+| 5 | 18h00, 5060 ticks | same nest minus grass (216, 184), (217, 184), Plant_Daylily (213, 184), (213, 185), lantern lit | kit and mother front view | sage shirt, Bob, BrowRaised, smile | hurries over (above) | tight, kit below the box on bare soil | it is born at dusk | kit and mother fill the frame | 4 | the kit wandered off last run: place it after the hatch, pause within 10 ticks |
+| 6 | 18h30, 6310 ticks | lantern lit (213, 186), Plant_Daylily (209, 183), (211, 183), bare corner | kit, mother, daylilies | sage shirt, Bob, smile | holds out the meal (above) | medium, Nelim left, kit centre, mother right | the first meal, the teshi lives with people | subjects fill the frame | 4.5 | none new: accepted at 4 in run f5d5 |
+
+**k, series.** One story written once at the top of the feature header (who, where, day, rhythm); scenes move from the pond to the nest, East to the nest; variety wide (1), tight (2, 5), medium (3, 4, 6); opening image sets the place (1), closing image is 6 with 7 as the night epilogue; teshi seen from the front in 2, 4, 5, 6.
+
+**Series score 4 of 5.** Weak points: image 1 thumbnail (wide opener), image 2 relies on a named spawn whose sex cannot be fixed (plan B written), steps never combined (forced walk plus carry plus follow). Previous run, verdicts on the 2026-10-18 plan: image 3 at 3.5 (Nelim seen from behind), 4 at 3 (hay over her face), 5 at 2 (no kit in frame), 6 at 4 (run f5d5, proof `Evidence/gallery-v3-6b`); the gap with the estimate of 4 taught: write the instant, the method and the order of the steps. Images 1 and 2 never produced a report (Inbox, launcher exit -1073741205, twice on image 1).
+
+Verdict after run: empty until played.
 ## Earlier state
 
 State of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon, Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
