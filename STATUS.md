@@ -121,7 +121,7 @@ Full lines in the header of `Tests/Pickle/Mod/Pickle/Features/13-workshop-captur
 
 **Series score 4 of 5.** Weak points: image 1 thumbnail (wide opener), image 2 relies on a named spawn whose sex cannot be fixed (plan B written), steps never combined (forced walk plus carry plus follow). Previous run, verdicts on the 2026-10-18 plan: image 3 at 3.5 (Nelim seen from behind), 4 at 3 (hay over her face), 5 at 2 (no kit in frame), 6 at 4 (run f5d5, proof `Evidence/gallery-v3-6b`); the gap with the estimate of 4 taught: write the instant, the method and the order of the steps. Images 1 and 2 never produced a report (Inbox, launcher exit -1073741205, twice on image 1).
 
-Verdict after run: empty until played.
+Verdict after run: image 3 (ticket 2bff, green, total 1, Inbox/gallery-v4-3-the-parents) judged 3.5 of 5 (2026-10-27): pair nose to nose with hearts, lit lantern, bed, daylilies, strong; Nelim cut by the left edge, face under the hay, so she does not read as the protagonist. Fix idea: forced walk target one cell further East (156 or 157, 174) or camera centre shifted 1 cell West. Images 1, 2, 4, 5, 6 pending (9bb8 lost exit 98 and refiled 7271; 8734 red on (156, 160) not standable, fixed in 8f6b631 and refiled bd81).
 ## Earlier state
 
 State of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon, Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
