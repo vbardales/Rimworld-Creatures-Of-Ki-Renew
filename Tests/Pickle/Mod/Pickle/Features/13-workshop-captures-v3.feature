@@ -166,7 +166,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: a female adult animal of kind "Teshi" named "Mother" is spawned at (156, 172)
-    And Nelim's Pickle Tools: "Nelim" stands at (156, 160) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (157, 166) facing South
     And Nelim's Pickle Tools: "Mother" is forced to walk to (156, 166)
     And Nelim's Pickle Tools: I advance the paused game by exactly 10 ticks
     When Teshi Renew: the camera looks at (156, 171) at zoom 4
