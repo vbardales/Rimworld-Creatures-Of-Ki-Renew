@@ -8,8 +8,9 @@
 # TIME: one start hour (16h), then 30 game minutes per image (1 250 ticks, cumulative): waits 60, 1310, 2560, 3810, 5060, 6310 ticks; image 7 at 19h30 (8810). Every Scenario reloads the save, so each sets 16h again,
 # waits its own total, then places what lives in the scene after the wait. The teshi is crepuscular: asleep at 16h, awake and active from 16h30.
 # WEATHER: `I set the weather to "Clear"` in the Background, held on purpose for the whole series (dusk comes from the hour and the lanterns; rain or fog would hide the animals). The lit lantern is the dusk marker: none in images 1 and 2, lit from image 3.
-# NELIM: ONE outfit for the whole evening (GALLERY.md criterion d, continuity): Apparel_CollarShirt dyed rgb (126, 150, 118) sage green, Apparel_Pants dyed rgb (70, 56, 44) dark brown, Bob, hair rgb (62, 44, 32),
-#   eyes rgb (92, 58, 36), smile by default (MouthSmile, LidCheerful, face kit neutral, expression "normal" set last, map at 20 degrees). Image 5 adds BrowRaised. Sage keeps her readable at 268 px against brown soil and yellow grass.
+# NELIM: ONE outfit for the whole evening (GALLERY.md criterion d, continuity): Apparel_CollarShirt dyed rgb (126, 150, 118) sage green, Apparel_Pants dyed rgb (70, 56, 44) dark brown (clothes are free, NSB 2026-10-28).
+#   CANON of NSB (2026-10-28, SanctuaryBacklot sanctuary-nelim-check.feature): hairstyle Roo_HD_Hair_Highpony (long: Bob was my choice with no source, dropped), hair rgb (51, 33, 16), skin rgb (228, 158, 90) and Eyes_DarkBrown stay as the save gives them (no override).
+#   Smile by default (MouthSmile, LidCheerful, face kit neutral, expression "normal" set last, map at 20 degrees). Image 5 adds BrowRaised. Sage keeps her readable at 268 px against brown soil and yellow grass.
 #   The only change is image 7 (published): a clean white BasicShirt, she changed to tend the injured teshi. No jacket (Opus: it would vanish against the yellow grass, and the story does not call for it). No hat in the series: no hat-hair mod.
 # FRAMING RULE of water-garden: the hole at (149, 173) and the steam geyser at (150, 173) stay out of frame, so every pond frame starts at x 152 or more.
 # FRONT VIEWS: images 2, 4, 5 and 6 show the teshi from the front; image 5 shows the kit's face.
@@ -120,11 +121,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (152, 173) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
     And Teshi Renew: the female adult teshi lies down to sleep
@@ -159,11 +159,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (156, 168) facing South
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: a female adult animal of kind "Teshi" named "Mother" is spawned at (156, 172)
     And Nelim's Pickle Tools: "Nelim" stands at (157, 166) facing South
@@ -194,11 +193,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (152, 174) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female adult teshi belonging to the colony stands at (158, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (160, 172)
@@ -251,11 +249,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Teshi Renew: a "EggTeshiFertilized" lies at (217, 185)
@@ -311,11 +308,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: the newborn animal of kind "Teshi" is named "Kit"
     And Nelim's Pickle Tools: "Kit" stands at (217, 184)
@@ -353,11 +349,10 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
-    And Nelim's Pickle Tools: "Nelim" hairstyle is "Bob"
-    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (62, 44, 32)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
-    And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female kit teshi stands at (210, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
