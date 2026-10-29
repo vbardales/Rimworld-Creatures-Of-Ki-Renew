@@ -314,7 +314,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: the newborn animal of kind "Teshi" is named "Kit"
-    And Nelim's Pickle Tools: "Kit" stands at (217, 184)
+    And Nelim's Pickle Tools: the animal "Kit" stands at (217, 184)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (212, 185)
