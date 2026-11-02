@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: writeTests[1.1.1]
+workflow_stage: shootGallery[1.1.1]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -27,11 +27,11 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
-updated:      2026-11-02, 7.b restored (Tests/Run-Functional-Tests.ps1, 20 checks) and 7.d tags added; stage still writeTests until Audit validates and replays
+updated:      2026-11-02, replay-audit --force: writeTests closed (7.b suite restored, 7.d tags), back to shootGallery[1.1.1]; next: file images 1, 2, 5
 remaining:
-  - 2026-11-02 7.b/7.e closed, Audit ruled B: Tests/Run-Functional-Tests.ps1 restored from 039d5ae^ and cut to what no shared check does (compiled-game readers, exact patch shapes and values, textures); 20 checks, 20 passed, 0 failed, run 2026-11-02 on the tree committed with this line (scan 20 s). Row in scripts/LOCAL_SCRIPTS.md (3fb0508), awaiting Audit validation. Run-UnitTests stays n/a (no Tests/*.Tests.csproj, XML-only mod). Next: Audit validates, then replay-audit --force to leave writeTests.
+  - 2026-11-02 7.b/7.e closed, Audit ruled B: Tests/Run-Functional-Tests.ps1 restored from 039d5ae^ and cut to what no shared check does (compiled-game readers, exact patch shapes and values, textures); 20 checks, 20 passed, 0 failed, run 2026-11-02 on the tree committed with this line (scan 20 s). Row in scripts/LOCAL_SCRIPTS.md (3fb0508), Audit validated it 2026-11-02 (20/20 rerun green). Run-UnitTests stays n/a (no Tests/*.Tests.csproj, XML-only mod). Replay --force the same day: stages 7 and 8 proven (Check-Status 0, ModBasics 0, Translations 0, Check-Steps 0; last Mod commit that is not an image d2604fe 2026-10-13, non-regression evidence 2026-10-14 and 15 newer; no @wip; code_review_sha 188150b, only Preview.png changed since), first open sub-step is in 9 (gallery): back to shootGallery[1.1.1].
   - 2026-11-02 7.d closed: @requires: tags of the PickleTools packages added to features 06, 07, 11, 12 and 13; shared Check-Steps 0 problems, 0 REQUIRES warning.
-  - 2026-11-02: gallery lines below stand for shootGallery[1.1.1]; images 1, 2, 5 not refiled while the stage is writeTests (no gallery captures before shootGallery, TM told).
+  - 2026-11-02: stage is shootGallery again: file images 1, 2, 5 alone on 0203776 (one ticket each, -NoBatch, priority 300, TM: no RAM gate; a low-RAM exit 137 or 3 is infra, refile). Gallery lines below stand.
   - 2026-11-02: ticket 978c (image 5) no report (Inbox held only `no-report.txt`, folder deleted; fifth lost run, machine). TM: no ticket pending. Still to refile alone after TM RAM-ok: images 1, 2, 5 on 0203776 (see 2026-10-29 lines). Local Check-Steps.ps1 and Minify-Evidence.ps1 removed (shared scripts/ copies, aac47d0); LOCAL_SCRIPTS rows dropped (Run-Functional-Tests.ps1 no longer exists in the mod); session code CoKT.
   - 2026-10-29 open after sleep: (1) wait TM signal RAM ok, then refile images 1 and 2 alone on 0203776 (filters `13-workshop-captures-v3::16h00,` and `::16h30,`, DepMap wsl-deps.sanctuary.map, -NoBatch, evidence gallery-v13-1-the-watch and gallery-v14-2-awake); (2) tell NSB (local_b555e766-064d-457f-9919-2ccb9d85ab80) the result, esp. whether water-garden passes within the 150 s frame timeout (NSB commit 8b52546); if over 150 s ask NPT via TM to shorten the 90-frame wait; (3) image 5 ticket 978c queued, the animal "Kit" stands-at step never played on a newborn (red goes to NPT via TM); (4) after all six verdicts: gallery table, Evidence minify, stale .feature header lines, echo and Preview (see 2026-10-25 open list).
   - 2026-10-29: image 2 refile (20261029-204552-816-753b) exit 125, no report (third 125 in a row: 399a, 84bd, this; low RAM per TM). Empty folder deleted. NO refile until TM signals RAM ok. To refile alone then: image 1 (`Inbox/gallery-v13-1-the-watch`) and image 2 (`Inbox/gallery-v14-2-awake`), on 0203776. Image 5 (978c) still queued.
@@ -71,7 +71,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 498bc9f9c09890466b2339f36a5419e3827a978b
+protocols_read_sha: 03b77c24c710e619610b09f8b764e8d317254600
 ---
 # Creatures of Ki - Teshi Renew — status
 
