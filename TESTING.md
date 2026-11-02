@@ -1,8 +1,8 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-Standalone suite `scripts/Run-Functional-Tests.ps1` gives 23 checks, incl. XML and Core references. Four external validators once cited here absent from repo; their historical results not current verification.
+Standalone suite `Tests/Run-Functional-Tests.ps1` gives 20 checks on the compiled game, the exact patch shapes, the textures and exact values; XML parsing and references are covered by the shared Check-ModBasics and Check-DefRefs (cut 2026-11-02). Four external validators once cited here absent from repo; their historical results not current verification.
 
-`scripts/Run-Functional-Tests.ps1` sits between the two. Cannot run game either, but reads compiled game and runs twenty-two checks this doc used to ask of a play session — incl. the scenario 4b was written to settle, now settled below. Run it first; takes seconds, costs nothing.
+`Tests/Run-Functional-Tests.ps1` sits between the two. Cannot run game either, but reads compiled game and runs twenty checks this doc used to ask of a play session — incl. the scenario 4b was written to settle, now settled below. Run it first; takes seconds, costs nothing.
 
 Pickle suite played most of these on headless game on 2026-09-24; STATUS.md says what it found. Played by hand, run in order: first cheap, catches anything fatal; fourth only one that can crash a save.
 
@@ -181,7 +181,7 @@ Read from `../AUDIT.md`, transition `done -> tested`. Pickle suite played since 
 
 ### Scope of the Pickle suite
 
-Only what running game can show. Rest already proved offline by `scripts/Run-Functional-Tests.ps1`. Features in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run.
+Only what running game can show. Rest already proved offline by `Tests/Run-Functional-Tests.ps1`. Features in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run.
 
 | Scenario | Fate | Feature | Why |
 | --- | --- | --- | --- |

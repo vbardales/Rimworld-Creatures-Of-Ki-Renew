@@ -6,7 +6,7 @@
 # Body parts are found by the label the player reads, in the language of the pass, and a label shared by two
 # parts fails the step. The right arm's claw is "right claw" and the left arm's is "front left claw": both are
 # the original mod's names and kept as they are; this checks each lands on its own side.
-@review @en-only
+@review @en-only @requires:nelim.pickletools.inspecttabs
 Feature: The teshi, read in English
 
   Background:

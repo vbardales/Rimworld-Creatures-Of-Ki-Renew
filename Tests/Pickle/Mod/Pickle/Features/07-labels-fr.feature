@@ -5,7 +5,7 @@
 # kept on purpose, so the label of the race itself is the same word in both languages.
 #
 # The health tab shows how the longer French labels lay out: judged by a person from the capture.
-@review @fr-only
+@review @fr-only @requires:nelim.pickletools.inspecttabs
 Feature: The teshi, read in French
 
   Background:

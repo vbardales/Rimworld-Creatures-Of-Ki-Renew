@@ -99,7 +99,7 @@ in this mod that is not Shooki's.
 the egg. The call is real; the certainty was not. The 1.6 port of Race to the Rim found that branch
 unreachable for animals whose `eggProgressUnfertilizedMax` sits below 1 — theirs was 0.5, and the teshi's is
 0.9 — because progress stops short of a laying and `CanLayNow` never comes true.
-`scripts/Run-Functional-Tests.ps1` now confirms that from the game: it reads `CompTick` writing
+`Tests/Run-Functional-Tests.ps1` now confirms that from the game: it reads `CompTick` writing
 `eggProgressUnfertilizedMax` into `eggProgress` while the animal is unfertilized, and `CanLayNow`
 requiring a full 1.
 
@@ -143,9 +143,9 @@ replacement would make this a rewrite rather than an update.
 
 ## Verification
 
-The standalone `scripts/Run-Functional-Tests.ps1` suite provides 23 automated checks,
-including XML parsing, Core references and inheritance, field existence and readers,
-egg behavior constraints, body coverage and texture paths. It uses installed Core data
+The standalone `Tests/Run-Functional-Tests.ps1` suite provides 20 automated checks,
+including field readers in the game, exact patch shapes, egg behavior constraints,
+body coverage and texture paths. XML parsing and references are checked by the shared scripts of the protocols repository. It uses installed Core data
 and reflection/IL inspection of RimWorld 1.6 assemblies. It does not launch or simulate
 the game. The successful run and its exact scope are recorded in `STATUS.md`.
 

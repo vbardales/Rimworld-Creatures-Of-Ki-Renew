@@ -34,7 +34,7 @@
 #   Nelim: Female Body/Apparel Variants, Realistic Bodies (WDI), AB's Visible Pants, Venus Touch Waistlines, Nals Facial Animation with EyeGenes3 for the
 #   brown eyes; all through the SanctuaryBacklot map (steps "Nelim's Sanctuary: ..." for the places, "Nelim's Pickle Tools: ..." for the rest).
 # Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!12-workshop-captures-v2`), as it does 11-workshop-captures.
-@review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2
+@review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.inspecttabs @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: the images of the Workshop page, second series
 
   Background:
