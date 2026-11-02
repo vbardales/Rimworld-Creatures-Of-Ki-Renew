@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
-workflow_stage: shootGallery[1.1.1]
+workflow_stage: writeTests[1.1.1]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki - Teshi Renew
 packageId:    nelim.creaturesofki
@@ -27,8 +27,11 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.1.0 (minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
-updated:      2026-11-02, resume after sleep: local scripts cut, image 5 ticket 978c lost (no report); before: 2026-10-18 gallery reopened (shootGallery[1.1.1])
+updated:      2026-11-02, replay-audit moved shootGallery to writeTests (7.b open, test harness deleted 2026-10-20); gallery state kept in remaining
 remaining:
+  - 2026-11-02 replay-audit, back to writeTests[1.1.1], 7.b open [session]: no automated test runs now (Run-UnitTests n/a: no Tests/*.Tests.csproj; the offline suite scripts/Run-Functional-Tests.ps1 was deleted 2026-10-20 in 039d5ae, TESTING.md lines 3, 5, 96, 184-198 and the folded STATUS lines still cite it). Redo 7.b/7.e properly: rebuild a test under Tests/ or write why none applies (XML-only mod, no DLL; shared Check-ModBasics, Check-DefRefs, Check-TypeRefs, Check-XmlFields, Check-Translations green 2026-11-02), then fix TESTING.md. Then replay.
+  - 2026-11-02 7.d: shared Check-Steps 0 problems; REQUIRES warnings: features 12 and 13 lack @requires tags for CameraZoom, ColonistRace, ScreenshotStudio, StageDecor (12 also ClickDiagnostics, InspectTabs, ScreenshotMode) [session].
+  - 2026-11-02: gallery lines below stand for shootGallery[1.1.1]; images 1, 2, 5 not refiled while the stage is writeTests (no gallery captures before shootGallery, TM told).
   - 2026-11-02: ticket 978c (image 5) no report (Inbox held only `no-report.txt`, folder deleted; fifth lost run, machine). TM: no ticket pending. Still to refile alone after TM RAM-ok: images 1, 2, 5 on 0203776 (see 2026-10-29 lines). Local Check-Steps.ps1 and Minify-Evidence.ps1 removed (shared scripts/ copies, aac47d0); LOCAL_SCRIPTS rows dropped (Run-Functional-Tests.ps1 no longer exists in the mod); session code CoKT.
   - 2026-10-29 open after sleep: (1) wait TM signal RAM ok, then refile images 1 and 2 alone on 0203776 (filters `13-workshop-captures-v3::16h00,` and `::16h30,`, DepMap wsl-deps.sanctuary.map, -NoBatch, evidence gallery-v13-1-the-watch and gallery-v14-2-awake); (2) tell NSB (local_b555e766-064d-457f-9919-2ccb9d85ab80) the result, esp. whether water-garden passes within the 150 s frame timeout (NSB commit 8b52546); if over 150 s ask NPT via TM to shorten the 90-frame wait; (3) image 5 ticket 978c queued, the animal "Kit" stands-at step never played on a newborn (red goes to NPT via TM); (4) after all six verdicts: gallery table, Evidence minify, stale .feature header lines, echo and Preview (see 2026-10-25 open list).
   - 2026-10-29: image 2 refile (20261029-204552-816-753b) exit 125, no report (third 125 in a row: 399a, 84bd, this; low RAM per TM). Empty folder deleted. NO refile until TM signals RAM ok. To refile alone then: image 1 (`Inbox/gallery-v13-1-the-watch`) and image 2 (`Inbox/gallery-v14-2-awake`), on 0203776. Image 5 (978c) still queued.
@@ -68,7 +71,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: d519dc9b6e5c5357b3569c5af5805c3ab8a92a3e
+protocols_read_sha: 498bc9f9c09890466b2339f36a5419e3827a978b
 ---
 # Creatures of Ki - Teshi Renew — status
 
