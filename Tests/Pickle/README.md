@@ -5,7 +5,7 @@ It turns the manual scenarios of `../../TESTING.md` into Gherkin scenarios that 
 and leave a person to read only the `@review` captures.
 
 **Status: played since 2026-09-24.** The step assembly compiles against the installed 1.6 game and Pickle, and every
-step line of the features resolves to exactly one step (`Check-Steps.ps1`, which was seen to go red on an undefined
+step line of the features resolves to exactly one step (shared `scripts/Check-Steps.ps1` of the protocols root, which was seen to go red on an undefined
 step). The final validation at `ccd2685` on 2026-09-25 played the minimal English and French passes and the pass with
 A Dog Said... Animal Prosthetics 2 green. The new-colony pass failed in its tool, which was changed, and passed on
 2026-09-26, as did the Nocturnal Animals pass. The list at the end names the assumptions the first runs confirmed or broke. `STATUS.md` is the current record.
@@ -75,7 +75,7 @@ The output is `Mod/Pickle/Assemblies/`, which is tracked, and the intermediates 
 Rebuild before every run: Pickle loads step DLLs when the game starts. Check the features without a game:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File ../scripts/Check-Steps.ps1 -Mod CreaturesOfKiRenew
 ```
 
 ## Passes
