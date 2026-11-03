@@ -139,8 +139,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
-    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: "Nelim" face state is logged
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+moodCheerful"
     And I take a screenshot "workshop3-1-the-watch"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -213,8 +214,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
-    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: "Nelim" face state is logged
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+moodCheerful"
     And I take a screenshot "workshop3-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -330,8 +332,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" brows are "BrowRaised"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
-    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: "Nelim" face state is logged
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
+    And Nelim's Pickle Tools: "Nelim" facial expression is "normal+moodCheerful"
     And I take a screenshot "workshop3-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
