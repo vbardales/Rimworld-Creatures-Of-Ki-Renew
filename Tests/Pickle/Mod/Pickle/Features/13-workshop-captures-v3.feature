@@ -64,7 +64,7 @@
 #     ESTIMATE 4. Risk: hay icon hides her face again. Plan: pause mid-stride facing East; plan B carried item Meat_Chicken (read in image 6) and the line becomes "brings a meal".
 #
 #  5  workshop3-5-the-hatching
-#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.3, centre (215, 185)
+#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.7, centre (213, 185)
 #     the egg has hatched, the kit stands below the empty box beside its mother; says: it is born at dusk, by the mod's own hatching
 #     instant: the egg has just hatched and Nelim hurries over; next she reaches the kit
 #     method: eggs one tick from hatching, wait for the hatch, THEN `the newborn animal of kind "Teshi" is named "Kit"` and `"Kit" stands at (217, 184)` (the hatched kit wandered out of frame last run; NPT step, fails if the hatcher already named the kit: plan B `Teshi Renew: a female kit teshi stands at (217, 184)`), mother at (215, 185), Nelim at (209, 185) facing East forced to walk to (212, 185), `I advance the paused game by exactly 10 ticks`, pause
@@ -108,7 +108,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Given the save "Nelims-tribe" is loaded
     And I set the weather to "Clear"
 
-  # Image 1, 16h00, Clear, WIDE root 4.5: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk, 14 ticks, pause).
+  # Image 1, 16h00, Clear, WIDE root 4.5, centre (157, 172) so Nelim is not cut by the left edge: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk, 14 ticks, pause).
   Scenario: 16h00, Nelim arrives at the bedside of the teshi asleep on the west bank
     Given I set the hour to 16
     And game speed is ultrafast
@@ -131,7 +131,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" stands at (152, 173) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (155, 173)
     And Nelim's Pickle Tools: I advance the paused game by exactly 14 ticks
-    When Teshi Renew: the camera looks at (160, 172) at zoom 4
+    When Teshi Renew: the camera looks at (157, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 4.5
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -273,7 +273,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 5, 18h00, Clear, TIGHT root 2.3: the egg has hatched, the kit is placed below the empty box on bare soil (no grass at (216, 184) and (217, 184)), Nelim hurries over mid-stride.
+  # Image 5, 18h00, Clear, TIGHT root 2.7, centre (213, 185) so Nelim stays whole on the left: the egg has hatched, the kit is placed below the empty box on bare soil (no grass at (216, 184) and (217, 184)), Nelim hurries over mid-stride.
   Scenario: 18h00, the egg hatches and Nelim hurries over to the kit beside its mother
     Given I set the hour to 16
     And game speed is ultrafast
@@ -319,8 +319,8 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (212, 185)
     And Nelim's Pickle Tools: I advance the paused game by exactly 10 ticks
-    And Teshi Renew: the camera looks at (215, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2.3
+    And Teshi Renew: the camera looks at (213, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.7
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: "Nelim" face is held neutral
