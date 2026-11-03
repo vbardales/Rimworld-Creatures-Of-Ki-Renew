@@ -140,6 +140,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
     And I take a screenshot "workshop3-1-the-watch"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -155,7 +156,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Sanctuary: I am at the sanctuary "water-garden"
     And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (156, 172)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 175) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (155, 170) fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (156, 168) facing South
     And Nelim's Pickle Tools: "Nelim" body type is Female
@@ -191,7 +192,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 171) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 170) fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" stands at (152, 174) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 174) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
@@ -201,8 +202,8 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Teshi Renew: a female adult teshi belonging to the colony stands at (158, 172)
     And Teshi Renew: a male adult teshi belonging to the colony stands at (160, 172)
     And Teshi Renew: the female adult teshi and the male adult teshi mate
-    And Nelim's Pickle Tools: "Nelim" stands at (152, 174) facing East
-    And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "Hay" to (157, 174)
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 174) facing East
+    And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "Hay" to (158, 174)
     And Nelim's Pickle Tools: I advance the paused game by exactly 30 ticks
     When Teshi Renew: the camera looks at (158, 173) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.5
@@ -213,6 +214,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
     And I take a screenshot "workshop3-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -329,6 +331,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
     And I take a screenshot "workshop3-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
