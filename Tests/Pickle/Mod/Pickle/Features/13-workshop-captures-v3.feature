@@ -21,36 +21,36 @@
 # SHOTLIST. Fields: index and file | place, hour, frame | subject, instant (just before / just after) | how the gesture is obtained | living things | Nelim | decor with defNames | mods and steps | type, subtitle | ESTIMATE /5, risk, plan
 #
 #  1  workshop3-1-the-watch
-#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; MEDIUM-WIDE, root 3.2, centre (158, 172), frame x 152.3 to 163.7 (the opening image: it sets the place; reworked 2026-11-06, root 4.5 gave a mother of 35 px at 268 px)
+#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; MEDIUM-WIDE, root 2.8, centre (157.2, 172.8), frame x 152.2 to 162.2, z 170.0 to 175.6 (the opening image; reworked 2026-11-06 v23: v22 at root 3.2 cut Nelim by the left edge and left the right half empty)
 #     the mother asleep on a large bed, Nelim arriving at its side; says: by day she sleeps, and someone watches over her
 #     instant: Nelim has just come down the bank and slows at the bedside; next she stops and watches
-#     method: `Nelim stands at (152, 173) facing East`, `Nelim is forced to walk to (155, 173)`, `I advance the paused game by exactly 20 ticks, about 1.5 cells so she stops off the cell grid (13 ticks lands on a cell and reads as standing)`, game paused: mid-stride, profile, face reads
+#     method: `Nelim stands at (153, 174) facing East`, `Nelim is forced to walk to (157, 174)` (row 174 was walked green in image 3), `I advance the paused game by exactly 20 ticks, about 1.5 cells so she stops off the cell grid (13 ticks lands on a cell and reads as standing)`, game paused: mid-stride, profile, she ends about x 154.5, whole inside the frame
 #     the mother asleep (lies down to sleep) on the left third; lily pads and the pond fill the right, the bank is the foreground
-#     Nelim: the evening outfit (above), smile
+#     Nelim: the evening outfit (above); NO smile required, written on purpose: wide opener, face under 40 px, she watches the mother with eyes down (v22: eyes closed, nothing readable at this size)
 #     GSAnimalBedBigPrestige at (156, 172); Plant_Daylily fully grown at (153, 175)
 #     Animal.BedsNew; steps of series 2 plus `is forced to walk to`; story scene; "Nelim comes down to the water to watch over the sleeping teshi."
-#     ESTIMATE 4. Risk: the sleeping mother reads as a pale blob (about 49 px at 268 px, accepted for the opener, Nelim is the second reading), geyser at the edge. Plan: frame starts at x 152.3. Director pass 2026-11-06 kept: root 3.2, 20 ticks. Refused: a darker bed or soil (no recolour step known).
+#     ESTIMATE 4.5. Risk: the sleeping mother is still a pale shape (about 55 px at 268 px at root 2.8, accepted for the opener, Nelim is the second reading), criterion j weak. Plan: tighter root 2.8 and centre moved so Nelim is whole and the right half is not empty. Director pass 2026-11-06 (v23) kept: centre z 172.8 so her head at row 174 is not cut by the top edge, walk kept (the mid-play moment), no smile written. Refused: a darker bed or soil (no recolour step known).
 #
 #  2  workshop3-2-awake
-#     water-garden, west bank, 16h30, Clear, 1 310 ticks; TIGHT front portrait, root 1.8, centre (157, 172) (reworked 2026-11-06)
-#     the mother awake on her bed, head up, face to the camera, Nelim half in the bottom-left corner looking toward her; says: the head, the four banded ears, the tail
+#     water-garden, west bank, 16h30, Clear, 1 310 ticks; TIGHT front portrait, root 2.4, centre (157, 172), frame x 152.7 to 161.3, z 169.6 to 174.4 (reworked 2026-11-06 v23: at root 1.8 Nelim at (154, 170) was outside the frame by geometry)
+#     the mother awake on her bed, head up, face to the camera, Nelim whole at the left of the frame looking toward her; says: the head, the four banded ears, the tail
 #     instant: she has just woken and lifts her head toward Nelim; next she stands up
-#     method: `a female adult teshi belonging to the colony stands at (156, 172)` on the bed (no lie-down, no walk: a walking teshi shows the top of its head, a teshi on the bed shows its face), Nelim stands at (154, 170) facing East, no tick after the spawn so she cannot step off, smile held to the screenshot
-#     Nelim: only the bottom-left corner of her, cut by the edge, in the evening outfit and a smile (director pass: a head-on teshi with nobody in frame is posed, the gaze cue joins her to the story)
+#     method: `Nelim stands at (154, 171) facing East` and `waits in place` (NPT steps.md l.260, no walk), `I let 20 ticks pass`, THEN `a female adult teshi belonging to the colony stands at (156, 172)` on the bed (no lie-down, no walk: a walking teshi shows the top of its head, a teshi on the bed shows its face), then the held `normal+moodCheerful` smile, screenshot (the order of image 6, which smiled clean; Opus: do not skip the ticks, the held expression needs them before it)
+#     Nelim: whole, at the left, in the evening outfit, smile held; a witness, her face is about 15 px at 268 px so the smile is not the point (the mother is the subject)
 #     decor: GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (159, 171)
-#     kind defName `Teshi` (read in Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml); steps of the Pickle Tools catalogue; story scene; "Awake, she steps off her bed and down the bank."
-#     ESTIMATE 4.5. Risk: the forced walk is untested on an animal (NPT: compiled, not played, ticket 1071). Plan B: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her (criterion e weak, estimate 4).
-#     ESTIMATE 4. Risk: she may step off the bed or look away, no visible gesture beyond the raised head; Nelim cut by the edge may read oddly. Plan B: Nelim out of frame, estimate 3.5. Director pass 2026-11-06 kept: gaze cue, no ticks, daylily moved into frame, centre (157, 172).
+#     kind defName `Teshi` (read in Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml); steps of the Pickle Tools catalogue; story scene; "Awake, she lifts her head toward Nelim."
+#     Plan B: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her.
+#     ESTIMATE 4.5. Risk: criterion e weak, the mother sits upright and reads as posed (v22); the raised head is the only gesture. Director pass 2026-11-06 (v23) kept: root 2.4 centre (157, 172) so Nelim is whole, wait in place then ticks then held smile. Not done: a walk for the mother (shows the top of her head).
 #  3  workshop3-3-the-parents
-#     water-garden, west bank, 17h00, Clear, 2 560 ticks; MEDIUM, root 3.5, centre (158, 173), frame x 151.8 to 164.2
-#     the pair nose to nose with hearts, Nelim passing with straw; says: the courting, at the start of the dusk
-#     instant: Nelim has just walked in with an armful of straw and glances at the pair; next she walks on to the nest
-#     method: female at (158, 172), male at (160, 172), mate step; `Nelim stands at (152, 174) facing East`, `Nelim is forced to haul 1 of the item "Hay" to (157, 174)` (NPT: the stack appears beside her, she picks it up, walks with it in her hands), `I advance the paused game by exactly 30 ticks` (past the pick-up, then mid-walk; guess, read the capture), pause (Nelim at row 174, two cells above the bottom edge)
+#     water-garden, west bank, 17h00, Clear, 2 560 ticks; MEDIUM, root 3.4, centre (158.3, 173), frame x 152.2 to 164.4 (v23: root 3.5 centre 158 started at x 151.8, past the geyser rule)
+#     the pair nose to nose with hearts, Nelim watching; says: the courting, at the start of the dusk
+#     instant: the pair has just met nose to nose and Nelim, who stopped on the bank, watches; next the male turns away (v22: the carried hay hid her face, the straw goes to image 4 only)
+#     method: `Nelim stands at (153, 174) facing East` and `waits in place`, `I let 20 ticks pass`, female at (158, 172), male at (160, 172), mate step, then the held `normal+moodCheerful` smile, screenshot (no haul, no carried item, no walk: the face is not hidden)
 #     the two adults mate (hearts) in the middle; the empty bed at the left is where she slept
-#     Nelim: the evening outfit, smile, profile facing East, so her face reads
+#     Nelim: the evening outfit, smile held, profile facing East; it may not read at this size (written: witness in profile, the pair is the subject)
 #     DR_StickLantern lit at (161, 171); Plant_Daylily fully grown at (153, 171), (153, 170); GSAnimalBedBigPrestige at (156, 172) empty
-#     Mlie.StickLantern, Animal.BedsNew; story scene; "The parents meet nose to nose while Nelim passes with straw."
-#     ESTIMATE 4. Risk: the haul timing (pick-up, then mid-walk) is a guess, and the step is compiled, not played (NPT ticket 1071). Plan: advance 30, then 60 on a refile; if the hay hides her face as in the previous image 4, haul Meat_Chicken and the line loses "straw".
+#     Mlie.StickLantern, Animal.BedsNew; story scene; "The parents meet nose to nose while Nelim watches."
+#     ESTIMATE 5. Risk: Nelim reads small and in profile at 268 px; the pair and the hearts are the subject. Director pass 2026-11-06 (v23) kept: root 3.4 centre (158.3, 173), no hay. Refused: the haul with Meat_Chicken (the story keeps the straw for image 4).
 #
 #  4  workshop3-4-the-nesting-box
 #     calm-zone, east of the cream square, 17h30, Clear, 3 810 ticks; MEDIUM-CLOSE, root 3.2, centre (213, 185)
@@ -64,15 +64,15 @@
 #     ESTIMATE 4. Risk: hay icon hides her face again. Plan: pause mid-stride facing East; plan B carried item Meat_Chicken (read in image 6) and the line becomes "brings a meal".
 #
 #  5  workshop3-5-the-hatching
-#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.3, centre (214, 185), frame x 209.9 to 218.1
+#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.4, centre (215, 185), frame x 210.7 to 219.3, z 182.6 to 187.4 (v23: v22 at root 2.3 centre (214, 185) put Nelim at the edge, outside the frame)
 #     the egg has hatched, the kit stands below the empty box beside its mother; says: it is born at dusk, by the mod's own hatching
 #     instant: the egg has just hatched and Nelim hurries over; next she reaches the kit
-#     method: eggs one tick from hatching, wait for the hatch, THEN `the newborn animal of kind "Teshi" is named "Kit"` and `"Kit" stands at (217, 184)` (the hatched kit wandered out of frame last run; NPT step, fails if the hatcher already named the kit: plan B `Teshi Renew: a female kit teshi stands at (217, 184)`), mother at (215, 185), Nelim at (209, 185) facing East forced to walk to (212, 185), `I advance the paused game by exactly 10 ticks`, pause
-#     the kit and the mother, both from the front; BrowRaised and a smile on Nelim, her eyes toward the kit
-#     Nelim: the evening outfit, BrowRaised, MouthSmile
+#     method: eggs one tick from hatching, wait for the hatch, `Nelim stands at (212, 185) facing East` and `waits in place` (reached green in v22, no walk, so no sweat), `I let 10 ticks pass`, THEN `a female kit teshi stands at (217, 184)` (plan A, the named newborn `"Kit" stands at`, fails if the hatcher named it) FACING WEST toward Nelim (Opus: facing South risks the back of the head, the front view is already shown by the mother and by image 2), mother at (215, 185), held `normal+BrowRaised` smile, nothing ticks after
+#     the kit in side silhouette and the mother from the front; BrowRaised and a smile on Nelim, her eyes toward the kit
+#     Nelim: the evening outfit, BrowRaised, MouthSmile (written)
 #     the nest of image 4 minus the grass at (216, 184), (217, 184) (the kit stands on bare soil for contrast), Plant_Daylily fully grown at (213, 184), (213, 185), the same lantern; the egg gone
 #     hatcher steps played in series 2; story scene; "The kit hatches beside its mother."
-#     ESTIMATE 4. Risk: the kit is small and pale on soil (about 21 px at 268 px at root 2.3); the mother and the kit are placed after the walk and nothing ticks after. Director pass 2026-11-06 kept: root 2.3, centre (214, 185), mother and kit after the advance. Refused: Nelim walking to (214, 185) (that is the bed edge and the grass).
+#     ESTIMATE 4.5. Risk: criterion j weak, the kit is small and pale on soil (about 25 px at 268 px at root 2.4). Director pass 2026-11-06 (v23) kept: root 2.4 centre (215, 185), Nelim waits at (212, 185), kit faces West. To check on the capture: (217, 184) is standable and clear, the kit really faces West (the facing step is NPT's, not played on a kit). Refused: facing South.
 #
 #  6  workshop3-6-the-first-meal (closing story image)
 #     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks; MEDIUM, root 2.8, centre (210, 185) (widened from 2.2 so the dusk and the lantern show)
