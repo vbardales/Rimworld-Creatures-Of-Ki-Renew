@@ -108,7 +108,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Given the save "Nelims-tribe" is loaded
     And I set the weather to "Clear"
 
-  # Image 1, 16h00, Clear, WIDE root 4.5, centre (157, 172) so Nelim is not cut by the left edge: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk, 14 ticks, pause).
+  # Image 1, 16h00, Clear, root 3.2 (was 4.5: the mother was 35 px at 268 px), centre (157, 172) x 151.3 to 162.7: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk 3 cells target (155, 173), 26 ticks = 2 cells, pause), smile held to the screenshot.
   Scenario: 16h00, Nelim arrives at the bedside of the teshi asleep on the west bank
     Given I set the hour to 16
     And game speed is ultrafast
@@ -130,9 +130,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Teshi Renew: the female adult teshi lies down to sleep
     And Nelim's Pickle Tools: "Nelim" stands at (152, 173) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (155, 173)
-    And Nelim's Pickle Tools: I advance the paused game by exactly 14 ticks
+    And Nelim's Pickle Tools: I advance the paused game by exactly 26 ticks
     When Teshi Renew: the camera looks at (157, 172) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 4.5
+    And Nelim's Pickle Tools: the camera root size is set to 3.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: "Nelim" face is held neutral
@@ -147,7 +147,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 2, 16h30, Clear, TIGHT root 1.8: the mother has just risen from the bed and follows Nelim, who walks away south out of frame.
+  # Image 2, 16h30, Clear, TIGHT root 1.8, centre (156, 172): the mother awake on her bed, head up, face to the camera (reworked 2026-11-06: a walking teshi shows the top of its head, a teshi on the bed shows its face, as in images 4 to 6). Nelim out of frame.
   # Plan B if the named spawn or `follows` fails: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her.
   Scenario: 16h30, the teshi awake steps off her bed, a close portrait
     Given I set the hour to 16
@@ -166,11 +166,8 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
-    And Nelim's Pickle Tools: a female adult animal of kind "Teshi" named "Mother" is spawned at (156, 172)
-    And Nelim's Pickle Tools: "Nelim" stands at (157, 166) facing South
-    And Nelim's Pickle Tools: "Mother" is forced to walk to (156, 166)
-    And Nelim's Pickle Tools: I advance the paused game by exactly 10 ticks
-    When Teshi Renew: the camera looks at (156, 171) at zoom 4
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
+    When Teshi Renew: the camera looks at (156, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 1.8
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -318,11 +315,11 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: the newborn animal of kind "Teshi" is named "Kit"
-    And Nelim's Pickle Tools: the animal "Kit" stands at (217, 184)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (212, 185)
     And Nelim's Pickle Tools: I advance the paused game by exactly 10 ticks
+    And Nelim's Pickle Tools: the animal "Kit" stands at (217, 184)
     And Teshi Renew: the camera looks at (213, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.7
     And Teshi Renew: I let 10 frames pass
@@ -340,7 +337,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 6, 18h30, Clear, MEDIUM root 2.8: Nelim holds out the meal, the kit steps up, the mother watches. As run f5d5 (accepted at 4); only the shirt colour and the root size change.
+  # Image 6, 18h30, Clear, MEDIUM root 2.8: Nelim holds out the meal, the kit steps up to her hand (one cell away), the mother watches. Smile held to the screenshot (NPT held expression), face state logged.
   Scenario: 18h30, Nelim feeds the kit by hand at a bare corner with daylilies
     Given I set the hour to 16
     And game speed is ultrafast
@@ -360,7 +357,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_CollarShirt" dyed rgb (126, 150, 118)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
-    And Teshi Renew: a female kit teshi stands at (210, 185)
+    And Teshi Renew: a female kit teshi stands at (209, 185)
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
@@ -372,7 +369,8 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
-    And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
