@@ -78,8 +78,10 @@ if (-not $SharedDir) { $SharedDir = Join-Path (Split-Path -Parent $ModRoot) 'scr
 # A rule returns its problems (nothing = pass); each is printed under the rule name and the exit code is 1 on any.
 $script:findings = @()
 $script:skipped = 0
+$script:ran = 0
 $gameOk = $false
 function It([string]$name, [scriptblock]$itBody) {
+    $script:ran++
     try { $problems = @(& $itBody | Where-Object { $_ }) } catch { $problems = @("threw: $($_.Exception.GetBaseException().Message)") }
     foreach ($p in $problems) { $script:findings += "[$name] $p" }
 }
@@ -676,6 +678,6 @@ It 'the pawn kind names this mod own animal, and the wildBiomes weights are weig
 # =============================================================================================
 if ($gameOk) { Remove-GameReflection }
 $script:findings | ForEach-Object { Write-Output $_ }
-if ($script:skipped -gt 0) { Write-Output "$($script:skipped) game-reading rule(s) skipped" }
+Write-Output "$($script:ran) rules run, $($script:skipped) skipped"
 if ($script:findings.Count -gt 0) { exit 1 }
 exit 0
