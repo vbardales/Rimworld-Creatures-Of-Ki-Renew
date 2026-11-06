@@ -21,26 +21,26 @@
 # SHOTLIST. Fields: index and file | place, hour, frame | subject, instant (just before / just after) | how the gesture is obtained | living things | Nelim | decor with defNames | mods and steps | type, subtitle | ESTIMATE /5, risk, plan
 #
 #  1  workshop3-1-the-watch
-#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; WIDE, root 4.5, centre (160, 172), frame x 152 to 168 (the opening image: it sets the place)
+#     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; MEDIUM-WIDE, root 3.2, centre (158, 172), frame x 152.3 to 163.7 (the opening image: it sets the place; reworked 2026-11-06, root 4.5 gave a mother of 35 px at 268 px)
 #     the mother asleep on a large bed, Nelim arriving at its side; says: by day she sleeps, and someone watches over her
 #     instant: Nelim has just come down the bank and slows at the bedside; next she stops and watches
-#     method: `Nelim stands at (152, 173) facing East`, `Nelim is forced to walk to (155, 173)`, `I advance the paused game by exactly 14 ticks`, game paused: mid-stride, profile, face reads
+#     method: `Nelim stands at (152, 173) facing East`, `Nelim is forced to walk to (155, 173)`, `I advance the paused game by exactly 20 ticks, about 1.5 cells so she stops off the cell grid (13 ticks lands on a cell and reads as standing)`, game paused: mid-stride, profile, face reads
 #     the mother asleep (lies down to sleep) on the left third; lily pads and the pond fill the right, the bank is the foreground
 #     Nelim: the evening outfit (above), smile
 #     GSAnimalBedBigPrestige at (156, 172); Plant_Daylily fully grown at (153, 175)
 #     Animal.BedsNew; steps of series 2 plus `is forced to walk to`; story scene; "Nelim comes down to the water to watch over the sleeping teshi."
-#     ESTIMATE 4. Risk: the mother is small at 268 px in a wide frame (accepted, it is the opener), geyser at the edge. Plan: frame starts at x 152; if the mother is lost, root 4.0.
+#     ESTIMATE 4. Risk: the sleeping mother reads as a pale blob (about 49 px at 268 px, accepted for the opener, Nelim is the second reading), geyser at the edge. Plan: frame starts at x 152.3. Director pass 2026-11-06 kept: root 3.2, 20 ticks. Refused: a darker bed or soil (no recolour step known).
 #
 #  2  workshop3-2-awake
-#     water-garden, west bank, 16h30, Clear, 1 310 ticks; TIGHT front portrait, root 1.8, centre (156, 171)
-#     the mother has just risen from the bed behind her; says: the head, the four banded ears, the tail
-#     instant: she has just woken and steps off the bed; next she walks down the bank
-#     method: `a female adult animal of kind "Teshi" named "Mother" is spawned at (156, 172)` on the bed, `"Mother" is forced to walk to (156, 166)`, `I advance the paused game by exactly 10 ticks` (mother moves 7 cells per second, so about 1.2 cells: z about 170.8, inside the frame z 169.2 to 172.8), pause: mid-step facing South (front view); Nelim stands at (156, 160), out of frame. Timing is a guess, read the capture
-#     Nelim: not in frame (an animal portrait; she waits south of the bank, out of frame)
-#     decor: GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (153, 175)
+#     water-garden, west bank, 16h30, Clear, 1 310 ticks; TIGHT front portrait, root 1.8, centre (157, 172) (reworked 2026-11-06)
+#     the mother awake on her bed, head up, face to the camera, Nelim half in the bottom-left corner looking toward her; says: the head, the four banded ears, the tail
+#     instant: she has just woken and lifts her head toward Nelim; next she stands up
+#     method: `a female adult teshi belonging to the colony stands at (156, 172)` on the bed (no lie-down, no walk: a walking teshi shows the top of its head, a teshi on the bed shows its face), Nelim stands at (154, 170) facing East, no tick after the spawn so she cannot step off, smile held to the screenshot
+#     Nelim: only the bottom-left corner of her, cut by the edge, in the evening outfit and a smile (director pass: a head-on teshi with nobody in frame is posed, the gaze cue joins her to the story)
+#     decor: GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (159, 171)
 #     kind defName `Teshi` (read in Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml); steps of the Pickle Tools catalogue; story scene; "Awake, she steps off her bed and down the bank."
 #     ESTIMATE 4.5. Risk: the forced walk is untested on an animal (NPT: compiled, not played, ticket 1071). Plan B: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her (criterion e weak, estimate 4).
-#
+#     ESTIMATE 4. Risk: she may step off the bed or look away, no visible gesture beyond the raised head; Nelim cut by the edge may read oddly. Plan B: Nelim out of frame, estimate 3.5. Director pass 2026-11-06 kept: gaze cue, no ticks, daylily moved into frame, centre (157, 172).
 #  3  workshop3-3-the-parents
 #     water-garden, west bank, 17h00, Clear, 2 560 ticks; MEDIUM, root 3.5, centre (158, 173), frame x 151.8 to 164.2
 #     the pair nose to nose with hearts, Nelim passing with straw; says: the courting, at the start of the dusk
@@ -64,7 +64,7 @@
 #     ESTIMATE 4. Risk: hay icon hides her face again. Plan: pause mid-stride facing East; plan B carried item Meat_Chicken (read in image 6) and the line becomes "brings a meal".
 #
 #  5  workshop3-5-the-hatching
-#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.7, centre (213, 185)
+#     calm-zone, same corner, 18h00, Clear, 5 060 ticks; TIGHT, root 2.3, centre (214, 185), frame x 209.9 to 218.1
 #     the egg has hatched, the kit stands below the empty box beside its mother; says: it is born at dusk, by the mod's own hatching
 #     instant: the egg has just hatched and Nelim hurries over; next she reaches the kit
 #     method: eggs one tick from hatching, wait for the hatch, THEN `the newborn animal of kind "Teshi" is named "Kit"` and `"Kit" stands at (217, 184)` (the hatched kit wandered out of frame last run; NPT step, fails if the hatcher already named the kit: plan B `Teshi Renew: a female kit teshi stands at (217, 184)`), mother at (215, 185), Nelim at (209, 185) facing East forced to walk to (212, 185), `I advance the paused game by exactly 10 ticks`, pause
@@ -72,7 +72,7 @@
 #     Nelim: the evening outfit, BrowRaised, MouthSmile
 #     the nest of image 4 minus the grass at (216, 184), (217, 184) (the kit stands on bare soil for contrast), Plant_Daylily fully grown at (213, 184), (213, 185), the same lantern; the egg gone
 #     hatcher steps played in series 2; story scene; "The kit hatches beside its mother."
-#     ESTIMATE 4. Risk: the kit pale on yellow, or still out of frame. Plan: bare soil under it and daylilies' orange behind; root 2.0 if it reads small.
+#     ESTIMATE 4. Risk: the kit is small and pale on soil (about 21 px at 268 px at root 2.3); the mother and the kit are placed after the walk and nothing ticks after. Director pass 2026-11-06 kept: root 2.3, centre (214, 185), mother and kit after the advance. Refused: Nelim walking to (214, 185) (that is the bed edge and the grass).
 #
 #  6  workshop3-6-the-first-meal (closing story image)
 #     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks; MEDIUM, root 2.8, centre (210, 185) (widened from 2.2 so the dusk and the lantern show)
@@ -108,7 +108,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Given the save "Nelims-tribe" is loaded
     And I set the weather to "Clear"
 
-  # Image 1, 16h00, Clear, root 3.2 (was 4.5: the mother was 35 px at 268 px), centre (157, 172) x 151.3 to 162.7: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk 3 cells target (155, 173), 26 ticks = 2 cells, pause), smile held to the screenshot.
+  # Image 1, 16h00, Clear, root 3.2 (was 4.5: the mother was 35 px at 268 px), centre (158, 172) x 152.3 to 163.7: the mother asleep on the bed, Nelim arrives mid-stride at its side (forced walk to (155, 173), 20 ticks = about 1.5 cells so she is off the cell grid, pause), smile held to the screenshot.
   Scenario: 16h00, Nelim arrives at the bedside of the teshi asleep on the west bank
     Given I set the hour to 16
     And game speed is ultrafast
@@ -130,8 +130,8 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Teshi Renew: the female adult teshi lies down to sleep
     And Nelim's Pickle Tools: "Nelim" stands at (152, 173) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (155, 173)
-    And Nelim's Pickle Tools: I advance the paused game by exactly 26 ticks
-    When Teshi Renew: the camera looks at (157, 172) at zoom 4
+    And Nelim's Pickle Tools: I advance the paused game by exactly 20 ticks
+    When Teshi Renew: the camera looks at (158, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -149,7 +149,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
 
   # Image 2, 16h30, Clear, TIGHT root 1.8, centre (156, 172): the mother awake on her bed, head up, face to the camera (reworked 2026-11-06: a walking teshi shows the top of its head, a teshi on the bed shows its face, as in images 4 to 6). Nelim out of frame.
   # Plan B if the named spawn or `follows` fails: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her.
-  Scenario: 16h30, the teshi awake steps off her bed, a close portrait
+  Scenario: 16h30, the teshi awake lifts her head on her bed, a close portrait
     Given I set the hour to 16
     And game speed is ultrafast
     And I wait 1310 ticks
@@ -157,9 +157,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Sanctuary: I am at the sanctuary "water-garden"
     And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (156, 172)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (155, 170) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (159, 171) fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" stands at (156, 168) facing South
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 170) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
@@ -167,10 +167,16 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
-    When Teshi Renew: the camera looks at (156, 172) at zoom 4
+    When Teshi Renew: the camera looks at (157, 172) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 1.8
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: "Nelim" face is held neutral
+    And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
+    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
+    And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-2-awake"
     And Teshi Renew: the camera's zoom limits are restored
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
@@ -260,7 +266,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "Hay" to (212, 185)
     And Nelim's Pickle Tools: I advance the paused game by exactly 45 ticks
-    When Teshi Renew: the camera looks at (213, 185) at zoom 4
+    When Teshi Renew: the camera looks at (214, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.2
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -315,13 +321,13 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (70, 56, 44)
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Nelim's Pickle Tools: the newborn animal of kind "Teshi" is named "Kit"
-    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
     And Nelim's Pickle Tools: "Nelim" stands at (209, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (212, 185)
     And Nelim's Pickle Tools: I advance the paused game by exactly 10 ticks
     And Nelim's Pickle Tools: the animal "Kit" stands at (217, 184)
-    And Teshi Renew: the camera looks at (213, 185) at zoom 4
-    And Nelim's Pickle Tools: the camera root size is set to 2.7
+    And Teshi Renew: a female adult teshi belonging to the colony stands at (215, 185)
+    And Teshi Renew: the camera looks at (214, 185) at zoom 4
+    And Nelim's Pickle Tools: the camera root size is set to 2.3
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And Nelim's Pickle Tools: "Nelim" face is held neutral
