@@ -55,28 +55,41 @@
   The earlier claim that sixteen checks were seen to fail one fault at a time was about the old file and
   is not re-verified here.
 
+  CONVERTED 2026-11-06 (AGENTS.md, "Mod tests shape"): this is now Tests/Rule-OwnValues.ps1, run by the generated
+  Tests/Test-Mod.ps1 after the shared checks. Same checks; it takes -ModRoot and -SharedDir, prints its findings and exits 1 on any.
+  The checks that read the compiled game (marked GameIt) SKIP loudly, never pass, when the game or lib/GameReflection.ps1 is
+  absent (the GitHub runner); every local run plays them.
+
 .EXAMPLE
-  powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Run-Functional-Tests.ps1
+  powershell -NoProfile -ExecutionPolicy Bypass -File Tests/Rule-OwnValues.ps1 -ModRoot .
 #>
 
 param(
-    [string]$ModRoot  = (Split-Path -Parent $PSScriptRoot),
+    [Parameter(Mandatory)][string]$ModRoot,
+    [string]$SharedDir,
     [string]$GameData = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Data',
     [string]$Managed  = 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed'
 )
 
 $ErrorActionPreference = 'Stop'
+$ModRoot = (Resolve-Path -LiteralPath $ModRoot).Path
+if (-not $SharedDir) { $SharedDir = Join-Path (Split-Path -Parent $ModRoot) 'scripts' }
 
-# A test here returns its problems (nothing = pass); the shared Test-That wants a boolean, so the problems go to Note.
+# A rule returns its problems (nothing = pass); each is printed under the rule name and the exit code is 1 on any.
+$script:findings = @()
+$script:skipped = 0
+$gameOk = $false
 function It([string]$name, [scriptblock]$itBody) {
-    Test-That $name {
-        $problems = @(& $itBody | Where-Object { $_ })
-        foreach ($p in $problems) { Note $p }
-        $problems.Count -eq 0
-    }
+    try { $problems = @(& $itBody | Where-Object { $_ }) } catch { $problems = @("threw: $($_.Exception.GetBaseException().Message)") }
+    foreach ($p in $problems) { $script:findings += "[$name] $p" }
+}
+# A rule that reads the compiled game: no game = skipped, loudly, never passed.
+function GameIt([string]$name, [scriptblock]$itBody) {
+    if (-not $gameOk) { Write-Host "WARNING SKIPPED (needs the game): $name" -ForegroundColor Yellow; $script:skipped++; return }
+    It $name $itBody
 }
 
-function Section([string]$name) { Write-Output ''; Write-Output $name }
+function Section([string]$name) { }
 
 # ---------------------------------------------------------------------------------------------
 # The game, loaded
@@ -89,14 +102,19 @@ function Section([string]$name) { Write-Output ''; Write-Output $name }
 
 # The shared harness (protocols repository, scripts/lib): assembly resolver, Get-AssemblyTypes, Get-FieldsRecursive, the test runner.
 # The tests below are this mod's own: what its defs hand to the game.
-. (Join-Path (Split-Path -Parent $ModRoot) 'scripts/lib/GameReflection.ps1')
-. (Join-Path (Split-Path -Parent $ModRoot) 'scripts/lib/TestRunner.ps1')
-Initialize-GameReflection -Managed $Managed
+$reflectionLib = Join-Path $SharedDir 'lib/GameReflection.ps1'
+$asmPath = Join-Path $Managed 'Assembly-CSharp.dll'
+if ((Test-Path -LiteralPath $reflectionLib) -and (Test-Path -LiteralPath $asmPath) -and (Test-Path -LiteralPath (Join-Path $GameData 'Core'))) {
+    . $reflectionLib
+    Initialize-GameReflection -Managed $Managed
+    $gameOk = $true
+} else {
+    Write-Host 'WARNING the game or lib/GameReflection.ps1 is not here: the checks that read the compiled game are SKIPPED, not passed' -ForegroundColor Yellow
+}
 
 $allTypes = @()
 $byName   = @{}
-$asmPath  = Join-Path $Managed 'Assembly-CSharp.dll'
-if (Test-Path $asmPath) {
+if ($gameOk) {
     $allTypes = @(Get-AssemblyTypes $asmPath)
     foreach ($t in $allTypes) { if (-not $byName.ContainsKey($t.Name)) { $byName[$t.Name] = $t } }
 }
@@ -255,7 +273,7 @@ function Show-Some($names) {
 
 $vanillaNamed = @{}
 $vanillaAbstract = @{}
-foreach ($dir in @(Get-Item (Join-Path $GameData 'Core'))) {
+foreach ($dir in @(if ($gameOk) { Get-Item (Join-Path $GameData 'Core') })) {
     $defsRoot = Join-Path $dir.FullName 'Defs'
     if (-not (Test-Path $defsRoot)) { continue }
     foreach ($f in Get-ChildItem $defsRoot -Recurse -Filter *.xml) {
@@ -284,7 +302,7 @@ Section 'The harness itself'
 # Not ceremony. Every group below reports "nothing wrong" when its inputs are empty, so the inputs
 # are asserted first.
 
-It 'the game and its data are actually loaded' {
+GameIt 'the game and its data are actually loaded' {
     if ($allTypes.Count -lt 10000)      { "Assembly-CSharp gave $($allTypes.Count) types; expected some sixteen thousand. Every lookup below would return null and pass." }
     if (-not $byName['RaceProperties']) { 'RaceProperties not found: the type table is empty, or the game moved it.' }
     if ($vanillaNamed.Count -lt 1000)   { "Core gave $($vanillaNamed.Count) defs; expected thousands. Check -GameData." }
@@ -311,7 +329,7 @@ It 'About identifies this standalone mod and the license copies match' {
     if ((Get-FileHash (Join-Path $ModRoot 'LICENSE')).Hash -ne (Get-FileHash (Join-Path $modDir 'LICENSE')).Hash) { 'distributed license differs from repository license' }
 }
 
-It 'XML classes and explicit graphics types exist in the game' {
+GameIt 'XML classes and explicit graphics types exist in the game' {
     foreach ($def in $defNodes) {
         foreach ($node in $def.SelectNodes('.//*[@Class] | .//graphicClass')) {
             $name = if ($node.HasAttribute('Class')) { $node.GetAttribute('Class') } else { $node.InnerText.Trim() }
@@ -409,14 +427,14 @@ It 'the Nocturnal Animals integration is one FindMod patch on both names of that
 Section "The port's two changes, read off the game"
 # =============================================================================================
 
-It 'RaceProperties has no wildness field, so the pre-1.6 form could only be ignored' {
+GameIt 'RaceProperties has no wildness field, so the pre-1.6 form could only be ignored' {
     $rp = $byName['RaceProperties']
     $wild = @($rp.GetFields($BFa) | Where-Object { $_.Name -ceq 'wildness' })
     if ($wild.Count -gt 0) { 'RaceProperties.wildness exists in this build: the first of the two port changes is unnecessary, and the value belongs under <race> after all.' }
     if ($teshiNode.SelectSingleNode('race/wildness')) { 'the def still writes <wildness> under <race>, where nothing would read it.' }
 }
 
-It 'Wildness is declared as a stat, and 0.50 is a value that stat accepts' {
+GameIt 'Wildness is declared as a stat, and 0.50 is a value that stat accepts' {
     $w = Get-Text $teshiNode 'statBases/Wildness'
     if (-not $w) { return 'the def declares no Wildness under statBases, so a wild teshi would take the stat default.' }
     if (-not $byName['StatDefOf'].GetField('Wildness', $BFa)) { 'StatDefOf.Wildness is gone: taming no longer reads this stat.' }
@@ -431,7 +449,7 @@ It 'Wildness is declared as a stat, and 0.50 is a value that stat accepts' {
     if ($def -and [double]$def -eq $v) { "Wildness $v is the stat's own default, so declaring it changes nothing." }
 }
 
-It 'the unfertilized egg is reached on a mated laying, by two methods of CompEggLayer' {
+GameIt 'the unfertilized egg is reached on a mated laying, by two methods of CompEggLayer' {
     $f = 'CompProperties_EggLayer.eggUnfertilizedDef'
     $m = Get-ReaderMethods $f
     if ($m.Count -eq 0) { return "nothing in the game reads $f any more: the def this port added would be inert." }
@@ -445,7 +463,7 @@ It 'the unfertilized egg is reached on a mated laying, by two methods of CompEgg
     if ($low -le [int]$fert) { "eggCountRange $count is not above eggFertilizationCountMax $fert, so every egg of a laying can be fertilized and this path never reaches the unfertilized def." }
 }
 
-It 'a lone female never lays: the gate arms below 1, and this animal sits at 0.9' {
+GameIt 'a lone female never lays: the gate arms below 1, and this animal sits at 0.9' {
     # ProgressStoppedBecauseUnfertilized opens by comparing the setting against 1.0: at 1 or above
     # the gate is disarmed and an unmated female runs all the way to a laying. That constant is read
     # off the compiled property rather than taken from a wiki.
@@ -492,7 +510,7 @@ It 'a lone female never lays: the gate arms below 1, and this animal sits at 0.9
     if ([double]$p -ge 1.0) { "eggProgressUnfertilizedMax is $p, which disarms the gate: a lone female WILL lay, and TESTING.md scenario 4b is written the wrong way round." }
 }
 
-It 'the fertilized egg hatches into this mod own animal' {
+GameIt 'the fertilized egg hatches into this mod own animal' {
     $hatch = $null
     foreach ($li in $fertNode.SelectNodes('comps/li')) {
         if ($li.GetAttribute('Class') -ceq 'CompProperties_Hatcher') { $hatch = $li }
@@ -510,7 +528,7 @@ It 'the fertilized egg hatches into this mod own animal' {
 Section 'No setting inert'
 # =============================================================================================
 
-It 'every field these defs write still has a reader in the game' {
+GameIt 'every field these defs write still has a reader in the game' {
     # The rule: a def that writes a field the game no longer reads is writing a comment. The fields
     # of Def itself are excluded - they are not settings of this mod.
     $skip = @('Def.defName', 'Def.label', 'Def.description', 'Def.generated', 'Def.modExtensions')
@@ -522,7 +540,7 @@ It 'every field these defs write still has a reader in the game' {
     if ($dead.Count -gt 0) { "written but read by nothing in 1.6: $($dead -join ', ')" }
 }
 
-It 'the egg-layer settings are read by the egg-layer comp, not by something else' {
+GameIt 'the egg-layer settings are read by the egg-layer comp, not by something else' {
     foreach ($name in @('eggFertilizedDef', 'eggUnfertilizedDef', 'eggFertilizationCountMax', 'eggLayIntervalDays', 'eggProgressUnfertilizedMax')) {
         $field = "CompProperties_EggLayer.$name"
         $r = Get-Readers $field
@@ -531,7 +549,7 @@ It 'the egg-layer settings are read by the egg-layer comp, not by something else
     }
 }
 
-It 'the tools name body part groups this mod own body puts on a part' {
+GameIt 'the tools name body part groups this mod own body puts on a part' {
     $groups = @{}
     foreach ($g in $bodyNode.SelectNodes('.//groups/li')) { $groups[$g.InnerText.Trim()] = $true }
     $used = 0
@@ -623,14 +641,14 @@ It 'no texture is shipped that no def asks for' {
 Section 'What it leans on'
 # =============================================================================================
 
-It 'the body def name does not collide with one of the game own' {
+GameIt 'the body def name does not collide with one of the game own' {
     # Two defs of one name: the last loaded wins, silently. A body named after a vanilla one would
     # rewrite that animal's anatomy for every other mod in the list too.
     $bn = Get-Text $bodyNode 'defName'
     if (Has-Vanilla 'BodyDef' $bn) { "BodyDef '$bn' is also declared by the game: whichever loads last replaces the other, with no error." }
 }
 
-It 'the food types it eats are flags the game defines' {
+GameIt 'the food types it eats are flags the game defines' {
     $v = Get-Text $teshiNode 'race/foodType'
     if (-not $v) { return 'no foodType: the animal would eat nothing.' }
     $enum = $byName['FoodTypeFlags']
@@ -656,6 +674,8 @@ It 'the pawn kind names this mod own animal, and the wildBiomes weights are weig
 }
 
 # =============================================================================================
-Write-Output ''
-Remove-GameReflection
-Complete-Tests
+if ($gameOk) { Remove-GameReflection }
+$script:findings | ForEach-Object { Write-Output $_ }
+if ($script:skipped -gt 0) { Write-Output "$($script:skipped) game-reading rule(s) skipped" }
+if ($script:findings.Count -gt 0) { exit 1 }
+exit 0

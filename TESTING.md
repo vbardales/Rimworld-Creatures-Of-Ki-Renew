@@ -1,8 +1,8 @@
 # Creatures of Ki — Teshi Renew: what to check in game
 
-Standalone suite `Tests/Run-Functional-Tests.ps1` gives 20 checks on the compiled game, the exact patch shapes, the textures and exact values; XML parsing and references are covered by the shared Check-ModBasics and Check-DefRefs (cut 2026-11-02). Four external validators once cited here absent from repo; their historical results not current verification.
+Standalone suite `Tests/Rule-OwnValues.ps1` gives 20 checks on the compiled game, the exact patch shapes, the textures and exact values; XML parsing and references are covered by the shared Check-ModBasics and Check-DefRefs (cut 2026-11-02). Four external validators once cited here absent from repo; their historical results not current verification.
 
-`Tests/Run-Functional-Tests.ps1` sits between the two. Cannot run game either, but reads compiled game and runs twenty checks this doc used to ask of a play session — incl. the scenario 4b was written to settle, now settled below. Run it first; takes seconds, costs nothing.
+`Tests/Rule-OwnValues.ps1` sits between the two. Cannot run game either, but reads compiled game and runs twenty checks this doc used to ask of a play session — incl. the scenario 4b was written to settle, now settled below. Run it first; takes seconds, costs nothing.
 
 Pickle suite played most of these on headless game on 2026-09-24; STATUS.md says what it found. Played by hand, run in order: first cheap, catches anything fatal; fourth only one that can crash a save.
 
@@ -93,7 +93,7 @@ Tame single female, no male anywhere on map, advance cycle same way.
 
 Pinned at 0.9, needing 1, she stopped for good. Inspect string should say so: comp has `ProgressStoppedBecauseUnfertilized` state for exactly this case.
 
-So scenario now confirmation, not experiment. **Fails if** she lays anything at all — would mean reading wrong, and `Run-Functional-Tests.ps1` should have caught it first.
+So scenario now confirmation, not experiment. **Fails if** she lays anything at all — would mean reading wrong, and `Rule-OwnValues.ps1` should have caught it first.
 
 What that settles about def: crash this mod's docs once described not possible for lone teshi, and same reading shows unfertilized def not reached by mated laying either. Declared because every egg-layer in Core declares one, and it is what dev-mode lay-egg on female with no fertilization left would ask for. Harmless, and not the fix changelog says.
 
@@ -181,7 +181,7 @@ Read from `../AUDIT.md`, transition `done -> tested`. Pickle suite played since 
 
 ### Scope of the Pickle suite
 
-Only what running game can show. Rest already proved offline by `Tests/Run-Functional-Tests.ps1`. Features in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run.
+Only what running game can show. Rest already proved offline by `Tests/Rule-OwnValues.ps1`. Features in `Tests/Pickle/Mod/Pickle/Features/`; `Tests/Pickle/README.md` says how to run.
 
 | Scenario | Fate | Feature | Why |
 | --- | --- | --- | --- |
