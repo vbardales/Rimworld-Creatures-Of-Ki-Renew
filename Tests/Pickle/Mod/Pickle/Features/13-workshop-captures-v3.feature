@@ -24,7 +24,7 @@
 #     water-garden, west bank, 16h00, Clear, 60 ticks of set-up only; MEDIUM-WIDE, root 2.8, centre (157, 173), frame x 152.0 to 162.0, z 170.2 to 175.8 (the opening image; reworked 2026-11-06 v23: v22 at root 3.2 cut Nelim by the left edge and left the right half empty)
 #     the mother asleep on a large bed, Nelim arriving at its side; says: by day she sleeps, and someone watches over her
 #     instant: Nelim has just come down the bank and slows at the bedside; next she stops and watches
-#     method: `Nelim stands at (153, 174) facing East`, `Nelim is forced to walk to (157, 174)` (row 174 was walked green in image 3), `I advance the paused game by exactly 20 ticks, about 1.5 cells so she stops off the cell grid (13 ticks lands on a cell and reads as standing)`, game paused: mid-stride, profile, she ends about x 154.5, whole inside the frame
+#     method: `Nelim stands at (154, 174) facing East`, `Nelim is forced to walk to (157, 174)` (row 174 was walked green in image 3), `I advance the paused game by exactly 30 ticks, about 2.5 cells` (v23: after 20 ticks from (153, 174) she was still at x 152.5 on the frame edge, so she starts one cell further East and walks longer), game paused: mid-stride, profile, she ends between x 154 and 156.5, whole inside the frame either way
 #     the mother asleep (lies down to sleep) on the left third; lily pads and the pond fill the right, the bank is the foreground
 #     Nelim: the evening outfit (above); NO smile required, written on purpose: wide opener, face under 40 px, she watches the mother with eyes down (v22: eyes closed, nothing readable at this size)
 #     GSAnimalBedBigPrestige at (156, 172); Plant_Daylily fully grown at (153, 175)
@@ -55,8 +55,8 @@
 #  4  workshop3-4-the-nesting-box
 #     calm-zone, east of the cream square, 17h30, Clear, 3 810 ticks; MEDIUM-CLOSE, root 3.2, centre (213, 185)
 #     the mother on her bed in a nest of yellow grass, the egg in its box, Nelim bringing the straw; says: she builds the nest as the light goes, and Nelim helps
-#     instant: Nelim has carried the straw from the bank and reaches the nest; next she lays it by the bed
-#     method: `Nelim stands at (208, 185) facing East`, `Nelim is forced to haul 1 of the item "Hay" to (212, 185)`, `I advance the paused game by exactly 45 ticks` (past the pick-up, then mid-walk, never at the pick-up: the hay covered her face last run); she stays west of the grass at row 185
+#     instant: Nelim has just laid the straw down by the nest; next she straightens up (v23: the carried hay hid her face in v6; it now lies on the ground and her hands are empty)
+#     method: `Nelim stands at (208, 185) facing East`, `Nelim is forced to haul 1 of the item "Hay" to (212, 185)`, `I advance the paused game by exactly 45 ticks` (past the pick-up, then mid-walk), then `"Nelim" puts down what it carries at (211, 186)` (NPT steps.md l.214: the hay stays on the ground in the shot, her hands are empty, face free); she stays west of the grass at row 185
 #     the mother from the front on her bed
 #     Nelim: the evening outfit, smile
 #     Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown; EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept at the centre-left for continuity with images 5 and 6; Opus suggested (209, 187), refused)
@@ -108,7 +108,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Given the save "Nelims-tribe" is loaded
     And I set the weather to "Clear"
 
-  # Image 1 (v23), 16h00, Clear, root 2.8, centre (157, 173), x 152.0 to 162.0: the mother asleep on the bed, Nelim whole at the left, arrives mid-stride (starts (153, 174), forced walk to (157, 174), 20 ticks = about 1.5 cells so she is off the cell grid, pause). No smile required (wide opener, face under 40 px); the held expression stays in the steps.
+  # Image 1 (v23), 16h00, Clear, root 2.8, centre (157, 173), x 152.0 to 162.0: the mother asleep on the bed, Nelim whole at the left, arrives mid-stride (starts (154, 174), forced walk to (157, 174), 30 ticks = about 2.5 cells, pause). No smile required (wide opener, face under 40 px); the held expression stays in the steps.
   Scenario: 16h00, Nelim arrives at the bedside of the teshi asleep on the west bank
     Given I set the hour to 16
     And game speed is ultrafast
@@ -119,7 +119,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (156, 172)
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (153, 175) fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
-    And Nelim's Pickle Tools: "Nelim" stands at (153, 174) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 174) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
     And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
@@ -128,9 +128,9 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: I let 120 ticks pass
     And Teshi Renew: a female adult teshi belonging to the colony stands at (156, 172)
     And Teshi Renew: the female adult teshi lies down to sleep
-    And Nelim's Pickle Tools: "Nelim" stands at (153, 174) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 174) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (157, 174)
-    And Nelim's Pickle Tools: I advance the paused game by exactly 20 ticks
+    And Nelim's Pickle Tools: I advance the paused game by exactly 30 ticks
     When Teshi Renew: the camera looks at (157, 173) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.8
     And Teshi Renew: I let 10 frames pass
@@ -224,7 +224,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     Then no warnings from mod "Creatures of Ki - Teshi Renew"
     And no errors were logged
 
-  # Image 4, 17h30, Clear, MEDIUM-CLOSE root 3.2: the mother on her bed in the nest, the egg in its box, Nelim reaches the nest with the straw (pause mid-stride, about 35 ticks).
+  # Image 4 (v24), 17h30, Clear, MEDIUM-CLOSE root 3.2: the mother on her bed in the nest, the egg in its box, Nelim mid-stride after laying the straw down at (211, 186): hands empty, hay on the ground, face free.
   # Plan B if the hay covers her face again: carry "Meat_Chicken" and change the subtitle to a meal.
   Scenario: 17h30, the mother at her nesting box while Nelim reaches the nest with straw
     Given I set the hour to 16
@@ -265,6 +265,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" is forced to haul 1 of the item "Hay" to (212, 185)
     And Nelim's Pickle Tools: I advance the paused game by exactly 45 ticks
+    And Nelim's Pickle Tools: "Nelim" puts down what it carries at (211, 186)
     When Teshi Renew: the camera looks at (214, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 3.2
     And Teshi Renew: I let 10 frames pass
