@@ -182,7 +182,7 @@ Checked in SANCTUAIRE-CASES (calm-zone block): the free-standable list for z 185
 
 | Animal | Shots | Outfit | Last read of its sheet | Exceptions |
 |---|---|---|---|---|
-| teshi "Mother", "Teshi", "Kit" (this mod's creature, tamed or spawned for the scene) | 1 to 6 | none (no apparel mod fits the teshi body) | n/a, not an NSB animal | none: not a pet or livestock, so outside rule 2 |
+| teshi "Mother", "Teshi", "Kit" (this mod's creature, tamed or spawned for the scene; outside NSB) | 1 to 6 | none (no apparel mod fits the teshi body) | n/a, not an NSB animal | VALIDATED by the owner, 2026-11-06: "je valide le teshi" (not a pet or livestock, rule 2 did not strictly apply; validation covers the teshi for this mod) |
 
 ## Earlier state
 
