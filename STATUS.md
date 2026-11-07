@@ -193,9 +193,11 @@ Fifth run, 2026-11-07: NSB `Docs` commits of 2026-11-06 17:00 to 2026-11-07 (f42
 | teshi (adult, defName `Teshi`) | 1, 2, 3, 4, 5, 6 | no |
 | teshi kit (newborn stage of the same kind) | 5, 6 | no |
 
-Places read: 2026-11-06 (SANCTUAIRE-LIEUX, SANCTUAIRE-CASES (calm-zone block only), EMBELLISSEMENT-LIEUX).
+Sixth run, 2026-11-08: NSB `Docs` commits 2026-11-07 to 2026-11-08 (f4268bc, 4db5ab9, b664c23, 564f12b, fdf06d7, 8aec4a1, ffd294b, 046c6a2, 0037883, c2706c5, 6d73581) read as diffs. None touches `water-garden`, `calm-zone`, the Nelim outfit rows used here, or any animal used: they validate other places (play-area, plant-garden, sofa-corner, dining-nook, sleeping-nook, workshops, rice-paddies) and Nelim body hair 1.7 (clothed in the gallery, no change). NPT `docs/steps.md` 2026-11-07 to 2026-11-08 read: `puts down what it carries` no longer says the item is forbidden only while the game runs (image 4 v25 carries nothing, unaffected); new steps (lies asleep in the bed, light lifted to at least, decor made of, growing-zone clean-ups) serve no shot of this mod today; no step of ours was renamed or removed. Nothing changed in the shotlist or scenarios. Rule 5 unchanged: no row MISSING. Idea, not applied: newly validated NSB decor places could densify image 4 decor (criterion b), a session call at the rework.
 
-Checked in SANCTUAIRE-CASES (calm-zone block): the free-standable list for z 185 skips x 208 and 209 (the cells of Nelim in images 4 to 6 and of the kit in image 6), but green v18 and v6 runs stood Nelim on both, so the list marks something on the cell (grass), not a block; no change. Tribe read: 2026-11-06 (NELIM-PROFIL, APPARENCES-CANON, CATALOGUE-ANIMAUX, GALERIE-COLONS, LOOKS-VALIDATION, HUMAINS-PROFILS; NSB-ROSTER by search for Nelim only).
+Places read: 2026-11-08 (diffs of SANCTUAIRE-LIEUX, VALIDE, EMBELLISSEMENT-LIEUX; calm-zone and water-garden unchanged since 2026-11-06). Steps read: 2026-11-08 (PickleTools docs/steps.md diffs).
+
+Checked in SANCTUAIRE-CASES (calm-zone block): the free-standable list for z 185 skips x 208 and 209 (the cells of Nelim in images 4 to 6 and of the kit in image 6), but green v18 and v6 runs stood Nelim on both, so the list marks something on the cell (grass), not a block; no change. Tribe read: 2026-11-08 (diffs only, nothing for this mod; full read 2026-11-06: NELIM-PROFIL, APPARENCES-CANON, CATALOGUE-ANIMAUX, GALERIE-COLONS, LOOKS-VALIDATION, HUMAINS-PROFILS; NSB-ROSTER by search for Nelim only).
 
 | Place | Shots | Changes made to it for the gallery | Last read |
 |---|---|---|---|
