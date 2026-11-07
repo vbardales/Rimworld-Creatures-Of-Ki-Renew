@@ -7,7 +7,7 @@
 # at the tea-house infirmary where a cut claw meets a bionic arm. She always moves or faces East: the pond is at x about 156, the nest at x about 213, so the series reads as one journey from the bank to the nest.
 # TIME: one start hour (16h), then 30 game minutes per image (1 250 ticks, cumulative): waits 60, 1310, 2560, 3810, 5060, 6310 ticks; image 7 at 19h30 (8810). Every Scenario reloads the save, so each sets 16h again,
 # waits its own total, then places what lives in the scene after the wait. The teshi is crepuscular: asleep at 16h, awake and active from 16h30.
-# WEATHER: `I set the weather to "Clear"` in the Background, held on purpose for the whole series (dusk comes from the hour and the lanterns; rain or fog would hide the animals). The lit lantern is the dusk marker: none in images 1 and 2, lit from image 3.
+# WEATHER: `I set the weather to "Clear"` in the Background, held on purpose for the whole series (dusk comes from the hour and the lanterns; rain or fog would hide the animals). The lit lantern is the dusk marker: none in image 1, the first one lit in image 2 (v26, 16h30 is already dim and the frame needs a light source), then a second light from image 4 (TorchLamp), a Brazier in image 6 (the light ramp of the Opus pass, 2026-11-08).
 # NELIM: ONE outfit for the whole evening (GALLERY.md criterion d, continuity): Apparel_CollarShirt dyed rgb (126, 150, 118) sage green, Apparel_Pants dyed rgb (70, 56, 44) dark brown (clothes are free, NSB 2026-10-28).
 #   CANON of NSB (2026-10-28, SanctuaryBacklot sanctuary-nelim-check.feature): hairstyle Roo_HD_Hair_Highpony (long: Bob was my choice with no source, dropped), hair rgb (51, 33, 16), skin rgb (228, 158, 90) and Eyes_DarkBrown stay as the save gives them (no override).
 #   Smile by default (MouthSmile, LidCheerful, face kit neutral, expression "normal" set last, map at 20 degrees). Image 5 adds BrowRaised. Sage keeps her readable at 268 px against brown soil and yellow grass.
@@ -37,7 +37,7 @@
 #     instant: she has just woken and lifts her head toward Nelim; next she stands up
 #     method: `Nelim stands at (154, 171) facing East` and `waits in place` (NPT steps.md l.260, no walk), `I let 120 ticks pass` (the dress-up ticks), THEN `a female adult teshi belonging to the colony stands at (156, 172)` on the bed (no lie-down, no walk: a walking teshi shows the top of its head, a teshi on the bed shows its face), then the held `normal+moodCheerful` smile, screenshot (the order of image 6, which smiled clean; Opus: do not skip the ticks, the held expression needs them before it)
 #     Nelim: whole, at the left, in the evening outfit, smile held; a witness, her face is about 15 px at 268 px so the smile is not the point (the mother is the subject)
-#     decor: GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (159, 171)
+#     decor (v26, 2026-11-08, dense: v23 scored decoration 3.5, flat grey water and bare soil; Opus pass: dress the north and east edges, keep the south of the subjects clear, one small light): GSAnimalBedBigPrestige at (156, 172) behind the mother; Plant_Daylily fully grown at (159, 171), (159, 173), (160, 173); DR_StickLantern lit at (160, 171) (first light of the evening, 16h30 already dim); Stool at (153, 172) behind Nelim (she has just stood up to wait); PlantPot_Bonsai at (153, 170); a band of Plant_YellowTallGrass fully grown at (153, 174) to (158, 174) along the north bank. Refused by Opus: grass beside Nelim (covers her legs), a Brazier by the pond in daylight, anything on the water.
 #     kind defName `Teshi` (read in Mod/Defs/ThingDefs_Races/Races_Animal_Teshi.xml); steps of the Pickle Tools catalogue; story scene; "Awake, she lifts her head toward Nelim."
 #     Plan B: `Teshi Renew: a female adult teshi belonging to the colony stands at (156, 171)` with the bed behind her.
 #     ESTIMATE 4.5. Risk: criterion e weak, the mother sits upright and reads as posed (v22); the raised head is the only gesture. Director pass 2026-11-06 (v23) kept: root 2.4 centre (157, 172) so Nelim is whole, wait in place then ticks then held smile. Not done: a walk for the mother (shows the top of her head).
@@ -59,7 +59,7 @@
 #     method: `Nelim stands at (212, 185) facing East` before and after the mother and the egg are placed, `I let 120 ticks pass`, no haul, thermal state logged and `"Nelim" facial expression "normal+moodCheerful" is held` as in images 3 and 5
 #     the mother from the front on her bed
 #     Nelim: the evening outfit, smile
-#     Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown; EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept at the centre-left for continuity with images 5 and 6; Opus suggested (209, 187), refused)
+#     decor (v26, 2026-11-08, dense: v25 scored decoration 3.5, bare brown soil around one grass patch; Opus pass kept): Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown, plus a north row at (213, 187) to (218, 187) fully grown (the nest sits in a meadow, nothing south of Nelim); Plant_Daylily fully grown at (209, 188), (210, 188), (219, 183), (219, 187) in the bare corners; TorchLamp lit at (209, 183) (second light, dusk); EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept for continuity with images 5 and 6). Refused by Opus: a third light, stack counters, grass at x 211 to 212 (would clip Nelim at (212, 185)).
 #     steps played in series 2; story scene; "Nelim watches over the mother at her nesting box."
 #     ESTIMATE 4.5. Risk: Nelim reads small in profile; plan: same spot and held expression as image 5 (4.5).
 #
@@ -75,13 +75,13 @@
 #     ESTIMATE 4.5. Risk: criterion j weak, the kit is small and pale on soil (about 25 px at 268 px at root 2.4). Director pass 2026-11-06 (v23) kept: root 2.4 centre (215, 185), Nelim waits at (212, 185), kit faces West. To check on the capture: (217, 184) is standable and clear, the kit really faces West (the facing step is NPT's, not played on a kit). Refused: facing South.
 #
 #  6  workshop3-6-the-first-meal (closing story image)
-#     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks; MEDIUM, root 2.8, centre (210, 185) (widened from 2.2 so the dusk and the lantern show)
+#     calm-zone, west of the nest, 18h30, Clear, 6 310 ticks; MEDIUM, root 2.8, centre (211, 185) (v26: was (210, 185); widened from 2.2 so the dusk and the lantern show)
 #     Nelim holds out a piece of meat, the kit comes to her, the mother watches; says: the first meal, and that the teshi lives with people
 #     instant: she has just held out the meal and the kit steps up; next it eats
 #     method: as run f5d5 (Nelim stands at (208, 185) facing East, carries 1 Meat_Chicken, kit placed at (210, 185), mother at (212, 184)), only the shirt colour and the root size change
 #     the kit approaches, the mother looks on
 #     Nelim: the evening outfit, smile
-#     DR_StickLantern lit (213, 186); Plant_Daylily fully grown at (209, 183), (211, 183) (no pot: a pot and its plant cannot share a cell, run 551e); bare corner
+#     decor (v26, 2026-11-08, dense: v22 scored decoration 3.5, right half bare soil; Opus pass kept; centre moved to (211, 185) so the nest bed shows at the right edge): DR_StickLantern lit (213, 186); Plant_Daylily fully grown at (209, 183), (211, 183) (no pot: a pot and its plant cannot share a cell, run 551e); a band of Plant_YellowTallGrass fully grown at (210, 186) to (214, 187) minus the lantern cell, behind the mother and north of the feeding row; the empty nest of image 4, GSAnimalBedBigPrestige (215, 185) and EggBox (217, 185) (story link: the nest she has left); Brazier lit at (206, 186), Stool at (207, 187) (she has been feeding the kit all evening). Refused by Opus: anything on row 184 between x 208 and 210 or in the space between the meat, the kit and the mother (the gesture is the image).
 #     steps played in series 2; story scene; "Nelim feeds the kit by hand."
 #     ESTIMATE 4.5. Risk: none new, the layout was accepted at 4. Plan: replay it with the shirt colour for continuity.
 #
@@ -158,6 +158,19 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Sanctuary: the animals are removed from the sanctuary "water-garden"
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (156, 172)
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (159, 171) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (159, 173) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (160, 173) fully grown
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (160, 171)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (160, 171) is lit
+    And Nelim's Pickle Tools: I place the decor "Stool" at (153, 172)
+    And Nelim's Pickle Tools: I place the decor "PlantPot_Bonsai" at (153, 170)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (153, 174)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (154, 174)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (155, 174)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (156, 174)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (157, 174)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 174)
+    And Nelim's Pickle Tools: the plants from (153, 174) to (158, 174) are fully grown
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (154, 171) facing East
     And Nelim's Pickle Tools: "Nelim" waits in place
@@ -247,7 +260,20 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 186)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 186)
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (213, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 187)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
+    And Nelim's Pickle Tools: the plants from (213, 187) to (218, 187) are fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (209, 188) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (210, 188) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (219, 183) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (219, 187) fully grown
+    And Nelim's Pickle Tools: I place the decor "TorchLamp" at (209, 183)
+    And Nelim's Pickle Tools: the decor "TorchLamp" at (209, 183) is lit
     And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
     And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" at (213, 186)
@@ -353,6 +379,21 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (213, 186) is lit
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (209, 183) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (211, 183) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (210, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (211, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (212, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (210, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (211, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (212, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (213, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 187)
+    And Nelim's Pickle Tools: the plants from (210, 186) to (214, 187) are fully grown
+    And Nelim's Pickle Tools: I place the decor "GSAnimalBedBigPrestige" at (215, 185)
+    And Nelim's Pickle Tools: I place the decor "EggBox" at (217, 185)
+    And Nelim's Pickle Tools: I place the decor "Brazier" at (206, 186)
+    And Nelim's Pickle Tools: the decor "Brazier" at (206, 186) is lit
+    And Nelim's Pickle Tools: I place the decor "Stool" at (207, 187)
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Nelim's Pickle Tools: "Nelim" body type is Female
@@ -365,7 +406,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Teshi Renew: a female adult teshi belonging to the colony stands at (212, 184)
     And Nelim's Pickle Tools: "Nelim" stands at (208, 185) facing East
     And Teshi Renew: the colonist "Nelim" carries 1 "Meat_Chicken"
-    When Teshi Renew: the camera looks at (210, 185) at zoom 4
+    When Teshi Renew: the camera looks at (211, 185) at zoom 4
     And Nelim's Pickle Tools: the camera root size is set to 2.8
     And Teshi Renew: I let 10 frames pass
     And Nelim's Pickle Tools: studio presentation mode is enabled
