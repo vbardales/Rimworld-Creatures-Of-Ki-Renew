@@ -59,7 +59,7 @@
 #     method: `Nelim stands at (212, 185) facing East` before and after the mother and the egg are placed, `I let 120 ticks pass`, no haul, thermal state logged and `"Nelim" facial expression "normal+moodCheerful" is held` as in images 3 and 5
 #     the mother from the front on her bed
 #     Nelim: the evening outfit, smile
-#     decor (v26, 2026-11-08, dense: v25 scored decoration 3.5, bare brown soil around one grass patch; Opus pass kept): Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown, plus a north row at (213, 187) to (218, 187) fully grown (the nest sits in a meadow, nothing south of Nelim); Plant_Daylily fully grown at (209, 188), (210, 188), (219, 183), (219, 187) in the bare corners; TorchLamp lit at (209, 183) (second light, dusk); EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept for continuity with images 5 and 6). Refused by Opus: a third light, stack counters, grass at x 211 to 212 (would clip Nelim at (212, 185)).
+#     decor (v26, 2026-11-08, dense: v25 scored decoration 3.5, bare brown soil around one grass patch; Opus pass kept): Plant_YellowTallGrass 3 x 5 at (214 to 218, 184 to 186) minus (216, 185), fully grown, plus a north row at (213, 187) to (218, 187) fully grown (the nest sits in a meadow, nothing south of Nelim); Plant_Daylily fully grown at (209, 188), (210, 188), (219, 183), (219, 187) in the bare corners; TorchLamp lit at (209, 183) (second light, dusk); EggBox (217, 185); GSAnimalBedBigPrestige (215, 185); DR_StickLantern lit (213, 186) (kept for continuity with images 5 and 6). Refused by Opus: a third light, stack counters, grass at x 211 to 212 (would clip Nelim at (212, 185)). v27 (2026-11-08 evening, v26 capture rated decoration 3.5: bare brown soil over the whole lower half and both sides): Plant_YellowTallGrass 2 x 2 at (208 to 209, 186 to 187) west of Nelim, south row at (213 to 218, 189), all fully grown; Plant_Daylily fully grown at (212, 183), (214, 182), (216, 182), (211, 189), (220, 185); Stool at (210, 183) and PlantPot_Bonsai at (211, 183) (seen standable in images 2 and 6).
 #     steps played in series 2; story scene; "Nelim watches over the mother at her nesting box."
 #     ESTIMATE 4.5. Risk: Nelim reads small in profile; plan: same spot and held expression as image 5 (4.5).
 #
@@ -268,6 +268,25 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 187)
     And Nelim's Pickle Tools: the plants from (214, 184) to (218, 186) are fully grown
     And Nelim's Pickle Tools: the plants from (213, 187) to (218, 187) are fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (208, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (209, 186)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (208, 187)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (209, 187)
+    And Nelim's Pickle Tools: the plants from (208, 186) to (209, 187) are fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (213, 189)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (214, 189)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (215, 189)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (216, 189)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (217, 189)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (218, 189)
+    And Nelim's Pickle Tools: the plants from (213, 189) to (218, 189) are fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (212, 183) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (214, 182) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (216, 182) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (211, 189) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (220, 185) fully grown
+    And Nelim's Pickle Tools: I place the decor "Stool" at (210, 183)
+    And Nelim's Pickle Tools: I place the decor "PlantPot_Bonsai" at (211, 183)
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (209, 188) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (210, 188) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (219, 183) fully grown
