@@ -58,7 +58,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-1-asleep"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 2, 16h30: awake, a close portrait.
@@ -76,7 +76,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-2-awake-portrait"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 3, 17h00: the parents, nose to nose, hearts, a lit lantern and a pot of flowers.
@@ -100,7 +100,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 4, 17h30: the mother at her nesting box in the yellow grass, the egg in it.
@@ -138,7 +138,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-4-the-nesting-box"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 5, 18h00: the egg hatches by the game's own hatcher, the kit where it came out, the mother beside it.
@@ -181,7 +181,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop2-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 6, 18h30: Nelim holds out a piece of meat to the kit, the mother watching.
@@ -216,7 +216,7 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: "Nelim" facial expression is "normal"
     And I take a screenshot "workshop2-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 7, 19h30: the tea-house is the animal infirmary, and the Health tab is opened on the patient there (one image for both:
@@ -262,5 +262,5 @@ Feature: the images of the Workshop page, second series
     And I take a screenshot "workshop2-7-the-infirmary-health-tab"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged

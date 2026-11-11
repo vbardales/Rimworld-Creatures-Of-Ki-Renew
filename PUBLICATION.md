@@ -93,7 +93,7 @@ Nelim's appearance, clothing and facial animations: [Female Body Variants Contin
 
 What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE says what the MIT grant covers, the upstream notice included.
 
-[Source code on GitHub](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew)
+[Source code on GitHub](https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Teshi-Renew)
 ```
 
 ## Release notes (the change note of each upload)

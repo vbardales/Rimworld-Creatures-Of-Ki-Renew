@@ -125,9 +125,9 @@ takes long, not by what it covers:
 
 | Ticket | Filter | Language | Scenarios |
 |---|---|---|---|
-| English, all but the slow laying | `Creatures of Ki - Teshi Renew - Pickle tests,!@fr-only,!@slow` | English | `01`, `02`, `04`, `05`, `06`, and `08` skipped by its requirement |
+| English, all but the slow laying | `Creatures of Ki: Teshi Renew - Pickle tests,!@fr-only,!@slow` | English | `01`, `02`, `04`, `05`, `06`, and `08` skipped by its requirement |
 | English, the slow laying and hatching | `03-laying-and-hatching` | English | the two `@slow` scenarios, deadline 900 s each |
-| French, all | `Creatures of Ki - Teshi Renew - Pickle tests,!@en-only` | French | `01` and `07` |
+| French, all | `Creatures of Ki: Teshi Renew - Pickle tests,!@en-only` | French | `01` and `07` |
 
 The integration pass is a fourth ticket, with `wsl-deps.avec-ads2.map` and the same English filter minus `!@slow`,
 now that the mod is in the WSL cache.
@@ -136,7 +136,7 @@ now that the mod is in the WSL cache.
 # from the collection root; the owner is this session's local_<id>, from get_session with "self"
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 `
   -Mod CreaturesOfKiRenew -Owner local_<id> -Label "first run French, all" -Language French `
-  -DepMap wsl-deps.sans-facultatifs.map -Filter 'Creatures of Ki - Teshi Renew - Pickle tests,!@en-only' `
+  -DepMap wsl-deps.sans-facultatifs.map -Filter 'Creatures of Ki: Teshi Renew - Pickle tests,!@en-only' `
   -EvidenceDir CreaturesOfKiRenew/Tests/Pickle/Evidence/<date>-french
 powershell.exe -ExecutionPolicy Bypass -File Rimworld-Ticket-Dispatcher/scripts/Submit-PickleRun.ps1 -List
 ```

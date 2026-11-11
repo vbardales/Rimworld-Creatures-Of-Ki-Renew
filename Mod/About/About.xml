@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Creatures of Ki - Teshi Renew</name>
+  <name>Creatures of Ki: Teshi Renew</name>
   <author>Shooki, Mlie - 1.6 adapted by Nelim</author>
   <packageId>nelim.creaturesofki</packageId>
   <supportedVersions>
     <li>1.6</li>
     <li>1.7</li>
   </supportedVersions>
-  <url>https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew</url>
+  <url>https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Teshi-Renew</url>
   <description>The teshi from Shooki's Creatures of Ki (https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020), brought forward to the latest RimWorld version. An animal from the forest planet Ki, and its eggs.
 
 I am not the author of this mod. The design, the textures and the original idea are Shooki's, and the 1.0 to 1.4 continuation is Mlie's. All I did was the work needed to make the animal run on the latest RimWorld version. Credit goes to them; mistakes in the update are mine. If either comes back to it, or asks me to take this down, I will.
@@ -66,7 +66,7 @@ Nelim's appearance, clothing and facial animations: Female Body Variants Continu
 
 What is reused and how it differs is detailed in ATTRIBUTION.md, and LICENSE says what the MIT grant covers, the upstream notice included.
 
-Source code on GitHub (https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew)</description>
+Source code on GitHub (https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Teshi-Renew)</description>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Royalty</li>

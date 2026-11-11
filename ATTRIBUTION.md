@@ -1,4 +1,4 @@
-# Creatures of Ki — Teshi: what was taken, and what was changed
+# Creatures of Ki: Teshi Renew, what was taken, and what was changed
 
 ## Source
 

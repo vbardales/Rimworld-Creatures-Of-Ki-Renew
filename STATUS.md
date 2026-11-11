@@ -5,10 +5,10 @@ translation_fr: complete
 settings_audit: not_applicable
 workflow_stage: shootGallery[1.1.1]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
-mod:          Creatures of Ki - Teshi Renew
+mod:          Creatures of Ki: Teshi Renew
 packageId:    nelim.creaturesofki
-repo:         Rimworld-Creatures-Of-Ki-Renew
-remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Renew.git
+repo:         Rimworld-Creatures-Of-Ki-Teshi-Renew
+remote:       https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Teshi-Renew.git
 local_path:   C:\Users\nelim\Documents\rimworld\CreaturesOfKiRenew
 visibility:   public
 detached:     yes

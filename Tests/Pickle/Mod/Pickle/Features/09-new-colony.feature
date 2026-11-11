@@ -20,5 +20,5 @@ Feature: A new colony
     And Nelim's Pickle Tools: the new colony's seed is "teshi-renew"
     When Nelim's Pickle Tools: a new colony is started
     Then def "Teshi" of type "PawnKindDef" exists
-    And no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged

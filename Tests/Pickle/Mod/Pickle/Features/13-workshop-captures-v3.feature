@@ -145,7 +145,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-1-the-watch"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 2 (v23), 16h30, Clear, TIGHT root 2.4, centre (157, 172), x 152.7 to 161.3: the mother awake on her bed, head up, face to the camera (a walking teshi shows the top of its head, a teshi on the bed shows its face). Nelim whole at the left (154, 171), waits in place (no walk), smile held.
@@ -194,7 +194,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-2-awake"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 3 (v23), 17h00, Clear, MEDIUM root 3.3, centre (158, 173), x 152.15 to 163.85: the pair nose to nose with hearts, Nelim stopped on the bank at (153, 174) watching, profile facing East, waits in place (no haul: the carried hay hid her face in v22; the straw is for image 4), smile held.
@@ -235,7 +235,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 4 (v28, 2026-11-09: v27 capture scored decoration 3.5, image 3.5, REDO: bare soil west of the lantern and at the top, props lined up in a row at the bottom, bonsai pot read as an empty blob), 17h30, Clear, MEDIUM-CLOSE root 3.2 centre (214, 185): the mother on her bed in the nest, the egg in its box, Nelim waiting in place at (212, 185) facing East, smile held, no carried item (v24: the haul gave her a sweat drop and a forbidden X on the hay; image 3 and 5 wait in place and are clean).
@@ -342,7 +342,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-4-the-nesting-box"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 5 (v23), 18h00, Clear, TIGHT root 2.4, centre (215, 185), x 210.7 to 219.3: the egg has hatched, the kit is placed below the empty box on bare soil (no grass at (216, 184) and (217, 184)) facing West toward Nelim, who waits in place at (212, 185) (no walk, no sweat), BrowRaised and a smile held.
@@ -404,7 +404,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 6, 18h30, Clear, MEDIUM root 2.8: Nelim holds out the meal, the kit steps up to her hand (one cell away), the mother watches. Smile held to the screenshot (NPT held expression), face state logged.
@@ -458,5 +458,5 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-6-the-first-meal"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged

@@ -1,4 +1,4 @@
-# Creatures of Ki — Teshi Renew: what to check in game
+# Creatures of Ki: Teshi Renew: what to check in game
 
 Standalone suite `Tests/Rule-OwnValues.ps1` gives 20 checks on the compiled game, the exact patch shapes, the textures and exact values; XML parsing and references are covered by the shared Check-ModBasics and Check-DefRefs (cut 2026-11-02). Four external validators once cited here absent from repo; their historical results not current verification.
 
@@ -35,7 +35,7 @@ Thirty-five scenarios written (`Scenario:` lines) across twelve features, both g
 
 Enable mod alone, with Core only. Needs no DLC, no Harmony.
 
-**Expect:** `Creatures of Ki - Teshi Renew` in mod list, icon beside it, showcase on mod page. No red text at startup.
+**Expect:** `Creatures of Ki: Teshi Renew` in mod list, icon beside it, showcase on mod page. No red text at startup.
 
 **Fails if:** any `XML error` or `Could not resolve cross-reference` naming `Teshi`, `EggTeshiFertilized`, `EggTeshiUnfertilized` or `BipedAnimalWithClawsAndTail`. Def that fails to load silently absent afterwards, so clean start is what next four scenarios rest on.
 

@@ -24,5 +24,5 @@ and [XND] Nocturnal Animals (Continued) (crepuscular body clock). No DLC and no 
 Register: `USE_THIS_INSTEAD.md`, row 2726461020. The item is public (3806709627). Post by the owner on the [Use This Instead](https://steamcommunity.com/sharedfiles/filedetails/?id=3396308787) page.
 
 ```
-A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020]Creatures of Ki (Continued)[/url] (Shooki, Mlie; packageId Mlie.CreaturesOfKi; RimWorld 1.0 to 1.4): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki - Teshi Renew[/url] (Nelim; packageId nelim.creaturesofki), for the latest RimWorld version. It keeps only the teshi. Thank you for keeping this list :)
+A replacement for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020]Creatures of Ki (Continued)[/url] (Shooki, Mlie; packageId Mlie.CreaturesOfKi; RimWorld 1.0 to 1.4): [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806709627]Creatures of Ki: Teshi Renew[/url] (Nelim; packageId nelim.creaturesofki), for the latest RimWorld version. It keeps only the teshi. Thank you for keeping this list :)
 ```

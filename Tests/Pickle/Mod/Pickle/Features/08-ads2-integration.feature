@@ -18,7 +18,7 @@ Feature: The ADS2 integration
     Then mod "SamBucher.ADogSaidAnimalProsthetics2" is loaded
     And mod "nelim.creaturesofki" loads before "SamBucher.ADogSaidAnimalProsthetics2"
     And Teshi Renew: the teshi offers as many recipes from the mod "SamBucher.ADogSaidAnimalProsthetics2" as the "Bear_Grizzly"
-    And no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # The teshi has arms and no shoulder, and ADS2's two arm recipes apply on a Shoulder. Mod/Patches/ADS2_Arms.xml adds
@@ -33,5 +33,5 @@ Feature: The ADS2 integration
     And Teshi Renew: the recipe "InstallBionicArmAnimal" is applied to the teshi's "right arm"
     Then Teshi Renew: the teshi's "left arm" carries the hediff "SimpleProstheticArmAnimal"
     And Teshi Renew: the teshi's "right arm" carries the hediff "BionicArmAnimal"
-    And no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged

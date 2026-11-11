@@ -1,4 +1,4 @@
-# French review - Creatures of Ki - Teshi Renew
+# French review - Creatures of Ki: Teshi Renew
 
 Repository type: **renew**
 

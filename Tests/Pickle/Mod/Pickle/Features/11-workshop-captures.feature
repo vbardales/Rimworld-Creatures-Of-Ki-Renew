@@ -43,7 +43,7 @@ Feature: the images of the Workshop page
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-1-dawn"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 2, late afternoon: the parents on the west bank of the pond, turned to each other, the small hearts over them.
@@ -60,7 +60,7 @@ Feature: the images of the Workshop page
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-2-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 3, evening: the mother in the nest she made of tall yellow grass, the egg in it, a torch lit beside.
@@ -92,7 +92,7 @@ Feature: the images of the Workshop page
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-3-the-nest"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 4, evening again: the egg has hatched, the mother brings the kit its first meal, between the flowers and the dry grass.
@@ -110,7 +110,7 @@ Feature: the images of the Workshop page
     And Nelim's Pickle Tools: studio presentation mode is enabled
     And I take a screenshot "workshop-4-the-meal"
     And Teshi Renew: the camera's zoom limits are restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 5, night: a menu, so a screenshot of what it is and not a staged scene: the health tab as a player sees it, one
@@ -136,7 +136,7 @@ Feature: the images of the Workshop page
     And I take a screenshot "workshop-5-the-health-tab"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
 
   # Image 6, night: the same tab after an operation, ADS2's bionic arm on the right arm (the integration of the page).
@@ -160,5 +160,5 @@ Feature: the images of the Workshop page
     And I take a screenshot "workshop-6-the-bionic-arm"
     And Teshi Renew: the camera's zoom limits are restored
     And Nelim's Pickle Tools: developer mode is restored
-    Then no warnings from mod "Creatures of Ki - Teshi Renew"
+    Then no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged

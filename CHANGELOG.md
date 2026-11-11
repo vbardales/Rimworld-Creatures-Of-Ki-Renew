@@ -4,6 +4,12 @@ Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it
 in game.
 
+## [Unreleased]
+
+### Changed
+
+- Mod name is now "Creatures of Ki: Teshi Renew" (colon instead of dash); repository renamed to `Rimworld-Creatures-Of-Ki-Teshi-Renew`. `packageId` and Workshop id are unchanged.
+
 ## [1.1.0] — 2026-10-14
 
 ### Added

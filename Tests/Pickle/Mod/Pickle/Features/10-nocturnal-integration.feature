@@ -17,5 +17,5 @@ Feature: The Nocturnal Animals integration
     Given the save "test-colony" is loaded
     Then mod "Mlie.XNDNocturnalAnimals" is loaded
     And Teshi Renew: the teshi's race carries the extension "NocturnalAnimals.ExtendedRaceProperties" with bodyClock "Crepuscular"
-    And no warnings from mod "Creatures of Ki - Teshi Renew"
+    And no warnings from mod "Creatures of Ki: Teshi Renew"
     And no errors were logged
