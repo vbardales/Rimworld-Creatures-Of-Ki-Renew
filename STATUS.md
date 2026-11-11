@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: pending_review  # 2026-11-11 AUDIT 6.g: /review-translation mandatory; French validated 2026-10-08 and 2026-10-15 on the old FRENCH_REVIEW.md, no read plugin review
 settings_audit: not_applicable
 workflow_stage: shootGallery[1.1.1]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
