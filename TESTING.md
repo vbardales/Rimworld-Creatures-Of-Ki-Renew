@@ -6,7 +6,7 @@ Standalone suite `Tests/Rule-OwnValues.ps1` gives 20 checks on the compiled game
 
 Pickle suite played most of these on headless game on 2026-09-24; STATUS.md says what it found. Played by hand, run in order: first cheap, catches anything fatal; fourth only one that can crash a save.
 
-Junction into `RimWorld/Mods` first — point at `CreaturesOfKiRenew/Mod`, not repository root. Play with dev mode on, keep `Player.log` after session:
+Junction into `RimWorld/Mods` first — point at `CreaturesOfKiTeshiRenew/Mod`, not repository root. Play with dev mode on, keep `Player.log` after session:
 
 ```
 C:\Users\nelim\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Player.log
