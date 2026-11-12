@@ -51,7 +51,7 @@ No DLC and no dependencies.
 
 ## What is not included
 
-[Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) is four fifths a playable race: the Kija, their faction and their name makers, all of which need Humanoid Alien Races. None of that is here, and this mod needs no Humanoid Alien Races. If you want the Kija, use the original.
+[Creatures of Ki](https://steamcommunity.com/sharedfiles/filedetails/?id=2726461020) is four fifths of a playable race: the Kija, their faction and their name makers, all of which need Humanoid Alien Races. None of that is here, and this mod needs no Humanoid Alien Races. If you want the Kija, use the original.
 
 ## Compatibility
 
@@ -133,7 +133,7 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 `Art/Gallery/` holds only the images to upload, numbered from zero, in the order they go on the page. **Size limit (owner, 2026-10-06): as many images as wanted, the whole gallery under 8 MB and each image under 2 MB**, so JPEG at quality 92 (about 350 KB for a 1920 x 1080 capture), never the PNG of the game. `0-preview.png` is the Preview, byte for byte (recopy it whenever the Preview changes; the renderer does it). An image played, read and judged good that waits for the owner's validation sits in `Art/Gallery/` as `<digit>-candidate-<subject>.jpg` (NPT, validated by the owner 2026-10-08; JPEG and not PNG for the size limit); once she validates it, `candidate-` is dropped (`1-asleep.jpg`). The index follows `0-preview.png` and nothing else lives in the folder (PUBLISHING.md: no subfolder).
 
-**The gallery today (2026-11-12): the third series, `1-the-watch` to `6-the-first-meal` plus `7-the-infirmary-health-tab`, six candidates rated 4 or more, waiting for the owner's acceptance (not yet accepted, not yet uploaded). The tables below that name the second series (`1-portrait` to `5-asleep`) are historical until the reindexation of the third series.**
+**The gallery today (2026-11-12): the third series, `1-the-watch` to `6-the-first-meal` (six story images, rated 4 or more) plus `7-the-infirmary-health-tab` (a seventh image, the interface capture, counted apart from the six). Images 2 to 5 and 7 are being redone (smile, hairstyle), waiting for the owner's acceptance (not yet accepted, not yet uploaded). The tables below that name the second series (`1-portrait` to `5-asleep`) are historical until the reindexation of the third series.**
 
 **Second series, historical (2026-10-11; replaced in `Art/` on 2026-11-12 by the third series, see "Gallery subtitles"): accepted by the owner on 2026-10-11 (her word, the six files, `candidate` dropped), `1-portrait` to `6-the-infirmary-health-tab` (six images after `0-preview`, 2.3 MB), in the page order chosen by the session (the most demonstrative first, AUDIT 9.c: portrait, parents, nest, hatching, asleep, infirmary), the session's verdict given (all six kept) (the table below keeps the story order in its Game time column)** (the six images of the first series, `1-dawn` to `6-the-bionic-arm`, were uploaded to Steam by the owner on 2026-10-06 and are in git history; the second series replaces them on the page when she uploads it). Source: `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature`, ticket `3c32` (run `gallery-v2-16`, images 6 and 7) and `2403` (run `gallery-v2-14`, images 1 to 5), map `wsl-deps.sanctuary.map`, English.
 

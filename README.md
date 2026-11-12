@@ -67,7 +67,7 @@ Content mod: removing it mid-save will lose any teshi and any teshi eggs already
 
 ## What is not included
 
-Creatures of Ki is four fifths a **playable race** — the Kija, their faction, their pawn kinds and
+Creatures of Ki is four fifths of a **playable race** — the Kija, their faction, their pawn kinds and
 their name makers — and that half of the mod requires Humanoid Alien Races. None of it is here, and
 this mod needs no Humanoid Alien Races. The teshi referenced neither the race nor HAR, which is why
 it could be lifted out cleanly. If you want the Kija, use the original.
