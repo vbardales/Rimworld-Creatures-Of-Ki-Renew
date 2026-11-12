@@ -190,7 +190,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" face kit is "neutral"
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful2" is held
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-2-awake"
     And Teshi Renew: the camera's zoom limits are restored
@@ -231,7 +231,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful2" is held
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-3-the-parents"
     And Teshi Renew: the camera's zoom limits are restored
@@ -338,7 +338,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful2" is held
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-4-the-nesting-box"
     And Teshi Renew: the camera's zoom limits are restored
@@ -400,7 +400,7 @@ Feature: the images of the Workshop page, third series (one evening, Nelim the p
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: the thermal state and thoughts of "Nelim" are logged
-    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful" is held
+    And Nelim's Pickle Tools: "Nelim" facial expression "normal+moodCheerful2" is held
     And Nelim's Pickle Tools: "Nelim" face state is logged
     And I take a screenshot "workshop3-5-the-hatching"
     And Teshi Renew: the camera's zoom limits are restored
