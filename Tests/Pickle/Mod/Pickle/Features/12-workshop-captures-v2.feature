@@ -239,6 +239,8 @@ Feature: the images of the Workshop page, second series
     And Nelim's Pickle Tools: the temperature of the map is 20 degrees
     And Nelim's Pickle Tools: "Nelim" stands at (141, 70) facing North
     And Nelim's Pickle Tools: "Nelim" body type is Female
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
+    And Nelim's Pickle Tools: "Nelim" hair colour is rgb (51, 33, 16)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (244, 242, 234)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (110, 96, 78)
     And Nelim's Pickle Tools: "Nelim" eye colour is rgb (92, 58, 36)
