@@ -139,7 +139,7 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 ## Gallery subtitles
 
-Third series (`13-workshop-captures-v3`), six candidates 2026-11-12 (score-gallery: all notes 4 or more). Originals without text in `Art/Gallery-clean/`, subtitled copies in `Art/Gallery/` (`scripts/Add-Subtitle.ps1`). `0-preview.png` and `7-the-infirmary-health-tab.jpg` (interface capture) carry no subtitle. Waiting for the owner's acceptance, then reindex.
+Third series (`13-workshop-captures-v3`), six candidates 2026-11-12 (score-gallery: all notes 4 or more). Originals without text in `Art/Gallery-clean/`, subtitled copies in `Art/Gallery/` (`scripts/Add-Subtitle.ps1`). `0-preview.png` carries none. Image 7 (health tab, interface capture) keeps the line the owner asked for on 2026-10-15, re-burned 2026-11-12 in the same style as the others from the clean original (git, before `5dc5a7d`). Waiting for the owner's acceptance, then reindex.
 
 | Index | File | Line |
 |---|---|---|
@@ -149,6 +149,7 @@ Third series (`13-workshop-captures-v3`), six candidates 2026-11-12 (score-galle
 | 4 | `4-the-nesting-box.jpg` | Nelim watches over the mother at her nesting box. |
 | 5 | `5-hatching.jpg` | The egg hatches at dusk: a kit is born. |
 | 6 | `6-the-first-meal.jpg` | Nelim holds out the first meal, and the kit steps up. |
+| 7 | `7-the-infirmary-health-tab.jpg` | A cut claw, and a bionic arm. |
 
 **The series is one story, not a row of captures** (owner, 2026-10-06): a late afternoon and an evening of the teshi, which is crepuscular (it sleeps by day and wakes as the light goes). The only common set is the Sanctuary of Nelim (fixture `Nelims-tribe`, repository SanctuaryBacklot). **The time flows through the series** (PUBLISHING.md): one start hour (16h) set in every scenario, then a cumulative wait of 30 game minutes (1 250 ticks) per image; what lives in the scene is placed after the wait. The shooting plan (place, moment, subject, composition, the living, what the image says) is in the header of the feature file.
 
