@@ -9,7 +9,7 @@ in game.
 ### Changed
 
 - Mod name is now "Creatures of Ki: Teshi Renew" (colon instead of dash); repository renamed to `Rimworld-Creatures-Of-Ki-Teshi-Renew`. `packageId` and Workshop id are unchanged.
-- `packageId` is now `nelim.creaturesofki.teshi` (was `nelim.creaturesofki`), so it no longer collides with the original Creatures of Ki family. The Workshop id is unchanged. RimWorld has no packageId alias: after the update, enable the mod again in the mod list and check its load order (before A Dog Said Animal Prosthetics 2). Saves load, because defs are referenced by `defName`, which did not change.
+- `packageId` is now `nelim.creaturesofki.teshi` (was `nelim.creaturesofki`). The Workshop id is unchanged. RimWorld has no packageId alias: after the update, enable the mod again in the mod list and check its load order (before A Dog Said Animal Prosthetics 2). No `defName` changed. Not tested on a real save: whether a save made with the old id loads after re-enabling the mod is unverified.
 
 ## [1.1.0] — 2026-10-14
 
