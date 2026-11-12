@@ -57,3 +57,4 @@ Languages: French (30 keys, 0 missing against English). English is the source si
 | Reviewer | Date | Revision reviewed | Corrections requested |
 |---|---|---|---|
 | Virginie (her word in chat, recorded by the session) | 2026-11-12 | b057311 | none: review validated, nothing requested |
+| Virginie (her word in chat, recorded by the session) | 2026-11-12 | 2e8e5c8 | none: "je valide la review", nothing requested |
