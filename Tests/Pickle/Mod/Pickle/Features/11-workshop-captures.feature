@@ -22,7 +22,7 @@
 #   smiley-north: the band of plain orange carpet between the eyes and the mouth, centre (176, 202), cells z 199-201 (the two menus).
 #   calm-zone: east of the cream square the earth is brown and plain (x 209-219, z 182-188), spiked with a few dry grasses and, to the west, flowers: the nest (image 3) and the kit with its mother (image 4).
 # The fixture is saved at 23h, so each scenario sets the hour and the weather itself.
-@review @requires:SamBucher.ADogSaidAnimalProsthetics2 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.inspecttabs @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
+@review @requires:SamBucher.ADogSaidAnimalProsthetics2 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools
 Feature: the images of the Workshop page
 
   Background:

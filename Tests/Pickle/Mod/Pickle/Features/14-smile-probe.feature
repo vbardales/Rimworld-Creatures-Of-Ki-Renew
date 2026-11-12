@@ -3,7 +3,7 @@
 # at East the Beauty2 head fix may hide or offset the mouth, step `the Beauty2 mouth offset is D` (0.02 to 0.05). One scenario, four
 # screenshots on the same tight frame of Nelim at (212, 185) facing East: B = moodCheerful2, C/D/E = moodCheerful2 with D 0.02, 0.035, 0.05.
 # Read the four captures, pick the setting where the mouth is a readable smile at 268 px, then apply it to scenarios 2 to 5 of file 13.
-@review @slow @timeout:1800 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.screenshotstudio
+@review @slow @timeout:1800 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools
 Feature: smile probe on a tight East shot of Nelim
 
   Background:

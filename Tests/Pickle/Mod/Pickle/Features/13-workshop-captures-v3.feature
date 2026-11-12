@@ -102,7 +102,7 @@
 # AFTER A RUN: put the real verdict of each capture (accept or refuse) next to the estimate in STATUS.md; the gap is what the next shotlist learns from.
 # MODS (pass map wsl-deps.sanctuary.map, nothing challenged): Animal.BedsNew 3107972819, Mlie.StickLantern 2024351846, the body and facial mods of the Sanctuary map, ADS2 (image 7 only).
 # STEPS: NPT answered on 2026-10-25 (commits 89a2970, 8318f39, compiled, NOT PLAYED, ticket 1071): `"X" is forced to walk to (x, z)` works for animals, `a female adult animal of kind "Teshi" named "Mother" is spawned at (x, z)`, `the newborn animal of kind "Teshi" is named "Kit"`, `I advance the paused game by exactly N ticks`. Carry during a walk (images 3 and 4): NPT says use `"Nelim" is forced to haul 1 of the item "Hay" to (x, z)` (colonist only, compiled, not played); Teshi Renew `carries` on a forced walk is unverified and not used there. Filter: any ticket on a pass other than wsl-deps.sanctuary.map excludes this suite (`!13-workshop-captures-v3`).
-@review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
+@review @slow @timeout:1800 @requires:SamBucher.ADogSaidAnimalProsthetics2 @requires:nelim.pickletools.camerazoom @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools
 Feature: the images of the Workshop page, third series (one evening, Nelim the protagonist, scenarios written from the 2026-10-25 header)
 
   Background:
