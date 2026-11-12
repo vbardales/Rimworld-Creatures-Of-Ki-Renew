@@ -31,7 +31,7 @@ sd.fa.movingvanillaeyes 3753978140
 # Prefix 'Nelim's Sanctuary: ' for these, 'Nelim's Pickle Tools: ' for the rest (NPT).
 nelim.sanctuarybacklot                path:SanctuaryBacklot/Mod
 # The mod under test, named by its own packageId so that it loads ahead of ADS2, as its loadBefore asks.
-nelim.creaturesofki                   path:CreaturesOfKiTeshiRenew/Mod
+nelim.creaturesofki.teshi                   path:CreaturesOfKiTeshiRenew/Mod
 SamBucher.ADogSaidAnimalProsthetics2  3238353862
 # Nelim's canon hairstyle Roo_HD_Hair_Highpony (SanctuaryBacklot docs/APPARENCES-CANON.md): Roo's HD Hairstyles, id as in the Backlot's wsl-deps.sanctuary-looks.map. Added 2026-10-28 after six runs failed "no hairstyle Roo_HD_Hair_Highpony".
 rooboid.hdhair.continued              3559870636

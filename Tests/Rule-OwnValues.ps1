@@ -325,7 +325,7 @@ Section 'XML and packaging'
 It 'About identifies this standalone mod and the license copies match' {
     $about = New-Object System.Xml.XmlDocument
     $about.Load((Join-Path $modDir 'About/About.xml'))
-    if ($about.ModMetaData.packageId -cne 'nelim.creaturesofki') { 'unexpected packageId' }
+    if ($about.ModMetaData.packageId -cne 'nelim.creaturesofki.teshi') { 'unexpected packageId' }
     $url = 'https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Teshi-Renew'
     if ($about.ModMetaData.url -cne $url -or -not $about.ModMetaData.description.Contains($url)) { 'GitHub URL missing or inconsistent' }
     if ((Get-FileHash (Join-Path $ModRoot 'LICENSE')).Hash -ne (Get-FileHash (Join-Path $modDir 'LICENSE')).Hash) { 'distributed license differs from repository license' }
