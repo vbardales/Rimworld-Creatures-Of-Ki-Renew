@@ -135,6 +135,19 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 
 **The gallery today (2026-10-11): the second series, accepted by the owner on 2026-10-11 (her word, the six files, `candidate` dropped), `1-portrait` to `6-the-infirmary-health-tab` (six images after `0-preview`, 2.3 MB), in the page order chosen by the session (the most demonstrative first, AUDIT 9.c: portrait, parents, nest, hatching, asleep, infirmary), the session's verdict given (all six kept) (the table below keeps the story order in its Game time column)** (the six images of the first series, `1-dawn` to `6-the-bionic-arm`, were uploaded to Steam by the owner on 2026-10-06 and are in git history; the second series replaces them on the page when she uploads it). Source: `Tests/Pickle/Mod/Pickle/Features/12-workshop-captures-v2.feature`, ticket `3c32` (run `gallery-v2-16`, images 6 and 7) and `2403` (run `gallery-v2-14`, images 1 to 5), map `wsl-deps.sanctuary.map`, English.
 
+## Gallery subtitles
+
+Third series (`13-workshop-captures-v3`), six candidates 2026-11-12 (score-gallery: all notes 4 or more). Originals without text in `Art/Gallery-clean/`, subtitled copies in `Art/Gallery/` (`scripts/Add-Subtitle.ps1`). `0-preview.png` and `7-the-infirmary-health-tab.jpg` (interface capture) carry no subtitle. Waiting for the owner's acceptance, then reindex.
+
+| Index | File | Line |
+|---|---|---|
+| 1 | `1-the-watch.jpg` | Nelim comes down to the pond to watch a sleeping teshi. |
+| 2 | `2-awake.jpg` | The teshi wakes and lifts her head toward Nelim. |
+| 3 | `3-the-parents.jpg` | A mate comes to the bed, and the two meet nose to nose. |
+| 4 | `4-the-nesting-box.jpg` | Nelim watches over the mother at her nesting box. |
+| 5 | `5-hatching.jpg` | The egg hatches at dusk: a kit is born. |
+| 6 | `6-the-first-meal.jpg` | Nelim holds out the first meal, and the kit steps up. |
+
 **The series is one story, not a row of captures** (owner, 2026-10-06): a late afternoon and an evening of the teshi, which is crepuscular (it sleeps by day and wakes as the light goes). The only common set is the Sanctuary of Nelim (fixture `Nelims-tribe`, repository SanctuaryBacklot). **The time flows through the series** (PUBLISHING.md): one start hour (16h) set in every scenario, then a cumulative wait of 30 game minutes (1 250 ticks) per image; what lives in the scene is placed after the wait. The shooting plan (place, moment, subject, composition, the living, what the image says) is in the header of the feature file.
 
 | Page # | Game time | Place | What it shows | Staged |
