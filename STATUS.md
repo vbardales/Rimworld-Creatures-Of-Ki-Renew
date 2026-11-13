@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete  # 2026-11-12 owner validated the review-translation answers (her word, twice: no recommendation, then three PUBLICATION points applied); review line of TRANSLATION_REVIEW.md filled with her word
 settings_audit: not_applicable
-workflow_stage: mountPreview[1.2.0]
+workflow_stage: writeDocs[1.2.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki: Teshi Renew
 packageId:    nelim.creaturesofki.teshi  # renamed 2026-11-12 on the owner word (was nelim.creaturesofki, published 1.1.0); players must re-enable the mod
@@ -27,8 +27,9 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.2.0 (packageId rename 2026-11-12; was 1.1.0 minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
-updated:      2026-11-13, Virginie accepted the seven gallery images (her word "je valide"); stage mountPreview: next regenerate echo from the gallery, validate Preview
+updated:      2026-11-13, Preview validated by Virginie, social preview uploaded, sync-nsb-npt done; stage writeDocs: description block, About.xml sync, CHANGELOG, PUBLICATION
 remaining:
+  - 2026-11-13 stage mountPreview to writeDocs[1.2.0]: 10.a to 10.f done (Preview validated by Virginie, echo kept, palette redone, icon bottom-left, social preview uploaded, sync-nsb-npt ninth run); Check-Status 0 error. Next at writeDocs (AUDIT 11): description block under "Steam description" of PUBLICATION.md (language mention rule 2026-11-13, AI-GENERATED now names DALL-E), About.xml sync (sync-about-description.mjs), thanks and links, CHANGELOG Unreleased, gallery table, adult-content boxes. Warnings left: upstream_synced missing (upstream archived), STATUS.md over 40 KB.
   - 2026-11-13 10.f social preview uploaded by Chrome (Settings, General, Social preview), new Preview shown in the section; social_preview_sha256 recorded. og:image tag not checked. Next: sync-nsb-npt, Check-Status, then writeDocs[1.2.0].
   - 2026-11-13 Virginie: "je valide ! c'est super !" on the new Preview (Preview-source.png from the accepted gallery, echo-source.png KEPT as is, palette redone, panelBare, icon bottom-left; 0c18456). echo_review_sha set to that commit. 10.d: 896x504, 759 KB, 0-preview.png byte copy, ink 8.06:1 and secondary 5.26:1 on the veil; desktop.ini present at root and in Mod/. Next: social preview upload by Chrome (10.f), social_preview_sha256, sync-nsb-npt, then writeDocs[1.2.0].
   - 2026-11-13 image model of the new Preview-source.png: DALL-E (OpenAI), same as ACG, on Virginie's word ("modèle ACG il me semble", not certain). Written in PUBLICATION.md (AI-GENERATED paragraph) and Mod/About/About.xml; the showcase images are now said to be in-game captures. Confirm with her if the model was another. Steam description to update at publication.
@@ -64,7 +65,7 @@ social_preview_sha256: 9e8c728656fd88ebc0a175f86b04a1c5144e8b3a8e5d9c86dd0662d75
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 0c18456c4538b37b29de392a33e5d4aed2c69f4d
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: e2270074b01c51ca3b41c69a7d172d0ac989cc7a
+protocols_read_sha: 9fe3593d4a35957cc626ebee3f5d488d30296f49
 ---
 # Creatures of Ki - Teshi Renew — status
 
