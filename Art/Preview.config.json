@@ -7,16 +7,17 @@
       { "text": "Ki: Teshi" },
       { "text": "Renew", "suffix": true }
     ],
-    "description": "The teshi of the forest planet Ki, and its eggs."
+    "description": "The teshi of the forest planet Ki, and its eggs.",
+    "panelBare": true
   },
   "background": { "file": "Preview-source.png" },
   "echo": { "file": "echo-source.png" },
   "icon": { "file": "ModIcon-source.png" },
   "palette": {
-    "veil": "#503F2F",
+    "veil": "#663B23",
     "inkPrimary": "#F2ECE1",
-    "inkSecondary": "#E9BD82",
-    "accent": "#69BCE6",
+    "inkSecondary": "#FFB066",
+    "accent": "#95CC29",
     "badgeInk": "#17120E"
   }
 }
