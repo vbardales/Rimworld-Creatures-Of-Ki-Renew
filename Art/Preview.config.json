@@ -13,6 +13,7 @@
   "background": { "file": "Preview-source.png" },
   "echo": { "file": "echo-source.png" },
   "icon": { "file": "ModIcon-source.png" },
+  "iconBadge": { "corner": "bottom-left" },
   "palette": {
     "veil": "#663B23",
     "inkPrimary": "#F2ECE1",
