@@ -10,6 +10,8 @@ in game.
 
 - Mod name is now "Creatures of Ki: Teshi Renew" (colon instead of dash); repository renamed to `Rimworld-Creatures-Of-Ki-Teshi-Renew`. `packageId` and Workshop id are unchanged.
 - `packageId` is now `nelim.creaturesofki.teshi` (was `nelim.creaturesofki`). The Workshop id is unchanged. RimWorld has no packageId alias: after the update, enable the mod again in the mod list and check its load order (before A Dog Said Animal Prosthetics 2). No `defName` changed. Not tested on a real save: whether a save made with the old id loads after re-enabling the mod is unverified.
+- French `EggTeshiUnfertilized` description ends "bien, bien meilleur une fois cuit", matching the English "much, much better".
+- English `EggTeshiFertilized` description says "teshi kit" instead of "baby teshi", the term the mod uses for the young animal.
 
 ## [1.1.0] — 2026-10-14
 

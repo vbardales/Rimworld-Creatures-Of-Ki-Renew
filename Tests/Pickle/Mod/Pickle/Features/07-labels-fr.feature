@@ -18,7 +18,7 @@ Feature: The teshi, read in French
     And Teshi Renew: the ThingDef "EggTeshiFertilized" is labelled "œuf de teshi (fécondé)"
     And Teshi Renew: the ThingDef "EggTeshiFertilized" reads "Un œuf de teshi fécondé. Si tout se passe bien, un petit teshi devrait en éclore. Il peut être mangé cru, mais il est bien meilleur une fois cuit."
     And Teshi Renew: the ThingDef "EggTeshiUnfertilized" is labelled "œuf de teshi (non fécondé)"
-    And Teshi Renew: the ThingDef "EggTeshiUnfertilized" reads "Un œuf de teshi non fécondé. Il peut être mangé cru, mais il est bien meilleur une fois cuit."
+    And Teshi Renew: the ThingDef "EggTeshiUnfertilized" reads "Un œuf de teshi non fécondé. Il peut être mangé cru, mais il est bien, bien meilleur une fois cuit."
     And Teshi Renew: the BodyDef "BipedAnimalWithClawsAndTail" is labelled "animal bipède"
     And Teshi Renew: the teshi kit is labelled "petit teshi" and its plural "petits teshis"
     And Teshi Renew: the teshi has an attack labelled "griffe gauche"
