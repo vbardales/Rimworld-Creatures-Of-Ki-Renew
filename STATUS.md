@@ -29,6 +29,7 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-11-13, Virginie accepted the seven gallery images (her word "je valide"); stage mountPreview: next regenerate echo from the gallery, validate Preview
 remaining:
+  - 2026-11-13 10.f social preview uploaded by Chrome (Settings, General, Social preview), new Preview shown in the section; social_preview_sha256 recorded. og:image tag not checked. Next: sync-nsb-npt, Check-Status, then writeDocs[1.2.0].
   - 2026-11-13 Virginie: "je valide ! c'est super !" on the new Preview (Preview-source.png from the accepted gallery, echo-source.png KEPT as is, palette redone, panelBare, icon bottom-left; 0c18456). echo_review_sha set to that commit. 10.d: 896x504, 759 KB, 0-preview.png byte copy, ink 8.06:1 and secondary 5.26:1 on the veil; desktop.ini present at root and in Mod/. Next: social preview upload by Chrome (10.f), social_preview_sha256, sync-nsb-npt, then writeDocs[1.2.0].
   - 2026-11-13 image model of the new Preview-source.png: DALL-E (OpenAI), same as ACG, on Virginie's word ("modèle ACG il me semble", not certain). Written in PUBLICATION.md (AI-GENERATED paragraph) and Mod/About/About.xml; the showcase images are now said to be in-game captures. Confirm with her if the model was another. Steam description to update at publication.
   - 2026-11-13 mountPreview 10.a bis: Preview prompt written (Docs/PROMPT_CreaturesOfKiTeshiRenew.md, STYLE_RIMWORLD "Bloc Preview depuis la galerie"), Virginie redoes the echo herself and generates the illustration. References to attach (clean originals, no subtitle): Art/Gallery-clean/4-the-nesting-box.jpg (main, fixes the palette), 5-hatching.jpg (kit, empty box), 3-the-parents.jpg (mate, nose to nose). Virginie said "trop mimi" as praise (v1 kept; a v2 made less cute by mistake was reverted). Panel zone assumed top-left (no panelAnchor in Preview.config.json): left 62 percent and top 80 percent reserved, bottom-left corner for the icon, subject in the right 36 percent. No colonist, no hearts. Art/Preview-source.png NOT replaced before her answer. Image model to note here at generation (PUBLISHING "Génération par IA"). Then: palette redone BEFORE the render (10.b), echo_review_sha emptied, Render-Preview.cjs, 0-preview.png copy. Pending: her echo, her illustration.
@@ -59,7 +60,7 @@ remaining:
   - for dormant: 14.c WSL Workshop mods downloaded by this mod's sessions (list first, owner approves), then `Check-Status.ps1` (crashes on `Get-FileHash`, shared script, for the Audit workflow session).
   - disclosed gaps against AUDIT.md (loop-declared stages, dispatch before lint, 1.7 declared before a green run, no `TEST_SCENARIOS.md`): in docs/runs/status-history.md, "AUDIT.md read in full, 2026-10-15".
   - unverified: gallery images on the Steam page and the thanks comment were posted by the owner (her word); no session read the page.
-social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1ed33602
+social_preview_sha256: 9e8c728656fd88ebc0a175f86b04a1c5144e8b3a8e5d9c86dd0662d75f624a52
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 0c18456c4538b37b29de392a33e5d4aed2c69f4d
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
