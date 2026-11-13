@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <OptionalCompat>
-  <li><packageId>Mlie.XNDNocturnalAnimals</packageId><workshopId>2269731409</workshopId><kind>patch</kind></li>
   <li><packageId>SamBucher.ADogSaidAnimalProsthetics2</packageId><workshopId>3238353862</workshopId><kind>patch</kind></li>
+  <li><packageId>Mlie.XNDNocturnalAnimals</packageId><workshopId>2269731409</workshopId><kind>patch</kind></li>
+  <li><packageId>XeoNovaDan.NocturnalAnimals</packageId><workshopId>2004368312</workshopId><kind>patch</kind></li>
 </OptionalCompat>
