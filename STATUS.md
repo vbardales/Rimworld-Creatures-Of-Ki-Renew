@@ -3,7 +3,7 @@ localization: complete
 translation_en: complete
 translation_fr: complete  # 2026-11-12 owner validated the review-translation answers (her word, twice: no recommendation, then three PUBLICATION points applied); review line of TRANSLATION_REVIEW.md filled with her word
 settings_audit: not_applicable
-workflow_stage: shootGallery[1.1.1]
+workflow_stage: mountPreview[1.2.0]
 tested_1_7:   yes  # 2026-10-13, ticket e8c8, feature 01-loads only (1 passed, 0 failed), RimWorld 1.7.4976 rev1043, English, map sans-facultatifs, on 971ac7c; <li>1.7</li> declared on the owner's word 2026-10-13
 mod:          Creatures of Ki: Teshi Renew
 packageId:    nelim.creaturesofki.teshi  # renamed 2026-11-12 on the owner word (was nelim.creaturesofki, published 1.1.0); players must re-enable the mod
@@ -27,8 +27,9 @@ version:      1.1.0 (tag v1.1.0 and GitHub release by CI run 38475087868; 1.0.1 
 target_version: 1.2.0 (packageId rename 2026-11-12; was 1.1.0 minor bump, 2026-10-13: RimWorld 1.7 pass; `<li>1.7</li>` declared, tested on load only: 01-loads, English, 1.7.4976)
 maintainer:   Claude Code, the session named in session, which holds this standalone repository
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
-updated:      2026-11-13, resume: protocols read to 80d05a39, STATUS.md folded under 80 KB (older remaining entries in docs/runs/status-history.md), REGISTER to TM held (permission mode), Inbox empty; waiting Virginie single gallery acceptance message
+updated:      2026-11-13, Virginie accepted the seven gallery images (her word "je valide"); stage mountPreview: next regenerate echo from the gallery, validate Preview
 remaining:
+  - 2026-11-13 Virginie: "je valide" on the seven subtitled images of Art/Gallery (third series, 13-workshop-captures-v3). Indexes 1 to 7 contiguous (0-preview.png stays), clean originals in Art/Gallery-clean, subtitles in PUBLICATION.md "Gallery subtitles"; reindex was a no-op. Order: 1 the-watch (wide, opens the story and shows the sleeping teshi on its bed) to 7 the-infirmary-health-tab (the mod's health tab). Stage shootGallery to mountPreview[1.2.0] (target_version 1.2.0). Next at mountPreview: echo invalidated (AUDIT 9.f), redo from gallery (echo-source.png), empty echo_review_sha, then Preview and 0-preview.png copy; Check-Status warns social_preview_sha256 stale and upstream_synced missing. Pending: none.
   - 2026-11-13 review-translation rerun on 95be223+: no proper noun to decide, no correction recommended (30 French keys complete, PUBLICATION.md and CHANGELOG.md clean, no source correction so no upstream PR). Applied 0, refused 0. Pending: none.
   - 2026-11-13 review-translation page 1 DONE (ChatGPT answer in): applied 2, refused 0. (1) French EggTeshiUnfertilized.description "bien, bien meilleur" (owner choice of 2026-10-15, BACKLOG entry closed); (2) English EggTeshiFertilized.description "baby teshi" to "teshi kit" in Mod/Defs (source column, owner rule 2026-11-12), features 06 and 07 updated to match, CHANGELOG Unreleased lines added. Upstream PR for (2): NOT prepared, upstream emipa606/CreaturesOfKi is archived and read-only (STATUS upstream_pr 2026-09-28). Proper nouns: teshi and Ki, proposal to keep, asked Virginie. No french_review_pending line, no yellow pastille to remove. Check-Translations PASS. Pickle features 06 and 07 not replayed (text change only, one small ticket at the next playTests pass).
   - 2026-11-12 Virginie: "je valide la review" (her word, mid-turn). Recorded on the review line of TRANSLATION_REVIEW.md (revision 2e8e5c8, nothing requested); translation_fr stays complete. Gallery: images 2 to 5 and 7 replaced by the v29 captures in Art/Gallery-clean and subtitled copies re-burned in Art/Gallery (2e8e5c8). All seven are candidates, waiting for her single acceptance message (not sent yet). Pending: gallery message to Virginie, replay-audit.
@@ -59,7 +60,7 @@ social_preview_sha256: 4215d8aea8baefad192e4e9e984310acdd32fbc195035a2a12f6603f1
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 5dc5a7dd3b39251cc90cb6cad6cc281fef94c2df
 code_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
-protocols_read_sha: 80d05a395e1803f96a90bcf05cffca22c0210641
+protocols_read_sha: e2270074b01c51ca3b41c69a7d172d0ac989cc7a
 ---
 # Creatures of Ki - Teshi Renew — status
 
