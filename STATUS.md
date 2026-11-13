@@ -171,7 +171,9 @@ Checked in SANCTUAIRE-CASES (calm-zone block): the free-standable list for z 185
 | teshi "Mother", "Teshi", "Kit" (this mod's creature, tamed or spawned for the scene; outside NSB) | 1 to 6 | none (no apparel mod fits the teshi body) | n/a, not an NSB animal | VALIDATED by the owner, 2026-11-06: "je valide le teshi" (not a pet or livestock, rule 2 did not strictly apply; validation covers the teshi for this mod) |
 
 ## Ecosystem
+
 2026-11-13, PiI Workshop search by Chrome (docs/inventory/ecosystem-steam/CreaturesOfKiTeshiRenew.md, protocols commit f7f2362): no duplicate, fork or replacement. Only the original 2726461020 (Mlie.CreaturesOfKi, tags 1.0 to 1.4, dead for 1.6) shares our defNames (3, expected). No other mod links, patches, retextures or translates it. Zoology: Realistic Animal Overhaul is a weak lead only (no shared defName, rebalances animal stats): test load order if wanted. Nothing subscribed. Package id of the original: Mlie.CreaturesOfKi.
+
 ## Earlier state
 
 State of 2026-10-02 (non-regression, publication 1.0.0, gates, integrations, icon, Preview) moved to `docs/runs/status-history.md` on 2026-10-13 (size, `Check-Status.ps1`).
