@@ -126,8 +126,8 @@ Checked in the sources, not from intention (`Mod/About/About.xml`, `STATUS.md`).
 - **[XND] Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, Workshop `2269731409`; original by
   XeoNovaDan, Workshop `2004368312`): optional, no `loadBefore` and no dependency.**
   `Patches/NocturnalAnimals.xml` is one `PatchOperationFindMod` on both names and touches only the teshi.
-- **Incompatibilities: none declared** (`incompatibleWith` absent, and neither README nor CHANGELOG claims
-  one).
+- **Incompatibilities: the original Creatures of Ki (`Mlie.CreaturesOfKi`, Workshop `2726461020`)**, declared in
+  `incompatibleWith` (2026-11-14, owner): both define the same teshi defNames, so enabled together they give duplicate defName errors.
 
 ## Captures for the Workshop page
 

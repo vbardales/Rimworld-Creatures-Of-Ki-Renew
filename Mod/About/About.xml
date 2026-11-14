@@ -78,4 +78,7 @@ Source code on GitHub (https://github.com/vbardales/Rimworld-Creatures-Of-Ki-Tes
   <loadBefore>
     <li>SamBucher.ADogSaidAnimalProsthetics2</li>
   </loadBefore>
+  <incompatibleWith>
+    <li>Mlie.CreaturesOfKi</li>
+  </incompatibleWith>
 </ModMetaData>
