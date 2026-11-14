@@ -30,6 +30,7 @@ maintainer:   Claude Code, the session named in session, which holds this standa
 session:      local_3b2dce0c-52e6-49cb-a662-cefbbbd56580
 updated:      2026-11-13, replay-audit: first open 8.a, stage back to playTests[1.2.0] (packageId rename and text edits after the last tested sha, code review stale)
 remaining:
+  - 2026-11-14 owner said yes to incompatibleWith: About.xml now lists Mlie.CreaturesOfKi (4c49d1d), PUBLICATION.md incompatibility line and CHANGELOG Unreleased updated, Check-ModBasics PASS, Test-Mod 6/6, About description in sync. 8.m reopened by the About.xml change and closed again: diff since the Opus review is that one incompatibleWith block (the sub-agent proposed it), read by the session, code_review_sha set to 4c49d1d. The five rename tickets (8a27 3/3 English green, 5abd, 8df9, 683b, 0bd3 green) ran on 08ca8c2, before the About.xml change: superseded, Inbox folders deleted (STATUS lines above keep their results). Refiled on 4c49d1d (queue running): 1774 English (incompat-en), c8ef French (incompat-fr), db6a ADS2, 5b07 Nocturnal, e664 new colony; expect 3, 3, 2, 1, 1 passed. Keep Mod/, Source/, Tests/ on 4c49d1d until the five RUN_DONE.
   - 2026-11-14 ticket 0bd3 (new colony, rename-newcolony) GREEN: summary.json total 1, passed 1, failed 0, exitReason passed, junit 0 failure: a new colony starts with the mod loaded and logs nothing. Pending: 8a27 (English) only.
   - 2026-11-14 ticket 683b (Nocturnal, rename-nocturnal) GREEN: summary.json total 1, passed 1, failed 0, exitReason passed, set avec-nocturnal, junit 0 failure: the teshi gets the crepuscular body clock on the new packageId. Pending: 8a27 (English), 0bd3 (new colony).
   - 2026-11-14 ticket 8df9 (ADS2, rename-ads2) GREEN: summary.json total 2, passed 2, failed 0, exitReason passed, set avec-ads2, junit 0 failure: same recipes as a grizzly bear, simple and bionic arm on each arm, on the new packageId. DLC-name rule (owner 2026-11-14 via TM): checked Mod/Languages, Docs/review-names.md, PUBLICATION.md, README.md, no translated DLC word (idéoligion, Odyssée) and no DLC name in a mod name, nothing to fix. Pending: 8a27 (English), 683b (Nocturnal), 0bd3 (new colony).
@@ -71,7 +72,7 @@ remaining:
 social_preview_sha256: 9e8c728656fd88ebc0a175f86b04a1c5144e8b3a8e5d9c86dd0662d75f624a52
 publication_changelog_review_sha: 188150b48a60f21c6c5dfeeed31b9e8f6cf3bb65
 echo_review_sha: 0c18456c4538b37b29de392a33e5d4aed2c69f4d
-code_review_sha: 08ca8c2a7d5366b8c53f35b15e802e00becd0225
+code_review_sha: 4c49d1df5e0b018bc37cdb7d0c9864ed12b4397a
 protocols_read_sha: 6368ebf850600524eee82e037422d7216c3e559e
 ---
 # Creatures of Ki - Teshi Renew — status
